@@ -16,8 +16,15 @@ Pod::Spec.new do |spec|
 
   spec.source_files  = "eMoney/**/*.{swift}"
   spec.swift_version = "5.0"
+  spec.static_framework = true
   spec.dependency 'LeanSDK'
   spec.dependency 'Alamofire'
   spec.dependency 'DropDown'
-
+  spec.dependency 'NVActivityIndicatorView'
+  spec.dependency 'Kingfisher'
+  spec.dependency 'SwiftyTesseract'
+  spec.dependency 'TensorFlowLiteSwift'
+  spec.dependency 'SwiftMessages'
+  spec.dependency 'FSPagerView'
+  spec.dependency 'lottie-ios'
 end
