@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_72" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Successful Transfer View Controller-->
+        <scene sceneID="SbF-7Z-xXh">
+            <objects>
+                <viewController storyboardIdentifier="SuccessfulTransferViewController" id="BZO-RZ-Lp6" customClass="SuccessfulTransferViewController" customModule="e_money" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ZJJ-0O-gcw">
+                        <rect key="frame" x="0.0" y="0.0" width="430" height="932"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wuK-5Y-i3F">
+                                <rect key="frame" x="355" y="64" width="75" height="35"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="75" id="q8V-9q-Kiy"/>
+                                    <constraint firstAttribute="height" constant="35" id="v33-UC-a7C"/>
+                                </constraints>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <connections>
+                                    <action selector="buttonShareTapped:" destination="BZO-RZ-Lp6" eventType="touchUpInside" id="PxE-Nd-L6g"/>
+                                </connections>
+                            </button>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="aw8-Ki-bqR">
+                                <rect key="frame" x="0.0" y="0.0" width="430" height="826"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TJg-GV-NNm" customClass="BaseButton" customModule="e_money" customModuleProvider="target">
+                                <rect key="frame" x="24" y="852" width="382" height="48"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="48" id="Vxw-7h-ntb"/>
+                                </constraints>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="Return to homepage"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="ButtonType" value="gradient_img_title"/>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="buttonReturnHomeTapped:" destination="BZO-RZ-Lp6" eventType="touchUpInside" id="ZTc-hG-GU1"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="RsR-Wb-zLG"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="TJg-GV-NNm" firstAttribute="top" secondItem="aw8-Ki-bqR" secondAttribute="bottom" constant="26" id="7rf-Ua-Gys"/>
+                            <constraint firstItem="wuK-5Y-i3F" firstAttribute="top" secondItem="ZJJ-0O-gcw" secondAttribute="top" constant="64" id="8be-JW-esp"/>
+                            <constraint firstItem="aw8-Ki-bqR" firstAttribute="leading" secondItem="RsR-Wb-zLG" secondAttribute="leading" id="Hom-Bd-BbG"/>
+                            <constraint firstItem="RsR-Wb-zLG" firstAttribute="trailing" secondItem="TJg-GV-NNm" secondAttribute="trailing" constant="24" id="JXZ-7a-FHz"/>
+                            <constraint firstAttribute="trailing" secondItem="wuK-5Y-i3F" secondAttribute="trailing" id="PPt-T6-98R"/>
+                            <constraint firstItem="aw8-Ki-bqR" firstAttribute="top" secondItem="ZJJ-0O-gcw" secondAttribute="top" id="TmU-CL-UOk"/>
+                            <constraint firstItem="aw8-Ki-bqR" firstAttribute="trailing" secondItem="RsR-Wb-zLG" secondAttribute="trailing" id="dzI-RC-S4A"/>
+                            <constraint firstAttribute="bottom" secondItem="TJg-GV-NNm" secondAttribute="bottom" constant="32" id="j04-Sx-ef0"/>
+                            <constraint firstItem="TJg-GV-NNm" firstAttribute="leading" secondItem="RsR-Wb-zLG" secondAttribute="leading" constant="24" id="p4Q-pA-ghg"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="buttonReturnHome" destination="TJg-GV-NNm" id="ZLX-UB-ZCs"/>
+                        <outlet property="tableView" destination="aw8-Ki-bqR" id="Pzp-0v-fng"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ama-h5-f0V" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-745.11627906976742" y="-285.19313304721032"/>
+        </scene>
+    </scenes>
+    <designables>
+        <designable name="TJg-GV-NNm">
+            <size key="intrinsicContentSize" width="165" height="34"/>
+        </designable>
+    </designables>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

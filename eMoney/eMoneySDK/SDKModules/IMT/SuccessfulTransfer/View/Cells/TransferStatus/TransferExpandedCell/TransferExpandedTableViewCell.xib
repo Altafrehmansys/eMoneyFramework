@@ -1,0 +1,326 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="SuisseIntl-Medium.ttf">
+            <string>SuisseIntl-Medium</string>
+        </array>
+        <array key="SuisseIntl-Regular.ttf">
+            <string>SuisseIntl</string>
+        </array>
+        <array key="SuisseIntl-SemiBold.ttf">
+            <string>SuisseIntl-SemiBold</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="TransferExpandedTableViewCell" rowHeight="552" id="KGk-i7-Jjw" customClass="TransferExpandedTableViewCell" customModule="e_money" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="427" height="552"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="427" height="552"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Yyk-O9-S9Q">
+                        <rect key="frame" x="24" y="8" width="379" height="536"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Transfer details" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="29e-is-bki">
+                                <rect key="frame" x="19.999999999999993" y="16" width="117.33333333333331" height="21"/>
+                                <fontDescription key="fontDescription" name="SuisseIntl-SemiBold" family="Suisse Int'l" pointSize="16"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="arrow-up" translatesAutoresizingMaskIntoConstraints="NO" id="hID-zF-a3Z">
+                                <rect key="frame" x="343" y="18" width="16" height="16.333333333333329"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Full Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ELB-FE-jIV">
+                                <rect key="frame" x="20" y="57.000000000000007" width="65" height="18.333333333333336"/>
+                                <fontDescription key="fontDescription" name="SuisseIntl" family="Suisse Int'l" pointSize="14"/>
+                                <color key="textColor" name="e&amp;_Black_80"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Method" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Phl-JR-HRD">
+                                <rect key="frame" x="20" y="95.333333333333329" width="50" height="18.333333333333329"/>
+                                <fontDescription key="fontDescription" name="SuisseIntl" family="Suisse Int'l" pointSize="14"/>
+                                <color key="textColor" name="e&amp;_Black_80"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bank account" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bnj-So-oce">
+                                <rect key="frame" x="255.33333333333329" y="95.333333333333329" width="103.66666666666666" height="21"/>
+                                <fontDescription key="fontDescription" name="SuisseIntl-SemiBold" family="Suisse Int'l" pointSize="16"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="IBAN AB 00 ABCD 123456 789111 " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QyW-Ja-sKY">
+                                <rect key="frame" x="172.66666666666663" y="116.33333333333333" width="186.33333333333337" height="15.666666666666671"/>
+                                <fontDescription key="fontDescription" name="SuisseIntl" family="Suisse Int'l" pointSize="12"/>
+                                <color key="textColor" name="e&amp;_Grey_100"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0n8-1a-FcK">
+                                <rect key="frame" x="20" y="152" width="339" height="1"/>
+                                <color key="backgroundColor" name="e&amp;_Grey_30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="1" id="3YK-jD-Jfd"/>
+                                </constraints>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="They receive" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SdA-Dn-VG2">
+                                <rect key="frame" x="20" y="173" width="80.666666666666671" height="18.333333333333343"/>
+                                <fontDescription key="fontDescription" name="SuisseIntl" family="Suisse Int'l" pointSize="14"/>
+                                <color key="textColor" name="e&amp;_Black_80"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You sent" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lp7-9P-CsE">
+                                <rect key="frame" x="20" y="229.33333333333334" width="55" height="18.333333333333343"/>
+                                <fontDescription key="fontDescription" name="SuisseIntl" family="Suisse Int'l" pointSize="14"/>
+                                <color key="textColor" name="e&amp;_Black_80"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HYG-oq-WdV">
+                                <rect key="frame" x="20" y="270.66666666666669" width="339" height="1"/>
+                                <color key="backgroundColor" name="e&amp;_Grey_30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="1" id="wk7-NE-H6n"/>
+                                </constraints>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="INR 111,212.31" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n2d-bE-QpC">
+                                <rect key="frame" x="261.66666666666669" y="173" width="97.333333333333314" height="21"/>
+                                <fontDescription key="fontDescription" name="SuisseIntl-SemiBold" family="Suisse Int'l" pointSize="16"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="AED 1.00 = INR 22.51" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lPP-kK-mc4">
+                                <rect key="frame" x="243.66666666666671" y="194" width="115.33333333333334" height="15.666666666666657"/>
+                                <fontDescription key="fontDescription" name="SuisseIntl" family="Suisse Int'l" pointSize="12"/>
+                                <color key="textColor" name="e&amp;_Grey_100"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="AED 5,000.00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h5x-l1-IBW">
+                                <rect key="frame" x="251.66666666666671" y="229.66666666666666" width="107.33333333333334" height="21"/>
+                                <fontDescription key="fontDescription" name="SuisseIntl-SemiBold" family="Suisse Int'l" pointSize="16"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Fees" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hW1-8b-XXX">
+                                <rect key="frame" x="20" y="291.66666666666669" width="31.666666666666671" height="18.333333333333314"/>
+                                <fontDescription key="fontDescription" name="SuisseIntl" family="Suisse Int'l" pointSize="14"/>
+                                <color key="textColor" name="e&amp;_Black_80"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Abdullah Mansoor" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aER-rk-miB">
+                                <rect key="frame" x="221.33333333333337" y="54.333333333333343" width="137.66666666666663" height="21"/>
+                                <fontDescription key="fontDescription" name="SuisseIntl-SemiBold" family="Suisse Int'l" pointSize="16"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="TI6-QJ-osx">
+                                <rect key="frame" x="196.33333333333337" y="291.66666666666669" width="162.66666666666663" height="21"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" AED 10.00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="F8X-v7-XUR">
+                                        <rect key="frame" x="0.0" y="0.0" width="81.333333333333329" height="21"/>
+                                        <fontDescription key="fontDescription" name="SuisseIntl" family="Suisse Int'l" pointSize="14"/>
+                                        <color key="textColor" name="e&amp;_Black_80"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" AED 10.00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Q1O-N6-fmK">
+                                        <rect key="frame" x="81.333333333333343" y="0.0" width="81.333333333333343" height="21"/>
+                                        <fontDescription key="fontDescription" name="SuisseIntl-SemiBold" family="Suisse Int'l" pointSize="16"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ppg-N4-2l9">
+                                <rect key="frame" x="20" y="332.66666666666669" width="339" height="45"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="diamond-icon" translatesAutoresizingMaskIntoConstraints="NO" id="N8Q-1R-nU9">
+                                        <rect key="frame" x="20" y="11.999999999999998" width="20" height="20.333333333333329"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="20" id="Ksp-lh-gl1"/>
+                                            <constraint firstAttribute="height" constant="20.329999999999998" id="gYH-6b-72t"/>
+                                        </constraints>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Saved AED 10.00 with GOZERO" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="naP-C3-KQN">
+                                        <rect key="frame" x="46" y="12" width="277" height="21"/>
+                                        <fontDescription key="fontDescription" name="SuisseIntl-Medium" family="Suisse Int'l" pointSize="14"/>
+                                        <color key="textColor" name="e&amp;_Maroon"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" name="e&amp;_Main_USP"/>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="naP-C3-KQN" secondAttribute="bottom" constant="12" id="EU3-Ln-SdT"/>
+                                    <constraint firstAttribute="height" constant="45" id="Gr4-Zo-fho"/>
+                                    <constraint firstItem="naP-C3-KQN" firstAttribute="top" secondItem="ppg-N4-2l9" secondAttribute="top" constant="12" id="KRo-s3-rrs"/>
+                                    <constraint firstItem="naP-C3-KQN" firstAttribute="leading" secondItem="N8Q-1R-nU9" secondAttribute="trailing" constant="6" id="XV7-HO-EiN"/>
+                                    <constraint firstAttribute="trailing" secondItem="naP-C3-KQN" secondAttribute="trailing" constant="16" id="h9X-CS-rcV"/>
+                                    <constraint firstItem="N8Q-1R-nU9" firstAttribute="top" secondItem="ppg-N4-2l9" secondAttribute="top" constant="12" id="htE-nS-qys"/>
+                                    <constraint firstItem="N8Q-1R-nU9" firstAttribute="leading" secondItem="ppg-N4-2l9" secondAttribute="leading" constant="20" id="wNE-ma-o55"/>
+                                </constraints>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your total payment" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UfA-TP-BAy">
+                                <rect key="frame" x="20.000000000000007" y="397.66666666666669" width="119.66666666666669" height="18.333333333333314"/>
+                                <fontDescription key="fontDescription" name="SuisseIntl" family="Suisse Int'l" pointSize="14"/>
+                                <color key="textColor" name="e&amp;_Black_80"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="AED 5,000.00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="C9D-pK-pmt">
+                                <rect key="frame" x="251.66666666666671" y="397.66666666666669" width="107.33333333333334" height="21"/>
+                                <fontDescription key="fontDescription" name="SuisseIntl-SemiBold" family="Suisse Int'l" pointSize="16"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tcR-w7-lMR">
+                                <rect key="frame" x="20" y="438.66666666666669" width="339" height="1"/>
+                                <color key="backgroundColor" name="e&amp;_Grey_30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="1" id="dBE-04-Yth"/>
+                                </constraints>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Transaction ID" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vpQ-97-HYI">
+                                <rect key="frame" x="19.999999999999993" y="459.66666666666669" width="92.333333333333314" height="18.333333333333314"/>
+                                <fontDescription key="fontDescription" name="SuisseIntl" family="Suisse Int'l" pointSize="14"/>
+                                <color key="textColor" name="e&amp;_Black_80"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="34560981098716242" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uib-77-mbe">
+                                <rect key="frame" x="198" y="459.66666666666669" width="161" height="21"/>
+                                <fontDescription key="fontDescription" name="SuisseIntl-SemiBold" family="Suisse Int'l" pointSize="16"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T4A-E3-S4r">
+                                <rect key="frame" x="20" y="498" width="30.666666666666671" height="18.333333333333371"/>
+                                <fontDescription key="fontDescription" name="SuisseIntl" family="Suisse Int'l" pointSize="14"/>
+                                <color key="textColor" name="e&amp;_Black_80"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Dec 23, 2023 at 09:41 am" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7P8-8D-xpt">
+                                <rect key="frame" x="169" y="500.66666666666669" width="190" height="21.000000000000057"/>
+                                <fontDescription key="fontDescription" name="SuisseIntl-SemiBold" family="Suisse Int'l" pointSize="16"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="29e-is-bki" firstAttribute="leading" secondItem="Yyk-O9-S9Q" secondAttribute="leading" constant="20" id="4P1-u3-nHB"/>
+                            <constraint firstItem="h5x-l1-IBW" firstAttribute="top" secondItem="lPP-kK-mc4" secondAttribute="bottom" constant="20" id="5ol-nG-yoR"/>
+                            <constraint firstAttribute="trailing" secondItem="lPP-kK-mc4" secondAttribute="trailing" constant="20" id="8xd-JJ-9u2"/>
+                            <constraint firstAttribute="trailing" secondItem="aER-rk-miB" secondAttribute="trailing" constant="20" id="9fF-TD-prp"/>
+                            <constraint firstAttribute="trailing" secondItem="ppg-N4-2l9" secondAttribute="trailing" constant="20" id="AUg-c7-jTY"/>
+                            <constraint firstAttribute="trailing" secondItem="tcR-w7-lMR" secondAttribute="trailing" constant="20" id="Avj-Jq-Gtn"/>
+                            <constraint firstAttribute="trailing" secondItem="C9D-pK-pmt" secondAttribute="trailing" constant="20" id="EBw-w6-dpN"/>
+                            <constraint firstAttribute="trailing" secondItem="hID-zF-a3Z" secondAttribute="trailing" constant="20" id="Ewb-wb-XBg"/>
+                            <constraint firstItem="C9D-pK-pmt" firstAttribute="top" secondItem="ppg-N4-2l9" secondAttribute="bottom" constant="20" id="FI3-Xy-rfN"/>
+                            <constraint firstItem="vpQ-97-HYI" firstAttribute="leading" secondItem="Yyk-O9-S9Q" secondAttribute="leading" constant="20" id="G6r-na-0Jr"/>
+                            <constraint firstAttribute="trailing" secondItem="uib-77-mbe" secondAttribute="trailing" constant="20" id="GEp-0k-YHd"/>
+                            <constraint firstItem="lp7-9P-CsE" firstAttribute="leading" secondItem="Yyk-O9-S9Q" secondAttribute="leading" constant="20" id="Hev-Ps-d4e"/>
+                            <constraint firstItem="tcR-w7-lMR" firstAttribute="leading" secondItem="Yyk-O9-S9Q" secondAttribute="leading" constant="20" id="Lp1-Cz-Y3J"/>
+                            <constraint firstItem="Phl-JR-HRD" firstAttribute="top" secondItem="ELB-FE-jIV" secondAttribute="bottom" constant="20" id="OXj-6m-2bN"/>
+                            <constraint firstItem="HYG-oq-WdV" firstAttribute="top" secondItem="h5x-l1-IBW" secondAttribute="bottom" constant="20" id="OuN-eK-Hfr"/>
+                            <constraint firstItem="ppg-N4-2l9" firstAttribute="top" secondItem="TI6-QJ-osx" secondAttribute="bottom" constant="20" id="Owx-pf-Oh2"/>
+                            <constraint firstItem="uib-77-mbe" firstAttribute="top" secondItem="tcR-w7-lMR" secondAttribute="bottom" constant="20" id="Ozg-mL-URL"/>
+                            <constraint firstAttribute="trailing" secondItem="QyW-Ja-sKY" secondAttribute="trailing" constant="20" id="Q92-0l-0bB"/>
+                            <constraint firstItem="hW1-8b-XXX" firstAttribute="top" secondItem="HYG-oq-WdV" secondAttribute="bottom" constant="20" id="QRx-FC-sdh"/>
+                            <constraint firstItem="0n8-1a-FcK" firstAttribute="top" secondItem="QyW-Ja-sKY" secondAttribute="bottom" constant="20" id="Tfx-4O-3gF"/>
+                            <constraint firstAttribute="trailing" secondItem="n2d-bE-QpC" secondAttribute="trailing" constant="20" id="U4x-XY-4a4"/>
+                            <constraint firstItem="hID-zF-a3Z" firstAttribute="top" secondItem="Yyk-O9-S9Q" secondAttribute="top" constant="18" id="VWn-xP-7zR"/>
+                            <constraint firstItem="7P8-8D-xpt" firstAttribute="top" secondItem="uib-77-mbe" secondAttribute="bottom" constant="20" id="Vvz-Km-fnl"/>
+                            <constraint firstItem="UfA-TP-BAy" firstAttribute="top" secondItem="ppg-N4-2l9" secondAttribute="bottom" constant="20" id="YyE-os-mOP"/>
+                            <constraint firstItem="lp7-9P-CsE" firstAttribute="top" secondItem="SdA-Dn-VG2" secondAttribute="bottom" constant="38" id="Z6M-WB-FBc"/>
+                            <constraint firstItem="vpQ-97-HYI" firstAttribute="top" secondItem="tcR-w7-lMR" secondAttribute="bottom" constant="20" id="b2R-AO-nmd"/>
+                            <constraint firstItem="ppg-N4-2l9" firstAttribute="leading" secondItem="Yyk-O9-S9Q" secondAttribute="leading" constant="20" id="bY6-St-D9y"/>
+                            <constraint firstItem="UfA-TP-BAy" firstAttribute="leading" secondItem="Yyk-O9-S9Q" secondAttribute="leading" constant="20" id="ccS-lp-NBy"/>
+                            <constraint firstItem="T4A-E3-S4r" firstAttribute="top" secondItem="vpQ-97-HYI" secondAttribute="bottom" constant="20" id="csj-jc-D3w"/>
+                            <constraint firstItem="SdA-Dn-VG2" firstAttribute="leading" secondItem="Yyk-O9-S9Q" secondAttribute="leading" constant="20" id="cv5-q9-KJv"/>
+                            <constraint firstItem="SdA-Dn-VG2" firstAttribute="top" secondItem="0n8-1a-FcK" secondAttribute="bottom" constant="20" id="eca-2e-N9h"/>
+                            <constraint firstItem="aER-rk-miB" firstAttribute="top" secondItem="hID-zF-a3Z" secondAttribute="bottom" constant="20" id="fY3-aA-6TI"/>
+                            <constraint firstItem="n2d-bE-QpC" firstAttribute="top" secondItem="0n8-1a-FcK" secondAttribute="bottom" constant="20" id="hNr-lW-g8A"/>
+                            <constraint firstItem="ELB-FE-jIV" firstAttribute="top" secondItem="29e-is-bki" secondAttribute="bottom" constant="20" id="ifg-tb-8XC"/>
+                            <constraint firstItem="lPP-kK-mc4" firstAttribute="top" secondItem="n2d-bE-QpC" secondAttribute="bottom" id="ivf-IC-482"/>
+                            <constraint firstAttribute="trailing" secondItem="TI6-QJ-osx" secondAttribute="trailing" constant="20" id="jZG-CG-ZhA"/>
+                            <constraint firstAttribute="trailing" secondItem="Bnj-So-oce" secondAttribute="trailing" constant="20" id="m1L-Rx-v21"/>
+                            <constraint firstAttribute="trailing" secondItem="0n8-1a-FcK" secondAttribute="trailing" constant="20" id="mJL-mV-o5O"/>
+                            <constraint firstItem="T4A-E3-S4r" firstAttribute="leading" secondItem="Yyk-O9-S9Q" secondAttribute="leading" constant="20" id="mql-HE-u9A"/>
+                            <constraint firstAttribute="trailing" secondItem="h5x-l1-IBW" secondAttribute="trailing" constant="20" id="nuT-b9-CXS"/>
+                            <constraint firstItem="HYG-oq-WdV" firstAttribute="leading" secondItem="Yyk-O9-S9Q" secondAttribute="leading" constant="20" id="p5w-xH-bcy"/>
+                            <constraint firstItem="Phl-JR-HRD" firstAttribute="leading" secondItem="Yyk-O9-S9Q" secondAttribute="leading" constant="20" id="pjf-vt-tLa"/>
+                            <constraint firstItem="29e-is-bki" firstAttribute="top" secondItem="Yyk-O9-S9Q" secondAttribute="top" constant="16" id="qky-C2-uYB"/>
+                            <constraint firstItem="Bnj-So-oce" firstAttribute="top" secondItem="aER-rk-miB" secondAttribute="bottom" constant="20" id="qwb-vQ-qDM"/>
+                            <constraint firstItem="ELB-FE-jIV" firstAttribute="leading" secondItem="Yyk-O9-S9Q" secondAttribute="leading" constant="20" id="rIG-z3-DUY"/>
+                            <constraint firstItem="0n8-1a-FcK" firstAttribute="leading" secondItem="Yyk-O9-S9Q" secondAttribute="leading" constant="20" id="s3e-kp-9wb"/>
+                            <constraint firstItem="TI6-QJ-osx" firstAttribute="top" secondItem="HYG-oq-WdV" secondAttribute="bottom" constant="20" id="tbn-jN-UvV"/>
+                            <constraint firstAttribute="height" constant="536" id="vMY-eW-IRz"/>
+                            <constraint firstItem="tcR-w7-lMR" firstAttribute="top" secondItem="C9D-pK-pmt" secondAttribute="bottom" constant="20" id="wFh-wB-AFc"/>
+                            <constraint firstAttribute="trailing" secondItem="HYG-oq-WdV" secondAttribute="trailing" constant="20" id="wVY-lj-C2P"/>
+                            <constraint firstItem="hW1-8b-XXX" firstAttribute="leading" secondItem="Yyk-O9-S9Q" secondAttribute="leading" constant="20" symbolic="YES" id="woK-IL-EDq"/>
+                            <constraint firstAttribute="trailing" secondItem="7P8-8D-xpt" secondAttribute="trailing" constant="20" id="yaL-SB-ZPK"/>
+                            <constraint firstItem="QyW-Ja-sKY" firstAttribute="top" secondItem="Bnj-So-oce" secondAttribute="bottom" id="zSe-C1-GaO"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="bottom" secondItem="Yyk-O9-S9Q" secondAttribute="bottom" constant="8" id="DBN-en-KGp"/>
+                    <constraint firstItem="Yyk-O9-S9Q" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="24" id="DUk-0f-06n"/>
+                    <constraint firstItem="Yyk-O9-S9Q" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="KqK-E6-1yt"/>
+                    <constraint firstAttribute="trailing" secondItem="Yyk-O9-S9Q" secondAttribute="trailing" constant="24" id="pA6-1A-V17"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="labelConversionValue" destination="lPP-kK-mc4" id="pxU-bd-GMz"/>
+                <outlet property="labelCurrencyValue" destination="n2d-bE-QpC" id="NR0-ta-gb2"/>
+                <outlet property="labelDate" destination="T4A-E3-S4r" id="RSc-hQ-WdA"/>
+                <outlet property="labelDateValue" destination="7P8-8D-xpt" id="1a7-Eg-cwE"/>
+                <outlet property="labelFees" destination="hW1-8b-XXX" id="8ov-sF-ndi"/>
+                <outlet property="labelFeesDiscount" destination="F8X-v7-XUR" id="lml-DD-w9P"/>
+                <outlet property="labelFeesValue" destination="Q1O-N6-fmK" id="bsC-ms-uSw"/>
+                <outlet property="labelFullName" destination="ELB-FE-jIV" id="Ag5-BH-RqT"/>
+                <outlet property="labelIban" destination="QyW-Ja-sKY" id="g0T-ft-8Ib"/>
+                <outlet property="labelMethod" destination="Phl-JR-HRD" id="E8a-yr-JUA"/>
+                <outlet property="labelMethodType" destination="Bnj-So-oce" id="eRH-SF-Kk6"/>
+                <outlet property="labelName" destination="aER-rk-miB" id="J0e-ZK-hhK"/>
+                <outlet property="labelPayment" destination="UfA-TP-BAy" id="4j1-Lp-uJ0"/>
+                <outlet property="labelPaymentValue" destination="C9D-pK-pmt" id="xZO-tz-sbD"/>
+                <outlet property="labelPromo" destination="naP-C3-KQN" id="qVH-li-q2X"/>
+                <outlet property="labelSentValue" destination="h5x-l1-IBW" id="NFG-W5-F2u"/>
+                <outlet property="labelTheyRecieve" destination="SdA-Dn-VG2" id="2fC-R7-qlI"/>
+                <outlet property="labelTransId" destination="vpQ-97-HYI" id="uwv-wt-6l6"/>
+                <outlet property="labelTransIdValue" destination="uib-77-mbe" id="eAM-hf-IkA"/>
+                <outlet property="labelTransferDetails" destination="29e-is-bki" id="ILL-9P-QDm"/>
+                <outlet property="labelYouSent" destination="lp7-9P-CsE" id="7uh-Qa-S1G"/>
+                <outlet property="viewContent" destination="Yyk-O9-S9Q" id="Lgh-2c-0cj"/>
+                <outlet property="viewPromo" destination="ppg-N4-2l9" id="ABP-bG-2rz"/>
+            </connections>
+            <point key="canvasLocation" x="75.572519083969468" y="97.887323943661983"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="arrow-up" width="16" height="16.333333969116211"/>
+        <image name="diamond-icon" width="20" height="20.333333969116211"/>
+        <namedColor name="e&amp;_Black_80">
+            <color red="0.18823529411764706" green="0.18823529411764706" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="e&amp;_Grey_100">
+            <color red="0.48627450980392156" green="0.48627450980392156" blue="0.47843137254901963" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="e&amp;_Grey_30">
+            <color red="0.84705882352941175" green="0.84705882352941175" blue="0.84313725490196079" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="e&amp;_Main_USP">
+            <color red="0.96862745098039216" green="0.93333333333333335" blue="0.85490196078431369" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="e&amp;_Maroon">
+            <color red="0.29399999976158142" green="0.059000000357627869" blue="0.11800000071525574" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>

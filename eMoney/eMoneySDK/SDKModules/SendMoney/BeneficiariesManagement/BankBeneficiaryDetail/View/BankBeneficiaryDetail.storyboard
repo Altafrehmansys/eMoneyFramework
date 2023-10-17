@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21225" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_5" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21207"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Bank Beneficiary Detail View Controller-->
+        <scene sceneID="SbF-7Z-xXh">
+            <objects>
+                <viewController storyboardIdentifier="BankBeneficiaryDetailViewController" id="BZO-RZ-Lp6" customClass="BankBeneficiaryDetailViewController" customModule="e_money" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ZJJ-0O-gcw">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bXU-Vr-WMY">
+                                <rect key="frame" x="0.0" y="773" width="414" height="1"/>
+                                <color key="backgroundColor" name="e&amp;_Grey_30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="1" id="Nq9-q4-Rnu"/>
+                                </constraints>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rqQ-f9-A5X" customClass="BaseButton" customModule="e_money" customModuleProvider="target">
+                                <rect key="frame" x="24" y="790" width="366" height="48"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="48" id="0Kl-2V-NWn"/>
+                                </constraints>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="Send money"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="ButtonType" value="gradient_img_title"/>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="sendMoneyPressed:" destination="BZO-RZ-Lp6" eventType="touchUpInside" id="goU-te-IcT"/>
+                                </connections>
+                            </button>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="zt4-wS-Y6f">
+                                <rect key="frame" x="0.0" y="44" width="414" height="729"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="RsR-Wb-zLG"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="rqQ-f9-A5X" firstAttribute="leading" secondItem="RsR-Wb-zLG" secondAttribute="leading" constant="24" id="5zF-W5-o7P"/>
+                            <constraint firstItem="RsR-Wb-zLG" firstAttribute="trailing" secondItem="rqQ-f9-A5X" secondAttribute="trailing" constant="24" id="6A9-4a-oBk"/>
+                            <constraint firstItem="zt4-wS-Y6f" firstAttribute="top" secondItem="RsR-Wb-zLG" secondAttribute="top" id="9jt-dV-R36"/>
+                            <constraint firstItem="RsR-Wb-zLG" firstAttribute="bottom" secondItem="rqQ-f9-A5X" secondAttribute="bottom" constant="24" id="QSL-HP-Jz8"/>
+                            <constraint firstItem="bXU-Vr-WMY" firstAttribute="leading" secondItem="RsR-Wb-zLG" secondAttribute="leading" id="Qep-tS-MA5"/>
+                            <constraint firstItem="zt4-wS-Y6f" firstAttribute="leading" secondItem="RsR-Wb-zLG" secondAttribute="leading" id="TEV-KR-3XX"/>
+                            <constraint firstItem="bXU-Vr-WMY" firstAttribute="top" secondItem="zt4-wS-Y6f" secondAttribute="bottom" id="eSP-T8-MiE"/>
+                            <constraint firstItem="zt4-wS-Y6f" firstAttribute="trailing" secondItem="RsR-Wb-zLG" secondAttribute="trailing" id="qgq-9t-zbC"/>
+                            <constraint firstItem="rqQ-f9-A5X" firstAttribute="top" secondItem="bXU-Vr-WMY" secondAttribute="bottom" constant="16" id="vwb-ym-9qW"/>
+                            <constraint firstItem="RsR-Wb-zLG" firstAttribute="trailing" secondItem="bXU-Vr-WMY" secondAttribute="trailing" id="yW4-np-dmF"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="btnSendMoney" destination="rqQ-f9-A5X" id="R4o-5K-xcb"/>
+                        <outlet property="tblView" destination="zt4-wS-Y6f" id="Gui-0y-uhe"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ama-h5-f0V" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-491.304347826087" y="-188.83928571428569"/>
+        </scene>
+    </scenes>
+    <designables>
+        <designable name="rqQ-f9-A5X">
+            <size key="intrinsicContentSize" width="101" height="34"/>
+        </designable>
+    </designables>
+    <resources>
+        <namedColor name="e&amp;_Grey_30">
+            <color red="0.84705882352941175" green="0.84705882352941175" blue="0.84313725490196079" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

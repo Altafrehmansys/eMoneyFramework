@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina5_9" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Add New Card View Controller-->
+        <scene sceneID="SbF-7Z-xXh">
+            <objects>
+                <viewController storyboardIdentifier="AddNewCardViewController" id="BZO-RZ-Lp6" customClass="AddNewCardViewController" customModule="e_money" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="9s9-xJ-6Lz">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="E0j-2F-j99">
+                                <rect key="frame" x="0.0" y="47" width="375" height="671"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8mq-jS-Sga">
+                                <rect key="frame" x="0.0" y="718" width="375" height="48"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ztV-Nw-xbJ" customClass="BaseButton" customModule="e_money" customModuleProvider="target">
+                                        <rect key="frame" x="24" y="0.0" width="327" height="48"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="48" id="tlH-42-3GZ"/>
+                                        </constraints>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <state key="normal" title="Button"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="height">
+                                                <integer key="value" value="48"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="ztV-Nw-xbJ" secondAttribute="trailing" constant="24" id="9X1-cc-1I8"/>
+                                    <constraint firstAttribute="bottom" secondItem="ztV-Nw-xbJ" secondAttribute="bottom" id="COf-BB-nRT"/>
+                                    <constraint firstItem="ztV-Nw-xbJ" firstAttribute="top" secondItem="8mq-jS-Sga" secondAttribute="top" id="G8j-A3-Q6r"/>
+                                    <constraint firstItem="ztV-Nw-xbJ" firstAttribute="leading" secondItem="8mq-jS-Sga" secondAttribute="leading" constant="24" id="leg-9u-iQn"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="tS9-BF-xgq"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="E0j-2F-j99" firstAttribute="top" secondItem="tS9-BF-xgq" secondAttribute="top" id="5hc-Rb-eGj"/>
+                            <constraint firstItem="tS9-BF-xgq" firstAttribute="trailing" secondItem="8mq-jS-Sga" secondAttribute="trailing" id="DOu-8l-NbX"/>
+                            <constraint firstItem="8mq-jS-Sga" firstAttribute="top" secondItem="E0j-2F-j99" secondAttribute="bottom" id="Or9-Fw-Ezr"/>
+                            <constraint firstItem="E0j-2F-j99" firstAttribute="leading" secondItem="tS9-BF-xgq" secondAttribute="leading" id="Q9Y-3Y-nC3"/>
+                            <constraint firstItem="tS9-BF-xgq" firstAttribute="trailing" secondItem="E0j-2F-j99" secondAttribute="trailing" id="gdT-UJ-DVQ"/>
+                            <constraint firstItem="tS9-BF-xgq" firstAttribute="bottom" secondItem="8mq-jS-Sga" secondAttribute="bottom" constant="12" id="lLO-xx-5cG"/>
+                            <constraint firstItem="8mq-jS-Sga" firstAttribute="leading" secondItem="tS9-BF-xgq" secondAttribute="leading" id="r6O-QJ-qWb"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="saveCardButton" destination="ztV-Nw-xbJ" id="cHj-4n-r8g"/>
+                        <outlet property="tableView" destination="E0j-2F-j99" id="94K-7G-KMd"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ama-h5-f0V" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-490" y="-188"/>
+        </scene>
+    </scenes>
+    <designables>
+        <designable name="ztV-Nw-xbJ">
+            <size key="intrinsicContentSize" width="46" height="30"/>
+        </designable>
+    </designables>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

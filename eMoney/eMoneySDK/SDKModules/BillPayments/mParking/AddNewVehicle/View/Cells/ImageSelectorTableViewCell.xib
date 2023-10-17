@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21225" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_0" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21207"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="106" id="KGk-i7-Jjw" customClass="ImageSelectorTableViewCell" customModule="e_money" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="106"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="106"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mLU-X2-yes">
+                        <rect key="frame" x="24" y="12" width="272" height="80"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Np7-bO-6rh">
+                                <rect key="frame" x="8" y="8" width="256" height="64"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="dubai-plate" translatesAutoresizingMaskIntoConstraints="NO" id="iid-4J-jlP">
+                                        <rect key="frame" x="77" y="12" width="102" height="40"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="102" id="RSc-d1-Is1"/>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="102" id="d3G-L2-xn9"/>
+                                            <constraint firstAttribute="height" constant="40" id="pm7-ta-ApU"/>
+                                        </constraints>
+                                    </imageView>
+                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="A" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="rrj-SJ-3js">
+                                        <rect key="frame" x="12" y="12" width="53" height="40"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="007" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Zat-yX-dFy">
+                                        <rect key="frame" x="191" y="12" width="53" height="40"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstItem="iid-4J-jlP" firstAttribute="centerX" secondItem="Np7-bO-6rh" secondAttribute="centerX" id="0ce-iV-MgD"/>
+                                    <constraint firstItem="iid-4J-jlP" firstAttribute="top" secondItem="Np7-bO-6rh" secondAttribute="top" constant="12" id="7ZC-7D-bHt"/>
+                                    <constraint firstItem="rrj-SJ-3js" firstAttribute="top" secondItem="Np7-bO-6rh" secondAttribute="top" constant="12" id="9us-qt-44l"/>
+                                    <constraint firstItem="Zat-yX-dFy" firstAttribute="top" secondItem="Np7-bO-6rh" secondAttribute="top" constant="12" id="ENu-Go-fFS"/>
+                                    <constraint firstAttribute="bottom" secondItem="Zat-yX-dFy" secondAttribute="bottom" constant="12" id="KLC-af-S3g"/>
+                                    <constraint firstItem="iid-4J-jlP" firstAttribute="centerY" secondItem="Np7-bO-6rh" secondAttribute="centerY" id="Lx4-7j-HtH"/>
+                                    <constraint firstAttribute="trailing" secondItem="Zat-yX-dFy" secondAttribute="trailing" constant="12" id="Mqw-Ad-khc"/>
+                                    <constraint firstItem="iid-4J-jlP" firstAttribute="leading" secondItem="rrj-SJ-3js" secondAttribute="trailing" constant="12" id="OU3-lT-0Hn"/>
+                                    <constraint firstAttribute="bottom" secondItem="rrj-SJ-3js" secondAttribute="bottom" constant="12" id="Ytz-Pd-q1P"/>
+                                    <constraint firstAttribute="bottom" secondItem="iid-4J-jlP" secondAttribute="bottom" constant="12" id="elR-fL-dyj"/>
+                                    <constraint firstItem="Zat-yX-dFy" firstAttribute="leading" secondItem="iid-4J-jlP" secondAttribute="trailing" constant="12" id="if7-PI-iMb"/>
+                                    <constraint firstItem="rrj-SJ-3js" firstAttribute="leading" secondItem="Np7-bO-6rh" secondAttribute="leading" constant="12" id="wSk-AJ-8ok"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" name="e&amp;_Online_Exclusive"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="Np7-bO-6rh" secondAttribute="trailing" constant="8" id="4jS-dd-RiT"/>
+                            <constraint firstItem="Np7-bO-6rh" firstAttribute="top" secondItem="mLU-X2-yes" secondAttribute="top" constant="8" id="Byt-pk-C0W"/>
+                            <constraint firstAttribute="bottom" secondItem="Np7-bO-6rh" secondAttribute="bottom" constant="8" id="pGJ-bL-JjH"/>
+                            <constraint firstItem="Np7-bO-6rh" firstAttribute="leading" secondItem="mLU-X2-yes" secondAttribute="leading" constant="8" id="vJl-7Z-cat"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="bottom" secondItem="mLU-X2-yes" secondAttribute="bottom" constant="12" id="9sY-ug-xz7"/>
+                    <constraint firstItem="mLU-X2-yes" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="24" id="UjI-f5-i8t"/>
+                    <constraint firstAttribute="trailing" secondItem="mLU-X2-yes" secondAttribute="trailing" constant="24" id="UyF-KI-v5t"/>
+                    <constraint firstItem="mLU-X2-yes" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="12" id="tkA-L4-Vu7"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="cellParentView" destination="mLU-X2-yes" id="QD1-1W-maq"/>
+                <outlet property="childView" destination="Np7-bO-6rh" id="dmO-eS-5ms"/>
+                <outlet property="endTextField" destination="Zat-yX-dFy" id="e54-I3-A2V"/>
+                <outlet property="imgView" destination="iid-4J-jlP" id="G8z-jv-Pxl"/>
+                <outlet property="startTextField" destination="rrj-SJ-3js" id="MRD-eT-stJ"/>
+            </connections>
+            <point key="canvasLocation" x="84.615384615384613" y="42.654028436018955"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="dubai-plate" width="101.66666412353516" height="40"/>
+        <namedColor name="e&amp;_Online_Exclusive">
+            <color red="0.92156862745098034" green="0.92156862745098034" blue="0.8901960784313725" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

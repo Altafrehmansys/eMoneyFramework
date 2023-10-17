@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21225" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_0" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21207"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="142" id="KGk-i7-Jjw" customClass="VehiclesFinesDetailTableViewCell" customModule="e_money" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="142"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="142"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gPe-ln-WCF">
+                        <rect key="frame" x="24" y="8" width="272" height="126"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="9005887086" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pcz-DW-v7W">
+                                <rect key="frame" x="20" y="17" width="102" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1hD-7x-vsK">
+                                <rect key="frame" x="0.0" y="59" width="272" height="67"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="7" translatesAutoresizingMaskIntoConstraints="NO" id="TpC-Xg-CWx">
+                                        <rect key="frame" x="20" y="12" width="232" height="43"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date: Apr 10, 2022 - 10:30 am" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6AI-Z7-qJe">
+                                                <rect key="frame" x="0.0" y="0.0" width="232" height="18"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Issued by: Dubai Police" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SZe-Di-iLC">
+                                                <rect key="frame" x="0.0" y="25" width="232" height="18"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <color key="backgroundColor" name="e&amp;_Success_10"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="67" id="5n5-zm-ovX"/>
+                                    <constraint firstItem="TpC-Xg-CWx" firstAttribute="leading" secondItem="1hD-7x-vsK" secondAttribute="leading" constant="20" id="IdQ-hn-6L2"/>
+                                    <constraint firstAttribute="bottom" secondItem="TpC-Xg-CWx" secondAttribute="bottom" constant="12" id="JEh-nz-EZL"/>
+                                    <constraint firstItem="TpC-Xg-CWx" firstAttribute="top" secondItem="1hD-7x-vsK" secondAttribute="top" constant="12" id="Zhj-Wy-kjX"/>
+                                    <constraint firstAttribute="trailing" secondItem="TpC-Xg-CWx" secondAttribute="trailing" constant="20" id="qOJ-ai-SJA"/>
+                                </constraints>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="AED 50.00" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A2b-yo-R28">
+                                <rect key="frame" x="173.66666666666666" y="24" width="81.333333333333343" height="20.333333333333329"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="1hD-7x-vsK" secondAttribute="trailing" id="7zb-j1-Fk9"/>
+                            <constraint firstAttribute="bottom" secondItem="1hD-7x-vsK" secondAttribute="bottom" id="DqS-DC-Y3O"/>
+                            <constraint firstItem="pcz-DW-v7W" firstAttribute="leading" secondItem="gPe-ln-WCF" secondAttribute="leading" constant="20" id="EMg-EU-uAI"/>
+                            <constraint firstItem="1hD-7x-vsK" firstAttribute="top" secondItem="pcz-DW-v7W" secondAttribute="bottom" constant="8" id="Iv1-RL-BTY"/>
+                            <constraint firstItem="pcz-DW-v7W" firstAttribute="top" secondItem="gPe-ln-WCF" secondAttribute="top" constant="17" id="aNn-5J-Nhk"/>
+                            <constraint firstAttribute="trailing" secondItem="A2b-yo-R28" secondAttribute="trailing" constant="17" id="cBg-fM-IWt"/>
+                            <constraint firstItem="A2b-yo-R28" firstAttribute="centerY" secondItem="pcz-DW-v7W" secondAttribute="centerY" id="hZq-2O-Ljz"/>
+                            <constraint firstItem="1hD-7x-vsK" firstAttribute="leading" secondItem="gPe-ln-WCF" secondAttribute="leading" id="qLq-dc-ZoI"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="gPe-ln-WCF" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="N6H-kq-NpH"/>
+                    <constraint firstItem="gPe-ln-WCF" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="24" id="UaB-tX-RcF"/>
+                    <constraint firstAttribute="trailing" secondItem="gPe-ln-WCF" secondAttribute="trailing" constant="24" id="rdh-MM-lab"/>
+                    <constraint firstAttribute="bottom" secondItem="gPe-ln-WCF" secondAttribute="bottom" constant="8" id="u1p-fZ-K4d"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="amountLabel" destination="A2b-yo-R28" id="NWH-Ge-XKD"/>
+                <outlet property="cellParentView" destination="gPe-ln-WCF" id="VdT-DB-rpn"/>
+                <outlet property="cellSubView" destination="1hD-7x-vsK" id="0EJ-hS-hoI"/>
+                <outlet property="dateAndTimeLabel" destination="6AI-Z7-qJe" id="UNe-Yl-vTd"/>
+                <outlet property="issuedByLabel" destination="SZe-Di-iLC" id="dw7-Zt-hvp"/>
+                <outlet property="serialNumberLabel" destination="pcz-DW-v7W" id="CvZ-9G-O7I"/>
+            </connections>
+            <point key="canvasLocation" x="178.46153846153845" y="99.526066350710892"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <namedColor name="e&amp;_Success_10">
+            <color red="0.87450980392156863" green="0.93725490196078431" blue="0.8666666666666667" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

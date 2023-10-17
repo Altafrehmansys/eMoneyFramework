@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21225" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_0" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21207"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="77" id="KGk-i7-Jjw" customClass="SavedCardsCell" customModule="e_money" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="77"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="77"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="radio_selected" translatesAutoresizingMaskIntoConstraints="NO" id="6vq-Qu-XGj">
+                        <rect key="frame" x="20" y="30.666666666666671" width="16" height="16"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="16" id="eGg-Q1-upM"/>
+                            <constraint firstAttribute="width" constant="16" id="wHM-Ve-ExW"/>
+                        </constraints>
+                    </imageView>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="visa-card-icon" translatesAutoresizingMaskIntoConstraints="NO" id="MjM-Ku-Neq">
+                        <rect key="frame" x="48" y="20.666666666666671" width="36" height="36"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="36" id="3dK-Ja-pll"/>
+                            <constraint firstAttribute="width" constant="36" id="T7g-1N-He4"/>
+                        </constraints>
+                    </imageView>
+                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="w3H-jP-tH2">
+                        <rect key="frame" x="96" y="18.333333333333332" width="200" height="40.666666666666671"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="VISA card" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4I3-Qq-hMX">
+                                <rect key="frame" x="0.0" y="0.0" width="200" height="20.333333333333332"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Debit card **** 1528" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GEh-C0-AQQ">
+                                <rect key="frame" x="0.0" y="20.333333333333336" width="200" height="20.333333333333336"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                    </stackView>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="w3H-jP-tH2" firstAttribute="centerY" secondItem="MjM-Ku-Neq" secondAttribute="centerY" id="MGW-pt-jZD"/>
+                    <constraint firstAttribute="trailing" secondItem="w3H-jP-tH2" secondAttribute="trailing" constant="24" id="Up8-ME-mJI"/>
+                    <constraint firstItem="6vq-Qu-XGj" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" id="akR-hX-6FW"/>
+                    <constraint firstItem="MjM-Ku-Neq" firstAttribute="leading" secondItem="6vq-Qu-XGj" secondAttribute="trailing" constant="12" id="ddb-tM-zWA"/>
+                    <constraint firstItem="6vq-Qu-XGj" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="juu-8w-81X"/>
+                    <constraint firstItem="w3H-jP-tH2" firstAttribute="leading" secondItem="MjM-Ku-Neq" secondAttribute="trailing" constant="12" id="nuz-7f-KQf"/>
+                    <constraint firstItem="MjM-Ku-Neq" firstAttribute="centerY" secondItem="6vq-Qu-XGj" secondAttribute="centerY" id="xtQ-x4-aAG"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="cardImgView" destination="MjM-Ku-Neq" id="IiG-9l-ag5"/>
+                <outlet property="cardNumberLabel" destination="GEh-C0-AQQ" id="qer-ge-rc2"/>
+                <outlet property="cardTypeLabel" destination="4I3-Qq-hMX" id="lAA-Ld-jBV"/>
+                <outlet property="radioCheckBox" destination="6vq-Qu-XGj" id="0XC-jB-QlX"/>
+            </connections>
+            <point key="canvasLocation" x="147.69230769230768" y="-1.066350710900474"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="radio_selected" width="24" height="24"/>
+        <image name="visa-card-icon" width="36.666667938232422" height="36.666667938232422"/>
+    </resources>
+</document>

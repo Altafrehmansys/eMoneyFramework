@@ -1,0 +1,36 @@
+{
+  "name": "PureLiveSDK",
+  "version": "6.4.0.1",
+  "summary": "PureLiveSDK",
+  "homepage": "https://gitlab.com/purelive/purelive-ios-sdk",
+  "authors": {
+    "PureLive": "info@purelive.ae"
+  },
+  "source": {
+    "git": "https://gitlab.com/purelive/purelive-ios-sdk"
+  },
+  "platforms": {
+    "ios": "10.0"
+  },
+  "default_subspecs": "Full",
+  "dependencies": {
+    "TensorFlowLiteC": [
+      "2.7.0"
+    ]
+  },
+  "subspecs": [
+    {
+      "name": "Full",
+      "vendored_frameworks": "PureLiveSDK.xcframework",
+      "resources": [
+        "PureLiveSDKResources.bundle",
+        "PureLiveSDKOnDeviceResources.bundle"
+      ]
+    },
+    {
+      "name": "Core",
+      "vendored_frameworks": "PureLiveSDK.xcframework",
+      "resources": "PureLiveSDKResources.bundle"
+    }
+  ]
+}

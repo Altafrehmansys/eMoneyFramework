@@ -1,0 +1,239 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_7" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21679"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="SuisseIntl-Medium.ttf">
+            <string>SuisseIntl-Medium</string>
+        </array>
+        <array key="SuisseIntl-Regular.ttf">
+            <string>SuisseIntl</string>
+        </array>
+        <array key="SuisseIntl-SemiBold.ttf">
+            <string>SuisseIntl-SemiBold</string>
+        </array>
+    </customFonts>
+    <scenes>
+        <!--Register Pin View Controller-->
+        <scene sceneID="SbF-7Z-xXh">
+            <objects>
+                <viewController storyboardIdentifier="RegisterPinViewController" id="BZO-RZ-Lp6" customClass="RegisterPinViewController" customModule="eMoneySDK" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ZJJ-0O-gcw">
+                        <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zq0-nx-HCN" customClass="BaseStepper" customModule="eMoneySDK" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="71" width="428" height="12"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="12" id="hO6-h3-Pyb"/>
+                                </constraints>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Create a PIN to secure your account." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7dN-rM-S7q">
+                                <rect key="frame" x="24" y="107" width="380" height="21"/>
+                                <fontDescription key="fontDescription" name="SuisseIntl" family="Suisse Int'l" pointSize="16"/>
+                                <color key="textColor" name="e&amp;_Black_80"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hide" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MQg-LM-W1h">
+                                <rect key="frame" x="377.66666666666669" y="218" width="26.333333333333314" height="15.666666666666657"/>
+                                <fontDescription key="fontDescription" name="SuisseIntl-Medium" family="Suisse Int'l" pointSize="12"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Weak PIN" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="orH-0b-t44">
+                                <rect key="frame" x="50" y="218" width="53.333333333333343" height="15.666666666666657"/>
+                                <fontDescription key="fontDescription" name="SuisseIntl" family="Suisse Int'l" pointSize="12"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="top" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="quG-lr-4Tp">
+                                <rect key="frame" x="24" y="253.99999999999997" width="256.33333333333331" height="86.666666666666657"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="Mtz-0n-UE2">
+                                        <rect key="frame" x="0.0" y="0.0" width="234" height="15.666666666666666"/>
+                                        <subviews>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="slash-black" translatesAutoresizingMaskIntoConstraints="NO" id="vL9-Gd-gna">
+                                                <rect key="frame" x="0.0" y="0.0" width="12" height="15.666666666666666"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="12" id="gj4-5a-0TV"/>
+                                                    <constraint firstAttribute="width" constant="12" id="jUe-3e-hyX"/>
+                                                </constraints>
+                                            </imageView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Do not use repeating numbers (eg. 1111)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U2M-ZJ-veF">
+                                                <rect key="frame" x="20" y="0.0" width="214" height="15.666666666666666"/>
+                                                <fontDescription key="fontDescription" name="SuisseIntl" family="Suisse Int'l" pointSize="12"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="kqW-my-WG6">
+                                        <rect key="frame" x="0.0" y="23.666666666666686" width="234" height="15.666666666666664"/>
+                                        <subviews>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="slash" translatesAutoresizingMaskIntoConstraints="NO" id="Ch5-vN-Y50">
+                                                <rect key="frame" x="0.0" y="0.0" width="12" height="15.666666666666666"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="12" id="Ljo-8p-tno"/>
+                                                    <constraint firstAttribute="width" constant="12" id="NGz-5D-wMB"/>
+                                                </constraints>
+                                            </imageView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Do not use repeating numbers (eg. 1111)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dra-KF-Ggz">
+                                                <rect key="frame" x="20" y="0.0" width="214" height="15.666666666666666"/>
+                                                <fontDescription key="fontDescription" name="SuisseIntl" family="Suisse Int'l" pointSize="12"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="CSQ-ui-JSU">
+                                        <rect key="frame" x="0.0" y="47.333333333333314" width="255.66666666666666" height="15.666666666666664"/>
+                                        <subviews>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="slash" translatesAutoresizingMaskIntoConstraints="NO" id="IIi-aY-BRL">
+                                                <rect key="frame" x="0.0" y="0.0" width="12" height="15.666666666666666"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="12" id="4s1-kd-PUm"/>
+                                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="12" id="XCk-G9-w8e"/>
+                                                </constraints>
+                                            </imageView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Do not use consecutive numbers (eg. 1234)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gMf-3F-X2c">
+                                                <rect key="frame" x="19.999999999999986" y="0.0" width="235.66666666666663" height="15.666666666666666"/>
+                                                <fontDescription key="fontDescription" name="SuisseIntl" family="Suisse Int'l" pointSize="12"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="egt-L8-o1s">
+                                        <rect key="frame" x="0.0" y="71" width="256.33333333333331" height="15.666666666666671"/>
+                                        <subviews>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="slash" translatesAutoresizingMaskIntoConstraints="NO" id="WW6-1r-rWY">
+                                                <rect key="frame" x="0.0" y="0.0" width="12" height="15.666666666666666"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="12" id="23q-te-M9F"/>
+                                                </constraints>
+                                            </imageView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Avoid using number from your date of birth " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dgA-e1-cei">
+                                                <rect key="frame" x="20.000000000000014" y="0.0" width="236.33333333333337" height="15.666666666666666"/>
+                                                <fontDescription key="fontDescription" name="SuisseIntl" family="Suisse Int'l" pointSize="12"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                            </stackView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="info-circle-red" translatesAutoresizingMaskIntoConstraints="NO" id="V8O-wz-gfP">
+                                <rect key="frame" x="24" y="218" width="16" height="16"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZaY-Wo-ARj" customClass="BaseButton" customModule="eMoneySDK" customModuleProvider="target">
+                                <rect key="frame" x="380" y="812" width="24" height="48"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="48" id="nYC-UC-Lsc"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="SuisseIntl-SemiBold" family="Suisse Int'l" pointSize="16"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" image="Line-arrow-right"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="ButtonType" value="gradient_circle"/>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="buttonReEnterPinTapped:" destination="BZO-RZ-Lp6" eventType="touchUpInside" id="X0Z-3X-BDD"/>
+                                </connections>
+                            </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="eye" translatesAutoresizingMaskIntoConstraints="NO" id="cqK-4Q-2l7">
+                                <rect key="frame" x="352.33333333333331" y="218" width="16.333333333333314" height="16"/>
+                            </imageView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lKi-qs-k9M" customClass="StandardTextField" customModule="eMoneySDK" customModuleProvider="target">
+                                <rect key="frame" x="24" y="144" width="380" height="64"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="64" id="D2v-At-235"/>
+                                </constraints>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cFY-Za-RMv">
+                                <rect key="frame" x="348" y="209" width="75" height="35"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="35" id="Zdr-eN-3yM"/>
+                                    <constraint firstAttribute="width" constant="75" id="fGN-nf-SrW"/>
+                                </constraints>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <connections>
+                                    <action selector="buttonShowHideTapped:" destination="BZO-RZ-Lp6" eventType="touchUpInside" id="YHD-dz-uGJ"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="RsR-Wb-zLG"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="orH-0b-t44" firstAttribute="leading" secondItem="V8O-wz-gfP" secondAttribute="trailing" constant="10" id="08W-Vu-rpi"/>
+                            <constraint firstItem="zq0-nx-HCN" firstAttribute="trailing" secondItem="RsR-Wb-zLG" secondAttribute="trailing" id="22i-eS-mgO"/>
+                            <constraint firstItem="quG-lr-4Tp" firstAttribute="top" secondItem="V8O-wz-gfP" secondAttribute="bottom" constant="20" id="3cC-iK-UfP"/>
+                            <constraint firstItem="zq0-nx-HCN" firstAttribute="leading" secondItem="RsR-Wb-zLG" secondAttribute="leading" id="7KN-qc-nmh"/>
+                            <constraint firstItem="quG-lr-4Tp" firstAttribute="leading" secondItem="RsR-Wb-zLG" secondAttribute="leading" constant="24" id="8a4-0P-qV7"/>
+                            <constraint firstItem="RsR-Wb-zLG" firstAttribute="trailing" secondItem="cFY-Za-RMv" secondAttribute="trailing" constant="5" id="9AU-Uy-adA"/>
+                            <constraint firstItem="RsR-Wb-zLG" firstAttribute="trailing" secondItem="7dN-rM-S7q" secondAttribute="trailing" constant="24" id="AC6-Xq-hFs"/>
+                            <constraint firstItem="lKi-qs-k9M" firstAttribute="leading" secondItem="RsR-Wb-zLG" secondAttribute="leading" constant="24" id="Coe-8I-rxl"/>
+                            <constraint firstItem="zq0-nx-HCN" firstAttribute="top" secondItem="RsR-Wb-zLG" secondAttribute="top" constant="24" id="Mz9-KT-GNY"/>
+                            <constraint firstItem="7dN-rM-S7q" firstAttribute="top" secondItem="zq0-nx-HCN" secondAttribute="bottom" constant="24" id="NWa-zG-hiu"/>
+                            <constraint firstItem="7dN-rM-S7q" firstAttribute="leading" secondItem="RsR-Wb-zLG" secondAttribute="leading" constant="24" id="ORY-NH-8cX"/>
+                            <constraint firstItem="V8O-wz-gfP" firstAttribute="leading" secondItem="RsR-Wb-zLG" secondAttribute="leading" constant="24" id="UYD-S5-1hR"/>
+                            <constraint firstItem="MQg-LM-W1h" firstAttribute="leading" secondItem="cqK-4Q-2l7" secondAttribute="trailing" constant="9" id="V3y-Q9-bvP"/>
+                            <constraint firstItem="RsR-Wb-zLG" firstAttribute="trailing" secondItem="MQg-LM-W1h" secondAttribute="trailing" constant="24" id="Wxa-PD-lmi"/>
+                            <constraint firstItem="RsR-Wb-zLG" firstAttribute="trailing" secondItem="lKi-qs-k9M" secondAttribute="trailing" constant="24" id="XQp-F8-BD6"/>
+                            <constraint firstItem="RsR-Wb-zLG" firstAttribute="trailing" secondItem="ZaY-Wo-ARj" secondAttribute="trailing" constant="24" id="YKl-18-C69"/>
+                            <constraint firstItem="MQg-LM-W1h" firstAttribute="top" secondItem="lKi-qs-k9M" secondAttribute="bottom" constant="10" id="YnA-No-dNt"/>
+                            <constraint firstItem="lKi-qs-k9M" firstAttribute="top" secondItem="7dN-rM-S7q" secondAttribute="bottom" constant="16" id="alA-yq-dPh"/>
+                            <constraint firstItem="cqK-4Q-2l7" firstAttribute="centerY" secondItem="MQg-LM-W1h" secondAttribute="centerY" id="d2F-bJ-bSt"/>
+                            <constraint firstItem="cFY-Za-RMv" firstAttribute="top" secondItem="lKi-qs-k9M" secondAttribute="bottom" constant="1" id="g3p-rJ-4Co"/>
+                            <constraint firstItem="V8O-wz-gfP" firstAttribute="centerY" secondItem="MQg-LM-W1h" secondAttribute="centerY" id="kO8-il-v3X"/>
+                            <constraint firstItem="orH-0b-t44" firstAttribute="centerY" secondItem="V8O-wz-gfP" secondAttribute="centerY" id="qRr-SR-6sb"/>
+                            <constraint firstItem="RsR-Wb-zLG" firstAttribute="bottom" secondItem="ZaY-Wo-ARj" secondAttribute="bottom" constant="32" id="vvT-2n-oQa"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="buttonReEnterPin" destination="ZaY-Wo-ARj" id="8Tf-LK-G4f"/>
+                        <outlet property="constraintButtonBottom" destination="vvT-2n-oQa" id="Evr-1b-ewg"/>
+                        <outlet property="imageViewAvoidDob" destination="WW6-1r-rWY" id="AZp-2z-szf"/>
+                        <outlet property="imageViewConsecutiveNum" destination="IIi-aY-BRL" id="paf-K8-D5s"/>
+                        <outlet property="imageViewHide" destination="cqK-4Q-2l7" id="xQU-pe-RzG"/>
+                        <outlet property="imageViewMinMaxLengh" destination="vL9-Gd-gna" id="xQw-a3-GSW"/>
+                        <outlet property="imageViewRepeatNum" destination="Ch5-vN-Y50" id="eDj-Qp-Q1Q"/>
+                        <outlet property="imageViewWeak" destination="V8O-wz-gfP" id="MNG-JD-c92"/>
+                        <outlet property="labelConsecutiveNum" destination="gMf-3F-X2c" id="oM5-86-hrx"/>
+                        <outlet property="labelHide" destination="MQg-LM-W1h" id="kuJ-Ai-w34"/>
+                        <outlet property="labelMinMaxLength" destination="U2M-ZJ-veF" id="aGj-hQ-GzU"/>
+                        <outlet property="labelRepeatNum" destination="Dra-KF-Ggz" id="JvV-3E-cB4"/>
+                        <outlet property="labelSecureAccount" destination="7dN-rM-S7q" id="fef-0k-6h1"/>
+                        <outlet property="labelWeakPin" destination="orH-0b-t44" id="rqP-uh-GhU"/>
+                        <outlet property="labelavoidDob" destination="dgA-e1-cei" id="Kft-Vp-wQD"/>
+                        <outlet property="textFieldOtp" destination="lKi-qs-k9M" id="Kff-od-ztr"/>
+                        <outlet property="viewStepper" destination="zq0-nx-HCN" id="h2J-RO-S4q"/>
+                        <outlet property="viewStepperTopConstraint" destination="Mz9-KT-GNY" id="Krx-Tk-jgO"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ama-h5-f0V" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-490.65420560747663" y="-188.55291576673866"/>
+        </scene>
+    </scenes>
+    <designables>
+        <designable name="ZaY-Wo-ARj">
+            <size key="intrinsicContentSize" width="24" height="24"/>
+        </designable>
+    </designables>
+    <resources>
+        <image name="Line-arrow-right" width="24" height="24"/>
+        <image name="eye" width="16.333333969116211" height="16"/>
+        <image name="info-circle-red" width="16" height="16"/>
+        <image name="slash" width="12" height="12"/>
+        <image name="slash-black" width="12" height="12"/>
+        <namedColor name="e&amp;_Black_80">
+            <color red="0.18823529411764706" green="0.18823529411764706" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>

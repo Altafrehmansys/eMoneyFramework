@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Bariol_Bold.otf">
+            <string>Bariol-Bold</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="iN0-l3-epB" customClass="CountrySectionHeaderView" customModule="e_money" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="52"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view tag="2" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XmM-fG-YcU">
+                    <rect key="frame" x="0.0" y="0.0" width="414" height="52"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" tag="1" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" highlighted="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HjZ-z8-P3L">
+                            <rect key="frame" x="29" y="27.5" width="34.5" height="16.5"/>
+                            <fontDescription key="fontDescription" name="Bariol-Bold" family="Bariol" pointSize="14"/>
+                            <color key="textColor" red="0.2196078431372549" green="0.22352941176470587" blue="0.22745098039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstItem="HjZ-z8-P3L" firstAttribute="leading" secondItem="XmM-fG-YcU" secondAttribute="leading" constant="29" id="24y-CA-twH"/>
+                        <constraint firstAttribute="bottom" secondItem="HjZ-z8-P3L" secondAttribute="bottom" constant="8" id="6kW-nf-2ft"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="XmM-fG-YcU" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="3K1-8D-NuE"/>
+                <constraint firstAttribute="trailing" secondItem="XmM-fG-YcU" secondAttribute="trailing" id="NaO-g5-sY9"/>
+                <constraint firstItem="XmM-fG-YcU" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="VCJ-aS-1u6"/>
+                <constraint firstAttribute="bottom" secondItem="XmM-fG-YcU" secondAttribute="bottom" id="dgX-zi-gbO"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="titleLbl" destination="HjZ-z8-P3L" id="OyP-8a-ZnZ"/>
+            </connections>
+            <point key="canvasLocation" x="-143.47826086956522" y="-204.91071428571428"/>
+        </view>
+    </objects>
+</document>

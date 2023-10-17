@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_72" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="SuisseIntl-Regular.ttf">
+            <string>SuisseIntl</string>
+        </array>
+    </customFonts>
+    <scenes>
+        <!--Login Number View Controller-->
+        <scene sceneID="43f-my-yBX">
+            <objects>
+                <viewController storyboardIdentifier="LoginNumberViewController" id="OGe-dU-AXd" customClass="LoginNumberViewController" customModule="e_money" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="nTI-T5-94z">
+                        <rect key="frame" x="0.0" y="0.0" width="430" height="932"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="g80-VR-AS8">
+                                <rect key="frame" x="0.0" y="0.0" width="430" height="259"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ise-MQ-DzG">
+                                <rect key="frame" x="24" y="209" width="382" height="186.33333333333337"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VbX-v5-wXx" customClass="StandardTextField" customModule="e_money" customModuleProvider="target">
+                                        <rect key="frame" x="20" y="69" width="342" height="64"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="64" id="EdQ-cv-aG4"/>
+                                        </constraints>
+                                    </view>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Login into your e&amp; money account" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pre-3D-glJ">
+                                        <rect key="frame" x="20" y="32" width="342" height="21"/>
+                                        <fontDescription key="fontDescription" name="SuisseIntl" family="Suisse Int'l" pointSize="16"/>
+                                        <color key="textColor" name="e&amp;_Black_80"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="VbX-v5-wXx" firstAttribute="leading" secondItem="Ise-MQ-DzG" secondAttribute="leading" constant="20" id="28Y-n1-qDK"/>
+                                    <constraint firstItem="Pre-3D-glJ" firstAttribute="top" secondItem="Ise-MQ-DzG" secondAttribute="top" constant="32" id="Yf2-dk-0aD"/>
+                                    <constraint firstItem="Pre-3D-glJ" firstAttribute="leading" secondItem="Ise-MQ-DzG" secondAttribute="leading" constant="20" id="fHu-Wp-PT1"/>
+                                    <constraint firstAttribute="trailing" secondItem="Pre-3D-glJ" secondAttribute="trailing" constant="20" id="wGD-bn-KBs"/>
+                                    <constraint firstItem="VbX-v5-wXx" firstAttribute="top" secondItem="Pre-3D-glJ" secondAttribute="bottom" constant="16" id="xK2-Xv-Gze"/>
+                                    <constraint firstAttribute="trailing" secondItem="VbX-v5-wXx" secondAttribute="trailing" constant="20" id="ydw-Qn-028"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="shadowRadius">
+                                        <real key="value" value="4"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="shadowOpacity">
+                                        <real key="value" value="0.10000000000000001"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="size" keyPath="shadowOffset">
+                                        <size key="value" width="3" height="4"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                        <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="2"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="20"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
+                                        <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="e&amp;money-white" translatesAutoresizingMaskIntoConstraints="NO" id="Mj3-OE-Jbg">
+                                <rect key="frame" x="140" y="114.66666666666669" width="150" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="150" id="Khr-Gl-1YR"/>
+                                    <constraint firstAttribute="height" constant="30" id="kP7-3Q-75z"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="upR-2O-Dwe" customClass="BaseButton" customModule="e_money" customModuleProvider="target">
+                                <rect key="frame" x="24" y="830" width="382" height="48"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="48" id="Blc-XB-snJ"/>
+                                </constraints>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="Login"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="ButtonType" value="gradient_img_title"/>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="buttonLoginTapped:" destination="OGe-dU-AXd" eventType="touchUpInside" id="XXp-ZC-feH"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="db3-Wb-Wxx"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="g80-VR-AS8" firstAttribute="leading" secondItem="db3-Wb-Wxx" secondAttribute="leading" id="5U5-c0-YGj"/>
+                            <constraint firstItem="Ise-MQ-DzG" firstAttribute="height" secondItem="nTI-T5-94z" secondAttribute="height" multiplier="0.2" id="6TW-ge-Amp"/>
+                            <constraint firstItem="g80-VR-AS8" firstAttribute="height" secondItem="nTI-T5-94z" secondAttribute="height" multiplier="0.278" id="6t1-G1-O3F"/>
+                            <constraint firstItem="Ise-MQ-DzG" firstAttribute="leading" secondItem="db3-Wb-Wxx" secondAttribute="leading" constant="24" id="88C-RB-Mnx"/>
+                            <constraint firstItem="g80-VR-AS8" firstAttribute="trailing" secondItem="db3-Wb-Wxx" secondAttribute="trailing" id="A8y-eo-k2k"/>
+                            <constraint firstItem="Ise-MQ-DzG" firstAttribute="top" secondItem="g80-VR-AS8" secondAttribute="bottom" constant="-50" id="BGI-2K-tye"/>
+                            <constraint firstItem="upR-2O-Dwe" firstAttribute="leading" secondItem="db3-Wb-Wxx" secondAttribute="leading" constant="24" id="I7n-tE-1zk"/>
+                            <constraint firstItem="g80-VR-AS8" firstAttribute="top" secondItem="nTI-T5-94z" secondAttribute="top" id="W0Z-Dg-A9b"/>
+                            <constraint firstItem="Mj3-OE-Jbg" firstAttribute="centerX" secondItem="g80-VR-AS8" secondAttribute="centerX" id="WOn-du-y4x"/>
+                            <constraint firstItem="db3-Wb-Wxx" firstAttribute="trailing" secondItem="upR-2O-Dwe" secondAttribute="trailing" constant="24" id="ajm-mT-zLx"/>
+                            <constraint firstItem="db3-Wb-Wxx" firstAttribute="bottom" secondItem="upR-2O-Dwe" secondAttribute="bottom" constant="20" id="f8B-A5-nrb"/>
+                            <constraint firstItem="db3-Wb-Wxx" firstAttribute="trailing" secondItem="Ise-MQ-DzG" secondAttribute="trailing" constant="24" id="gys-q0-66F"/>
+                            <constraint firstItem="Mj3-OE-Jbg" firstAttribute="centerY" secondItem="g80-VR-AS8" secondAttribute="centerY" id="mLF-o6-j2s"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="buttonLogin" destination="upR-2O-Dwe" id="WKe-LH-Euf"/>
+                        <outlet property="imageViewTop" destination="Mj3-OE-Jbg" id="YL2-lq-wqt"/>
+                        <outlet property="labelDesc" destination="Pre-3D-glJ" id="bC8-MS-LuU"/>
+                        <outlet property="viewField" destination="VbX-v5-wXx" id="sMb-YX-cMY"/>
+                        <outlet property="viewShadow" destination="Ise-MQ-DzG" id="jgo-Lb-Ix7"/>
+                        <outlet property="viewTop" destination="g80-VR-AS8" id="lPJ-t8-HBj"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dS3-9a-i9h" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="323.72093023255815" y="-188.6266094420601"/>
+        </scene>
+    </scenes>
+    <designables>
+        <designable name="upR-2O-Dwe">
+            <size key="intrinsicContentSize" width="44" height="34"/>
+        </designable>
+    </designables>
+    <resources>
+        <image name="e&amp;money-white" width="149.66667175292969" height="30"/>
+        <namedColor name="e&amp;_Black_80">
+            <color red="0.18823529411764706" green="0.18823529411764706" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>

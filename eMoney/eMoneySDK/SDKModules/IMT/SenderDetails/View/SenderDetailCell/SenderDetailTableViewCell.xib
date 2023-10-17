@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="SenderDetailTableViewCell" rowHeight="64" id="KGk-i7-Jjw" customClass="SenderDetailTableViewCell" customModule="e_money" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="64"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="64"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xJo-7t-iaS">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="64"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="loC-eX-IQK" customClass="StandardTextField" customModule="e_money" customModuleProvider="target">
+                                <rect key="frame" x="24" y="8" width="272" height="48"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="loC-eX-IQK" firstAttribute="leading" secondItem="xJo-7t-iaS" secondAttribute="leading" constant="24" id="A4K-Nr-Sdm"/>
+                            <constraint firstItem="loC-eX-IQK" firstAttribute="top" secondItem="xJo-7t-iaS" secondAttribute="top" constant="8" id="Ieo-9Y-Nqf"/>
+                            <constraint firstAttribute="trailing" secondItem="loC-eX-IQK" secondAttribute="trailing" constant="24" id="QtN-EC-Co7"/>
+                            <constraint firstAttribute="bottom" secondItem="loC-eX-IQK" secondAttribute="bottom" constant="8" id="ox1-w5-10C"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="xJo-7t-iaS" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="IdQ-HX-NV4"/>
+                    <constraint firstAttribute="trailing" secondItem="xJo-7t-iaS" secondAttribute="trailing" id="YM0-Ue-Flg"/>
+                    <constraint firstItem="xJo-7t-iaS" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="o0I-vB-evg"/>
+                    <constraint firstAttribute="bottom" secondItem="xJo-7t-iaS" secondAttribute="bottom" id="t54-3i-oUs"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="textFieldSender" destination="loC-eX-IQK" id="KhG-6s-yQZ"/>
+                <outlet property="viewContent" destination="xJo-7t-iaS" id="dcm-es-XJp"/>
+            </connections>
+            <point key="canvasLocation" x="97.70992366412213" y="26.760563380281692"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

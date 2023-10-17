@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_72" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="SuisseIntl-Regular.ttf">
+            <string>SuisseIntl</string>
+        </array>
+        <array key="SuisseIntl-SemiBold.ttf">
+            <string>SuisseIntl-SemiBold</string>
+        </array>
+    </customFonts>
+    <scenes>
+        <!--Select Card View Controller-->
+        <scene sceneID="SbF-7Z-xXh">
+            <objects>
+                <viewController storyboardIdentifier="SelectCardViewController" id="BZO-RZ-Lp6" customClass="SelectCardViewController" customModule="e_money" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ZJJ-0O-gcw">
+                        <rect key="frame" x="0.0" y="0.0" width="430" height="932"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="All done! Here is your card" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qyY-gb-YJs">
+                                <rect key="frame" x="24" y="167" width="382" height="26"/>
+                                <fontDescription key="fontDescription" name="SuisseIntl-SemiBold" family="Suisse Int'l" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Customize your e&amp; money card, and use it for online payments &amp; in-store transactions." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gaz-7t-dCP">
+                                <rect key="frame" x="24" y="209" width="382" height="36.333333333333343"/>
+                                <fontDescription key="fontDescription" name="SuisseIntl" family="Suisse Int'l" pointSize="14"/>
+                                <color key="textColor" name="e&amp;_Grey_100"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pJ7-OO-kPa" customClass="FSPagerView" customModule="FSPagerView">
+                                <rect key="frame" x="24" y="261.33333333333337" width="382" height="298.33333333333337"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="BZO-RZ-Lp6" id="pTv-el-b0c"/>
+                                    <outlet property="delegate" destination="BZO-RZ-Lp6" id="apO-7h-Y6o"/>
+                                </connections>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FmX-hf-JPc" customClass="BaseButton" customModule="e_money" customModuleProvider="target">
+                                <rect key="frame" x="24" y="826" width="382" height="48"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="48" id="yvd-VL-Q42"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="SuisseIntl-SemiBold" family="Suisse Int'l" pointSize="16"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="Confirm selection"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="ButtonType" value="gradient_img_title"/>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="buttonConfirmTapped:" destination="BZO-RZ-Lp6" eventType="touchUpInside" id="oW7-Dg-vnl"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9IY-WV-dCe">
+                                <rect key="frame" x="151" y="575.66666666666663" width="28" height="28"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" image="brownSmall"/>
+                                <connections>
+                                    <action selector="buttonBrownTapped:" destination="BZO-RZ-Lp6" eventType="touchUpInside" id="bhq-bM-3KL"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ffh-mT-sxj">
+                                <rect key="frame" x="195" y="569.66666666666663" width="40" height="40"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" image="redCircle"/>
+                                <connections>
+                                    <action selector="buttonRedTapped:" destination="BZO-RZ-Lp6" eventType="touchUpInside" id="Wf0-oD-4KZ"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hgI-w6-MF9">
+                                <rect key="frame" x="251" y="575.66666666666663" width="28" height="28"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" image="whiteCircle"/>
+                                <connections>
+                                    <action selector="buttonWhiteTapped:" destination="BZO-RZ-Lp6" eventType="touchUpInside" id="zYR-aj-jin"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="RsR-Wb-zLG"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="Ffh-mT-sxj" firstAttribute="centerX" secondItem="pJ7-OO-kPa" secondAttribute="centerX" id="3MP-92-u8y"/>
+                            <constraint firstItem="Ffh-mT-sxj" firstAttribute="leading" secondItem="9IY-WV-dCe" secondAttribute="trailing" constant="16" id="3Xj-by-vXw"/>
+                            <constraint firstItem="gaz-7t-dCP" firstAttribute="leading" secondItem="RsR-Wb-zLG" secondAttribute="leading" constant="24" id="8Az-eb-hCy"/>
+                            <constraint firstItem="RsR-Wb-zLG" firstAttribute="trailing" secondItem="gaz-7t-dCP" secondAttribute="trailing" constant="24" id="KEo-tC-og4"/>
+                            <constraint firstItem="RsR-Wb-zLG" firstAttribute="bottom" secondItem="FmX-hf-JPc" secondAttribute="bottom" constant="24" id="Q7X-8W-DES"/>
+                            <constraint firstItem="pJ7-OO-kPa" firstAttribute="top" secondItem="gaz-7t-dCP" secondAttribute="bottom" constant="16" id="QRU-aY-cSS"/>
+                            <constraint firstItem="Ffh-mT-sxj" firstAttribute="top" secondItem="pJ7-OO-kPa" secondAttribute="bottom" constant="10" id="TS3-Z1-48I"/>
+                            <constraint firstItem="RsR-Wb-zLG" firstAttribute="trailing" secondItem="qyY-gb-YJs" secondAttribute="trailing" constant="24" id="UMg-dd-gTc"/>
+                            <constraint firstItem="qyY-gb-YJs" firstAttribute="top" secondItem="RsR-Wb-zLG" secondAttribute="top" constant="108" id="coe-vY-5Wi"/>
+                            <constraint firstItem="hgI-w6-MF9" firstAttribute="centerY" secondItem="Ffh-mT-sxj" secondAttribute="centerY" id="czE-6c-Hsw"/>
+                            <constraint firstItem="hgI-w6-MF9" firstAttribute="leading" secondItem="Ffh-mT-sxj" secondAttribute="trailing" constant="16" id="dCp-19-D0t"/>
+                            <constraint firstItem="9IY-WV-dCe" firstAttribute="centerY" secondItem="Ffh-mT-sxj" secondAttribute="centerY" id="duH-Bi-9E4"/>
+                            <constraint firstItem="gaz-7t-dCP" firstAttribute="top" secondItem="qyY-gb-YJs" secondAttribute="bottom" constant="16" id="oAd-PD-7vQ"/>
+                            <constraint firstItem="pJ7-OO-kPa" firstAttribute="leading" secondItem="RsR-Wb-zLG" secondAttribute="leading" constant="24" id="oID-mH-QX9"/>
+                            <constraint firstItem="pJ7-OO-kPa" firstAttribute="height" secondItem="ZJJ-0O-gcw" secondAttribute="height" multiplier="0.32" id="tEs-2L-77s"/>
+                            <constraint firstItem="RsR-Wb-zLG" firstAttribute="trailing" secondItem="pJ7-OO-kPa" secondAttribute="trailing" constant="24" id="vSm-Sw-jQx"/>
+                            <constraint firstItem="FmX-hf-JPc" firstAttribute="leading" secondItem="RsR-Wb-zLG" secondAttribute="leading" constant="24" id="vk8-aD-AbT"/>
+                            <constraint firstItem="RsR-Wb-zLG" firstAttribute="trailing" secondItem="FmX-hf-JPc" secondAttribute="trailing" constant="24" id="ybT-0b-cxj"/>
+                            <constraint firstItem="qyY-gb-YJs" firstAttribute="leading" secondItem="RsR-Wb-zLG" secondAttribute="leading" constant="24" id="zQk-Bi-Xcb"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="buttonBrown" destination="9IY-WV-dCe" id="0kZ-BO-Qfg"/>
+                        <outlet property="buttonConfirmSelection" destination="FmX-hf-JPc" id="xxh-P8-z70"/>
+                        <outlet property="buttonRed" destination="Ffh-mT-sxj" id="Ro5-9t-QLw"/>
+                        <outlet property="buttonWhite" destination="hgI-w6-MF9" id="S2A-xL-0Hx"/>
+                        <outlet property="labelDesc" destination="gaz-7t-dCP" id="Zz8-5P-q5R"/>
+                        <outlet property="labelHeading" destination="qyY-gb-YJs" id="fN3-ue-1o8"/>
+                        <outlet property="pagerView" destination="pJ7-OO-kPa" id="gr3-ou-N5c"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ama-h5-f0V" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-490" y="-188"/>
+        </scene>
+    </scenes>
+    <designables>
+        <designable name="FmX-hf-JPc">
+            <size key="intrinsicContentSize" width="134" height="33"/>
+        </designable>
+    </designables>
+    <resources>
+        <image name="brownSmall" width="28" height="28"/>
+        <image name="redCircle" width="40" height="40"/>
+        <image name="whiteCircle" width="28" height="28"/>
+        <namedColor name="e&amp;_Grey_100">
+            <color red="0.48627450980392156" green="0.48627450980392156" blue="0.47843137254901963" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

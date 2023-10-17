@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_72" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="SuisseIntl-Regular.ttf">
+            <string>SuisseIntl</string>
+        </array>
+        <array key="SuisseIntl-SemiBold.ttf">
+            <string>SuisseIntl-SemiBold</string>
+        </array>
+    </customFonts>
+    <scenes>
+        <!--Thankyou View Controller-->
+        <scene sceneID="SbF-7Z-xXh">
+            <objects>
+                <viewController storyboardIdentifier="ThankyouViewController" id="BZO-RZ-Lp6" customClass="ThankyouViewController" customModule="e_money" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ZJJ-0O-gcw">
+                        <rect key="frame" x="0.0" y="0.0" width="430" height="932"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Thank you for registering!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dYH-s6-PnQ">
+                                <rect key="frame" x="26" y="383.66666666666669" width="378" height="26"/>
+                                <fontDescription key="fontDescription" name="SuisseIntl-SemiBold" family="Suisse Int'l" pointSize="20"/>
+                                <color key="textColor" name="e&amp;_Black_80"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="redDot" translatesAutoresizingMaskIntoConstraints="NO" id="GAW-5p-UYE">
+                                <rect key="frame" x="183" y="327.66666666666669" width="64" height="16"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your registration is under review, this could take a couple of days. Explore the app in limited functionality until then!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wno-Mp-qtS">
+                                <rect key="frame" x="24" y="425.66666666666669" width="382" height="36.333333333333314"/>
+                                <fontDescription key="fontDescription" name="SuisseIntl" family="Suisse Int'l" pointSize="14"/>
+                                <color key="textColor" name="e&amp;_Grey_100"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="nxy-Pw-Mso">
+                                <rect key="frame" x="24" y="750" width="382" height="116"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mNk-sP-vxH" customClass="BaseButton" customModule="e_money" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="382" height="48"/>
+                                        <color key="backgroundColor" red="0.58431372550000005" green="0.0039215686269999999" blue="0.14117647059999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="48" id="JJg-89-m3w"/>
+                                        </constraints>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <state key="normal" title="Continue as guest "/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="ButtonType" value="gradient"/>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="proceedBtnTapped:" destination="BZO-RZ-Lp6" eventType="touchUpInside" id="fIi-Z3-hDw"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ato-Bs-Efw" customClass="BaseButton" customModule="e_money" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="68" width="382" height="48"/>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <state key="normal" title="Not now, later"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="ButtonType" value="plain"/>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="buttonNotNowTapped:" destination="BZO-RZ-Lp6" eventType="touchUpInside" id="Gg7-wa-FR9"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="a8B-AE-ZRo" customClass="LottieAnimationView" customModule="Lottie">
+                                <rect key="frame" x="115" y="243.66666666666663" width="200" height="100"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="k3X-gO-e8u"/>
+                                    <constraint firstAttribute="height" constant="100" id="tsc-wB-YP2"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="RsR-Wb-zLG"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="GAW-5p-UYE" firstAttribute="centerX" secondItem="ZJJ-0O-gcw" secondAttribute="centerX" id="4mF-4n-ECk"/>
+                            <constraint firstItem="a8B-AE-ZRo" firstAttribute="centerX" secondItem="ZJJ-0O-gcw" secondAttribute="centerX" id="5eh-tM-dbf"/>
+                            <constraint firstItem="RsR-Wb-zLG" firstAttribute="trailing" secondItem="nxy-Pw-Mso" secondAttribute="trailing" constant="24" id="Dnr-JM-uUm"/>
+                            <constraint firstItem="nxy-Pw-Mso" firstAttribute="leading" secondItem="RsR-Wb-zLG" secondAttribute="leading" constant="24" id="Pny-pP-DrL"/>
+                            <constraint firstItem="RsR-Wb-zLG" firstAttribute="bottom" secondItem="nxy-Pw-Mso" secondAttribute="bottom" constant="32" id="QTf-bO-3jQ"/>
+                            <constraint firstItem="Wno-Mp-qtS" firstAttribute="leading" secondItem="RsR-Wb-zLG" secondAttribute="leading" constant="24" id="T0s-z6-bY3"/>
+                            <constraint firstItem="dYH-s6-PnQ" firstAttribute="top" secondItem="a8B-AE-ZRo" secondAttribute="bottom" constant="40" id="WIT-9J-TY8"/>
+                            <constraint firstItem="GAW-5p-UYE" firstAttribute="centerY" secondItem="ZJJ-0O-gcw" secondAttribute="centerY" multiplier="0.72" id="X8x-Ty-VIt"/>
+                            <constraint firstItem="RsR-Wb-zLG" firstAttribute="trailing" secondItem="Wno-Mp-qtS" secondAttribute="trailing" constant="24" id="YQH-P8-bbr"/>
+                            <constraint firstItem="dYH-s6-PnQ" firstAttribute="leading" secondItem="RsR-Wb-zLG" secondAttribute="leading" constant="26" id="Yh2-wR-YRu"/>
+                            <constraint firstItem="dYH-s6-PnQ" firstAttribute="top" secondItem="GAW-5p-UYE" secondAttribute="bottom" constant="40" id="ep4-H2-d27"/>
+                            <constraint firstItem="Wno-Mp-qtS" firstAttribute="top" secondItem="dYH-s6-PnQ" secondAttribute="bottom" constant="16" id="mU3-fy-VBd"/>
+                            <constraint firstItem="RsR-Wb-zLG" firstAttribute="trailing" secondItem="dYH-s6-PnQ" secondAttribute="trailing" constant="26" id="yNd-ja-6GX"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="animatonView" destination="a8B-AE-ZRo" id="4Ya-m5-Z1F"/>
+                        <outlet property="buttonContinue" destination="mNk-sP-vxH" id="R8B-C9-ES9"/>
+                        <outlet property="buttonNotNow" destination="Ato-Bs-Efw" id="HmB-Lj-tc2"/>
+                        <outlet property="imageViewDots" destination="GAW-5p-UYE" id="9oR-QQ-GRJ"/>
+                        <outlet property="labelDescription" destination="Wno-Mp-qtS" id="Gzp-YQ-pJn"/>
+                        <outlet property="labelThankyou" destination="dYH-s6-PnQ" id="I7L-s1-Wcs"/>
+                        <outlet property="stackView" destination="nxy-Pw-Mso" id="pde-Ym-3e6"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ama-h5-f0V" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-490" y="-188"/>
+        </scene>
+    </scenes>
+    <designables>
+        <designable name="Ato-Bs-Efw">
+            <size key="intrinsicContentSize" width="103" height="33"/>
+        </designable>
+        <designable name="a8B-AE-ZRo"/>
+        <designable name="mNk-sP-vxH">
+            <size key="intrinsicContentSize" width="140" height="33"/>
+        </designable>
+    </designables>
+    <resources>
+        <image name="redDot" width="64" height="16"/>
+        <namedColor name="e&amp;_Black_80">
+            <color red="0.18823529411764706" green="0.18823529411764706" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="e&amp;_Grey_100">
+            <color red="0.48627450980392156" green="0.48627450980392156" blue="0.47843137254901963" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

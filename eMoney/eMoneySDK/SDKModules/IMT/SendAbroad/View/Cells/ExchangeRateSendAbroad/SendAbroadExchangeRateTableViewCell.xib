@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="SuisseIntl-Regular.ttf">
+            <string>SuisseIntl</string>
+        </array>
+        <array key="SuisseIntl-SemiBold.ttf">
+            <string>SuisseIntl-SemiBold</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="SendAbroadExchangeRateTableViewCell" rowHeight="102" id="KGk-i7-Jjw" customClass="SendAbroadExchangeRateTableViewCell" customModule="e_money" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="327" height="102"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="327" height="102"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FDi-UX-CfZ">
+                        <rect key="frame" x="24" y="8" width="279" height="86"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sendAbroadNotification" translatesAutoresizingMaskIntoConstraints="NO" id="AP3-L1-QEM">
+                                <rect key="frame" x="16" y="16" width="36" height="36"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="36" id="97x-7g-8rO"/>
+                                    <constraint firstAttribute="width" constant="36" id="RbX-62-jiD"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Set an exchange rate alert" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mti-UC-da0">
+                                <rect key="frame" x="64" y="16" width="207" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="VSZ-b1-b62"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="SuisseIntl-SemiBold" family="Suisse Int'l" pointSize="16"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="We’ll notify you when the rate reaches your preference or higher." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g5d-dR-Vfl">
+                                <rect key="frame" x="64" y="41" width="207" height="31.333333333333329"/>
+                                <fontDescription key="fontDescription" name="SuisseIntl" family="Suisse Int'l" pointSize="12"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" name="e&amp;_Grey_20"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="mti-UC-da0" secondAttribute="trailing" constant="8" id="0OL-jC-DE5"/>
+                            <constraint firstItem="AP3-L1-QEM" firstAttribute="leading" secondItem="FDi-UX-CfZ" secondAttribute="leading" constant="16" id="48c-fi-3OG"/>
+                            <constraint firstAttribute="trailing" secondItem="g5d-dR-Vfl" secondAttribute="trailing" constant="8" id="9K5-Ql-w45"/>
+                            <constraint firstItem="g5d-dR-Vfl" firstAttribute="leading" secondItem="AP3-L1-QEM" secondAttribute="trailing" constant="12" id="Hi7-S4-aZ4"/>
+                            <constraint firstItem="mti-UC-da0" firstAttribute="leading" secondItem="AP3-L1-QEM" secondAttribute="trailing" constant="12" id="e0O-ru-gVW"/>
+                            <constraint firstItem="mti-UC-da0" firstAttribute="top" secondItem="FDi-UX-CfZ" secondAttribute="top" constant="16" id="l99-ot-aHX"/>
+                            <constraint firstItem="g5d-dR-Vfl" firstAttribute="top" secondItem="mti-UC-da0" secondAttribute="bottom" constant="4" id="n6v-nZ-jzV"/>
+                            <constraint firstAttribute="height" constant="86" id="qqe-95-9a9"/>
+                            <constraint firstItem="AP3-L1-QEM" firstAttribute="top" secondItem="FDi-UX-CfZ" secondAttribute="top" constant="16" id="tdb-Xb-QKK"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="FDi-UX-CfZ" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="24" id="3yR-jA-XU2"/>
+                    <constraint firstAttribute="trailing" secondItem="FDi-UX-CfZ" secondAttribute="trailing" constant="24" id="IBT-m4-EVU"/>
+                    <constraint firstItem="FDi-UX-CfZ" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="JYu-qx-4Oo"/>
+                    <constraint firstAttribute="bottom" secondItem="FDi-UX-CfZ" secondAttribute="bottom" constant="8" id="cXn-VF-Jca"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="imageViewNotification" destination="AP3-L1-QEM" id="4qu-nI-NP7"/>
+                <outlet property="labelDesc" destination="g5d-dR-Vfl" id="SRk-ZT-HFd"/>
+                <outlet property="labelHeading" destination="mti-UC-da0" id="aKu-Sy-2m6"/>
+                <outlet property="viewContent" destination="FDi-UX-CfZ" id="rCS-2J-iIu"/>
+            </connections>
+            <point key="canvasLocation" x="113.74045801526717" y="30.281690140845072"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="sendAbroadNotification" width="36" height="36"/>
+        <namedColor name="e&amp;_Grey_20">
+            <color red="0.89803921568627454" green="0.89803921568627454" blue="0.89411764705882357" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>

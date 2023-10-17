@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_72" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="SuisseIntl-SemiBold.ttf">
+            <string>SuisseIntl-SemiBold</string>
+        </array>
+    </customFonts>
+    <scenes>
+        <!--Add Apple Wallet View Controller-->
+        <scene sceneID="SbF-7Z-xXh">
+            <objects>
+                <viewController storyboardIdentifier="AddAppleWalletViewController" id="BZO-RZ-Lp6" customClass="AddAppleWalletViewController" customModule="e_money" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ZJJ-0O-gcw">
+                        <rect key="frame" x="0.0" y="0.0" width="430" height="932"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a4l-g0-Kbd">
+                                <rect key="frame" x="24" y="179" width="382" height="52"/>
+                                <string key="text">Great choice! Ready to
+ add to Apple Wallet</string>
+                                <fontDescription key="fontDescription" name="SuisseIntl-SemiBold" family="Suisse Int'l" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Group 1000002171" translatesAutoresizingMaskIntoConstraints="NO" id="rYn-Ex-Mep">
+                                <rect key="frame" x="58.666666666666657" y="552" width="313" height="25"/>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="walletCard" translatesAutoresizingMaskIntoConstraints="NO" id="9xG-yA-0Lc">
+                                <rect key="frame" x="83.666666666666686" y="263" width="263" height="298"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uoi-gL-w1Z">
+                                <rect key="frame" x="24" y="847" width="382" height="33"/>
+                                <fontDescription key="fontDescription" name="SuisseIntl-SemiBold" family="Suisse Int'l" pointSize="16"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="Not now, later">
+                                    <color key="titleColor" name="e&amp;_red_100"/>
+                                </state>
+                                <connections>
+                                    <action selector="notNowTapped:" destination="BZO-RZ-Lp6" eventType="touchUpInside" id="gl1-9v-vvH"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UYd-Ne-zZ7">
+                                <rect key="frame" x="76.666666666666686" y="767" width="277" height="56"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" backgroundImage="appleWallet"/>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="RsR-Wb-zLG"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="uoi-gL-w1Z" firstAttribute="leading" secondItem="RsR-Wb-zLG" secondAttribute="leading" constant="24" id="7j7-et-gRF"/>
+                            <constraint firstItem="a4l-g0-Kbd" firstAttribute="top" secondItem="RsR-Wb-zLG" secondAttribute="top" constant="120" id="A58-hQ-zRF"/>
+                            <constraint firstItem="uoi-gL-w1Z" firstAttribute="top" secondItem="UYd-Ne-zZ7" secondAttribute="bottom" constant="24" id="FMJ-C5-L3B"/>
+                            <constraint firstItem="RsR-Wb-zLG" firstAttribute="trailing" secondItem="a4l-g0-Kbd" secondAttribute="trailing" constant="24" id="Fkw-iC-ib7"/>
+                            <constraint firstItem="UYd-Ne-zZ7" firstAttribute="centerX" secondItem="ZJJ-0O-gcw" secondAttribute="centerX" id="WgJ-qE-Qb7"/>
+                            <constraint firstItem="RsR-Wb-zLG" firstAttribute="bottom" secondItem="uoi-gL-w1Z" secondAttribute="bottom" constant="18" id="YTy-Rl-Ahy"/>
+                            <constraint firstItem="a4l-g0-Kbd" firstAttribute="leading" secondItem="RsR-Wb-zLG" secondAttribute="leading" constant="24" id="bTd-Fb-Wjd"/>
+                            <constraint firstItem="RsR-Wb-zLG" firstAttribute="trailing" secondItem="uoi-gL-w1Z" secondAttribute="trailing" constant="24" id="cUS-gb-w4j"/>
+                            <constraint firstItem="rYn-Ex-Mep" firstAttribute="top" secondItem="9xG-yA-0Lc" secondAttribute="bottom" constant="-9" id="cbI-m7-NK0"/>
+                            <constraint firstItem="rYn-Ex-Mep" firstAttribute="centerX" secondItem="9xG-yA-0Lc" secondAttribute="centerX" id="fP3-f7-rHp"/>
+                            <constraint firstItem="9xG-yA-0Lc" firstAttribute="top" secondItem="a4l-g0-Kbd" secondAttribute="bottom" constant="32" id="grY-n3-xPg"/>
+                            <constraint firstItem="9xG-yA-0Lc" firstAttribute="centerX" secondItem="RsR-Wb-zLG" secondAttribute="centerX" id="he0-Ns-q9o"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="buttonAddToApple" destination="UYd-Ne-zZ7" id="X2D-7e-y0P"/>
+                        <outlet property="buttonNotNow" destination="uoi-gL-w1Z" id="3Ca-5O-1Vy"/>
+                        <outlet property="imageViewCard" destination="9xG-yA-0Lc" id="BPa-ge-3a7"/>
+                        <outlet property="labelChoice" destination="a4l-g0-Kbd" id="37P-X2-g33"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ama-h5-f0V" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-490" y="-188"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="Group 1000002171" width="312.66665649414062" height="25"/>
+        <image name="appleWallet" width="277" height="56"/>
+        <image name="walletCard" width="262.66665649414062" height="297.66665649414062"/>
+        <namedColor name="e&amp;_red_100">
+            <color red="0.8784313725490196" green="0.031372549019607843" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>

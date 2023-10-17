@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_72" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="SbF-7Z-xXh">
+            <objects>
+                <viewController modalPresentationStyle="overCurrentContext" id="BZO-RZ-Lp6" sceneMemberID="viewController">
+                    <view key="view" alpha="0.69999999999999996" contentMode="scaleToFill" id="ZJJ-0O-gcw">
+                        <rect key="frame" x="0.0" y="0.0" width="430" height="932"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <wkWebView alpha="0.69999999999999996" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pip-yz-s11">
+                                <rect key="frame" x="0.0" y="0.0" width="430" height="932"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <wkWebViewConfiguration key="configuration">
+                                    <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
+                                    <wkPreferences key="preferences"/>
+                                </wkWebViewConfiguration>
+                            </wkWebView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="RsR-Wb-zLG"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="pip-yz-s11" secondAttribute="bottom" id="8Mc-LA-qKr"/>
+                            <constraint firstItem="pip-yz-s11" firstAttribute="trailing" secondItem="RsR-Wb-zLG" secondAttribute="trailing" id="Rdv-80-MEl"/>
+                            <constraint firstItem="pip-yz-s11" firstAttribute="leading" secondItem="RsR-Wb-zLG" secondAttribute="leading" id="cCF-Q8-0Ci"/>
+                            <constraint firstItem="pip-yz-s11" firstAttribute="top" secondItem="ZJJ-0O-gcw" secondAttribute="top" id="pPj-KC-iHG"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ama-h5-f0V" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-45" y="-192"/>
+        </scene>
+        <!--Terms Conditions View Controller-->
+        <scene sceneID="h2i-rF-PIj">
+            <objects>
+                <viewController storyboardIdentifier="TermsConditionsViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Cjl-6m-0lt" customClass="TermsConditionsViewController" customModule="e_money" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="bXO-rf-xHc">
+                        <rect key="frame" x="0.0" y="0.0" width="430" height="932"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cAa-zJ-N0B">
+                                <rect key="frame" x="0.0" y="186.33333333333331" width="430" height="745.66666666666674"/>
+                                <subviews>
+                                    <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="l1f-jr-FZ9">
+                                        <rect key="frame" x="0.0" y="76.999999999999943" width="430" height="668.66666666666652"/>
+                                        <color key="backgroundColor" systemColor="systemGray4Color"/>
+                                        <wkWebViewConfiguration key="configuration">
+                                            <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
+                                            <wkPreferences key="preferences"/>
+                                        </wkWebViewConfiguration>
+                                    </wkWebView>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="akn-rj-KU0">
+                                        <rect key="frame" x="185" y="8" width="60" height="4"/>
+                                        <color key="backgroundColor" name="e&amp;_Grey_50"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="4" id="HCw-fR-x07"/>
+                                            <constraint firstAttribute="width" constant="60" id="s88-Z6-AbL"/>
+                                        </constraints>
+                                    </view>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I5X-Cw-wxt">
+                                        <rect key="frame" x="68" y="36" width="294" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tr1-S0-gXd">
+                                        <rect key="frame" x="374" y="26.666666666666657" width="40" height="40"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="GTu-ju-qPW"/>
+                                            <constraint firstAttribute="width" constant="40" id="UhK-we-mUM"/>
+                                        </constraints>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <state key="normal" image="Close"/>
+                                        <connections>
+                                            <action selector="buttonCloseTapped:" destination="Cjl-6m-0lt" eventType="touchUpInside" id="Web-XX-pBw"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="tr1-S0-gXd" firstAttribute="leading" secondItem="I5X-Cw-wxt" secondAttribute="trailing" constant="12" id="Cty-Yd-NjW"/>
+                                    <constraint firstAttribute="trailing" secondItem="tr1-S0-gXd" secondAttribute="trailing" constant="16" id="J4e-w6-y5f"/>
+                                    <constraint firstItem="akn-rj-KU0" firstAttribute="top" secondItem="cAa-zJ-N0B" secondAttribute="top" constant="8" id="NNc-yz-TKs"/>
+                                    <constraint firstItem="akn-rj-KU0" firstAttribute="centerX" secondItem="cAa-zJ-N0B" secondAttribute="centerX" id="OF7-Vl-lws"/>
+                                    <constraint firstAttribute="bottom" secondItem="l1f-jr-FZ9" secondAttribute="bottom" id="ONo-PA-Ctf"/>
+                                    <constraint firstItem="tr1-S0-gXd" firstAttribute="centerY" secondItem="I5X-Cw-wxt" secondAttribute="centerY" id="VnD-9R-l2z"/>
+                                    <constraint firstItem="I5X-Cw-wxt" firstAttribute="top" secondItem="akn-rj-KU0" secondAttribute="bottom" constant="24" id="cL9-AY-4QS"/>
+                                    <constraint firstItem="l1f-jr-FZ9" firstAttribute="leading" secondItem="cAa-zJ-N0B" secondAttribute="leading" id="cgf-DX-cvh"/>
+                                    <constraint firstItem="I5X-Cw-wxt" firstAttribute="centerX" secondItem="cAa-zJ-N0B" secondAttribute="centerX" id="dua-j0-tg0"/>
+                                    <constraint firstAttribute="trailing" secondItem="l1f-jr-FZ9" secondAttribute="trailing" id="k1s-85-npR"/>
+                                    <constraint firstItem="l1f-jr-FZ9" firstAttribute="top" secondItem="I5X-Cw-wxt" secondAttribute="bottom" constant="20" id="xjO-Y4-INv"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="20"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="Msa-dO-lZU"/>
+                        <color key="backgroundColor" red="0.19215686269999999" green="0.19215686269999999" blue="0.19215686269999999" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="cAa-zJ-N0B" secondAttribute="bottom" id="Ucn-nP-X3R"/>
+                            <constraint firstItem="cAa-zJ-N0B" firstAttribute="leading" secondItem="Msa-dO-lZU" secondAttribute="leading" id="bpG-Mh-dbD"/>
+                            <constraint firstItem="cAa-zJ-N0B" firstAttribute="trailing" secondItem="Msa-dO-lZU" secondAttribute="trailing" id="ggC-Kg-Flf"/>
+                            <constraint firstItem="cAa-zJ-N0B" firstAttribute="height" secondItem="bXO-rf-xHc" secondAttribute="height" multiplier="0.8" id="jzj-of-E48"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="dqd-wT-ka8"/>
+                    <connections>
+                        <outlet property="titleLabel" destination="I5X-Cw-wxt" id="vCg-Ck-ZSZ"/>
+                        <outlet property="webView" destination="l1f-jr-FZ9" id="y79-SU-lmM"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Bfh-ZG-7N6" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="743.72093023255809" y="-192.4892703862661"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="Close" width="24" height="24"/>
+        <namedColor name="e&amp;_Grey_50">
+            <color red="0.74117647058823533" green="0.74117647058823533" blue="0.73725490196078436" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="systemGray4Color">
+            <color red="0.81960784313725488" green="0.81960784313725488" blue="0.83921568627450982" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>

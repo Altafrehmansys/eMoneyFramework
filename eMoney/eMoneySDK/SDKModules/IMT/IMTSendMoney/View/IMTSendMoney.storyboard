@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina5_9" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Send Money View Controller-->
+        <scene sceneID="qBd-VL-Rqw">
+            <objects>
+                <viewController storyboardIdentifier="IMTSendMoneyViewController" id="eBX-aY-djY" customClass="IMTSendMoneyViewController" customModule="e_money" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="REN-3j-cQN">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CKU-UW-5TR">
+                                <rect key="frame" x="0.0" y="47" width="375" height="731"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dVx-zJ-OGg" customClass="BaseStepper" customModule="e_money" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="24" width="375" height="12"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="12" id="u0O-Fa-k8P"/>
+                                        </constraints>
+                                    </view>
+                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="h31-se-CsX">
+                                        <rect key="frame" x="0.0" y="36" width="375" height="695"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                    </tableView>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZVH-CZ-Fai">
+                                        <rect key="frame" x="0.0" y="683" width="375" height="48"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="820-AS-1mV" customClass="BaseButton" customModule="e_money" customModuleProvider="target">
+                                                <rect key="frame" x="327" y="12" width="24" height="24"/>
+                                                <state key="normal" image="Line-arrow-right"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="string" keyPath="ButtonType" value="gradient_circle"/>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="nextBtnTapped:" destination="eBX-aY-djY" eventType="touchUpInside" id="gVP-ik-n6j"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <constraints>
+                                            <constraint firstItem="820-AS-1mV" firstAttribute="top" secondItem="ZVH-CZ-Fai" secondAttribute="top" constant="12" id="1uj-92-8Gw"/>
+                                            <constraint firstAttribute="trailing" secondItem="820-AS-1mV" secondAttribute="trailing" constant="24" id="AzD-aF-hcZ"/>
+                                            <constraint firstAttribute="bottom" secondItem="820-AS-1mV" secondAttribute="bottom" constant="12" id="iyF-Gd-HLF"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="ZVH-CZ-Fai" secondAttribute="bottom" id="2Qh-6E-l1m"/>
+                                    <constraint firstItem="h31-se-CsX" firstAttribute="top" secondItem="dVx-zJ-OGg" secondAttribute="bottom" id="5et-bq-9Ln"/>
+                                    <constraint firstAttribute="trailing" secondItem="ZVH-CZ-Fai" secondAttribute="trailing" id="Cdl-ra-qUk"/>
+                                    <constraint firstItem="dVx-zJ-OGg" firstAttribute="leading" secondItem="CKU-UW-5TR" secondAttribute="leading" id="TXk-O2-FnV"/>
+                                    <constraint firstItem="dVx-zJ-OGg" firstAttribute="top" secondItem="CKU-UW-5TR" secondAttribute="top" constant="24" id="X3k-gw-zVk"/>
+                                    <constraint firstAttribute="bottom" secondItem="h31-se-CsX" secondAttribute="bottom" id="Znb-Kq-YDL"/>
+                                    <constraint firstAttribute="trailing" secondItem="h31-se-CsX" secondAttribute="trailing" id="ewg-KE-iyz"/>
+                                    <constraint firstAttribute="trailing" secondItem="dVx-zJ-OGg" secondAttribute="trailing" id="fKP-Lz-PDm"/>
+                                    <constraint firstItem="h31-se-CsX" firstAttribute="leading" secondItem="CKU-UW-5TR" secondAttribute="leading" id="nC5-5g-eC8"/>
+                                    <constraint firstItem="ZVH-CZ-Fai" firstAttribute="leading" secondItem="CKU-UW-5TR" secondAttribute="leading" id="xdH-Ua-FhX"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="rtJ-en-MGt"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="CKU-UW-5TR" firstAttribute="leading" secondItem="REN-3j-cQN" secondAttribute="leading" id="7l7-V7-otY"/>
+                            <constraint firstItem="rtJ-en-MGt" firstAttribute="bottom" secondItem="CKU-UW-5TR" secondAttribute="bottom" id="AEC-T7-6Ee"/>
+                            <constraint firstItem="rtJ-en-MGt" firstAttribute="trailing" secondItem="CKU-UW-5TR" secondAttribute="trailing" id="QYB-6J-GQa"/>
+                            <constraint firstItem="CKU-UW-5TR" firstAttribute="top" secondItem="rtJ-en-MGt" secondAttribute="top" id="qrF-51-i2o"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="nextButton" destination="820-AS-1mV" id="Tww-ci-uxe"/>
+                        <outlet property="stepsBar" destination="dVx-zJ-OGg" id="BWw-gz-NaV"/>
+                        <outlet property="tableView" destination="h31-se-CsX" id="fdy-NM-921"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="U7v-fU-ZUf" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-490.83969465648852" y="-188.02816901408451"/>
+        </scene>
+    </scenes>
+    <designables>
+        <designable name="820-AS-1mV">
+            <size key="intrinsicContentSize" width="24" height="24"/>
+        </designable>
+    </designables>
+    <resources>
+        <image name="Line-arrow-right" width="24" height="24"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

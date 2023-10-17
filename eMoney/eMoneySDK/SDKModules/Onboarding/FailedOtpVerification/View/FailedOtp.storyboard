@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_72" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="SuisseIntl-Regular.ttf">
+            <string>SuisseIntl</string>
+        </array>
+        <array key="SuisseIntl-SemiBold.ttf">
+            <string>SuisseIntl-SemiBold</string>
+        </array>
+    </customFonts>
+    <scenes>
+        <!--Failed Otp View Controller-->
+        <scene sceneID="SbF-7Z-xXh">
+            <objects>
+                <viewController storyboardIdentifier="FailedOtpViewController" id="BZO-RZ-Lp6" customClass="FailedOtpViewController" customModule="e_money" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ZJJ-0O-gcw">
+                        <rect key="frame" x="0.0" y="0.0" width="430" height="932"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="lock-circle" translatesAutoresizingMaskIntoConstraints="NO" id="ssP-Ww-wYG">
+                                <rect key="frame" x="165" y="189" width="100" height="100"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Failed OTP Verification" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qmy-7e-9b5">
+                                <rect key="frame" x="32" y="329" width="366" height="26"/>
+                                <fontDescription key="fontDescription" name="SuisseIntl-SemiBold" family="Suisse Int'l" pointSize="20"/>
+                                <color key="textColor" name="e&amp;_Black_80"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You have entered too many wrong inputs, please try again after" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zrl-vy-PBb">
+                                <rect key="frame" x="32" y="371" width="366" height="36.333333333333314"/>
+                                <fontDescription key="fontDescription" name="SuisseIntl" family="Suisse Int'l" pointSize="14"/>
+                                <color key="textColor" name="e&amp;_Grey_100"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GLQ-cc-OfB">
+                                <rect key="frame" x="0.0" y="455.33333333333331" width="430" height="0.0"/>
+                                <fontDescription key="fontDescription" name="SuisseIntl-SemiBold" family="Suisse Int'l" pointSize="42"/>
+                                <color key="textColor" name="e&amp;_Black_80"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p0p-Ky-aBh">
+                                <rect key="frame" x="192.33333333333334" y="464.33333333333331" width="0.0" height="0.0"/>
+                                <fontDescription key="fontDescription" name="SuisseIntl" family="Suisse Int'l" pointSize="14"/>
+                                <color key="textColor" name="e&amp;_Grey_100"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lqA-1w-Yfw">
+                                <rect key="frame" x="215" y="464.33333333333331" width="0.0" height="0.0"/>
+                                <fontDescription key="fontDescription" name="SuisseIntl" family="Suisse Int'l" pointSize="14"/>
+                                <color key="textColor" name="e&amp;_Grey_100"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tx9-mV-SmQ">
+                                <rect key="frame" x="237.66666666666666" y="464.33333333333331" width="0.0" height="0.0"/>
+                                <fontDescription key="fontDescription" name="SuisseIntl" family="Suisse Int'l" pointSize="14"/>
+                                <color key="textColor" name="e&amp;_Grey_100"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="RsR-Wb-zLG"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="RsR-Wb-zLG" firstAttribute="trailing" secondItem="zrl-vy-PBb" secondAttribute="trailing" constant="32" id="0Es-xr-0h4"/>
+                            <constraint firstItem="Qmy-7e-9b5" firstAttribute="top" secondItem="ssP-Ww-wYG" secondAttribute="bottom" constant="40" id="0hw-uZ-faX"/>
+                            <constraint firstItem="zrl-vy-PBb" firstAttribute="leading" secondItem="RsR-Wb-zLG" secondAttribute="leading" constant="32" id="72d-5X-t4a"/>
+                            <constraint firstItem="ssP-Ww-wYG" firstAttribute="top" secondItem="RsR-Wb-zLG" secondAttribute="top" constant="130" id="DBx-Q1-B6M"/>
+                            <constraint firstItem="lqA-1w-Yfw" firstAttribute="top" secondItem="GLQ-cc-OfB" secondAttribute="bottom" constant="9" id="DSe-hW-3BA"/>
+                            <constraint firstItem="tx9-mV-SmQ" firstAttribute="leading" secondItem="lqA-1w-Yfw" secondAttribute="trailing" constant="22.666666666666686" id="PZN-vO-TUm"/>
+                            <constraint firstItem="RsR-Wb-zLG" firstAttribute="trailing" secondItem="Qmy-7e-9b5" secondAttribute="trailing" constant="32" id="RDL-nf-GTf"/>
+                            <constraint firstItem="lqA-1w-Yfw" firstAttribute="centerX" secondItem="GLQ-cc-OfB" secondAttribute="centerX" id="Tyx-Co-HWa"/>
+                            <constraint firstItem="Qmy-7e-9b5" firstAttribute="leading" secondItem="RsR-Wb-zLG" secondAttribute="leading" constant="32" id="Yjh-0S-Pdw"/>
+                            <constraint firstItem="RsR-Wb-zLG" firstAttribute="trailing" secondItem="GLQ-cc-OfB" secondAttribute="trailing" id="a5f-G2-xQT"/>
+                            <constraint firstItem="GLQ-cc-OfB" firstAttribute="leading" secondItem="RsR-Wb-zLG" secondAttribute="leading" id="aQH-Q9-7zM"/>
+                            <constraint firstItem="GLQ-cc-OfB" firstAttribute="top" secondItem="zrl-vy-PBb" secondAttribute="bottom" constant="48" id="hx7-0r-tty"/>
+                            <constraint firstItem="ssP-Ww-wYG" firstAttribute="centerX" secondItem="RsR-Wb-zLG" secondAttribute="centerX" id="oev-Uy-sq3"/>
+                            <constraint firstItem="p0p-Ky-aBh" firstAttribute="top" secondItem="GLQ-cc-OfB" secondAttribute="bottom" constant="9" id="orB-iz-dev"/>
+                            <constraint firstItem="zrl-vy-PBb" firstAttribute="top" secondItem="Qmy-7e-9b5" secondAttribute="bottom" constant="16" id="pg5-OI-ysi"/>
+                            <constraint firstItem="tx9-mV-SmQ" firstAttribute="top" secondItem="GLQ-cc-OfB" secondAttribute="bottom" constant="9" id="z9H-Kq-1Zy"/>
+                            <constraint firstItem="lqA-1w-Yfw" firstAttribute="leading" secondItem="p0p-Ky-aBh" secondAttribute="trailing" constant="22.666666666666657" id="zJD-zI-Dyb"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="imageViewLock" destination="ssP-Ww-wYG" id="03p-wB-sgn"/>
+                        <outlet property="labelDesc" destination="zrl-vy-PBb" id="RZH-bV-Z8g"/>
+                        <outlet property="labelFailOtp" destination="Qmy-7e-9b5" id="hRt-52-MGe"/>
+                        <outlet property="labelHours" destination="p0p-Ky-aBh" id="4fd-VF-gM2"/>
+                        <outlet property="labelMin" destination="lqA-1w-Yfw" id="XA9-7B-5CP"/>
+                        <outlet property="labelSec" destination="tx9-mV-SmQ" id="IYF-rR-uhp"/>
+                        <outlet property="labelTimer" destination="GLQ-cc-OfB" id="Uu3-AN-DoR"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ama-h5-f0V" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-491.16279069767444" y="-188.6266094420601"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="lock-circle" width="100" height="100"/>
+        <namedColor name="e&amp;_Black_80">
+            <color red="0.19215686274509805" green="0.19215686274509805" blue="0.19215686274509805" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="e&amp;_Grey_100">
+            <color red="0.48627450980392156" green="0.48627450980392156" blue="0.47843137254901963" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>

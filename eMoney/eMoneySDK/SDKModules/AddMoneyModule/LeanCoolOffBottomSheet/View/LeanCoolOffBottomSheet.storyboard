@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina5_9" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Bariol_Bold.otf">
+            <string>Bariol-Bold</string>
+        </array>
+        <array key="Bariol_Regular.otf">
+            <string>Bariol</string>
+        </array>
+    </customFonts>
+    <scenes>
+        <!--Lean Cool Off Bottom Sheet View Controller-->
+        <scene sceneID="SbF-7Z-xXh">
+            <objects>
+                <viewController storyboardIdentifier="LeanCoolOffBottomSheetViewController" id="BZO-RZ-Lp6" customClass="LeanCoolOffBottomSheetViewController" customModule="e_money" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="MHd-lW-MIx">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="P4X-tq-NrD">
+                                <rect key="frame" x="0.0" y="505.33333333333326" width="375" height="306.66666666666674"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KXe-C0-qaT" customClass="BaseButton" customModule="e_money" customModuleProvider="target">
+                                        <rect key="frame" x="24" y="228.66666666666669" width="327" height="44"/>
+                                        <color key="backgroundColor" name="e&amp;_Red_100"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="44" id="x9b-F2-mO8"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                        <state key="normal" title="Understood">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="12"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="understoodButtonTapped:" destination="BZO-RZ-Lp6" eventType="touchUpInside" id="hbq-QV-SV5"/>
+                                        </connections>
+                                    </button>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="2pt-ZV-5Cj">
+                                        <rect key="frame" x="24" y="25.000000000000057" width="327" height="178.66666666666666"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Successfully linked" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3oB-8t-Kah">
+                                                <rect key="frame" x="78" y="0.0" width="171" height="23.333333333333332"/>
+                                                <fontDescription key="fontDescription" name="Bariol-Bold" family="Bariol" pointSize="20"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="743-uX-1le">
+                                                <rect key="frame" x="0.0" y="43.333333333333258" width="327" height="30"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00:00" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pHM-Xb-qjW">
+                                                        <rect key="frame" x="109" y="-1.3333333333332575" width="109" height="32.666666666666664"/>
+                                                        <fontDescription key="fontDescription" name="Bariol-Bold" family="Bariol" pointSize="28"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="30" id="J0k-DQ-pvr"/>
+                                                    <constraint firstItem="pHM-Xb-qjW" firstAttribute="centerX" secondItem="743-uX-1le" secondAttribute="centerX" id="kBD-fn-DKz"/>
+                                                    <constraint firstItem="pHM-Xb-qjW" firstAttribute="centerY" secondItem="743-uX-1le" secondAttribute="centerY" id="rDm-Ka-o1s"/>
+                                                </constraints>
+                                            </view>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Give some time to work our magic and make the account available for use." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FFF-fO-bL6">
+                                                <rect key="frame" x="9.6666666666666572" y="93.333333333333258" width="308" height="32.666666666666657"/>
+                                                <fontDescription key="fontDescription" name="Bariol" family="Bariol" pointSize="14"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You will be notified when ready to add money from your linked account." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dG7-6Y-UXh">
+                                                <rect key="frame" x="3.3333333333333428" y="146" width="320.33333333333326" height="32.666666666666657"/>
+                                                <fontDescription key="fontDescription" name="Bariol" family="Bariol" pointSize="14"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstItem="743-uX-1le" firstAttribute="leading" secondItem="2pt-ZV-5Cj" secondAttribute="leading" id="1kz-8Y-RGe"/>
+                                            <constraint firstAttribute="trailing" secondItem="743-uX-1le" secondAttribute="trailing" id="hKE-dn-Gid"/>
+                                        </constraints>
+                                    </stackView>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="KXe-C0-qaT" secondAttribute="bottom" constant="34" id="2Id-oH-QDQ"/>
+                                    <constraint firstAttribute="trailing" secondItem="KXe-C0-qaT" secondAttribute="trailing" constant="24" id="7Gb-fn-nCu"/>
+                                    <constraint firstItem="2pt-ZV-5Cj" firstAttribute="leading" secondItem="P4X-tq-NrD" secondAttribute="leading" constant="24" id="HuG-Ib-FRQ"/>
+                                    <constraint firstItem="KXe-C0-qaT" firstAttribute="top" secondItem="2pt-ZV-5Cj" secondAttribute="bottom" constant="25" id="MMu-Ge-5wg"/>
+                                    <constraint firstItem="2pt-ZV-5Cj" firstAttribute="top" secondItem="P4X-tq-NrD" secondAttribute="top" constant="25" id="MUZ-Vf-y4m"/>
+                                    <constraint firstItem="KXe-C0-qaT" firstAttribute="leading" secondItem="P4X-tq-NrD" secondAttribute="leading" constant="24" id="e7A-yz-TKK"/>
+                                    <constraint firstAttribute="trailing" secondItem="2pt-ZV-5Cj" secondAttribute="trailing" constant="24" id="vNn-QB-AUC"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="8"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                        <color key="value" name="BorderColor"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="SVH-pd-OUl"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.55816857990000002" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="P4X-tq-NrD" secondAttribute="bottom" id="0jy-48-VbO"/>
+                            <constraint firstItem="P4X-tq-NrD" firstAttribute="leading" secondItem="SVH-pd-OUl" secondAttribute="leading" id="Cq6-yo-O0S"/>
+                            <constraint firstItem="SVH-pd-OUl" firstAttribute="trailing" secondItem="P4X-tq-NrD" secondAttribute="trailing" id="fVs-bz-Hcu"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="containerView" destination="P4X-tq-NrD" id="ArS-eh-T02"/>
+                        <outlet property="coolDownTimeLabel" destination="pHM-Xb-qjW" id="nhn-dH-6Ax"/>
+                        <outlet property="coolDownTimeView" destination="743-uX-1le" id="Acr-cY-BtD"/>
+                        <outlet property="firstDescriptionLabel" destination="FFF-fO-bL6" id="gTq-ST-3jn"/>
+                        <outlet property="secondDescriptionLabel" destination="dG7-6Y-UXh" id="GE2-hJ-Man"/>
+                        <outlet property="titleLabel" destination="3oB-8t-Kah" id="MKm-OP-eC8"/>
+                        <outlet property="understoodButton" destination="KXe-C0-qaT" id="ifS-sG-Pan"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ama-h5-f0V" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-490" y="-188"/>
+        </scene>
+    </scenes>
+    <resources>
+        <namedColor name="BorderColor">
+            <color red="0.32899999618530273" green="0.32400000095367432" blue="0.4779999852180481" alpha="0.33000001311302185" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="e&amp;_Red_100">
+            <color red="0.8784313725490196" green="0.031372549019607843" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

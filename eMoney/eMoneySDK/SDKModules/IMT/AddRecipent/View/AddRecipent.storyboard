@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BZO-RZ-Lp6">
+    <device id="retina6_72" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="SuisseIntl-Regular.ttf">
+            <string>SuisseIntl</string>
+        </array>
+        <array key="SuisseIntl-SemiBold.ttf">
+            <string>SuisseIntl-SemiBold</string>
+        </array>
+    </customFonts>
+    <scenes>
+        <!--Add Recipent View Controller-->
+        <scene sceneID="SbF-7Z-xXh">
+            <objects>
+                <viewController storyboardIdentifier="AddRecipentViewController" id="BZO-RZ-Lp6" customClass="AddRecipentViewController" customModule="e_money" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ZJJ-0O-gcw">
+                        <rect key="frame" x="0.0" y="0.0" width="430" height="932"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="Nbm-Gp-AgQ">
+                                <rect key="frame" x="0.0" y="180" width="430" height="612"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ML3-Jj-fHA" customClass="BaseStepper" customModule="e_money" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="91" width="430" height="12"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="12" id="5mx-2h-zeL"/>
+                                </constraints>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Send money to" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vhW-IQ-CMb">
+                                <rect key="frame" x="24" y="127" width="113" height="21"/>
+                                <fontDescription key="fontDescription" name="SuisseIntl-SemiBold" family="Suisse Int'l" pointSize="16"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="redCheckbox" translatesAutoresizingMaskIntoConstraints="NO" id="vj3-4Q-1UQ">
+                                <rect key="frame" x="24" y="812" width="24" height="24"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Save beneficiary for future transfers" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sKf-vw-bmH">
+                                <rect key="frame" x="63.000000000000014" y="816.33333333333337" width="195.33333333333337" height="15.666666666666629"/>
+                                <fontDescription key="fontDescription" name="SuisseIntl" family="Suisse Int'l" pointSize="12"/>
+                                <color key="textColor" name="e&amp;_Black_80"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Wo-TE-wLr" customClass="BaseButton" customModule="e_money" customModuleProvider="target">
+                                <rect key="frame" x="24" y="852" width="382" height="48"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="48" id="dqu-rs-hyM"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="SuisseIntl-SemiBold" family="Suisse Int'l" pointSize="16"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="Review the transfer"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="ButtonType" value="gradient_img_title"/>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="buttonReviewTransferTapped:" destination="BZO-RZ-Lp6" eventType="touchUpInside" id="VYj-W4-a8x"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="RsR-Wb-zLG"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="Nbm-Gp-AgQ" firstAttribute="leading" secondItem="RsR-Wb-zLG" secondAttribute="leading" id="56E-Sm-vgG"/>
+                            <constraint firstItem="vj3-4Q-1UQ" firstAttribute="leading" secondItem="RsR-Wb-zLG" secondAttribute="leading" constant="24" id="8uU-Cf-2tl"/>
+                            <constraint firstItem="ML3-Jj-fHA" firstAttribute="leading" secondItem="RsR-Wb-zLG" secondAttribute="leading" id="Lxe-BL-OTI"/>
+                            <constraint firstItem="vhW-IQ-CMb" firstAttribute="leading" secondItem="RsR-Wb-zLG" secondAttribute="leading" constant="24" id="P9h-1z-hIk"/>
+                            <constraint firstItem="ML3-Jj-fHA" firstAttribute="top" secondItem="RsR-Wb-zLG" secondAttribute="top" constant="32" id="Suc-JV-JI7"/>
+                            <constraint firstItem="Nbm-Gp-AgQ" firstAttribute="top" secondItem="vhW-IQ-CMb" secondAttribute="bottom" constant="32" id="VjW-YK-WBW"/>
+                            <constraint firstItem="vhW-IQ-CMb" firstAttribute="top" secondItem="ML3-Jj-fHA" secondAttribute="bottom" constant="24" id="ZQ8-Dr-6fG"/>
+                            <constraint firstItem="Nbm-Gp-AgQ" firstAttribute="trailing" secondItem="RsR-Wb-zLG" secondAttribute="trailing" id="Zf5-Zi-ALR"/>
+                            <constraint firstItem="vj3-4Q-1UQ" firstAttribute="top" secondItem="Nbm-Gp-AgQ" secondAttribute="bottom" constant="20" id="aEd-lP-buX"/>
+                            <constraint firstItem="2Wo-TE-wLr" firstAttribute="top" secondItem="vj3-4Q-1UQ" secondAttribute="bottom" constant="16" id="apT-d2-qfs"/>
+                            <constraint firstAttribute="bottom" secondItem="2Wo-TE-wLr" secondAttribute="bottom" constant="32" id="ikN-qG-IiO"/>
+                            <constraint firstItem="ML3-Jj-fHA" firstAttribute="trailing" secondItem="RsR-Wb-zLG" secondAttribute="trailing" id="mu4-uQ-Z8P"/>
+                            <constraint firstItem="sKf-vw-bmH" firstAttribute="centerY" secondItem="vj3-4Q-1UQ" secondAttribute="centerY" id="qsY-qc-EVF"/>
+                            <constraint firstItem="sKf-vw-bmH" firstAttribute="leading" secondItem="vj3-4Q-1UQ" secondAttribute="trailing" constant="15" id="rge-Xo-mBF"/>
+                            <constraint firstItem="RsR-Wb-zLG" firstAttribute="trailing" secondItem="2Wo-TE-wLr" secondAttribute="trailing" constant="24" id="x7X-Tw-Tv3"/>
+                            <constraint firstItem="2Wo-TE-wLr" firstAttribute="leading" secondItem="RsR-Wb-zLG" secondAttribute="leading" constant="24" id="xNR-z6-m7U"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="buttonReviewTransfer" destination="2Wo-TE-wLr" id="Kkm-BR-zH2"/>
+                        <outlet property="tableView" destination="Nbm-Gp-AgQ" id="r3i-RD-XKz"/>
+                        <outlet property="viewProgress" destination="ML3-Jj-fHA" id="oFW-l5-Va5"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ama-h5-f0V" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-491.16279069767444" y="-188.6266094420601"/>
+        </scene>
+    </scenes>
+    <designables>
+        <designable name="2Wo-TE-wLr">
+            <size key="intrinsicContentSize" width="146" height="33"/>
+        </designable>
+    </designables>
+    <resources>
+        <image name="redCheckbox" width="24" height="24"/>
+        <namedColor name="e&amp;_Black_80">
+            <color red="0.18823529411764706" green="0.18823529411764706" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

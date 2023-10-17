@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21225" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_5" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21207"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Add Mobile Bill Account View Controller-->
+        <scene sceneID="SbF-7Z-xXh">
+            <objects>
+                <viewController storyboardIdentifier="AddMobileBillAccountViewController" id="BZO-RZ-Lp6" customClass="AddMobileBillAccountViewController" customModule="e_money" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ZJJ-0O-gcw">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="etisalat" translatesAutoresizingMaskIntoConstraints="NO" id="Rsc-Nb-66a">
+                                <rect key="frame" x="189" y="75.666666666666671" width="36" height="36"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="36" id="0xA-JH-Xzp"/>
+                                    <constraint firstAttribute="height" constant="36" id="PFU-cg-6oo"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Etisalat" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bPP-lG-cYr">
+                                <rect key="frame" x="179.33333333333334" y="123.66666666666669" width="55.333333333333343" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="c2I-45-bgc" customClass="StandardTextField" customModule="e_money" customModuleProvider="target">
+                                <rect key="frame" x="24" y="176.66666666666666" width="366" height="64"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="64" id="QhD-J2-bAj"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bje-FO-gg9" customClass="StandardTextField" customModule="e_money" customModuleProvider="target">
+                                <rect key="frame" x="24" y="252.66666666666663" width="366" height="64"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="64" id="1C2-BH-Y9R"/>
+                                </constraints>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aeW-dL-DPX">
+                                <rect key="frame" x="36" y="743" width="24" height="24"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="24" id="MDO-yX-6P4"/>
+                                    <constraint firstAttribute="width" constant="24" id="lLP-WX-rT4"/>
+                                </constraints>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" image="redCheckbox"/>
+                                <connections>
+                                    <action selector="btnTickPressed:" destination="BZO-RZ-Lp6" eventType="touchUpInside" id="DAd-I5-0SS"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="McT-Dz-wFE" customClass="BaseButton" customModule="e_money" customModuleProvider="target">
+                                <rect key="frame" x="24" y="783" width="366" height="48"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="48" id="ood-nA-sxd"/>
+                                </constraints>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Send Money"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="ButtonType" value="gradient_img_title"/>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="btnContinuePressed:" destination="BZO-RZ-Lp6" eventType="touchUpInside" id="9sb-Yp-hIr"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Save this for future bill payments" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aYj-CD-i24">
+                                <rect key="frame" x="67.999999999999986" y="745" width="248.66666666666663" height="20.333333333333371"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="RsR-Wb-zLG"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="c2I-45-bgc" firstAttribute="leading" secondItem="RsR-Wb-zLG" secondAttribute="leading" constant="24" id="1BR-PM-zkJ"/>
+                            <constraint firstItem="bPP-lG-cYr" firstAttribute="top" secondItem="Rsc-Nb-66a" secondAttribute="bottom" constant="12" id="1hK-tZ-8F0"/>
+                            <constraint firstItem="bPP-lG-cYr" firstAttribute="centerX" secondItem="ZJJ-0O-gcw" secondAttribute="centerX" id="2fn-JB-uz8"/>
+                            <constraint firstItem="aeW-dL-DPX" firstAttribute="leading" secondItem="RsR-Wb-zLG" secondAttribute="leading" constant="36" id="BTk-CU-F9W"/>
+                            <constraint firstItem="Rsc-Nb-66a" firstAttribute="top" secondItem="RsR-Wb-zLG" secondAttribute="top" constant="31.829999999999998" id="Czt-vL-k8c"/>
+                            <constraint firstItem="RsR-Wb-zLG" firstAttribute="trailing" secondItem="bje-FO-gg9" secondAttribute="trailing" constant="24" id="Hbv-gD-9Yq"/>
+                            <constraint firstItem="aYj-CD-i24" firstAttribute="centerY" secondItem="aeW-dL-DPX" secondAttribute="centerY" id="S8O-PW-VEI"/>
+                            <constraint firstItem="bje-FO-gg9" firstAttribute="leading" secondItem="RsR-Wb-zLG" secondAttribute="leading" constant="24" id="T6w-1i-iDY"/>
+                            <constraint firstItem="McT-Dz-wFE" firstAttribute="leading" secondItem="RsR-Wb-zLG" secondAttribute="leading" constant="24" id="dGI-So-ya0"/>
+                            <constraint firstItem="McT-Dz-wFE" firstAttribute="top" secondItem="aeW-dL-DPX" secondAttribute="bottom" constant="16" id="ebh-MJ-7eT"/>
+                            <constraint firstItem="aYj-CD-i24" firstAttribute="leading" secondItem="aeW-dL-DPX" secondAttribute="trailing" constant="8" symbolic="YES" id="ilW-Pm-ouQ"/>
+                            <constraint firstItem="RsR-Wb-zLG" firstAttribute="trailing" secondItem="c2I-45-bgc" secondAttribute="trailing" constant="24" id="jyb-mK-n1D"/>
+                            <constraint firstItem="c2I-45-bgc" firstAttribute="top" secondItem="bPP-lG-cYr" secondAttribute="bottom" constant="32" id="mfz-kR-Z19"/>
+                            <constraint firstItem="Rsc-Nb-66a" firstAttribute="centerX" secondItem="ZJJ-0O-gcw" secondAttribute="centerX" id="qNG-mC-jTd"/>
+                            <constraint firstItem="RsR-Wb-zLG" firstAttribute="bottom" secondItem="McT-Dz-wFE" secondAttribute="bottom" constant="31" id="rzv-TH-jqu"/>
+                            <constraint firstItem="bje-FO-gg9" firstAttribute="top" secondItem="c2I-45-bgc" secondAttribute="bottom" constant="12" id="uMu-1k-3rJ"/>
+                            <constraint firstItem="RsR-Wb-zLG" firstAttribute="trailing" secondItem="McT-Dz-wFE" secondAttribute="trailing" constant="24" id="wIl-1I-Nyc"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="btnContinue" destination="McT-Dz-wFE" id="dmA-Zc-pep"/>
+                        <outlet property="btnTick" destination="aeW-dL-DPX" id="rAa-IS-nwd"/>
+                        <outlet property="mobileTextField" destination="c2I-45-bgc" id="cEz-3T-3Tt"/>
+                        <outlet property="nickNameTextField" destination="bje-FO-gg9" id="dzU-9I-zOR"/>
+                        <outlet property="saveBillLabel" destination="aYj-CD-i24" id="5B2-4A-uYB"/>
+                        <outlet property="titleLabel" destination="bPP-lG-cYr" id="wxw-3Q-yse"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ama-h5-f0V" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-491.304347826087" y="-188.16964285714286"/>
+        </scene>
+    </scenes>
+    <designables>
+        <designable name="McT-Dz-wFE">
+            <size key="intrinsicContentSize" width="119" height="34.333333333333336"/>
+        </designable>
+    </designables>
+    <resources>
+        <image name="etisalat" width="36.666667938232422" height="36.666667938232422"/>
+        <image name="redCheckbox" width="24" height="24"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

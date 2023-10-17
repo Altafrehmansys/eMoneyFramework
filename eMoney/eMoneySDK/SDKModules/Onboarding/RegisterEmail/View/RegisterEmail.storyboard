@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_72" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21678"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="SuisseIntl-Regular.ttf">
+            <string>SuisseIntl</string>
+        </array>
+    </customFonts>
+    <scenes>
+        <!--Register Email View Controller-->
+        <scene sceneID="SbF-7Z-xXh">
+            <objects>
+                <viewController storyboardIdentifier="RegisterEmailViewController" id="BZO-RZ-Lp6" customClass="RegisterEmailViewController" customModule="eMoneySDK" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ZJJ-0O-gcw">
+                        <rect key="frame" x="0.0" y="0.0" width="430" height="932"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="y2h-bW-oK0" customClass="BaseStepper" customModule="eMoneySDK" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="91" width="430" height="12"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="12" id="RJh-Y8-Ci3"/>
+                                </constraints>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="We will send you a verification link. The link will be valid for 7 days." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vVf-NT-zbo">
+                                <rect key="frame" x="24" y="127.00000000000001" width="382" height="41.666666666666671"/>
+                                <fontDescription key="fontDescription" name="SuisseIntl" family="Suisse Int'l" pointSize="16"/>
+                                <color key="textColor" name="e&amp;_Black_80"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="yIc-7O-iY0" customClass="StandardTextField" customModule="eMoneySDK" customModuleProvider="target">
+                                <rect key="frame" x="24" y="184.66666666666666" width="382" height="64"/>
+                                <color key="backgroundColor" systemColor="linkColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="64" id="Az2-0W-TmM"/>
+                                </constraints>
+                            </view>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="Xy7-I6-ACH">
+                                <rect key="frame" x="24" y="834" width="382" height="48"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zJu-Yo-jGp" customClass="BaseButton" customModule="eMoneySDK" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="382" height="48"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="48" id="yqr-Y5-E6x"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="18"/>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <state key="normal" title=" Continue"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="ButtonType" value="gradient_img_title"/>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="buttonContinueTapped:" destination="BZO-RZ-Lp6" eventType="touchUpInside" id="bHT-qm-P7m"/>
+                                        </connections>
+                                    </button>
+                                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ijL-LW-RgY">
+                                        <rect key="frame" x="0.0" y="0.0" width="382" height="48"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="48" id="E9Q-eS-z6s"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="18"/>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <connections>
+                                            <action selector="buttonNotNowTapped:" destination="BZO-RZ-Lp6" eventType="touchUpInside" id="x1L-HC-Myg"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="RsR-Wb-zLG"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="vVf-NT-zbo" firstAttribute="leading" secondItem="RsR-Wb-zLG" secondAttribute="leading" constant="24" id="B6K-Kx-ewP"/>
+                            <constraint firstItem="RsR-Wb-zLG" firstAttribute="bottom" secondItem="Xy7-I6-ACH" secondAttribute="bottom" constant="16" id="Bk0-jc-PyE"/>
+                            <constraint firstItem="yIc-7O-iY0" firstAttribute="top" secondItem="vVf-NT-zbo" secondAttribute="bottom" constant="16" id="C03-Zh-CHw"/>
+                            <constraint firstItem="RsR-Wb-zLG" firstAttribute="trailing" secondItem="yIc-7O-iY0" secondAttribute="trailing" constant="24" id="CKj-fw-knN"/>
+                            <constraint firstItem="Xy7-I6-ACH" firstAttribute="leading" secondItem="RsR-Wb-zLG" secondAttribute="leading" constant="24" id="GqU-j5-f9v"/>
+                            <constraint firstItem="yIc-7O-iY0" firstAttribute="leading" secondItem="RsR-Wb-zLG" secondAttribute="leading" constant="24" id="LUF-lc-WgU"/>
+                            <constraint firstItem="y2h-bW-oK0" firstAttribute="trailing" secondItem="RsR-Wb-zLG" secondAttribute="trailing" id="ZvT-WQ-r7e"/>
+                            <constraint firstItem="vVf-NT-zbo" firstAttribute="top" secondItem="y2h-bW-oK0" secondAttribute="bottom" constant="24" id="cSY-Dr-brb"/>
+                            <constraint firstItem="y2h-bW-oK0" firstAttribute="leading" secondItem="RsR-Wb-zLG" secondAttribute="leading" id="cxe-Bl-ipw"/>
+                            <constraint firstItem="RsR-Wb-zLG" firstAttribute="trailing" secondItem="Xy7-I6-ACH" secondAttribute="trailing" constant="24" id="dn5-tQ-Bnf"/>
+                            <constraint firstItem="RsR-Wb-zLG" firstAttribute="trailing" secondItem="vVf-NT-zbo" secondAttribute="trailing" constant="24" id="p1P-ie-ux1"/>
+                            <constraint firstItem="y2h-bW-oK0" firstAttribute="top" secondItem="RsR-Wb-zLG" secondAttribute="top" constant="32" id="wMO-3g-6xS"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="buttonContinue" destination="zJu-Yo-jGp" id="YBl-4U-tJ2"/>
+                        <outlet property="buttonNotNow" destination="ijL-LW-RgY" id="XYf-dF-Moc"/>
+                        <outlet property="constraintBottomButton" destination="Bk0-jc-PyE" id="oqQ-E4-Tv9"/>
+                        <outlet property="labelVerifyLink" destination="vVf-NT-zbo" id="UVm-Gq-U9x"/>
+                        <outlet property="txtFieldEmail" destination="yIc-7O-iY0" id="jie-cJ-BJV"/>
+                        <outlet property="viewStepper" destination="y2h-bW-oK0" id="0FU-Ix-VTf"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ama-h5-f0V" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-491.16279069767444" y="-188.6266094420601"/>
+        </scene>
+    </scenes>
+    <designables>
+        <designable name="zJu-Yo-jGp">
+            <size key="intrinsicContentSize" width="78" height="33"/>
+        </designable>
+    </designables>
+    <resources>
+        <namedColor name="e&amp;_Black_80">
+            <color red="0.18823529411764706" green="0.18823529411764706" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="linkColor">
+            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>

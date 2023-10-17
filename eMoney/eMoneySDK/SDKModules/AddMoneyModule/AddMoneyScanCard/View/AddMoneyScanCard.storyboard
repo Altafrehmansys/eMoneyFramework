@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina5_9" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Add Money Scan Card View Controller-->
+        <scene sceneID="SbF-7Z-xXh">
+            <objects>
+                <viewController storyboardIdentifier="AddMoneyScanCardViewController" id="BZO-RZ-Lp6" customClass="AddMoneyScanCardViewController" customModule="e_money" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ZJJ-0O-gcw">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PIH-t9-Fzd">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Xfm-cn-Mex">
+                                <rect key="frame" x="37" y="216.66666666666663" width="301" height="379"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Vector 203" translatesAutoresizingMaskIntoConstraints="NO" id="ybr-NZ-7em">
+                                        <rect key="frame" x="0.0" y="0.0" width="47" height="47"/>
+                                    </imageView>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Vector 204" translatesAutoresizingMaskIntoConstraints="NO" id="JBU-l9-TCh">
+                                        <rect key="frame" x="254" y="0.0" width="47" height="47"/>
+                                    </imageView>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Vector 205" translatesAutoresizingMaskIntoConstraints="NO" id="TBg-Wc-o0v">
+                                        <rect key="frame" x="0.0" y="332" width="47" height="47"/>
+                                    </imageView>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Vector 206" translatesAutoresizingMaskIntoConstraints="NO" id="x1p-9D-SQg">
+                                        <rect key="frame" x="254" y="332" width="47" height="47"/>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="x1p-9D-SQg" secondAttribute="bottom" id="5b7-YT-DyB"/>
+                                    <constraint firstItem="TBg-Wc-o0v" firstAttribute="leading" secondItem="Xfm-cn-Mex" secondAttribute="leading" id="OaE-i8-ya1"/>
+                                    <constraint firstAttribute="trailing" secondItem="JBU-l9-TCh" secondAttribute="trailing" id="d6X-RF-NdZ"/>
+                                    <constraint firstAttribute="bottom" secondItem="TBg-Wc-o0v" secondAttribute="bottom" id="lby-xP-l1B"/>
+                                    <constraint firstItem="ybr-NZ-7em" firstAttribute="top" secondItem="Xfm-cn-Mex" secondAttribute="top" id="sc5-nS-TWx"/>
+                                    <constraint firstItem="JBU-l9-TCh" firstAttribute="top" secondItem="Xfm-cn-Mex" secondAttribute="top" id="tmi-9c-cHV"/>
+                                    <constraint firstItem="ybr-NZ-7em" firstAttribute="leading" secondItem="Xfm-cn-Mex" secondAttribute="leading" id="y7J-ad-RfF"/>
+                                    <constraint firstAttribute="trailing" secondItem="x1p-9D-SQg" secondAttribute="trailing" id="zzH-IA-BEg"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="RsR-Wb-zLG"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="PIH-t9-Fzd" firstAttribute="leading" secondItem="RsR-Wb-zLG" secondAttribute="leading" id="6on-rV-2Ku"/>
+                            <constraint firstItem="Xfm-cn-Mex" firstAttribute="height" secondItem="ZJJ-0O-gcw" secondAttribute="height" multiplier="0.466749" id="FPw-QU-1jU"/>
+                            <constraint firstItem="Xfm-cn-Mex" firstAttribute="centerX" secondItem="ZJJ-0O-gcw" secondAttribute="centerX" id="bOv-iT-msH"/>
+                            <constraint firstItem="PIH-t9-Fzd" firstAttribute="top" secondItem="ZJJ-0O-gcw" secondAttribute="top" id="cjH-6a-k78"/>
+                            <constraint firstItem="RsR-Wb-zLG" firstAttribute="trailing" secondItem="PIH-t9-Fzd" secondAttribute="trailing" id="e8w-hi-vAt"/>
+                            <constraint firstItem="RsR-Wb-zLG" firstAttribute="trailing" secondItem="Xfm-cn-Mex" secondAttribute="trailing" constant="37" id="jRB-pq-CbW"/>
+                            <constraint firstAttribute="bottom" secondItem="PIH-t9-Fzd" secondAttribute="bottom" id="lRo-d7-H8w"/>
+                            <constraint firstItem="Xfm-cn-Mex" firstAttribute="centerY" secondItem="ZJJ-0O-gcw" secondAttribute="centerY" id="lfW-i1-EPN"/>
+                            <constraint firstItem="Xfm-cn-Mex" firstAttribute="leading" secondItem="RsR-Wb-zLG" secondAttribute="leading" constant="37" id="put-NE-m53"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="guidedView" destination="Xfm-cn-Mex" id="acO-s0-xoR"/>
+                        <outlet property="scannerView" destination="PIH-t9-Fzd" id="qDh-Pl-YfB"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ama-h5-f0V" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-490" y="-188"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="Vector 203" width="47" height="47"/>
+        <image name="Vector 204" width="47" height="47"/>
+        <image name="Vector 205" width="47" height="47"/>
+        <image name="Vector 206" width="47" height="47"/>
+    </resources>
+</document>

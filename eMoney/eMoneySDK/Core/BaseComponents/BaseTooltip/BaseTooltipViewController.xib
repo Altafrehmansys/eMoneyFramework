@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="SuisseIntl-Regular.ttf">
+            <string>SuisseIntl</string>
+        </array>
+        <array key="SuisseIntl-SemiBold.ttf">
+            <string>SuisseIntl-SemiBold</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="BaseTooltipViewController" customModule="e_money" customModuleProvider="target">
+            <connections>
+                <outlet property="buttonCross" destination="Igt-EK-ycL" id="5u4-5P-FNl"/>
+                <outlet property="buttonLeft" destination="Pdc-KK-VfJ" id="tZa-34-pxU"/>
+                <outlet property="buttonRight" destination="f3s-nm-Gp0" id="npe-aP-dTF"/>
+                <outlet property="imageViewLeft" destination="eNc-WV-osF" id="Aiz-eW-xY3"/>
+                <outlet property="lblDesc" destination="gdT-oQ-MHe" id="vLi-3r-XaS"/>
+                <outlet property="lblTitle" destination="RPB-xp-ieF" id="fk7-9X-YFn"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+                <outlet property="viewContent" destination="q71-tT-7iy" id="Dbq-dz-sH2"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="q71-tT-7iy">
+                    <rect key="frame" x="16" y="366.66666666666669" width="361" height="144"/>
+                    <subviews>
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="alertoast" translatesAutoresizingMaskIntoConstraints="NO" id="eNc-WV-osF">
+                            <rect key="frame" x="18" y="18" width="20" height="20"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="20" id="Ujw-Wi-QOP"/>
+                                <constraint firstAttribute="height" constant="20" id="tWF-EL-dNb"/>
+                            </constraints>
+                        </imageView>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title comes here" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RPB-xp-ieF">
+                            <rect key="frame" x="53.000000000000007" y="16" width="109.66666666666669" height="19"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="19" id="BfO-9o-i3l"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" name="SuisseIntl-SemiBold" family="Suisse Int'l" pointSize="14"/>
+                            <color key="textColor" name="e&amp;_Black_80"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lorem ipsum dolor sit amet, consec ctuetur adipiscing eliaweam necsyt ligula tristique quagdosnoy." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gdT-oQ-MHe">
+                            <rect key="frame" x="53" y="39" width="292" height="47"/>
+                            <fontDescription key="fontDescription" name="SuisseIntl" family="Suisse Int'l" pointSize="12"/>
+                            <color key="textColor" name="e&amp;_Grey_100"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="24" translatesAutoresizingMaskIntoConstraints="NO" id="Mv8-oa-KUC">
+                            <rect key="frame" x="61.333333333333329" y="98" width="238.33333333333337" height="36"/>
+                            <subviews>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pdc-KK-VfJ">
+                                    <rect key="frame" x="0.0" y="0.0" width="107.33333333333333" height="36"/>
+                                    <state key="normal" title="Button"/>
+                                    <buttonConfiguration key="configuration" style="plain" title="Button">
+                                        <fontDescription key="titleFontDescription" name="SuisseIntl-Medium" family="Suisse Int'l" pointSize="12"/>
+                                        <color key="baseForegroundColor" red="0.8784313725490196" green="0.031372549019607843" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </buttonConfiguration>
+                                    <connections>
+                                        <action selector="buttonLeftTapped:" destination="-1" eventType="touchUpInside" id="Xnv-Cv-7HW"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f3s-nm-Gp0">
+                                    <rect key="frame" x="131.33333333333331" y="0.0" width="107" height="36"/>
+                                    <state key="normal" title="Button"/>
+                                    <buttonConfiguration key="configuration" style="plain" title="Button">
+                                        <fontDescription key="titleFontDescription" name="SuisseIntl-Medium" family="Suisse Int'l" pointSize="12"/>
+                                        <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </buttonConfiguration>
+                                    <connections>
+                                        <action selector="buttonRightTapped:" destination="-1" eventType="touchUpInside" id="WSH-bN-mV9"/>
+                                    </connections>
+                                </button>
+                            </subviews>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="36" id="fXQ-ZX-3UJ"/>
+                            </constraints>
+                        </stackView>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Igt-EK-ycL">
+                            <rect key="frame" x="313" y="16" width="24" height="24"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="24" id="Ovf-Hf-l3e"/>
+                                <constraint firstAttribute="height" constant="24" id="Wcq-91-id1"/>
+                            </constraints>
+                            <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                            <state key="normal" image="Close"/>
+                            <connections>
+                                <action selector="buttonCrossTapped:" destination="-1" eventType="touchUpInside" id="f0A-UJ-Akj"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstItem="Igt-EK-ycL" firstAttribute="centerY" secondItem="eNc-WV-osF" secondAttribute="centerY" id="8gR-Q2-Crn"/>
+                        <constraint firstItem="gdT-oQ-MHe" firstAttribute="leading" secondItem="RPB-xp-ieF" secondAttribute="leading" id="9jE-yd-ra5"/>
+                        <constraint firstItem="Mv8-oa-KUC" firstAttribute="centerX" secondItem="q71-tT-7iy" secondAttribute="centerX" id="CwZ-wv-5Pr"/>
+                        <constraint firstItem="RPB-xp-ieF" firstAttribute="leading" secondItem="eNc-WV-osF" secondAttribute="trailing" constant="15" id="IbO-3Y-cO2"/>
+                        <constraint firstItem="Mv8-oa-KUC" firstAttribute="width" secondItem="q71-tT-7iy" secondAttribute="width" multiplier="0.66" id="Mhc-J5-tb6"/>
+                        <constraint firstItem="RPB-xp-ieF" firstAttribute="top" secondItem="q71-tT-7iy" secondAttribute="top" constant="16" id="Use-T8-I8l"/>
+                        <constraint firstItem="gdT-oQ-MHe" firstAttribute="top" secondItem="RPB-xp-ieF" secondAttribute="bottom" constant="4" id="V5W-70-9Zn"/>
+                        <constraint firstAttribute="height" constant="144" id="Xbm-zQ-nW3"/>
+                        <constraint firstItem="Mv8-oa-KUC" firstAttribute="top" secondItem="gdT-oQ-MHe" secondAttribute="bottom" constant="12" id="cjK-Ob-y5z"/>
+                        <constraint firstItem="eNc-WV-osF" firstAttribute="top" secondItem="q71-tT-7iy" secondAttribute="top" constant="18" id="ll3-Ok-2AJ"/>
+                        <constraint firstItem="eNc-WV-osF" firstAttribute="leading" secondItem="q71-tT-7iy" secondAttribute="leading" constant="18" id="qKz-Un-dR7"/>
+                        <constraint firstAttribute="trailing" secondItem="gdT-oQ-MHe" secondAttribute="trailing" constant="16" id="u0m-az-ePO"/>
+                        <constraint firstAttribute="trailing" secondItem="Igt-EK-ycL" secondAttribute="trailing" constant="24" id="zpu-ea-kRR"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.50398596938775508" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="q71-tT-7iy" secondAttribute="trailing" constant="16" id="1X3-F1-Yo7"/>
+                <constraint firstItem="q71-tT-7iy" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="3c9-Wj-kiK"/>
+                <constraint firstItem="q71-tT-7iy" firstAttribute="centerY" secondItem="fnl-2z-Ty3" secondAttribute="centerY" id="mO9-Vg-hjk"/>
+            </constraints>
+            <point key="canvasLocation" x="101.5267175572519" y="19.718309859154932"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="Close" width="24" height="24"/>
+        <image name="alertoast" width="20" height="20"/>
+        <namedColor name="e&amp;_Black_80">
+            <color red="0.18823529411764706" green="0.18823529411764706" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="e&amp;_Grey_100">
+            <color red="0.48627450980392156" green="0.48627450980392156" blue="0.47843137254901963" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>

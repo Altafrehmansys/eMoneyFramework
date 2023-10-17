@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21225" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_7" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21207"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Bill Management View Controller-->
+        <scene sceneID="SbF-7Z-xXh">
+            <objects>
+                <viewController storyboardIdentifier="BillManagementViewController" id="BZO-RZ-Lp6" customClass="BillManagementViewController" customModule="e_money" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ZJJ-0O-gcw">
+                        <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="T35-dh-OU3">
+                                <rect key="frame" x="0.0" y="47" width="428" height="758"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="FCM-F5-Hay">
+                                <rect key="frame" x="24" y="813" width="380" height="48"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Sg2-So-smF" customClass="BaseButton" customModule="e_money" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="380" height="48"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="48" id="rlN-1k-Gw9"/>
+                                        </constraints>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <state key="normal" title="Send money"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="ButtonType" value="gradient_img_title"/>
+                                        </userDefinedRuntimeAttributes>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="48" id="hAc-6d-cTL"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="RsR-Wb-zLG"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="T35-dh-OU3" firstAttribute="trailing" secondItem="RsR-Wb-zLG" secondAttribute="trailing" id="9mF-00-HGp"/>
+                            <constraint firstItem="FCM-F5-Hay" firstAttribute="top" secondItem="T35-dh-OU3" secondAttribute="bottom" constant="8" symbolic="YES" id="OI9-p1-2rQ"/>
+                            <constraint firstItem="RsR-Wb-zLG" firstAttribute="bottom" secondItem="FCM-F5-Hay" secondAttribute="bottom" constant="31" id="cNY-Ls-Tbe"/>
+                            <constraint firstItem="RsR-Wb-zLG" firstAttribute="trailing" secondItem="FCM-F5-Hay" secondAttribute="trailing" constant="24" id="gqv-fe-RPZ"/>
+                            <constraint firstItem="FCM-F5-Hay" firstAttribute="leading" secondItem="RsR-Wb-zLG" secondAttribute="leading" constant="24" id="vBF-dZ-Gb6"/>
+                            <constraint firstItem="T35-dh-OU3" firstAttribute="top" secondItem="RsR-Wb-zLG" secondAttribute="top" id="vus-if-VLy"/>
+                            <constraint firstItem="T35-dh-OU3" firstAttribute="leading" secondItem="RsR-Wb-zLG" secondAttribute="leading" id="y39-6Z-p1E"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="btnPayBill" destination="Sg2-So-smF" id="JbN-Ny-bJU"/>
+                        <outlet property="tblView" destination="T35-dh-OU3" id="OJv-2z-Jtb"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ama-h5-f0V" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-490.65420560747663" y="-188.55291576673866"/>
+        </scene>
+    </scenes>
+    <designables>
+        <designable name="Sg2-So-smF">
+            <size key="intrinsicContentSize" width="101" height="34"/>
+        </designable>
+    </designables>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

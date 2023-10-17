@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21225" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_0" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21207"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="50" id="KGk-i7-Jjw" customClass="SeparatorWithTextCell" customModule="e_money" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="50"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="50"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="OR" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vSd-TL-718">
+                        <rect key="frame" x="148.33333333333334" y="12" width="23.666666666666657" height="26"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="grA-bI-x8y">
+                        <rect key="frame" x="180" y="24.666666666666668" width="116" height="1"/>
+                        <color key="backgroundColor" name="e&amp;_Grey_20"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="1" id="GDv-JR-bfq"/>
+                        </constraints>
+                    </view>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="l66-3h-JwV">
+                        <rect key="frame" x="24" y="24.666666666666668" width="116" height="1"/>
+                        <color key="backgroundColor" name="e&amp;_Grey_20"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="1" id="FmJ-fW-g14"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="l66-3h-JwV" firstAttribute="centerY" secondItem="vSd-TL-718" secondAttribute="centerY" id="5ma-G8-jdc"/>
+                    <constraint firstItem="vSd-TL-718" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="12" id="Bhw-CT-JUs"/>
+                    <constraint firstItem="grA-bI-x8y" firstAttribute="leading" secondItem="vSd-TL-718" secondAttribute="trailing" constant="8" symbolic="YES" id="Byg-s8-jeK"/>
+                    <constraint firstItem="grA-bI-x8y" firstAttribute="centerY" secondItem="vSd-TL-718" secondAttribute="centerY" id="DIJ-g2-ZkC"/>
+                    <constraint firstItem="l66-3h-JwV" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="24" id="Gif-4p-amv"/>
+                    <constraint firstItem="vSd-TL-718" firstAttribute="leading" secondItem="l66-3h-JwV" secondAttribute="trailing" constant="8.3300000000000001" id="JhI-Dl-XNT"/>
+                    <constraint firstAttribute="bottom" secondItem="vSd-TL-718" secondAttribute="bottom" constant="12" id="SbK-JO-Rk5"/>
+                    <constraint firstAttribute="trailing" secondItem="grA-bI-x8y" secondAttribute="trailing" constant="24" id="ls3-AK-8so"/>
+                    <constraint firstItem="vSd-TL-718" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" id="si4-ij-ngY"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="separatorTextLabel" destination="vSd-TL-718" id="jsW-bF-91w"/>
+            </connections>
+            <point key="canvasLocation" x="124.61538461538461" y="-10.663507109004739"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <namedColor name="e&amp;_Grey_20">
+            <color red="0.89803921568627454" green="0.89803921568627454" blue="0.89411764705882357" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>

@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="135" id="KGk-i7-Jjw" customClass="SavedAccountsAndCardsTableViewCell" customModule="e_money" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="135"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="135"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ABb-CF-TBA">
+                        <rect key="frame" x="24" y="8" width="272" height="111"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZtR-jw-Xys">
+                                <rect key="frame" x="0.0" y="0.0" width="272" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gm6-uC-rUq">
+                                <rect key="frame" x="0.0" y="37" width="272" height="74"/>
+                                <subviews>
+                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" placeholderIntrinsicWidth="272" placeholderIntrinsicHeight="50" bounces="NO" alwaysBounceVertical="YES" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" bouncesZoom="NO" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="PZP-bx-3Tb" customClass="ContentSizedTableView" customModule="e_money" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="12" width="272" height="50"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                    </tableView>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstItem="PZP-bx-3Tb" firstAttribute="leading" secondItem="gm6-uC-rUq" secondAttribute="leading" id="2oY-jB-jh1"/>
+                                    <constraint firstAttribute="bottom" secondItem="PZP-bx-3Tb" secondAttribute="bottom" constant="12" id="8xM-Xp-cV2"/>
+                                    <constraint firstItem="PZP-bx-3Tb" firstAttribute="top" secondItem="gm6-uC-rUq" secondAttribute="top" constant="12" id="cT8-4a-29F"/>
+                                    <constraint firstAttribute="trailing" secondItem="PZP-bx-3Tb" secondAttribute="trailing" id="nIr-di-EhB"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="gm6-uC-rUq" firstAttribute="top" secondItem="ZtR-jw-Xys" secondAttribute="bottom" constant="16" id="LCt-If-dMw"/>
+                            <constraint firstAttribute="trailing" secondItem="gm6-uC-rUq" secondAttribute="trailing" id="RMh-qg-apT"/>
+                            <constraint firstItem="ZtR-jw-Xys" firstAttribute="top" secondItem="ABb-CF-TBA" secondAttribute="top" id="bBj-HW-DyW"/>
+                            <constraint firstItem="ZtR-jw-Xys" firstAttribute="leading" secondItem="ABb-CF-TBA" secondAttribute="leading" id="cvV-Ox-Zyv"/>
+                            <constraint firstAttribute="bottom" secondItem="gm6-uC-rUq" secondAttribute="bottom" id="ltG-Km-HYF"/>
+                            <constraint firstItem="gm6-uC-rUq" firstAttribute="leading" secondItem="ABb-CF-TBA" secondAttribute="leading" id="pXZ-zZ-wOI"/>
+                            <constraint firstAttribute="trailing" secondItem="ZtR-jw-Xys" secondAttribute="trailing" id="vK1-mA-t9Z"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="trailing" secondItem="ABb-CF-TBA" secondAttribute="trailing" constant="24" id="Kbb-Bg-Tkc"/>
+                    <constraint firstItem="ABb-CF-TBA" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="YdU-y1-YiL"/>
+                    <constraint firstItem="ABb-CF-TBA" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="24" id="c7E-6D-SlT"/>
+                    <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="ABb-CF-TBA" secondAttribute="bottom" constant="8" id="iN4-N8-zxY"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="containerView" destination="gm6-uC-rUq" id="xqO-z8-RZ4"/>
+                <outlet property="tableView" destination="PZP-bx-3Tb" id="lJR-hg-W3v"/>
+                <outlet property="titleLabel" destination="ZtR-jw-Xys" id="hUe-Ud-nD1"/>
+            </connections>
+            <point key="canvasLocation" x="1.5267175572519083" y="51.056338028169016"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

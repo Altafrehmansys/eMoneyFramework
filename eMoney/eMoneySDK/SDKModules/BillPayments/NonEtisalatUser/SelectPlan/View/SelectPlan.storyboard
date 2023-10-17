@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Select Plan View Controller-->
+        <scene sceneID="SbF-7Z-xXh">
+            <objects>
+                <viewController storyboardIdentifier="SelectPlanViewController" id="BZO-RZ-Lp6" customClass="SelectPlanViewController" customModule="e_money" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ZJJ-0O-gcw">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="dju-7K-2YZ">
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="375" id="aie-ls-2Z9"/>
+                                </constraints>
+                            </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xRA-yn-FiC" customClass="BaseButton" customModule="e_money" customModuleProvider="target">
+                                <rect key="frame" x="303" y="599" width="48" height="48"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="48" id="08L-Ea-IQM"/>
+                                    <constraint firstAttribute="width" constant="48" id="ObP-PV-u4X"/>
+                                </constraints>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" image="arrow-right-with-background"/>
+                                <connections>
+                                    <action selector="didTapNext:" destination="BZO-RZ-Lp6" eventType="touchUpInside" id="tqN-8S-AyY"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="RsR-Wb-zLG"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="RsR-Wb-zLG" firstAttribute="trailing" secondItem="dju-7K-2YZ" secondAttribute="trailing" id="0Ao-Za-ucq"/>
+                            <constraint firstItem="RsR-Wb-zLG" firstAttribute="bottom" secondItem="dju-7K-2YZ" secondAttribute="bottom" id="5lj-0J-P9V"/>
+                            <constraint firstItem="RsR-Wb-zLG" firstAttribute="bottom" secondItem="xRA-yn-FiC" secondAttribute="bottom" constant="20" id="5yg-vn-xZl"/>
+                            <constraint firstItem="RsR-Wb-zLG" firstAttribute="trailing" secondItem="xRA-yn-FiC" secondAttribute="trailing" constant="24" id="gPs-eY-2ju"/>
+                            <constraint firstItem="dju-7K-2YZ" firstAttribute="leading" secondItem="RsR-Wb-zLG" secondAttribute="leading" id="hdB-9L-j82"/>
+                            <constraint firstItem="dju-7K-2YZ" firstAttribute="top" secondItem="RsR-Wb-zLG" secondAttribute="top" constant="20" id="jeN-Na-6fg"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="btnNext" destination="xRA-yn-FiC" id="DOt-tu-vmE"/>
+                        <outlet property="tableView" destination="dju-7K-2YZ" id="r54-kb-ZUT"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ama-h5-f0V" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-490" y="-188"/>
+        </scene>
+    </scenes>
+    <designables>
+        <designable name="xRA-yn-FiC">
+            <size key="intrinsicContentSize" width="48" height="48"/>
+        </designable>
+    </designables>
+    <resources>
+        <image name="arrow-right-with-background" width="48" height="48"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

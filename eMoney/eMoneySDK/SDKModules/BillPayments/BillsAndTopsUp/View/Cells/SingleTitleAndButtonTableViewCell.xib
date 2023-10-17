@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21225" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_0" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21207"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="39" id="KGk-i7-Jjw" customClass="SingleTitleAndButtonTableViewCell" customModule="e_money" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="39"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="39"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Saved accounts" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="H4g-gO-Zav">
+                        <rect key="frame" x="24" y="8" width="121" height="23"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YyZ-FD-hHt" customClass="BaseButton" customModule="e_money" customModuleProvider="target">
+                        <rect key="frame" x="228" y="8" width="75" height="23"/>
+                        <state key="normal" title="Button"/>
+                        <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                    </button>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="YyZ-FD-hHt" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="JAf-K4-Li6"/>
+                    <constraint firstItem="YyZ-FD-hHt" firstAttribute="centerY" secondItem="H4g-gO-Zav" secondAttribute="centerY" id="Nva-bb-Pjx"/>
+                    <constraint firstAttribute="trailing" secondItem="YyZ-FD-hHt" secondAttribute="trailing" constant="17" id="byI-nD-iki"/>
+                    <constraint firstItem="H4g-gO-Zav" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="24" id="dUY-uO-Wkp"/>
+                    <constraint firstAttribute="bottom" secondItem="H4g-gO-Zav" secondAttribute="bottom" constant="8" id="fni-Qc-cWO"/>
+                    <constraint firstAttribute="bottom" secondItem="YyZ-FD-hHt" secondAttribute="bottom" constant="8" id="qOJ-MC-0Qd"/>
+                    <constraint firstItem="H4g-gO-Zav" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="sGH-2c-GfN"/>
+                    <constraint firstItem="H4g-gO-Zav" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="yBa-7l-s7o"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="btnViewAll" destination="YyZ-FD-hHt" id="F5z-wJ-P2I"/>
+                <outlet property="titleLabel" destination="H4g-gO-Zav" id="ImE-Sx-UXB"/>
+            </connections>
+            <point key="canvasLocation" x="21.538461538461537" y="29.502369668246445"/>
+        </tableViewCell>
+    </objects>
+    <designables>
+        <designable name="YyZ-FD-hHt">
+            <size key="intrinsicContentSize" width="75" height="34.333333333333336"/>
+        </designable>
+    </designables>
+</document>

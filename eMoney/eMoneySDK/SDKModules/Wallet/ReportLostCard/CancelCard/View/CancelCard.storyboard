@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21225" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_72" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21207"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Cancel Card View Controller-->
+        <scene sceneID="SbF-7Z-xXh">
+            <objects>
+                <viewController storyboardIdentifier="CancelCardViewController" id="BZO-RZ-Lp6" customClass="CancelCardViewController" customModule="e_money" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ZJJ-0O-gcw">
+                        <rect key="frame" x="0.0" y="0.0" width="430" height="932"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="card-bg" translatesAutoresizingMaskIntoConstraints="NO" id="1dv-Rs-eZy">
+                                <rect key="frame" x="86" y="259" width="258" height="160"/>
+                                <color key="tintColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="160" id="DuP-oJ-x9B"/>
+                                    <constraint firstAttribute="width" constant="258" id="Q85-wQ-XMQ"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Account Cancelled" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rgb-nc-0qr">
+                                <rect key="frame" x="98" y="271" width="143" height="20.333333333333314"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PXF-hN-gEm">
+                                <rect key="frame" x="86" y="310" width="258" height="58"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Card cancelled" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Uyw-iI-Nyz">
+                                        <rect key="frame" x="72" y="19" width="114" height="20.333333333333329"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstItem="Uyw-iI-Nyz" firstAttribute="centerY" secondItem="PXF-hN-gEm" secondAttribute="centerY" id="KOl-Nn-gET"/>
+                                    <constraint firstAttribute="height" constant="58" id="epB-LO-eN1"/>
+                                    <constraint firstAttribute="width" constant="258" id="lpP-5v-J7b"/>
+                                    <constraint firstItem="Uyw-iI-Nyz" firstAttribute="centerX" secondItem="PXF-hN-gEm" secondAttribute="centerX" id="mhs-vr-hRn"/>
+                                </constraints>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your e&amp; money card is cancelled" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3p1-GW-QBz">
+                                <rect key="frame" x="24" y="451" width="382" height="30"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="25"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ovW-tK-9dE">
+                                <rect key="frame" x="60" y="497.00000000000006" width="310" height="40.666666666666686"/>
+                                <string key="text">You can reissue a new card which 
+will be updated on your digital wallet.</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="75C-gs-VeT">
+                                <rect key="frame" x="20" y="771" width="386" height="96"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hnx-i6-UdU" customClass="BaseButton" customModule="e_money" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="386" height="48"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="48" id="1Zt-QT-P7O"/>
+                                        </constraints>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <state key="normal" title="Issue new e&amp; money card"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="ButtonType" value="gradient_img_title"/>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="btnIssueNewCardPressed:" destination="BZO-RZ-Lp6" eventType="touchUpInside" id="d1m-Ib-YjK"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="X5m-dZ-N3O" customClass="BaseButton" customModule="e_money" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="48" width="386" height="48"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="48" id="FX2-Fw-CIs"/>
+                                        </constraints>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <state key="normal" title="Issue new e&amp; money card"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="ButtonType" value="gradient_img_title"/>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="btnNotNowPressed:" destination="BZO-RZ-Lp6" eventType="touchUpInside" id="t5l-3l-uSh"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="RsR-Wb-zLG"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="75C-gs-VeT" firstAttribute="leading" secondItem="RsR-Wb-zLG" secondAttribute="leading" constant="20" id="0nv-Kf-dps"/>
+                            <constraint firstItem="ovW-tK-9dE" firstAttribute="leading" secondItem="RsR-Wb-zLG" secondAttribute="leading" constant="60" id="G3f-PF-2qR"/>
+                            <constraint firstItem="1dv-Rs-eZy" firstAttribute="centerX" secondItem="ZJJ-0O-gcw" secondAttribute="centerX" id="GUf-Xt-WrS"/>
+                            <constraint firstItem="Rgb-nc-0qr" firstAttribute="top" secondItem="1dv-Rs-eZy" secondAttribute="top" constant="12" id="OML-TR-SFt"/>
+                            <constraint firstItem="3p1-GW-QBz" firstAttribute="centerX" secondItem="ZJJ-0O-gcw" secondAttribute="centerX" id="P6U-jO-Ahe"/>
+                            <constraint firstItem="ovW-tK-9dE" firstAttribute="top" secondItem="3p1-GW-QBz" secondAttribute="bottom" constant="16" id="R45-s7-PVQ"/>
+                            <constraint firstItem="3p1-GW-QBz" firstAttribute="top" secondItem="1dv-Rs-eZy" secondAttribute="bottom" constant="32" id="ShO-gR-yMv"/>
+                            <constraint firstItem="RsR-Wb-zLG" firstAttribute="bottom" secondItem="75C-gs-VeT" secondAttribute="bottom" constant="31" id="Szi-0K-bAt"/>
+                            <constraint firstAttribute="trailing" secondItem="3p1-GW-QBz" secondAttribute="trailing" constant="24" id="T4h-1b-bY7"/>
+                            <constraint firstItem="Rgb-nc-0qr" firstAttribute="leading" secondItem="1dv-Rs-eZy" secondAttribute="leading" constant="12" id="TCn-FZ-2LM"/>
+                            <constraint firstItem="3p1-GW-QBz" firstAttribute="centerY" secondItem="ZJJ-0O-gcw" secondAttribute="centerY" id="TlG-Ch-AEW"/>
+                            <constraint firstItem="RsR-Wb-zLG" firstAttribute="trailing" secondItem="75C-gs-VeT" secondAttribute="trailing" constant="24" id="Y1B-hQ-Bm4"/>
+                            <constraint firstItem="PXF-hN-gEm" firstAttribute="centerY" secondItem="1dv-Rs-eZy" secondAttribute="centerY" id="flY-Ya-Dg1"/>
+                            <constraint firstItem="PXF-hN-gEm" firstAttribute="centerX" secondItem="ZJJ-0O-gcw" secondAttribute="centerX" id="prn-ss-OZZ"/>
+                            <constraint firstItem="3p1-GW-QBz" firstAttribute="leading" secondItem="RsR-Wb-zLG" secondAttribute="leading" constant="24" id="x0O-Ev-NgP"/>
+                            <constraint firstItem="RsR-Wb-zLG" firstAttribute="trailing" secondItem="ovW-tK-9dE" secondAttribute="trailing" constant="60" id="xj9-ek-TP4"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="accountCancelLabel" destination="Rgb-nc-0qr" id="CS6-qD-Ua2"/>
+                        <outlet property="btnIssueNewCard" destination="hnx-i6-UdU" id="pYB-Ls-U79"/>
+                        <outlet property="btnNotNowLater" destination="X5m-dZ-N3O" id="sQr-Yy-bb5"/>
+                        <outlet property="cancelLabel" destination="Uyw-iI-Nyz" id="j5I-OL-sA2"/>
+                        <outlet property="cardCancelViw" destination="PXF-hN-gEm" id="5fX-6V-BeF"/>
+                        <outlet property="cardImgView" destination="1dv-Rs-eZy" id="5cb-Xp-rWt"/>
+                        <outlet property="descriptionLabel" destination="ovW-tK-9dE" id="d37-Xe-hMt"/>
+                        <outlet property="statusLabel" destination="3p1-GW-QBz" id="ngb-g5-hOL"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ama-h5-f0V" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-491.16279069767444" y="-188.6266094420601"/>
+        </scene>
+    </scenes>
+    <designables>
+        <designable name="X5m-dZ-N3O">
+            <size key="intrinsicContentSize" width="176" height="30"/>
+        </designable>
+        <designable name="hnx-i6-UdU">
+            <size key="intrinsicContentSize" width="176" height="30"/>
+        </designable>
+    </designables>
+    <resources>
+        <image name="card-bg" width="335" height="214"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

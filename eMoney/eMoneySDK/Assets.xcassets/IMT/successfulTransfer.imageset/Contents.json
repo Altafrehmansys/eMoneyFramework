@@ -1,0 +1,12 @@
+{
+  "images" : [
+    {
+      "filename" : "successfulTransfer.svg",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

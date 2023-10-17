@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_72" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="SuisseIntl-Regular.ttf">
+            <string>SuisseIntl</string>
+        </array>
+        <array key="SuisseIntl-SemiBold.ttf">
+            <string>SuisseIntl-SemiBold</string>
+        </array>
+    </customFonts>
+    <scenes>
+        <!--Verify Mobile Number View Controller-->
+        <scene sceneID="SbF-7Z-xXh">
+            <objects>
+                <viewController storyboardIdentifier="VerifyMobileNumberViewController" id="BZO-RZ-Lp6" customClass="VerifyMobileNumberViewController" customModule="e_money" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ZJJ-0O-gcw">
+                        <rect key="frame" x="0.0" y="0.0" width="430" height="932"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="NbE-g1-21v">
+                                <rect key="frame" x="24" y="115" width="382" height="102"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enter OTP sent to +971 57451 9021" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FQ5-WM-YO6">
+                                        <rect key="frame" x="0.0" y="0.0" width="382" height="50"/>
+                                        <fontDescription key="fontDescription" name="SuisseIntl" family="Suisse Int'l" pointSize="16"/>
+                                        <color key="textColor" name="e&amp;_Black_80"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dut-6I-nwl">
+                                        <rect key="frame" x="0.0" y="52" width="382" height="50"/>
+                                        <fontDescription key="fontDescription" name="SuisseIntl-SemiBold" family="Suisse Int'l" pointSize="16"/>
+                                        <color key="textColor" name="e&amp;_Black_80"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Haven’t received?" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RIC-Pe-pcb">
+                                <rect key="frame" x="24" y="313" width="256" height="34"/>
+                                <fontDescription key="fontDescription" name="SuisseIntl" family="Suisse Int'l" pointSize="12"/>
+                                <color key="textColor" name="e&amp;_Black_80"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" text="Resend OTP" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="llS-gn-EZt">
+                                <rect key="frame" x="296" y="313" width="110" height="34"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="110" id="sAd-ww-Asg"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="SuisseIntl" family="Suisse Int'l" pointSize="12"/>
+                                <color key="textColor" name="e&amp;_Error_100"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tJd-oL-6FE" customClass="BaseButton" customModule="e_money" customModuleProvider="target">
+                                <rect key="frame" x="24" y="818" width="382" height="48"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="Confirm"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="ButtonType" value="gradient_img_title"/>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="buttonConfirmTapped:" destination="BZO-RZ-Lp6" eventType="touchUpInside" id="gSE-YF-JJu"/>
+                                </connections>
+                            </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="POa-i9-TWP" customClass="OTPTextField" customModule="e_money" customModuleProvider="target">
+                                <rect key="frame" x="24" y="233" width="382" height="64"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="64" id="2Gc-df-uA8"/>
+                                </constraints>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lTO-Jy-8gJ">
+                                <rect key="frame" x="296" y="313" width="110" height="34"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <connections>
+                                    <action selector="buttonResendOtpTapped:" destination="BZO-RZ-Lp6" eventType="touchUpInside" id="WCF-cP-3f0"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="RsR-Wb-zLG"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="RIC-Pe-pcb" firstAttribute="height" secondItem="llS-gn-EZt" secondAttribute="height" id="0Dc-u7-nPr"/>
+                            <constraint firstItem="llS-gn-EZt" firstAttribute="leading" secondItem="RIC-Pe-pcb" secondAttribute="trailing" constant="16" id="1bc-Gm-WT1"/>
+                            <constraint firstItem="RIC-Pe-pcb" firstAttribute="leading" secondItem="RsR-Wb-zLG" secondAttribute="leading" constant="24" id="5ky-Mr-IcJ"/>
+                            <constraint firstItem="RsR-Wb-zLG" firstAttribute="trailing" secondItem="tJd-oL-6FE" secondAttribute="trailing" constant="24" id="64e-OZ-HsJ"/>
+                            <constraint firstItem="RsR-Wb-zLG" firstAttribute="trailing" secondItem="NbE-g1-21v" secondAttribute="trailing" constant="24" id="An4-So-3P6"/>
+                            <constraint firstItem="lTO-Jy-8gJ" firstAttribute="top" secondItem="llS-gn-EZt" secondAttribute="top" id="B7E-hC-ntN"/>
+                            <constraint firstItem="RIC-Pe-pcb" firstAttribute="top" secondItem="POa-i9-TWP" secondAttribute="bottom" constant="16" id="CSa-vH-a2c"/>
+                            <constraint firstItem="lTO-Jy-8gJ" firstAttribute="leading" secondItem="llS-gn-EZt" secondAttribute="leading" id="DOV-P3-o5H"/>
+                            <constraint firstItem="lTO-Jy-8gJ" firstAttribute="trailing" secondItem="llS-gn-EZt" secondAttribute="trailing" id="Jtc-9A-wX3"/>
+                            <constraint firstItem="lTO-Jy-8gJ" firstAttribute="width" secondItem="llS-gn-EZt" secondAttribute="width" id="K9O-iQ-wS2"/>
+                            <constraint firstItem="tJd-oL-6FE" firstAttribute="leading" secondItem="RsR-Wb-zLG" secondAttribute="leading" constant="24" id="LSf-hC-NMK"/>
+                            <constraint firstItem="NbE-g1-21v" firstAttribute="top" secondItem="RsR-Wb-zLG" secondAttribute="top" constant="56" id="QDv-Lg-3xG"/>
+                            <constraint firstItem="lTO-Jy-8gJ" firstAttribute="height" secondItem="llS-gn-EZt" secondAttribute="height" id="a1h-jD-cZp"/>
+                            <constraint firstItem="llS-gn-EZt" firstAttribute="top" secondItem="POa-i9-TWP" secondAttribute="bottom" constant="16" id="gY2-JF-hJF"/>
+                            <constraint firstItem="POa-i9-TWP" firstAttribute="leading" secondItem="RsR-Wb-zLG" secondAttribute="leading" constant="24" id="hHt-c4-09t"/>
+                            <constraint firstItem="RsR-Wb-zLG" firstAttribute="trailing" secondItem="POa-i9-TWP" secondAttribute="trailing" constant="24" id="hsy-4O-vQc"/>
+                            <constraint firstItem="NbE-g1-21v" firstAttribute="leading" secondItem="RsR-Wb-zLG" secondAttribute="leading" constant="24" id="ixv-Oh-G91"/>
+                            <constraint firstItem="POa-i9-TWP" firstAttribute="top" secondItem="NbE-g1-21v" secondAttribute="bottom" constant="16" id="jcp-x7-bja"/>
+                            <constraint firstItem="RsR-Wb-zLG" firstAttribute="bottom" secondItem="tJd-oL-6FE" secondAttribute="bottom" constant="32" id="pus-kU-nrT"/>
+                            <constraint firstItem="lTO-Jy-8gJ" firstAttribute="bottom" secondItem="llS-gn-EZt" secondAttribute="bottom" id="qwB-YZ-2pk"/>
+                            <constraint firstItem="RsR-Wb-zLG" firstAttribute="trailing" secondItem="llS-gn-EZt" secondAttribute="trailing" constant="24" id="toK-zP-ZIn"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="buttonConfirm" destination="tJd-oL-6FE" id="VMF-L8-c8Q"/>
+                        <outlet property="buttonResendOtp" destination="lTO-Jy-8gJ" id="PzA-QS-syQ"/>
+                        <outlet property="constraintBottomButton" destination="pus-kU-nrT" id="vSH-oL-3eh"/>
+                        <outlet property="labelEmailID" destination="Dut-6I-nwl" id="p0T-9q-a3u"/>
+                        <outlet property="labelNotRecieve" destination="RIC-Pe-pcb" id="YyE-ZR-8Cm"/>
+                        <outlet property="labelOTP" destination="FQ5-WM-YO6" id="NTV-mz-uZq"/>
+                        <outlet property="labelResendOtp" destination="llS-gn-EZt" id="i2C-py-Wbx"/>
+                        <outlet property="textfieldOtp" destination="POa-i9-TWP" id="T93-0v-yot"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ama-h5-f0V" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-491.16279069767444" y="-188.6266094420601"/>
+        </scene>
+    </scenes>
+    <designables>
+        <designable name="tJd-oL-6FE">
+            <size key="intrinsicContentSize" width="58" height="32"/>
+        </designable>
+    </designables>
+    <resources>
+        <namedColor name="e&amp;_Black_80">
+            <color red="0.18823529411764706" green="0.18823529411764706" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="e&amp;_Error_100">
+            <color red="0.90588235294117647" green="0.22352941176470589" blue="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

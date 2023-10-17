@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21678"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="DeliveryDetailsViewController" customModule="e_money" customModuleProvider="target">
+            <connections>
+                <outlet property="confirmBtn" destination="PTX-dP-ECQ" id="7eX-oR-y1O"/>
+                <outlet property="nameOptionsTableView" destination="LRn-TH-jrV" id="b9l-DK-CzH"/>
+                <outlet property="nameTextField" destination="7qN-S8-Ozr" id="bVT-EU-nVw"/>
+                <outlet property="subTitleLabel" destination="94a-NP-7xg" id="ZdG-Bs-oUJ"/>
+                <outlet property="titleLabel" destination="uoc-On-miM" id="BdF-ew-uee"/>
+                <outlet property="view" destination="iN0-l3-epB" id="Hti-Xo-Jcg"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YNI-0F-86A">
+                    <rect key="frame" x="0.0" y="59" width="393" height="703"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jGR-4P-QDg">
+                            <rect key="frame" x="0.0" y="0.0" width="393" height="500.33333333333331"/>
+                            <subviews>
+                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="60" translatesAutoresizingMaskIntoConstraints="NO" id="94F-Uq-3y8">
+                                    <rect key="frame" x="24" y="8" width="345" height="484.33333333333331"/>
+                                    <subviews>
+                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="6W7-Wn-I4C">
+                                            <rect key="frame" x="0.0" y="0.0" width="345" height="69"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select the name for your physical card" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uoc-On-miM">
+                                                    <rect key="frame" x="0.0" y="0.0" width="345" height="20.333333333333332"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" name="e&amp;_Black_80"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" This will only be used for printing the physical card." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="94a-NP-7xg">
+                                                    <rect key="frame" x="0.0" y="28.333333333333325" width="345" height="40.666666666666657"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" name="e&amp;_Grey_100"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </stackView>
+                                        <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Mohamed " textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7qN-S8-Ozr">
+                                            <rect key="frame" x="0.0" y="129" width="345" height="35.333333333333343"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="28"/>
+                                            <textInputTraits key="textInputTraits"/>
+                                        </textField>
+                                        <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" scrollEnabled="NO" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="LRn-TH-jrV">
+                                            <rect key="frame" x="0.0" y="224.33333333333331" width="345" height="260"/>
+                                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="260" id="0HQ-Z6-eNj"/>
+                                            </constraints>
+                                            <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                        </tableView>
+                                    </subviews>
+                                </stackView>
+                            </subviews>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <constraints>
+                                <constraint firstAttribute="bottom" secondItem="94F-Uq-3y8" secondAttribute="bottom" constant="8" id="3nB-dM-vNW"/>
+                                <constraint firstItem="94F-Uq-3y8" firstAttribute="leading" secondItem="jGR-4P-QDg" secondAttribute="leading" constant="24" id="PAk-W9-hS9"/>
+                                <constraint firstItem="94F-Uq-3y8" firstAttribute="top" secondItem="jGR-4P-QDg" secondAttribute="top" constant="8" id="iwS-yi-kKo"/>
+                                <constraint firstAttribute="trailing" secondItem="94F-Uq-3y8" secondAttribute="trailing" constant="24" id="zpJ-dQ-mdd"/>
+                            </constraints>
+                        </view>
+                    </subviews>
+                    <constraints>
+                        <constraint firstAttribute="bottom" secondItem="jGR-4P-QDg" secondAttribute="bottom" id="EOc-QN-hIZ"/>
+                        <constraint firstItem="jGR-4P-QDg" firstAttribute="top" secondItem="YNI-0F-86A" secondAttribute="top" id="PMA-rN-05G"/>
+                        <constraint firstItem="jGR-4P-QDg" firstAttribute="width" secondItem="YNI-0F-86A" secondAttribute="width" id="bGh-Uf-rVY"/>
+                        <constraint firstAttribute="trailing" secondItem="jGR-4P-QDg" secondAttribute="trailing" id="cvZ-sN-KcV"/>
+                        <constraint firstItem="jGR-4P-QDg" firstAttribute="leading" secondItem="YNI-0F-86A" secondAttribute="leading" id="vFY-iL-fIu"/>
+                    </constraints>
+                </scrollView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PTX-dP-ECQ" customClass="BaseButton" customModule="e_money" customModuleProvider="target">
+                    <rect key="frame" x="24" y="770" width="345" height="48"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="48" id="xYF-rQ-sFA"/>
+                    </constraints>
+                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                    <state key="normal" title="Confirm name">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </state>
+                    <connections>
+                        <action selector="confrimNameBtnTapped:" destination="-1" eventType="touchUpInside" id="wqj-NT-R8b"/>
+                    </connections>
+                </button>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="YNI-0F-86A" firstAttribute="trailing" secondItem="vUN-kp-3ea" secondAttribute="trailing" id="81Z-tR-1Ta"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="PTX-dP-ECQ" secondAttribute="trailing" constant="24" id="Eal-jq-QIM"/>
+                <constraint firstItem="YNI-0F-86A" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="Lr9-kN-ilQ"/>
+                <constraint firstItem="PTX-dP-ECQ" firstAttribute="top" secondItem="YNI-0F-86A" secondAttribute="bottom" constant="8" id="TPf-f6-S1B"/>
+                <constraint firstItem="PTX-dP-ECQ" firstAttribute="bottom" secondItem="vUN-kp-3ea" secondAttribute="bottom" id="Y6V-kn-5Fq"/>
+                <constraint firstItem="YNI-0F-86A" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="hbJ-YS-bsd"/>
+                <constraint firstItem="PTX-dP-ECQ" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="24" id="ozS-71-tx3"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="46.564885496183201" y="41.549295774647888"/>
+        </view>
+    </objects>
+    <designables>
+        <designable name="PTX-dP-ECQ">
+            <size key="intrinsicContentSize" width="97" height="30"/>
+        </designable>
+    </designables>
+    <resources>
+        <namedColor name="e&amp;_Black_80">
+            <color red="0.18823529411764706" green="0.18823529411764706" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="e&amp;_Grey_100">
+            <color red="0.48627450980392156" green="0.48627450980392156" blue="0.47843137254901963" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_72" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="SuisseIntl-SemiBold.ttf">
+            <string>SuisseIntl-SemiBold</string>
+        </array>
+    </customFonts>
+    <scenes>
+        <!--Summary View Controller-->
+        <scene sceneID="SbF-7Z-xXh">
+            <objects>
+                <viewController storyboardIdentifier="SummaryViewController" id="BZO-RZ-Lp6" customClass="SummaryViewController" customModule="e_money" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ZJJ-0O-gcw">
+                        <rect key="frame" x="0.0" y="0.0" width="430" height="932"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="719-Gx-vdO" customClass="BaseStepper" customModule="e_money" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="91" width="430" height="12"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="12" id="ch0-qE-Vbv"/>
+                                </constraints>
+                            </view>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="jeU-Ll-hsG">
+                                <rect key="frame" x="24" y="836" width="382" height="76"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BvU-0Z-5MA" customClass="BaseButton" customModule="e_money" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="382" height="34"/>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <state key="normal" title="Confirm transfer"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="ButtonType" value="gradient_img_title"/>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="buttonConfirmTapped:" destination="BZO-RZ-Lp6" eventType="touchUpInside" id="525-if-Wir"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QQ3-MK-idu">
+                                        <rect key="frame" x="0.0" y="42" width="382" height="34"/>
+                                        <fontDescription key="fontDescription" name="SuisseIntl-SemiBold" family="Suisse Int'l" pointSize="16"/>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <state key="normal" title="Save for later">
+                                            <color key="titleColor" name="e&amp;_Error_100"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="buttonSaveLaterTapped:" destination="BZO-RZ-Lp6" eventType="touchUpInside" id="R3W-fu-Gjq"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="mqG-hA-Q0X">
+                                <rect key="frame" x="0.0" y="115" width="430" height="709"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="RsR-Wb-zLG"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="jeU-Ll-hsG" firstAttribute="top" secondItem="mqG-hA-Q0X" secondAttribute="bottom" constant="12" id="36m-S3-HNw"/>
+                            <constraint firstItem="RsR-Wb-zLG" firstAttribute="trailing" secondItem="jeU-Ll-hsG" secondAttribute="trailing" constant="24" id="478-xd-V9e"/>
+                            <constraint firstItem="jeU-Ll-hsG" firstAttribute="leading" secondItem="RsR-Wb-zLG" secondAttribute="leading" constant="24" id="5RP-vr-uSL"/>
+                            <constraint firstItem="719-Gx-vdO" firstAttribute="trailing" secondItem="RsR-Wb-zLG" secondAttribute="trailing" id="Ix4-2B-DeX"/>
+                            <constraint firstItem="719-Gx-vdO" firstAttribute="leading" secondItem="RsR-Wb-zLG" secondAttribute="leading" id="MvV-EJ-1Ae"/>
+                            <constraint firstItem="719-Gx-vdO" firstAttribute="top" secondItem="RsR-Wb-zLG" secondAttribute="top" constant="32" id="TzQ-E8-ciJ"/>
+                            <constraint firstItem="mqG-hA-Q0X" firstAttribute="leading" secondItem="RsR-Wb-zLG" secondAttribute="leading" id="bIv-AG-S5u"/>
+                            <constraint firstAttribute="bottom" secondItem="jeU-Ll-hsG" secondAttribute="bottom" constant="20" id="ki5-Z0-XUf"/>
+                            <constraint firstItem="mqG-hA-Q0X" firstAttribute="top" secondItem="719-Gx-vdO" secondAttribute="bottom" constant="12" id="nrk-E6-AHY"/>
+                            <constraint firstItem="RsR-Wb-zLG" firstAttribute="trailing" secondItem="mqG-hA-Q0X" secondAttribute="trailing" id="yAS-bJ-uPp"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="buttonConfirm" destination="BvU-0Z-5MA" id="fMu-Z4-xcx"/>
+                        <outlet property="buttonSaveLater" destination="QQ3-MK-idu" id="vwW-m2-84K"/>
+                        <outlet property="tableView" destination="mqG-hA-Q0X" id="I3K-oD-Fgv"/>
+                        <outlet property="viewProgress" destination="719-Gx-vdO" id="K5G-K5-OKA"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ama-h5-f0V" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-491.16279069767444" y="-188.6266094420601"/>
+        </scene>
+    </scenes>
+    <designables>
+        <designable name="BvU-0Z-5MA">
+            <size key="intrinsicContentSize" width="132" height="34"/>
+        </designable>
+    </designables>
+    <resources>
+        <namedColor name="e&amp;_Error_100">
+            <color red="0.90588235294117647" green="0.22352941176470589" blue="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

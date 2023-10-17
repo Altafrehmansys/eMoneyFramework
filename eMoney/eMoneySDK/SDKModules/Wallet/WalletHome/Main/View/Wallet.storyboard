@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21225" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_72" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21207"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Wallet View Controller-->
+        <scene sceneID="SbF-7Z-xXh">
+            <objects>
+                <viewController storyboardIdentifier="WalletViewController" id="BZO-RZ-Lp6" customClass="WalletViewController" customModule="e_money" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ZJJ-0O-gcw">
+                        <rect key="frame" x="0.0" y="0.0" width="430" height="932"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QVF-2v-HPK">
+                                <rect key="frame" x="0.0" y="0.0" width="430" height="185"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="accounts" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="s04-mT-vNt">
+                                        <rect key="frame" x="24" y="84.666666666666671" width="70" height="20.333333333333329"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="XaL-6H-2QM">
+                                        <rect key="frame" x="24" y="129" width="382" height="32"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gev-ru-boO">
+                                                <rect key="frame" x="0.0" y="0.0" width="201.33333333333334" height="32"/>
+                                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="plain" title="e&amp; money accounts"/>
+                                                <connections>
+                                                    <action selector="btnEAndMoneyPressed:" destination="BZO-RZ-Lp6" eventType="touchUpInside" id="duS-Dx-Wfz"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DXA-Vo-wvO">
+                                                <rect key="frame" x="213.33333333333337" y="0.0" width="168.66666666666663" height="32"/>
+                                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="plain" title="Saved accounts"/>
+                                                <connections>
+                                                    <action selector="btnSavedAccountsPressed:" destination="BZO-RZ-Lp6" eventType="touchUpInside" id="Aco-An-AIu"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="32" id="4c1-bh-xKj"/>
+                                        </constraints>
+                                    </stackView>
+                                </subviews>
+                                <color key="backgroundColor" name="e&amp;_Red_Gradient_Start"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="XaL-6H-2QM" secondAttribute="trailing" constant="24" id="U7q-uf-Jrk"/>
+                                    <constraint firstItem="s04-mT-vNt" firstAttribute="leading" secondItem="QVF-2v-HPK" secondAttribute="leading" constant="24" id="Xwh-lO-Trw"/>
+                                    <constraint firstItem="XaL-6H-2QM" firstAttribute="top" secondItem="s04-mT-vNt" secondAttribute="bottom" constant="24" id="gFs-N9-5cv"/>
+                                    <constraint firstAttribute="bottom" secondItem="XaL-6H-2QM" secondAttribute="bottom" constant="24" id="kri-GW-NPV"/>
+                                    <constraint firstAttribute="height" constant="185" id="mZU-zj-jnj"/>
+                                    <constraint firstItem="XaL-6H-2QM" firstAttribute="leading" secondItem="QVF-2v-HPK" secondAttribute="leading" constant="24" id="xnk-gb-3aJ"/>
+                                </constraints>
+                            </view>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="DIZ-QZ-5LS">
+                                <rect key="frame" x="0.0" y="185" width="430" height="713"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="RsR-Wb-zLG"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="DIZ-QZ-5LS" firstAttribute="trailing" secondItem="RsR-Wb-zLG" secondAttribute="trailing" id="BQ5-2Z-fTx"/>
+                            <constraint firstItem="QVF-2v-HPK" firstAttribute="top" secondItem="ZJJ-0O-gcw" secondAttribute="top" id="Ffq-pf-BF6"/>
+                            <constraint firstItem="QVF-2v-HPK" firstAttribute="trailing" secondItem="RsR-Wb-zLG" secondAttribute="trailing" id="K4h-ix-lFF"/>
+                            <constraint firstItem="DIZ-QZ-5LS" firstAttribute="top" secondItem="QVF-2v-HPK" secondAttribute="bottom" id="Yql-Mu-Wz3"/>
+                            <constraint firstItem="QVF-2v-HPK" firstAttribute="leading" secondItem="RsR-Wb-zLG" secondAttribute="leading" id="bYB-l0-x0j"/>
+                            <constraint firstItem="DIZ-QZ-5LS" firstAttribute="bottom" secondItem="RsR-Wb-zLG" secondAttribute="bottom" id="hhN-Xl-Lps"/>
+                            <constraint firstItem="DIZ-QZ-5LS" firstAttribute="leading" secondItem="RsR-Wb-zLG" secondAttribute="leading" id="ncB-1F-sMM"/>
+                        </constraints>
+                    </view>
+                    <nil key="simulatedTopBarMetrics"/>
+                    <connections>
+                        <outlet property="accountLabel" destination="s04-mT-vNt" id="txA-t6-kuE"/>
+                        <outlet property="btnEAndMoney" destination="Gev-ru-boO" id="BeW-vi-Rwx"/>
+                        <outlet property="btnSavedAccounts" destination="DXA-Vo-wvO" id="zrc-kC-xRG"/>
+                        <outlet property="tblView" destination="DIZ-QZ-5LS" id="z4I-gb-VZY"/>
+                        <outlet property="topView" destination="QVF-2v-HPK" id="4jL-HR-yuM"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ama-h5-f0V" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-682.32558139534888" y="-197.63948497854079"/>
+        </scene>
+    </scenes>
+    <resources>
+        <namedColor name="e&amp;_Red_Gradient_Start">
+            <color red="0.58431372549019611" green="0.0039215686274509803" blue="0.14117647058823529" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

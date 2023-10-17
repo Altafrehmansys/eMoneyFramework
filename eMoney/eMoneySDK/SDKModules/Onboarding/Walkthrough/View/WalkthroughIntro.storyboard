@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina5_9" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="collection view cell content view" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="SuisseIntl-Medium.ttf">
+            <string>SuisseIntl-Medium</string>
+        </array>
+        <array key="SuisseIntl-SemiBold.ttf">
+            <string>SuisseIntl-SemiBold</string>
+        </array>
+    </customFonts>
+    <scenes>
+        <!--Walkthrough Intro View Controller-->
+        <scene sceneID="tnn-k8-n9F">
+            <objects>
+                <viewController storyboardIdentifier="WalkthroughIntroViewController" id="PAF-2h-os3" customClass="WalkthroughIntroViewController" customModule="e_money" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="dOb-Rd-5xZ">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="IYi-Oc-7Kk">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="598"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="Q5T-Ad-3pd">
+                                    <size key="itemSize" width="128" height="128"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="sut-SL-UMX">
+                                        <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="YYY-ru-VpV">
+                                            <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </collectionViewCellContentView>
+                                    </collectionViewCell>
+                                </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="PAF-2h-os3" id="vd0-Jg-bmw"/>
+                                    <outlet property="delegate" destination="PAF-2h-os3" id="qiY-no-Vhb"/>
+                                </connections>
+                            </collectionView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pKl-PU-jZI">
+                                <rect key="frame" x="0.0" y="574" width="375" height="238"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Send money to your family back home" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Aie-I5-wer">
+                                        <rect key="frame" x="36" y="32" width="303" height="62.333333333333343"/>
+                                        <fontDescription key="fontDescription" name="SuisseIntl-Medium" family="Suisse Int'l" pointSize="24"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="Ycr-ML-BUv">
+                                        <rect key="frame" x="24" y="158" width="327" height="48"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vya-lZ-E68" customClass="BaseButton" customModule="e_money" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="0.0" width="157.66666666666666" height="48"/>
+                                                <fontDescription key="fontDescription" name="SuisseIntl-SemiBold" family="Suisse Int'l" pointSize="16"/>
+                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                <state key="normal" title="Login">
+                                                    <color key="titleColor" name="e&amp;_Error_100"/>
+                                                </state>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="string" keyPath="ButtonType" value="border"/>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="buttonLoginTapped:" destination="PAF-2h-os3" eventType="touchUpInside" id="RGf-bA-wvw"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7GK-HD-LOo" customClass="BaseButton" customModule="e_money" customModuleProvider="target">
+                                                <rect key="frame" x="169.66666666666663" y="0.0" width="157.33333333333337" height="48"/>
+                                                <fontDescription key="fontDescription" name="SuisseIntl-SemiBold" family="Suisse Int'l" pointSize="16"/>
+                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                <state key="normal" title="Register"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="string" keyPath="ButtonType" value="gradient_img_title"/>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="buttonRegisterTapped:" destination="PAF-2h-os3" eventType="touchUpInside" id="1E4-WN-KEF"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="48" id="o81-CA-zC4"/>
+                                        </constraints>
+                                    </stackView>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="Ycr-ML-BUv" firstAttribute="leading" secondItem="pKl-PU-jZI" secondAttribute="leading" constant="24" id="4iG-2s-G7B"/>
+                                    <constraint firstItem="Aie-I5-wer" firstAttribute="leading" secondItem="pKl-PU-jZI" secondAttribute="leading" constant="36" id="Kt8-fW-urI"/>
+                                    <constraint firstAttribute="bottom" secondItem="Ycr-ML-BUv" secondAttribute="bottom" constant="32" id="Xuq-vS-FmR"/>
+                                    <constraint firstAttribute="trailing" secondItem="Aie-I5-wer" secondAttribute="trailing" constant="36" id="ZdE-HQ-s1p"/>
+                                    <constraint firstItem="Aie-I5-wer" firstAttribute="top" secondItem="pKl-PU-jZI" secondAttribute="top" constant="32" id="geh-DN-U4w"/>
+                                    <constraint firstAttribute="trailing" secondItem="Ycr-ML-BUv" secondAttribute="trailing" constant="24" id="kT5-UD-yzS"/>
+                                    <constraint firstAttribute="height" constant="238" id="ppZ-Oy-6KL"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rVe-zb-lwl" customClass="BaseStepper" customModule="e_money" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="59" width="375" height="12"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="12" id="g3u-Ml-4He"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="o26-Vo-8Cs">
+                                <rect key="frame" x="0.0" y="47" width="375" height="505"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="aZ1-dB-I7I"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="rVe-zb-lwl" firstAttribute="leading" secondItem="aZ1-dB-I7I" secondAttribute="leading" id="2Q3-lI-50H"/>
+                            <constraint firstAttribute="bottom" secondItem="pKl-PU-jZI" secondAttribute="bottom" id="2VJ-Hl-x2S"/>
+                            <constraint firstItem="o26-Vo-8Cs" firstAttribute="top" secondItem="aZ1-dB-I7I" secondAttribute="top" id="55I-25-6IG"/>
+                            <constraint firstItem="rVe-zb-lwl" firstAttribute="top" secondItem="aZ1-dB-I7I" secondAttribute="top" constant="12" id="GkH-Mh-rSt"/>
+                            <constraint firstItem="pKl-PU-jZI" firstAttribute="top" secondItem="o26-Vo-8Cs" secondAttribute="bottom" constant="22" id="Hka-7h-bbE"/>
+                            <constraint firstItem="IYi-Oc-7Kk" firstAttribute="top" secondItem="dOb-Rd-5xZ" secondAttribute="top" id="SUf-cj-qaE"/>
+                            <constraint firstItem="IYi-Oc-7Kk" firstAttribute="trailing" secondItem="aZ1-dB-I7I" secondAttribute="trailing" id="Si9-rK-wtx"/>
+                            <constraint firstItem="pKl-PU-jZI" firstAttribute="leading" secondItem="aZ1-dB-I7I" secondAttribute="leading" id="XqI-3m-cWW"/>
+                            <constraint firstItem="pKl-PU-jZI" firstAttribute="trailing" secondItem="aZ1-dB-I7I" secondAttribute="trailing" id="YJ3-ZM-eo4"/>
+                            <constraint firstItem="IYi-Oc-7Kk" firstAttribute="leading" secondItem="aZ1-dB-I7I" secondAttribute="leading" id="k9N-dT-jUG"/>
+                            <constraint firstItem="pKl-PU-jZI" firstAttribute="top" secondItem="IYi-Oc-7Kk" secondAttribute="bottom" constant="-24" id="nOR-2s-XrP"/>
+                            <constraint firstItem="o26-Vo-8Cs" firstAttribute="leading" secondItem="aZ1-dB-I7I" secondAttribute="leading" id="rBL-gf-QOw"/>
+                            <constraint firstItem="aZ1-dB-I7I" firstAttribute="trailing" secondItem="rVe-zb-lwl" secondAttribute="trailing" id="sle-WX-5xh"/>
+                            <constraint firstItem="o26-Vo-8Cs" firstAttribute="width" secondItem="IYi-Oc-7Kk" secondAttribute="width" id="vGV-uP-YDV"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="buttonLogin" destination="vya-lZ-E68" id="nsg-Na-rPh"/>
+                        <outlet property="buttonRegister" destination="7GK-HD-LOo" id="JUl-2y-6Uw"/>
+                        <outlet property="collectionView" destination="IYi-Oc-7Kk" id="Gkc-zJ-ksZ"/>
+                        <outlet property="lblDesc" destination="Aie-I5-wer" id="PRf-6K-23d"/>
+                        <outlet property="viewBottom" destination="pKl-PU-jZI" id="ieT-XL-Qps"/>
+                        <outlet property="viewLeft" destination="o26-Vo-8Cs" id="Yp7-ww-bk7"/>
+                        <outlet property="viewSteps" destination="rVe-zb-lwl" id="wCm-al-hZf"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6yz-r2-yID" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2311.1999999999998" y="-2.9556650246305418"/>
+        </scene>
+    </scenes>
+    <designables>
+        <designable name="7GK-HD-LOo">
+            <size key="intrinsicContentSize" width="64" height="33"/>
+        </designable>
+        <designable name="vya-lZ-E68">
+            <size key="intrinsicContentSize" width="42" height="33"/>
+        </designable>
+    </designables>
+    <resources>
+        <namedColor name="e&amp;_Error_100">
+            <color red="0.90588235294117647" green="0.22352941176470589" blue="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>

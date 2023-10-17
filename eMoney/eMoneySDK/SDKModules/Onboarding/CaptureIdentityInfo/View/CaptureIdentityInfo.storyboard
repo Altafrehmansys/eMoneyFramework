@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina5_9" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Capture Identity Info View Controller-->
+        <scene sceneID="SbF-7Z-xXh">
+            <objects>
+                <viewController storyboardIdentifier="CaptureIdentityInfoViewController" id="BZO-RZ-Lp6" customClass="CaptureIdentityInfoViewController" customModule="e_money" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ZJJ-0O-gcw">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xAj-XL-ZaD">
+                                <rect key="frame" x="0.0" y="47" width="375" height="731"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AKn-Xz-zbt" customClass="BaseStepper" customModule="e_money" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="24" width="375" height="12"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="12" id="dQQ-en-c0e"/>
+                                        </constraints>
+                                    </view>
+                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="zku-Vj-5xN">
+                                        <rect key="frame" x="0.0" y="36" width="375" height="695"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                    </tableView>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cvg-qF-LiY">
+                                        <rect key="frame" x="0.0" y="659" width="375" height="72"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="X8C-Fz-evK" customClass="BaseButton" customModule="e_money" customModuleProvider="target">
+                                                <rect key="frame" x="24" y="12" width="327" height="48"/>
+                                                <state key="normal" title="Open Camera" image="cameraBtnIcon"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="string" keyPath="ButtonType" value="gradient_img_title"/>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="openCameraTapped:" destination="BZO-RZ-Lp6" eventType="touchUpInside" id="XOk-ys-cg1"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="bottom" secondItem="X8C-Fz-evK" secondAttribute="bottom" constant="12" id="DwH-gp-M5m"/>
+                                            <constraint firstItem="X8C-Fz-evK" firstAttribute="leading" secondItem="cvg-qF-LiY" secondAttribute="leading" constant="24" id="WDq-YJ-f1q"/>
+                                            <constraint firstItem="X8C-Fz-evK" firstAttribute="top" secondItem="cvg-qF-LiY" secondAttribute="top" constant="12" id="g3L-ZJ-IHS"/>
+                                            <constraint firstAttribute="trailing" secondItem="X8C-Fz-evK" secondAttribute="trailing" constant="24" id="rhO-Is-3kV"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="cvg-qF-LiY" secondAttribute="bottom" id="4Bk-LD-yyi"/>
+                                    <constraint firstAttribute="trailing" secondItem="cvg-qF-LiY" secondAttribute="trailing" id="8mb-IG-d7F"/>
+                                    <constraint firstItem="zku-Vj-5xN" firstAttribute="leading" secondItem="xAj-XL-ZaD" secondAttribute="leading" id="M46-LP-v3U"/>
+                                    <constraint firstAttribute="bottom" secondItem="zku-Vj-5xN" secondAttribute="bottom" id="XiZ-TO-A3I"/>
+                                    <constraint firstAttribute="trailing" secondItem="zku-Vj-5xN" secondAttribute="trailing" id="bxT-r6-c61"/>
+                                    <constraint firstItem="AKn-Xz-zbt" firstAttribute="top" secondItem="xAj-XL-ZaD" secondAttribute="top" constant="24" id="cLj-TW-v0W"/>
+                                    <constraint firstItem="zku-Vj-5xN" firstAttribute="top" secondItem="AKn-Xz-zbt" secondAttribute="bottom" id="opY-Pj-BvQ"/>
+                                    <constraint firstItem="cvg-qF-LiY" firstAttribute="leading" secondItem="xAj-XL-ZaD" secondAttribute="leading" id="rT0-NO-8v5"/>
+                                    <constraint firstAttribute="trailing" secondItem="AKn-Xz-zbt" secondAttribute="trailing" id="rsZ-JP-SrN"/>
+                                    <constraint firstItem="AKn-Xz-zbt" firstAttribute="leading" secondItem="xAj-XL-ZaD" secondAttribute="leading" id="sg1-BJ-pJ1"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="RsR-Wb-zLG"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="xAj-XL-ZaD" firstAttribute="leading" secondItem="ZJJ-0O-gcw" secondAttribute="leading" id="49O-fp-jDG"/>
+                            <constraint firstItem="xAj-XL-ZaD" firstAttribute="top" secondItem="RsR-Wb-zLG" secondAttribute="top" id="bjl-Xe-DPW"/>
+                            <constraint firstItem="RsR-Wb-zLG" firstAttribute="bottom" secondItem="xAj-XL-ZaD" secondAttribute="bottom" id="pEQ-e8-FqT"/>
+                            <constraint firstItem="RsR-Wb-zLG" firstAttribute="trailing" secondItem="xAj-XL-ZaD" secondAttribute="trailing" id="uJd-wr-YbV"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="openCameraBtn" destination="X8C-Fz-evK" id="Lbt-7J-ycL"/>
+                        <outlet property="stepsBar" destination="AKn-Xz-zbt" id="YVA-Ih-FPL"/>
+                        <outlet property="tableView" destination="zku-Vj-5xN" id="QQc-e6-61r"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ama-h5-f0V" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-490.83969465648852" y="-188.02816901408451"/>
+        </scene>
+    </scenes>
+    <designables>
+        <designable name="X8C-Fz-evK">
+            <size key="intrinsicContentSize" width="130" height="24"/>
+        </designable>
+    </designables>
+    <resources>
+        <image name="cameraBtnIcon" width="24" height="24"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

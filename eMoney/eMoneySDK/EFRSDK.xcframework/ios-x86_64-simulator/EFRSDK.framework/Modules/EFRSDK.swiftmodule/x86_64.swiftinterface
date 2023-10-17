@@ -1,0 +1,520 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 5.4.2 (swiftlang-1205.0.28.2 clang-1205.0.19.57)
+// swift-module-flags: -target x86_64-apple-ios11.0-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -Osize -module-name EFRSDK
+import AVFoundation
+import AVKit
+import Accelerate
+import CommonCrypto
+import CoreGraphics
+import CoreImage
+import CoreMedia
+import CoreMotion
+import Dispatch
+import Foundation
+import Metal
+import MetalKit
+import MetalPerformanceShaders
+import PureLiveSDK
+import Security
+import Swift
+import UIKit
+import Vision
+import os.log
+import os
+@objc public class SecretKey : ObjectiveC.NSObject {
+  public var code: Swift.UInt32?
+  public var value: [Swift.UInt8]?
+  public var expiryDateTime: Swift.String?
+  public init(code: Swift.UInt32?, value: [Swift.UInt8]?, expiryDateTime: Swift.String?)
+  @objc override dynamic public init()
+  @objc deinit
+}
+@objc public class EFRSDKResponseData : ObjectiveC.NSObject {
+  public var statusCode: Swift.Int?
+  public var data: Swift.String?
+  public init(data: Swift.String?, statusCode: Swift.Int?)
+  @objc override dynamic public init()
+  @objc deinit
+}
+@objc public class EFRSDKConfigurationData : ObjectiveC.NSObject {
+  public var configuration: EFRSDK.EFRSDKResponseData? {
+    get
+    set(value)
+  }
+  public var secretKey: EFRSDK.SecretKey?
+  public init(configuration: EFRSDK.EFRSDKResponseData, secretKey: EFRSDK.SecretKey?)
+  @objc override dynamic public init()
+  @objc deinit
+}
+@_inheritsConvenienceInitializers @objc public class SDK : ObjectiveC.NSObject {
+  public static var getInstance: EFRSDK.SDK
+  public static var getVersion: EFRSDK.Version
+  public var secretKey: EFRSDK.SecretKey?
+  @objc override dynamic public init()
+  public var getAvailableFeedbackMessages: [EFRSDK.FeedbackMessageDescriptor] {
+    get
+  }
+  public var enableDebug: Swift.Bool {
+    get
+    set(value)
+  }
+  public var bestFace: EFRSDK.BestFace {
+    get
+    set(value)
+  }
+  public var liveness: EFRSDK.Liveness {
+    get
+    set(value)
+  }
+  public var languageLocalization: EFRSDK.Localize {
+    get
+    set(value)
+  }
+  public var executionFeedback: EFRSDK.ExecutionFeedback {
+    get
+    set(value)
+  }
+  public var getVersion: EFRSDK.Version {
+    get
+  }
+  public var frameColorNeutralFeedbackMessage: UIKit.UIColor {
+    get
+    set(value)
+  }
+  public var frameColorWarningFeedbackMessage: UIKit.UIColor {
+    get
+    set(value)
+  }
+  public var instructionMessageColor: UIKit.UIColor {
+    get
+    set(value)
+  }
+  public var frameShape: EFRSDK.FrameStyle {
+    get
+    set(value)
+  }
+  public var closeButton: UIKit.UIButton? {
+    get
+    set(value)
+  }
+  public var frameStrokeWidth: Swift.Float {
+    get
+    set(value)
+  }
+  public var frameCornerRadius: Swift.UInt8 {
+    get
+    set(value)
+  }
+  public func getAdvisedViewAspectRatio() -> Swift.Float
+  public func stopProcess()
+  public func getExpiryDate() -> Foundation.Date
+  public var getLogUrls: [Foundation.URL]? {
+    get
+  }
+  public class func initialise(configurationSettings: EFRSDK.EFRSDKConfigurationData?, callBack: @escaping (EFRSDK.FeedbackMessage) -> Swift.Void) throws
+  open class func startProcess(on viewController: UIKit.UIViewController, callBack: @escaping (EFRSDK.Result) -> Swift.Void) -> EFRSDK.FaceCaptureViewController?
+  @objc deinit
+}
+@_inheritsConvenienceInitializers @objc public class Version : ObjectiveC.NSObject {
+  public static var shared: EFRSDK.Version
+  @objc override dynamic public init()
+  public var expiryDate: Swift.String {
+    get
+  }
+  public var major: Swift.Int16 {
+    get
+  }
+  public var minor: Swift.Int16 {
+    get
+  }
+  public var patch: Swift.Int16 {
+    get
+  }
+  public var releaseVersionNumber: Swift.String {
+    get
+  }
+  public var buildNumber: Swift.String {
+    get
+  }
+  @objc deinit
+}
+@objc open class Portrait : ObjectiveC.NSObject, Swift.Decodable {
+  public var status: EFRSDK.PortraitStatus
+  public var score: Swift.Double
+  public var image: Swift.String
+  public var thumbnail: Swift.String?
+  public var imageHash: Swift.String
+  public var feedbackMeesage: [EFRSDK.FeedbackMessage]
+  public func getImage() -> UIKit.UIImage
+  public func getFeedbackMeesage() -> [EFRSDK.FeedbackMessage]
+  public func load(to imageView: UIKit.UIImageView, with callback: @escaping (UIKit.UIImage?) -> Swift.Void)
+  public init(image: Swift.String, thumbnail: Swift.String?, imageData: Foundation.Data, message: [EFRSDK.FeedbackMessage], imageHash: Swift.String)
+  public func loadImagewithProperties(to imageView: UIKit.UIImageView, with callback: @escaping (Foundation.Data?, [EFRSDK.FeedbackMessage]) -> Swift.Void)
+  @objc override dynamic public init()
+  @objc deinit
+  required public init(from decoder: Swift.Decoder) throws
+}
+@objc public class Result : ObjectiveC.NSObject {
+  public var bestFaceResult: EFRSDK.BestFaceResult?
+  public var livenessResult: EFRSDK.LivenessResult?
+  public var lastWarningMessage: [EFRSDK.FeedbackMessage]
+  public var log: Swift.String?
+  public init?(bestFaceResult: EFRSDK.BestFaceResult?, livenessResult: EFRSDK.LivenessResult?, lastWarningMessage: [EFRSDK.FeedbackMessage], log: Swift.String)
+  @objc override dynamic public init()
+  @objc deinit
+}
+@objc public class BestFaceResult : ObjectiveC.NSObject {
+  public var portraits: [EFRSDK.Portrait]?
+  public var status: EFRSDK.ProcessStatus
+  public var eyeBlinkCount: Swift.Int
+  public var elapsedSec: Swift.Float
+  public init?(bestportrait: [EFRSDK.Portrait], status: EFRSDK.ProcessStatus, elapsedSec: Swift.Float, eyeBlinkCount: Swift.Int)
+  @objc override dynamic public init()
+  @objc deinit
+}
+@objc public class LivenessResult : ObjectiveC.NSObject {
+  public var livenessCheckResult: [EFRSDK.LivenessCheckState]
+  public init?(livenessCheckResult: [EFRSDK.LivenessCheckState])
+  @objc override dynamic public init()
+  @objc deinit
+}
+@objc public class Feedback : ObjectiveC.NSObject {
+  public var bestFaceIsolationState: EFRSDK.BestFaceIsolationState?
+  public var livenessCheckState: EFRSDK.LivenessCheckState?
+  public var facePose: EFRSDK.Pose?
+  public var phonePose: EFRSDK.Pose?
+  public var feedbackMessage: [EFRSDK.FeedbackMessage]
+  public init?(lcsState: EFRSDK.LivenessCheckState?, bfiState: EFRSDK.BestFaceIsolationState?, facePose: EFRSDK.Pose?, phonePose: EFRSDK.Pose, feedbackMessage: [EFRSDK.FeedbackMessage])
+  @objc override dynamic public init()
+  @objc deinit
+}
+@objc public class LivenessCheckState : ObjectiveC.NSObject {
+  public var code: EFRSDK.LivenessCheck
+  public var status: EFRSDK.ProcessStatus
+  public var timeoutSec: Swift.UInt8
+  public var elapsedSec: Swift.Float
+  public init?(status: EFRSDK.ProcessStatus, code: EFRSDK.LivenessCheck, timeoutSec: Swift.UInt8, elapsedSec: Swift.Float)
+  @objc override dynamic public init()
+  @objc deinit
+}
+@objc public class BestFaceIsolationState : ObjectiveC.NSObject {
+  public var bestFaceCount: Swift.UInt8
+  public var goodFaceCount: Swift.UInt8
+  public var status: EFRSDK.ProcessStatus
+  public var timeoutSec: Swift.UInt8
+  public var elapsedSec: Swift.Float
+  public init?(status: EFRSDK.ProcessStatus, bestFaceCount: Swift.UInt8, goodFaceCount: Swift.UInt8, timeoutSec: Swift.UInt8, elapsedSec: Swift.Float)
+  @objc override dynamic public init()
+  @objc deinit
+}
+@objc public class Pose : ObjectiveC.NSObject {
+  public var yaw: Swift.Float
+  public var roll: Swift.Float
+  public var pitch: Swift.Float
+  public init(yaw: Swift.Float, roll: Swift.Float, pitch: Swift.Float)
+  @objc override dynamic public init()
+  @objc deinit
+}
+public struct FeedbackMessageDescriptor {
+  public var code: EFRSDK.FeedbackMessage
+  public var description: Swift.String
+  public var message: Swift.String
+}
+public struct LivenessCheckDescriptor {
+  public var code: EFRSDK.LivenessCheck
+  public var description: Swift.String
+  public var message: Swift.String
+}
+@objc public enum FrameStyle : Swift.Int, Swift.Decodable {
+  case OVAL = 1
+  case RECTANGLE = 2
+  public var description: Swift.String {
+    get
+  }
+  public init?(rawValue: Swift.Int)
+  public typealias RawValue = Swift.Int
+  public var rawValue: Swift.Int {
+    get
+  }
+}
+@objc public enum OverlayStyle : Swift.Int, Swift.Decodable {
+  case DARK = 0
+  case LIGHT = 1
+  case BLUE = 2
+  case CUSTOM = 3
+  public init?(rawValue: Swift.Int)
+  public typealias RawValue = Swift.Int
+  public var rawValue: Swift.Int {
+    get
+  }
+}
+@objc public enum Process : Swift.Int, Swift.Decodable, Swift.Hashable {
+  case BEST_FACE_ISOLATION = 0
+  case LIVENESS_CHECKS = 1
+  public var description: Swift.String {
+    get
+  }
+  public init?(rawValue: Swift.Int)
+  public typealias RawValue = Swift.Int
+  public var rawValue: Swift.Int {
+    get
+  }
+}
+@objc public enum LivenessCheck : Swift.Int, Swift.Codable, Swift.Hashable {
+  case CLOSE_EYES_AND_OPEN = 100
+  case CLOSE_THEN_OPEN_LEFT_EYE = 101
+  case CLOSE_THEN_OPEN_RIGHT_EYE = 102
+  case LOOK_TO_LEFT_DIRECTION = 200
+  case LOOK_TO_RIGHT_DIRECTION = 201
+  case LOOK_TO_UP_DIRECTION = 202
+  case LOOK_TO_DOWN_DIRECTION = 203
+  case TURN_HEAD_TO_LEFT = 300
+  case TURN_HEAD_TO_RIGHT = 301
+  case RAISE_HEAD_UP = 302
+  case LOWER_HEAD_DOWN = 303
+  case LEAN_HEAD_TO_LEFT_SHOULDER = 304
+  case LEAN_HEAD_TO_RIGHT_SHOULDER = 305
+  case LEAN_HEAD_TOWARD_SHOULDERS = 306
+  case NOD_HEAD = 310
+  case OPEN_THEN_CLOSE_MOUTH = 400
+  case SMILE = 401
+  case ZOOM_OUT = 500
+  case ZOOM_IN = 501
+  case TAP_UNIQUE_OBJECT = 600
+  case SMILE_CLOSE_BOTH_EYES = 700
+  case SMILE_TAP_UNIQUE_OBJECT = 701
+  case SMILE_TILT_HEAD_LEFT = 702
+  case SMILE_TILT_HEAD_RIGHT = 703
+  case FOLLOW_TEXT = 800
+  case PRE_POST_LIVENESS_CHECK = 0
+  case BEST_FACE_LIVENESS_CHECK = 900
+  public var code: Swift.Int {
+    get
+  }
+  public var description: Swift.String {
+    get
+  }
+  public var message: Swift.String {
+    get
+  }
+  public var name: Swift.String {
+    get
+  }
+  public init?(rawValue: Swift.Int)
+  public typealias RawValue = Swift.Int
+  public var rawValue: Swift.Int {
+    get
+  }
+}
+@objc public enum FeedbackMessage : Swift.Int, Swift.Codable, Swift.Hashable {
+  case INVALID_INPUT = -102
+  case INVALID_LICENSE = -101
+  case INVALID_TOKEN = -103
+  case INVALID_CONFIGURATION = -104
+  case INCOMPATIBLE_HARDWARE = -100
+  case ACTION_STOPPED = -27
+  case INSUFFICIENT_VIDEOS = -26
+  case ACTION_NOT_DETECTED = -25
+  case INSUFFICIENT_IMAGES = -24
+  case SPOOFING_DETECTED = -23
+  case SERVER_TIMEOUT = -22
+  case SERVER_FAILURE = -21
+  case NETWORK_FAILURE = -20
+  case MISMATCH = -10
+  case KEEP_YOUR_PHONE_STRAIGHT = -9
+  case PARTIAL_FACE_DETECTED = -8
+  case MULTIPLE_FACE_DETECTED = -7
+  case NO_FACE_DETECTED = -6
+  case TILT_PHONE_DOWN = -5
+  case TILT_PHONE_UP = -4
+  case UNSTABLE_PHONE = -3
+  case INSUFFICIENT_LIGHT = -2
+  case CAMERA_ACCESS_DENIED = -1
+  case OK = 0
+  case KEEP_HEAD_STRAIGHT = 1
+  case KEEP_EYES_OPEN = 2
+  case KEEP_MOUTH_CLOSE = 3
+  case KEEP_HEAD_INSIDE_FRAME = 4
+  case MOVE_PHONE_CLOSER_TO_FACE = 5
+  case MOVE_PHONE_FARTHER_FROM_FACE = 6
+  case STOP_SMILING = 7
+  public var description: Swift.String {
+    get
+  }
+  public var message: Swift.String {
+    get
+  }
+  public var name: Swift.String {
+    get
+  }
+  public init?(rawValue: Swift.Int)
+  public typealias RawValue = Swift.Int
+  public var rawValue: Swift.Int {
+    get
+  }
+}
+@objc public enum ProcessStatus : Swift.Int, Swift.Decodable, Swift.Hashable {
+  case PROCESSING = -3
+  case FAILED = -2
+  case STOPPED = -1
+  case PENDING = 0
+  case INPROGRESS = 1
+  case TIMEOUT = 2
+  case PASSED = 3
+  public var description: Swift.String {
+    get
+  }
+  public init?(rawValue: Swift.Int)
+  public typealias RawValue = Swift.Int
+  public var rawValue: Swift.Int {
+    get
+  }
+}
+@objc public enum LiveStatus : Swift.Int, Swift.Decodable, Swift.Hashable {
+  case PASSED = 0
+  case FAILED = 1
+  case NOT_DETERMINED = 2
+  case INTERMEDIATE = 3
+  public var description: Swift.String {
+    get
+  }
+  public init?(rawValue: Swift.Int)
+  public typealias RawValue = Swift.Int
+  public var rawValue: Swift.Int {
+    get
+  }
+}
+@objc(LiveStatusCheck) public class LiveStatusCheck : ObjectiveC.NSObject, Swift.Decodable {
+  public var status: EFRSDK.LiveStatus?
+  public init?(status: EFRSDK.LiveStatus?)
+  @objc override dynamic public init()
+  @objc deinit
+  required public init(from decoder: Swift.Decoder) throws
+}
+@objc public enum PortraitStatus : Swift.Int, Swift.Decodable, Swift.Hashable {
+  case PENDING = -24
+  case SPOOFING_DETECTED = -23
+  case SERVER_TIMEOUT = -22
+  case SERVER_FAILURE = -21
+  case NETWORK_FAILURE = -20
+  case PASSED = 0
+  public var description: Swift.String {
+    get
+  }
+  public init?(rawValue: Swift.Int)
+  public typealias RawValue = Swift.Int
+  public var rawValue: Swift.Int {
+    get
+  }
+}
+@objc public enum LivenessCheckMethod : Swift.Int, Swift.Decodable, Swift.Hashable {
+  case ON_SERVER = 0
+  case ON_DEVICE = 1
+  case ON_SERVER_ON_DEVICE = 2
+  public var description: Swift.String {
+    get
+  }
+  public init?(rawValue: Swift.Int)
+  public typealias RawValue = Swift.Int
+  public var rawValue: Swift.Int {
+    get
+  }
+}
+@objc public class LivenessCheckProcess : ObjectiveC.NSObject {
+  public var code: EFRSDK.LivenessCheck
+  public var checkCycles: Swift.UInt8
+  public var timeoutSec: Swift.UInt8
+  public init(code: EFRSDK.LivenessCheck!, timeoutSec: Swift.UInt8!, checkCycles: Swift.UInt8!)
+  @objc override dynamic public init()
+  @objc deinit
+}
+@objc public protocol FaceCaptureDelegate {
+  @objc func onFeedback(feedback: EFRSDK.Feedback)
+  @objc func onCompleted(result: EFRSDK.Result)
+}
+@_inheritsConvenienceInitializers @objc open class FaceCaptureViewController : UIKit.UIViewController {
+  @objc public var callBackResult: ((EFRSDK.Result) -> Swift.Void)?
+  @objc public var feedbackCall: ((EFRSDK.Feedback) -> Swift.Void)?
+  @objc public var onTimer: ((Swift.Int, Swift.Int) -> Swift.Void)?
+  weak public var delegate: EFRSDK.FaceCaptureDelegate!
+  @objc override dynamic open func viewDidLoad()
+  @objc override dynamic open func viewWillAppear(_ animated: Swift.Bool)
+  @objc override dynamic open func viewDidAppear(_ animated: Swift.Bool)
+  @objc override dynamic open func viewDidDisappear(_ animated: Swift.Bool)
+  @objc override dynamic open func viewDidLayoutSubviews()
+  @objc override dynamic open func didReceiveMemoryWarning()
+  @objc override dynamic open var supportedInterfaceOrientations: UIKit.UIInterfaceOrientationMask {
+    @objc get
+  }
+  @objc override dynamic public init(nibName nibNameOrNil: Swift.String?, bundle nibBundleOrNil: Foundation.Bundle?)
+  @objc required dynamic public init?(coder: Foundation.NSCoder)
+  @objc deinit
+}
+extension FaceCaptureViewController : AVFAudio.AVAudioPlayerDelegate {
+  @objc dynamic public func audioPlayerDidFinishPlaying(_ player: AVFAudio.AVAudioPlayer, successfully flag: Swift.Bool)
+}
+@_inheritsConvenienceInitializers @objc public class Localize : ObjectiveC.NSObject {
+  public static var Instance: EFRSDK.Localize
+  public func availableLanguages(_ excludeBase: Swift.Bool = false) -> [Swift.String]
+  public func currentLanguage() -> Swift.String
+  public func setCurrentLanguage(_ language: Swift.String)
+  public func defaultLanguage() -> Swift.String
+  @objc override dynamic public init()
+  @objc deinit
+}
+@objc public class BestFace : ObjectiveC.NSObject {
+  public static var Instance: EFRSDK.BestFace
+  public var timeoutSec: Swift.UInt8 {
+    get
+    set(value)
+  }
+  public var portraitCount: Swift.UInt8 {
+    get
+    set(value)
+  }
+  public init(timeoutSec: Swift.UInt8 = 0, portraitCount: Swift.UInt8 = 4)
+  @objc override dynamic public init()
+  @objc deinit
+}
+@objc public class Liveness : ObjectiveC.NSObject {
+  public static var Instance: EFRSDK.Liveness
+  public var getAvailableLivenessChecks: [EFRSDK.LivenessCheckDescriptor] {
+    get
+  }
+  public func setlivenessChecks(_ livenessChecks: [EFRSDK.LivenessCheckProcess]) throws
+  public var livenessCheckTtpe: EFRSDK.LivenessCheckMethod {
+    get
+    set(value)
+  }
+  public var randomizeLivenessChecks: Swift.Bool {
+    get
+    set(value)
+  }
+  public func go()
+  public init(livenessChecks: [EFRSDK.LivenessCheckProcess] = [.init(code: .CLOSE_EYES_AND_OPEN, timeoutSec: 10, checkCycles: 1)])
+  @objc override dynamic public init()
+  @objc deinit
+}
+@_inheritsConvenienceInitializers @objc public class ExecutionFeedback : ObjectiveC.NSObject {
+  public static var Instance: EFRSDK.ExecutionFeedback
+  public static var executionHandler: ((Swift.String) -> ())?
+  public var handler: ((Swift.String) -> ())? {
+    get
+    set(value)
+  }
+  public func setHandler(_ callBack: ((Swift.String) -> ())? = nil)
+  public func execute(data: EFRSDK.EFRSDKResponseData)
+  @objc override dynamic public init()
+  @objc deinit
+}
+public enum ValidationError : Swift.Error {
+  case IllegalArgument
+  public var description: Swift.String {
+    get
+  }
+  public static func == (a: EFRSDK.ValidationError, b: EFRSDK.ValidationError) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  public var hashValue: Swift.Int {
+    get
+  }
+}

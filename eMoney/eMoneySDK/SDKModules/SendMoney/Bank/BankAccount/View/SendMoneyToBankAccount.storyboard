@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21225" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina5_9" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21207"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Send Money To Bank Account View Controller-->
+        <scene sceneID="SbF-7Z-xXh">
+            <objects>
+                <viewController storyboardIdentifier="SendMoneyToBankAccountViewController" id="BZO-RZ-Lp6" customClass="SendMoneyToBankAccountViewController" customModule="e_money" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ZJJ-0O-gcw">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nLE-eM-1xP" customClass="StandardTextField" customModule="e_money" customModuleProvider="target">
+                                <rect key="frame" x="24" y="79" width="327" height="64"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <color key="tintColor" name="e&amp;_Grey_20"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="64" id="X6I-gg-V6T"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                        <color key="value" name="e&amp;_Grey_20"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Dbw-R8-vcA" customClass="StandardTextField" customModule="e_money" customModuleProvider="target">
+                                <rect key="frame" x="24" y="155" width="327" height="64"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <color key="tintColor" name="e&amp;_Grey_20"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="64" id="CbM-9A-oWz"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                        <color key="value" name="e&amp;_Grey_20"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PJC-xb-nhI" customClass="StandardTextField" customModule="e_money" customModuleProvider="target">
+                                <rect key="frame" x="24" y="231" width="327" height="64"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <color key="tintColor" name="e&amp;_Grey_20"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="64" id="aTO-9w-MZ2"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                        <color key="value" name="e&amp;_Grey_20"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="olo-1c-iTx" customClass="BaseButton" customModule="e_money" customModuleProvider="target">
+                                <rect key="frame" x="24" y="711" width="327" height="48"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="48" id="Jm3-sY-kpE"/>
+                                </constraints>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Send Money"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="ButtonType" value="gradient_img_title"/>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="sendMoneyButtonPressed:" destination="BZO-RZ-Lp6" eventType="touchUpInside" id="MeE-BH-h77"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tsw-Sa-pWP">
+                                <rect key="frame" x="24" y="671" width="24" height="24"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="24" id="05W-yt-Wl0"/>
+                                    <constraint firstAttribute="height" constant="24" id="0FF-Ld-bcP"/>
+                                </constraints>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" image="redCheckbox"/>
+                                <connections>
+                                    <action selector="btnCheckBoxPressed:" destination="BZO-RZ-Lp6" eventType="touchUpInside" id="FFs-7j-Gb5"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Save beneficiary for upcoming transfers" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CJK-li-7AH">
+                                <rect key="frame" x="56" y="673" width="303" height="20.333333333333371"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="RsR-Wb-zLG"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="RsR-Wb-zLG" firstAttribute="trailing" secondItem="Dbw-R8-vcA" secondAttribute="trailing" constant="24" id="5VV-gL-z0z"/>
+                            <constraint firstItem="Dbw-R8-vcA" firstAttribute="leading" secondItem="RsR-Wb-zLG" secondAttribute="leading" constant="24" id="9uZ-fp-R1Z"/>
+                            <constraint firstItem="PJC-xb-nhI" firstAttribute="top" secondItem="Dbw-R8-vcA" secondAttribute="bottom" constant="12" id="EZ2-eM-bK7"/>
+                            <constraint firstItem="RsR-Wb-zLG" firstAttribute="trailing" secondItem="nLE-eM-1xP" secondAttribute="trailing" constant="24" id="Gcn-cp-SUa"/>
+                            <constraint firstItem="Dbw-R8-vcA" firstAttribute="top" secondItem="nLE-eM-1xP" secondAttribute="bottom" constant="12" id="Ibx-m4-bxO"/>
+                            <constraint firstItem="nLE-eM-1xP" firstAttribute="top" secondItem="RsR-Wb-zLG" secondAttribute="top" constant="32" id="IoR-A7-Zcp"/>
+                            <constraint firstItem="olo-1c-iTx" firstAttribute="leading" secondItem="RsR-Wb-zLG" secondAttribute="leading" constant="24" id="JfN-wa-Ob8"/>
+                            <constraint firstItem="CJK-li-7AH" firstAttribute="centerY" secondItem="Tsw-Sa-pWP" secondAttribute="centerY" id="LXm-ge-P8H"/>
+                            <constraint firstItem="Tsw-Sa-pWP" firstAttribute="leading" secondItem="RsR-Wb-zLG" secondAttribute="leading" constant="24" id="NUJ-Se-TeW"/>
+                            <constraint firstItem="RsR-Wb-zLG" firstAttribute="bottom" secondItem="olo-1c-iTx" secondAttribute="bottom" constant="19" id="SNM-Vn-ofO"/>
+                            <constraint firstItem="RsR-Wb-zLG" firstAttribute="trailing" secondItem="PJC-xb-nhI" secondAttribute="trailing" constant="24" id="ejo-Fp-FNz"/>
+                            <constraint firstItem="RsR-Wb-zLG" firstAttribute="trailing" secondItem="olo-1c-iTx" secondAttribute="trailing" constant="24" id="g8e-hO-KO1"/>
+                            <constraint firstItem="olo-1c-iTx" firstAttribute="top" secondItem="Tsw-Sa-pWP" secondAttribute="bottom" constant="16" id="klr-e0-RkF"/>
+                            <constraint firstItem="CJK-li-7AH" firstAttribute="leading" secondItem="Tsw-Sa-pWP" secondAttribute="trailing" constant="8" symbolic="YES" id="sqn-4m-QaU"/>
+                            <constraint firstItem="PJC-xb-nhI" firstAttribute="leading" secondItem="RsR-Wb-zLG" secondAttribute="leading" constant="24" id="x1w-G9-lLx"/>
+                            <constraint firstItem="nLE-eM-1xP" firstAttribute="leading" secondItem="RsR-Wb-zLG" secondAttribute="leading" constant="24" id="zVG-Z0-b9X"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="accountHoldeNameTextField" destination="Dbw-R8-vcA" id="8By-Eb-Fa4"/>
+                        <outlet property="btnCheckBox" destination="Tsw-Sa-pWP" id="8fV-s4-Jk5"/>
+                        <outlet property="btnSendMoney" destination="olo-1c-iTx" id="rb0-dP-NoB"/>
+                        <outlet property="iBANNumberTextField" destination="nLE-eM-1xP" id="Iui-e6-5OV"/>
+                        <outlet property="lblSaveBeneficiary" destination="CJK-li-7AH" id="geF-jG-aPT"/>
+                        <outlet property="nickNameTextField" destination="PJC-xb-nhI" id="wcg-hH-9xS"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ama-h5-f0V" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-490.39999999999998" y="-188.42364532019704"/>
+        </scene>
+    </scenes>
+    <designables>
+        <designable name="olo-1c-iTx">
+            <size key="intrinsicContentSize" width="119" height="34.333333333333336"/>
+        </designable>
+    </designables>
+    <resources>
+        <image name="redCheckbox" width="24" height="24"/>
+        <namedColor name="e&amp;_Grey_20">
+            <color red="0.89803921568627454" green="0.89803921568627454" blue="0.89411764705882357" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

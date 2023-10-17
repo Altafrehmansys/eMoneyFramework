@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="KGk-i7-Jjw" customClass="SingleButtonTableViewCell" customModule="e_money" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hty-B6-2NU" customClass="BaseButton" customModule="e_money" customModuleProvider="target">
+                        <rect key="frame" x="0.0" y="4" width="320" height="32"/>
+                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="height">
+                                <integer key="value" value="28"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                        <connections>
+                            <action selector="buttonTappedAction:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="dej-q7-C54"/>
+                        </connections>
+                    </button>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="hty-B6-2NU" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="4" id="7Bp-C6-eRN"/>
+                    <constraint firstItem="hty-B6-2NU" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" id="Hib-b4-R9s"/>
+                    <constraint firstItem="hty-B6-2NU" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="gbu-IG-d2j"/>
+                    <constraint firstAttribute="trailing" secondItem="hty-B6-2NU" secondAttribute="trailing" id="w25-Bp-BuO"/>
+                    <constraint firstAttribute="bottom" secondItem="hty-B6-2NU" secondAttribute="bottom" constant="8" id="yqw-za-aCL"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="button" destination="hty-B6-2NU" id="dwg-UI-O5i"/>
+                <outlet property="leftContraint" destination="gbu-IG-d2j" id="koj-wn-4JD"/>
+                <outlet property="rightContraint" destination="w25-Bp-BuO" id="Isv-gs-4Hl"/>
+            </connections>
+            <point key="canvasLocation" x="-73" y="20"/>
+        </tableViewCell>
+    </objects>
+    <designables>
+        <designable name="hty-B6-2NU">
+            <size key="intrinsicContentSize" width="30" height="34"/>
+        </designable>
+    </designables>
+</document>

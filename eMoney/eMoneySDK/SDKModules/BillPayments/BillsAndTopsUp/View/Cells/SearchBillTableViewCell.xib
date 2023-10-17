@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21225" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_0" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21207"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="70" id="KGk-i7-Jjw" customClass="SearchBillTableViewCell" customModule="e_money" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="387" height="70"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="387" height="70"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AwZ-1e-slh">
+                        <rect key="frame" x="24" y="12" width="339" height="48"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="search-normal" translatesAutoresizingMaskIntoConstraints="NO" id="5kC-HH-QJq">
+                                <rect key="frame" x="300" y="12" width="24" height="24"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="24" id="2qs-Gn-w6R"/>
+                                    <constraint firstAttribute="width" constant="24" id="xiy-FK-Da8"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zw2-zS-tii">
+                                <rect key="frame" x="16" y="8" width="276" height="32"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="Search for a biller">
+                                    <color key="titleColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="Zw2-zS-tii" secondAttribute="bottom" constant="8" id="54S-Ve-e5T"/>
+                            <constraint firstItem="Zw2-zS-tii" firstAttribute="leading" secondItem="AwZ-1e-slh" secondAttribute="leading" constant="16" id="Klo-S8-9r0"/>
+                            <constraint firstAttribute="height" constant="48" id="MLU-gk-1Mo"/>
+                            <constraint firstItem="5kC-HH-QJq" firstAttribute="leading" secondItem="Zw2-zS-tii" secondAttribute="trailing" constant="8" symbolic="YES" id="dOr-BM-pHE"/>
+                            <constraint firstAttribute="trailing" secondItem="5kC-HH-QJq" secondAttribute="trailing" constant="15" id="duj-TU-Wf0"/>
+                            <constraint firstItem="Zw2-zS-tii" firstAttribute="top" secondItem="AwZ-1e-slh" secondAttribute="top" constant="8" id="iGo-H3-OfB"/>
+                            <constraint firstItem="5kC-HH-QJq" firstAttribute="centerY" secondItem="AwZ-1e-slh" secondAttribute="centerY" id="iVH-ka-kFQ"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="AwZ-1e-slh" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="12" id="Gzw-9v-lpP"/>
+                    <constraint firstAttribute="trailing" secondItem="AwZ-1e-slh" secondAttribute="trailing" constant="24" id="R3y-7Y-Dnk"/>
+                    <constraint firstAttribute="bottom" secondItem="AwZ-1e-slh" secondAttribute="bottom" constant="12" id="bpE-02-TCk"/>
+                    <constraint firstItem="AwZ-1e-slh" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="24" id="rfU-v5-Gu8"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="btnSearch" destination="Zw2-zS-tii" id="Byz-9L-nn1"/>
+                <outlet property="cellParentView" destination="AwZ-1e-slh" id="TYk-Gh-KK0"/>
+            </connections>
+            <point key="canvasLocation" x="120.76923076923076" y="37.677725118483409"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="search-normal" width="24" height="24.333333969116211"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="22154" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22130"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="SuisseIntl-Regular.ttf">
+            <string>SuisseIntl</string>
+        </array>
+    </customFonts>
+    <scenes>
+        <!--PinSDK Custom View Controller-->
+        <scene sceneID="s0d-6b-0kx">
+            <objects>
+                <viewController storyboardIdentifier="PinSDKCustomViewController" id="Y6W-OH-hqX" customClass="PinSDKCustomViewController" customModule="eMoneySDK" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enter your pin" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5kE-jN-D5T">
+                                <rect key="frame" x="16" y="59" width="361" height="21"/>
+                                <fontDescription key="fontDescription" name="SuisseIntl" family="Suisse Int'l" pointSize="16"/>
+                                <color key="textColor" name="e&amp;_Black_80"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0Bh-l8-bro" customClass="StandardTextField" customModule="eMoneySDK" customModuleProvider="target">
+                                <rect key="frame" x="16" y="96" width="361" height="64"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="64" id="Ui0-XY-2Vc"/>
+                                </constraints>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NRK-4N-uzr" customClass="BaseButton" customModule="eMoneySDK" customModuleProvider="target">
+                                <rect key="frame" x="16" y="754" width="361" height="48"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="48" id="I81-cQ-YaG"/>
+                                </constraints>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="Join e&amp; money"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="ButtonType" value="gradient"/>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="actionVerifyPin:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="UVp-BO-bfO"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="0Bh-l8-bro" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="72R-he-5Hl"/>
+                            <constraint firstItem="NRK-4N-uzr" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="16" id="CoE-ff-sPz"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="NRK-4N-uzr" secondAttribute="trailing" constant="16" id="EPY-Tg-u89"/>
+                            <constraint firstItem="0Bh-l8-bro" firstAttribute="top" secondItem="5kE-jN-D5T" secondAttribute="bottom" constant="16" id="He8-f1-zPe"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="0Bh-l8-bro" secondAttribute="trailing" constant="16" id="I6s-3l-ieL"/>
+                            <constraint firstItem="5kE-jN-D5T" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="16" id="Tmg-YN-DuH"/>
+                            <constraint firstItem="0Bh-l8-bro" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="16" id="VlP-97-u1X"/>
+                            <constraint firstItem="NRK-4N-uzr" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="Wrp-jc-K9B"/>
+                            <constraint firstItem="5kE-jN-D5T" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="Xgy-Bb-VT1"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="5kE-jN-D5T" secondAttribute="trailing" constant="16" id="d8Y-aI-Box"/>
+                            <constraint firstAttribute="bottom" secondItem="NRK-4N-uzr" secondAttribute="bottom" constant="50" id="oiu-qt-z8G"/>
+                            <constraint firstItem="5kE-jN-D5T" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="uzp-LT-8sY"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="buttonVerify" destination="NRK-4N-uzr" id="XDz-1H-2wB"/>
+                        <outlet property="textFieldPin" destination="0Bh-l8-bro" id="3KU-Pw-kJ7"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="138.1679389312977" y="-2.1126760563380285"/>
+        </scene>
+    </scenes>
+    <designables>
+        <designable name="NRK-4N-uzr">
+            <size key="intrinsicContentSize" width="119" height="34"/>
+        </designable>
+    </designables>
+    <resources>
+        <namedColor name="e&amp;_Black_80">
+            <color red="0.18823529411764706" green="0.18823529411764706" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

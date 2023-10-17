@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21678"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Wallet Card Success View Controller-->
+        <scene sceneID="cyu-ML-gG9">
+            <objects>
+                <viewController storyboardIdentifier="WalletCardSuccessViewController" id="tch-T2-r3f" customClass="WalletCardSuccessViewController" customModule="e_money" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="U21-xx-apj">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sDx-X7-etZ" customClass="LottieAnimationView" customModule="Lottie">
+                                <rect key="frame" x="0.0" y="20" width="375" height="275"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Cards" translatesAutoresizingMaskIntoConstraints="NO" id="d28-Rv-cU2">
+                                        <rect key="frame" x="58.5" y="102" width="258" height="160"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="160" id="Fid-gH-fIG"/>
+                                            <constraint firstAttribute="width" constant="258" id="r9T-3M-28q"/>
+                                        </constraints>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstItem="d28-Rv-cU2" firstAttribute="top" secondItem="sDx-X7-etZ" secondAttribute="top" constant="102" id="hj2-tu-Caa"/>
+                                    <constraint firstAttribute="height" constant="275" id="xcW-kW-3Vq"/>
+                                </constraints>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Card ordered successfully" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BV9-jv-gmi">
+                                <rect key="frame" x="24" y="311" width="327" height="26"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="26" id="UZw-mB-q4o"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nlH-yw-DLE">
+                                <rect key="frame" x="0.0" y="587" width="375" height="80"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="hMw-dm-foy">
+                                        <rect key="frame" x="24" y="0.0" width="327" height="48"/>
+                                        <subviews>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="K7u-vY-D2f" customClass="BaseButton" customModule="e_money" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="0.0" width="327" height="48"/>
+                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="48" id="kVn-k1-3X7"/>
+                                                </constraints>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="string" keyPath="ButtonType" value="gradient_circle"/>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="didTapReturn:" destination="tch-T2-r3f" eventType="touchUpInside" id="GWI-co-2IZ"/>
+                                                </connections>
+                                            </view>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="hMw-dm-foy" firstAttribute="leading" secondItem="nlH-yw-DLE" secondAttribute="leading" constant="24" id="K3x-u8-CkO"/>
+                                    <constraint firstAttribute="bottom" secondItem="hMw-dm-foy" secondAttribute="bottom" constant="32" id="gMg-1K-1g1"/>
+                                    <constraint firstAttribute="trailing" secondItem="hMw-dm-foy" secondAttribute="trailing" constant="24" id="rUA-i8-ZfE"/>
+                                    <constraint firstItem="hMw-dm-foy" firstAttribute="top" secondItem="nlH-yw-DLE" secondAttribute="top" id="tgN-Nt-WEC"/>
+                                </constraints>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CIX-8M-P1z">
+                                <rect key="frame" x="24" y="345" width="327" height="81.5"/>
+                                <string key="text">Your order is in progress. After 24 hours, the status of the order will be updated. Please activate your card only after you take your delivery.</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="ukS-ik-ij7"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="ukS-ik-ij7" firstAttribute="trailing" secondItem="nlH-yw-DLE" secondAttribute="trailing" id="16X-n3-0fd"/>
+                            <constraint firstItem="sDx-X7-etZ" firstAttribute="leading" secondItem="ukS-ik-ij7" secondAttribute="leading" id="8eH-sR-9lu"/>
+                            <constraint firstItem="ukS-ik-ij7" firstAttribute="trailing" secondItem="BV9-jv-gmi" secondAttribute="trailing" constant="24" id="CBE-yg-eli"/>
+                            <constraint firstItem="BV9-jv-gmi" firstAttribute="centerX" secondItem="ukS-ik-ij7" secondAttribute="centerX" id="Grh-iS-Bnp"/>
+                            <constraint firstItem="d28-Rv-cU2" firstAttribute="centerX" secondItem="ukS-ik-ij7" secondAttribute="centerX" id="HUv-fd-M3y"/>
+                            <constraint firstItem="CIX-8M-P1z" firstAttribute="centerX" secondItem="BV9-jv-gmi" secondAttribute="centerX" id="K5b-qc-MBm"/>
+                            <constraint firstItem="CIX-8M-P1z" firstAttribute="top" secondItem="BV9-jv-gmi" secondAttribute="bottom" constant="8" id="PgG-Lp-Bhg"/>
+                            <constraint firstAttribute="bottom" secondItem="nlH-yw-DLE" secondAttribute="bottom" id="RBa-TJ-GVA"/>
+                            <constraint firstItem="BV9-jv-gmi" firstAttribute="leading" secondItem="ukS-ik-ij7" secondAttribute="leading" constant="24" id="TD0-7h-Orj"/>
+                            <constraint firstItem="ukS-ik-ij7" firstAttribute="trailing" secondItem="sDx-X7-etZ" secondAttribute="trailing" id="UBm-FC-zjM"/>
+                            <constraint firstItem="CIX-8M-P1z" firstAttribute="leading" secondItem="U21-xx-apj" secondAttribute="leading" constant="24" id="Z0d-qV-Tc8"/>
+                            <constraint firstItem="nlH-yw-DLE" firstAttribute="leading" secondItem="U21-xx-apj" secondAttribute="leading" id="ZrC-6W-cwl"/>
+                            <constraint firstItem="sDx-X7-etZ" firstAttribute="top" secondItem="ukS-ik-ij7" secondAttribute="top" id="a20-i1-9Hw"/>
+                            <constraint firstItem="BV9-jv-gmi" firstAttribute="top" secondItem="sDx-X7-etZ" secondAttribute="bottom" constant="16" id="fhx-UA-f6E"/>
+                            <constraint firstAttribute="trailing" secondItem="CIX-8M-P1z" secondAttribute="trailing" constant="24" id="pE4-HC-Tf6"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="animatedBGView" destination="sDx-X7-etZ" id="IP1-Ka-qvk"/>
+                        <outlet property="btnReturn" destination="K7u-vY-D2f" id="Ttj-gP-iRV"/>
+                        <outlet property="headingLabel" destination="CIX-8M-P1z" id="QPF-eH-fhT"/>
+                        <outlet property="titleLabel" destination="BV9-jv-gmi" id="gGM-47-rkh"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1J1-7s-myD" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-492" y="-189.3553223388306"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="Cards" width="270" height="172"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

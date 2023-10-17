@@ -1,0 +1,23 @@
+{
+  "images" : [
+    {
+      "filename" : "flag_democratic_republic_of_the_congo.png",
+      "idiom" : "universal",
+      "scale" : "1x"
+    },
+    {
+      "filename" : "flag_democratic_republic_of_the_congo@2x.png",
+      "idiom" : "universal",
+      "scale" : "2x"
+    },
+    {
+      "filename" : "flag_democratic_republic_of_the_congo@3x.png",
+      "idiom" : "universal",
+      "scale" : "3x"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

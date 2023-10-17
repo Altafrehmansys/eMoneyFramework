@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina5_9" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Manage Saved Card View Controller-->
+        <scene sceneID="SbF-7Z-xXh">
+            <objects>
+                <viewController storyboardIdentifier="ManageSavedCardViewController" id="BZO-RZ-Lp6" customClass="ManageSavedCardViewController" customModule="e_money" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="vZj-DQ-hfF">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view alpha="0.5" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qtu-8w-pm7">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="T2T-tZ-Vpp">
+                                <rect key="frame" x="0.0" y="441" width="375" height="371"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eVI-YD-J5R">
+                                        <rect key="frame" x="157.66666666666666" y="8" width="60" height="4"/>
+                                        <color key="backgroundColor" name="e&amp;_Grey_50"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="4" id="SMy-zE-TQc"/>
+                                            <constraint firstAttribute="width" constant="60" id="sEw-b8-Qff"/>
+                                        </constraints>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="2"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </view>
+                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" placeholderIntrinsicWidth="375" placeholderIntrinsicHeight="223" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="vrc-f6-hms" customClass="ContentSizedTableView" customModule="e_money" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="56" width="375" height="223"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                    </tableView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" placeholderIntrinsicWidth="382" placeholderIntrinsicHeight="16" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="41x-l6-gWv">
+                                        <rect key="frame" x="16" y="295" width="343" height="60"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wa3-9J-mxf" customClass="BaseButton" customModule="e_money" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="0.0" width="343" height="30"/>
+                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="height">
+                                                        <integer key="value" value="48"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JiT-iC-ifN" customClass="BaseButton" customModule="e_money" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="30" width="343" height="30"/>
+                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6TO-hl-18V">
+                                        <rect key="frame" x="327" y="32" width="24" height="24"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="24" id="8TF-UT-oIR"/>
+                                            <constraint firstAttribute="width" constant="24" id="Wtd-75-peY"/>
+                                        </constraints>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <state key="normal" image="Close-icon"/>
+                                        <connections>
+                                            <action selector="closeButtonTapped:" destination="BZO-RZ-Lp6" eventType="touchUpInside" id="aGV-4R-GgX"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="41x-l6-gWv" secondAttribute="bottom" constant="16" id="08e-7i-GZs"/>
+                                    <constraint firstItem="vrc-f6-hms" firstAttribute="top" secondItem="6TO-hl-18V" secondAttribute="bottom" id="4ca-uc-Kjy"/>
+                                    <constraint firstItem="6TO-hl-18V" firstAttribute="top" secondItem="T2T-tZ-Vpp" secondAttribute="top" constant="32" id="Fnd-dx-NRI"/>
+                                    <constraint firstItem="41x-l6-gWv" firstAttribute="leading" secondItem="T2T-tZ-Vpp" secondAttribute="leading" constant="16" id="Lu3-Bl-hkg"/>
+                                    <constraint firstAttribute="trailing" secondItem="6TO-hl-18V" secondAttribute="trailing" constant="24" id="NH9-gz-gfx"/>
+                                    <constraint firstItem="eVI-YD-J5R" firstAttribute="top" secondItem="T2T-tZ-Vpp" secondAttribute="top" constant="8" id="adP-Nn-wer"/>
+                                    <constraint firstAttribute="trailing" secondItem="vrc-f6-hms" secondAttribute="trailing" id="h7O-pW-NxU"/>
+                                    <constraint firstItem="41x-l6-gWv" firstAttribute="top" secondItem="vrc-f6-hms" secondAttribute="bottom" constant="16" id="i3P-gw-PP5"/>
+                                    <constraint firstItem="eVI-YD-J5R" firstAttribute="centerX" secondItem="T2T-tZ-Vpp" secondAttribute="centerX" id="nV8-u7-G8e"/>
+                                    <constraint firstItem="vrc-f6-hms" firstAttribute="leading" secondItem="T2T-tZ-Vpp" secondAttribute="leading" id="sK9-gw-s7S"/>
+                                    <constraint firstAttribute="trailing" secondItem="41x-l6-gWv" secondAttribute="trailing" constant="16" id="ttY-cE-fDd"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="VH2-Hx-1Sj"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="qtu-8w-pm7" firstAttribute="leading" secondItem="vZj-DQ-hfF" secondAttribute="leading" id="95p-f4-iDZ"/>
+                            <constraint firstAttribute="bottom" secondItem="qtu-8w-pm7" secondAttribute="bottom" id="FkZ-lS-uPL"/>
+                            <constraint firstAttribute="trailing" secondItem="T2T-tZ-Vpp" secondAttribute="trailing" id="Jsk-tO-gxE"/>
+                            <constraint firstItem="qtu-8w-pm7" firstAttribute="top" secondItem="vZj-DQ-hfF" secondAttribute="top" id="Kgm-cY-aMc"/>
+                            <constraint firstAttribute="bottom" secondItem="T2T-tZ-Vpp" secondAttribute="bottom" id="NBB-kb-Vdg"/>
+                            <constraint firstAttribute="trailing" secondItem="qtu-8w-pm7" secondAttribute="trailing" id="Vkq-uN-VCs"/>
+                            <constraint firstItem="T2T-tZ-Vpp" firstAttribute="leading" secondItem="vZj-DQ-hfF" secondAttribute="leading" id="X5y-ab-Ffn"/>
+                            <constraint firstItem="T2T-tZ-Vpp" firstAttribute="top" relation="greaterThanOrEqual" secondItem="vZj-DQ-hfF" secondAttribute="top" constant="80" id="jO2-dL-wQz"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="backgroundView" destination="qtu-8w-pm7" id="voj-lp-Dfz"/>
+                        <outlet property="mainContainerView" destination="T2T-tZ-Vpp" id="U3p-7r-JSe"/>
+                        <outlet property="removeThisMethodButton" destination="JiT-iC-ifN" id="iJ5-wQ-HuR"/>
+                        <outlet property="tableView" destination="vrc-f6-hms" id="COj-R7-Ngk"/>
+                        <outlet property="updateCardDetailsButton" destination="Wa3-9J-mxf" id="rxo-uw-kPZ"/>
+                        <outlet property="viewBottomContraint" destination="NBB-kb-Vdg" id="crF-5p-rTD"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ama-h5-f0V" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-490" y="-188"/>
+        </scene>
+    </scenes>
+    <designables>
+        <designable name="JiT-iC-ifN">
+            <size key="intrinsicContentSize" width="30" height="30"/>
+        </designable>
+        <designable name="Wa3-9J-mxf">
+            <size key="intrinsicContentSize" width="30" height="30"/>
+        </designable>
+    </designables>
+    <resources>
+        <image name="Close-icon" width="24" height="24"/>
+        <namedColor name="e&amp;_Grey_50">
+            <color red="0.74117647058823533" green="0.74117647058823533" blue="0.73725490196078436" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

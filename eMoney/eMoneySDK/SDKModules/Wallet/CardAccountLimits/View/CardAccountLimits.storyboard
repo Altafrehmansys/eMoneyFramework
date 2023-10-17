@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21225" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_72" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21207"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Card Account Limits View Controller-->
+        <scene sceneID="SbF-7Z-xXh">
+            <objects>
+                <viewController storyboardIdentifier="CardAccountLimitsViewController" id="BZO-RZ-Lp6" customClass="CardAccountLimitsViewController" customModule="e_money" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ZJJ-0O-gcw">
+                        <rect key="frame" x="0.0" y="0.0" width="430" height="932"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fBO-ud-Vl2" customClass="BaseButton" customModule="e_money" customModuleProvider="target">
+                                <rect key="frame" x="24" y="819" width="382" height="48"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="48" id="SqM-aK-HTW"/>
+                                </constraints>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="Save Changes"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="ButtonType" value="gradient_img_title"/>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="btnSaveChanges:" destination="BZO-RZ-Lp6" eventType="touchUpInside" id="wxx-Sg-8dJ"/>
+                                </connections>
+                            </button>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="2Yy-8C-fJP">
+                                <rect key="frame" x="0.0" y="59" width="430" height="744"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="RsR-Wb-zLG"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="fBO-ud-Vl2" firstAttribute="leading" secondItem="RsR-Wb-zLG" secondAttribute="leading" constant="24" id="3gz-p1-aso"/>
+                            <constraint firstItem="RsR-Wb-zLG" firstAttribute="bottom" secondItem="fBO-ud-Vl2" secondAttribute="bottom" constant="31" id="4rJ-Qr-xdV"/>
+                            <constraint firstItem="RsR-Wb-zLG" firstAttribute="trailing" secondItem="fBO-ud-Vl2" secondAttribute="trailing" constant="24" id="5dt-Vx-BDu"/>
+                            <constraint firstItem="RsR-Wb-zLG" firstAttribute="trailing" secondItem="2Yy-8C-fJP" secondAttribute="trailing" id="60N-3D-IZC"/>
+                            <constraint firstItem="2Yy-8C-fJP" firstAttribute="leading" secondItem="RsR-Wb-zLG" secondAttribute="leading" id="bm7-qE-OC6"/>
+                            <constraint firstItem="fBO-ud-Vl2" firstAttribute="top" secondItem="2Yy-8C-fJP" secondAttribute="bottom" constant="16" id="uHU-Uw-edL"/>
+                            <constraint firstItem="2Yy-8C-fJP" firstAttribute="top" secondItem="RsR-Wb-zLG" secondAttribute="top" id="vCN-Nb-rAt"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="btnSaveChanges" destination="fBO-ud-Vl2" id="8nu-Sd-8Vu"/>
+                        <outlet property="tblView" destination="2Yy-8C-fJP" id="jh4-tc-Zc8"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ama-h5-f0V" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-491.16279069767444" y="-188.6266094420601"/>
+        </scene>
+    </scenes>
+    <designables>
+        <designable name="fBO-ud-Vl2">
+            <size key="intrinsicContentSize" width="98" height="30"/>
+        </designable>
+    </designables>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
