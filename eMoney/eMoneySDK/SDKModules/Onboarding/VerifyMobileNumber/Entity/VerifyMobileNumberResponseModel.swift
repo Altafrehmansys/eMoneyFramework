@@ -21,6 +21,7 @@ struct InitiatePinRequestModel:Codable{
 struct VerifyMobileNumberOtpSendRequestModel:Codable{
     var isSingleAccount:Bool?
     var msisdn:String?
+    var identity:String?
     var flowName:String?
 }
 

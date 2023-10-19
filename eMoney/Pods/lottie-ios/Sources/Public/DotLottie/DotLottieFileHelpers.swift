@@ -20,6 +20,10 @@ extension DotLottieFile {
       dotLottieCache: DotLottieCacheProvider? = DotLottieCache.sharedCache)
       -> Result<DotLottieFile, Error>
     {
+      LottieLogger.shared.assert(
+        !Thread.isMainThread,
+        "`DotLottieFile.SynchronouslyBlockingCurrentThread` methods shouldn't be called on the main thread.")
+
       /// Check cache for lottie
       if
         let dotLottieCache = dotLottieCache,
@@ -45,16 +49,20 @@ extension DotLottieFile {
     /// Please use the asynchronous methods whenever possible. This operation will block the Thread it is running in.
     ///
     /// - Parameter name: The name of the lottie file without the lottie extension. EG "StarAnimation"
-    /// - Parameter bundle: The bundle in which the lottie is located. Defaults to `Bundle(identifier: "com.app.taskLocalTester.asdf.asdf.asdf.eMoneySDK")!`
+    /// - Parameter bundle: The bundle in which the lottie is located. Defaults to `Bundle.main`
     /// - Parameter subdirectory: A subdirectory in the bundle in which the lottie is located. Optional.
     /// - Parameter dotLottieCache: A cache for holding loaded lotties. Defaults to `LRUDotLottieCache.sharedCache`. Optional.
     public static func named(
       _ name: String,
-      bundle: Bundle = Bundle(identifier: "com.app.taskLocalTester.asdf.asdf.asdf.eMoneySDK")!,
+      bundle: Bundle = Bundle.main,
       subdirectory: String? = nil,
       dotLottieCache: DotLottieCacheProvider? = DotLottieCache.sharedCache)
       -> Result<DotLottieFile, Error>
     {
+      LottieLogger.shared.assert(
+        !Thread.isMainThread,
+        "`DotLottieFile.SynchronouslyBlockingCurrentThread` methods shouldn't be called on the main thread.")
+
       /// Create a cache key for the lottie.
       let cacheKey = bundle.bundlePath + (subdirectory ?? "") + "/" + name
 
@@ -78,18 +86,42 @@ extension DotLottieFile {
         return .failure(error)
       }
     }
+
+    /// Loads an DotLottie from a data synchronously. Returns a `Result<DotLottieFile, Error>`
+    ///
+    /// Please use the asynchronous methods whenever possible. This operation will block the Thread it is running in.
+    ///
+    /// - Parameters:
+    ///   - data: The data(`Foundation.Data`) object to load DotLottie from
+    ///   - filename: The name of the lottie file without the lottie extension. eg. "StarAnimation"
+    public static func loadedFrom(
+      data: Data,
+      filename: String)
+      -> Result<DotLottieFile, Error>
+    {
+      LottieLogger.shared.assert(
+        !Thread.isMainThread,
+        "`DotLottieFile.SynchronouslyBlockingCurrentThread` methods shouldn't be called on the main thread.")
+
+      do {
+        let dotLottieFile = try DotLottieFile(data: data, filename: filename)
+        return .success(dotLottieFile)
+      } catch {
+        return .failure(error)
+      }
+    }
   }
 
   /// Loads a DotLottie model from a bundle by its name. Returns `nil` if a file is not found.
   ///
   /// - Parameter name: The name of the lottie file without the lottie extension. EG "StarAnimation"
-  /// - Parameter bundle: The bundle in which the lottie is located. Defaults to `Bundle(identifier: "com.app.taskLocalTester.asdf.asdf.asdf.eMoneySDK")!`
+  /// - Parameter bundle: The bundle in which the lottie is located. Defaults to `Bundle.main`
   /// - Parameter subdirectory: A subdirectory in the bundle in which the lottie is located. Optional.
   /// - Parameter dotLottieCache: A cache for holding loaded lotties. Defaults to `LRUDotLottieCache.sharedCache`. Optional.
   @available(iOS 13.0, macOS 10.15, tvOS 13.0, *)
   public static func named(
     _ name: String,
-    bundle: Bundle = Bundle(identifier: "com.app.taskLocalTester.asdf.asdf.asdf.eMoneySDK")!,
+    bundle: Bundle = Bundle.main,
     subdirectory: String? = nil,
     dotLottieCache: DotLottieCacheProvider? = DotLottieCache.sharedCache)
     async throws -> DotLottieFile
@@ -104,14 +136,14 @@ extension DotLottieFile {
   /// Loads a DotLottie model from a bundle by its name. Returns `nil` if a file is not found.
   ///
   /// - Parameter name: The name of the lottie file without the lottie extension. EG "StarAnimation"
-  /// - Parameter bundle: The bundle in which the lottie is located. Defaults to `Bundle(identifier: "com.app.taskLocalTester.asdf.asdf.asdf.eMoneySDK")!`
+  /// - Parameter bundle: The bundle in which the lottie is located. Defaults to `Bundle.main`
   /// - Parameter subdirectory: A subdirectory in the bundle in which the lottie is located. Optional.
   /// - Parameter dotLottieCache: A cache for holding loaded lotties. Defaults to `LRUDotLottieCache.sharedCache`. Optional.
   /// - Parameter dispatchQueue: A dispatch queue used to load animations. Defaults to `DispatchQueue.global()`. Optional.
   /// - Parameter handleResult: A closure to be called when the file has loaded.
   public static func named(
     _ name: String,
-    bundle: Bundle = Bundle(identifier: "com.app.taskLocalTester.asdf.asdf.asdf.eMoneySDK")!,
+    bundle: Bundle = Bundle.main,
     subdirectory: String? = nil,
     dotLottieCache: DotLottieCacheProvider? = DotLottieCache.sharedCache,
     dispatchQueue: DispatchQueue = .global(),
@@ -170,12 +202,12 @@ extension DotLottieFile {
 
   /// Loads a DotLottie model from the asset catalog by its name. Returns `nil` if a lottie is not found.
   /// - Parameter name: The name of the lottie file in the asset catalog. EG "StarAnimation"
-  /// - Parameter bundle: The bundle in which the lottie is located. Defaults to `Bundle(identifier: "com.app.taskLocalTester.asdf.asdf.asdf.eMoneySDK")!`
+  /// - Parameter bundle: The bundle in which the lottie is located. Defaults to `Bundle.main`
   /// - Parameter dotLottieCache: A cache for holding loaded lottie files. Defaults to `LRUDotLottieCache.sharedCache` Optional.
   @available(iOS 13.0, macOS 10.15, tvOS 13.0, *)
   public static func asset(
     named name: String,
-    bundle: Bundle = Bundle(identifier: "com.app.taskLocalTester.asdf.asdf.asdf.eMoneySDK")!,
+    bundle: Bundle = Bundle.main,
     dotLottieCache: DotLottieCacheProvider? = DotLottieCache.sharedCache)
     async throws -> DotLottieFile
   {
@@ -188,13 +220,13 @@ extension DotLottieFile {
 
   ///    Loads a DotLottie model from the asset catalog by its name. Returns `nil` if a lottie is not found.
   ///    - Parameter name: The name of the lottie file in the asset catalog. EG "StarAnimation"
-  ///    - Parameter bundle: The bundle in which the lottie is located. Defaults to `Bundle(identifier: "com.app.taskLocalTester.asdf.asdf.asdf.eMoneySDK")!`
+  ///    - Parameter bundle: The bundle in which the lottie is located. Defaults to `Bundle.main`
   ///    - Parameter dotLottieCache: A cache for holding loaded lottie files. Defaults to `LRUDotLottieCache.sharedCache` Optional.
   ///    - Parameter dispatchQueue: A dispatch queue used to load animations. Defaults to `DispatchQueue.global()`. Optional.
   ///    - Parameter handleResult: A closure to be called when the file has loaded.
   public static func asset(
     named name: String,
-    bundle: Bundle = Bundle(identifier: "com.app.taskLocalTester.asdf.asdf.asdf.eMoneySDK")!,
+    bundle: Bundle = Bundle.main,
     dotLottieCache: DotLottieCacheProvider? = DotLottieCache.sharedCache,
     dispatchQueue: DispatchQueue = .global(),
     handleResult: @escaping (Result<DotLottieFile, Error>) -> Void)
@@ -286,6 +318,53 @@ extension DotLottieFile {
         }
       }
       task.resume()
+    }
+  }
+
+  /// Loads an DotLottie from a data asynchronously.
+  ///
+  /// - Parameters:
+  ///   - data: The data(`Foundation.Data`) object to load DotLottie from
+  ///   - filename: The name of the lottie file without the lottie extension. eg. "StarAnimation"
+  ///   - dispatchQueue: A dispatch queue used to load animations. Defaults to `DispatchQueue.global()`. Optional.
+  ///   - handleResult: A closure to be called when the file has loaded.
+  public static func loadedFrom(
+    data: Data,
+    filename: String,
+    dispatchQueue: DispatchQueue = .global(),
+    handleResult: @escaping (Result<DotLottieFile, Error>) -> Void)
+  {
+    dispatchQueue.async {
+      do {
+        let dotLottie = try DotLottieFile(data: data, filename: filename)
+        DispatchQueue.main.async {
+          handleResult(.success(dotLottie))
+        }
+      } catch {
+        DispatchQueue.main.async {
+          handleResult(.failure(error))
+        }
+      }
+    }
+  }
+
+  /// Loads an DotLottie from a data asynchronously.
+  ///
+  /// - Parameters:
+  ///   - data: The data(`Foundation.Data`) object to load DotLottie from
+  ///   - filename: The name of the lottie file without the lottie extension. eg. "StarAnimation"
+  ///   - dispatchQueue: A dispatch queue used to load animations. Defaults to `DispatchQueue.global()`. Optional.
+  @available(iOS 13.0, macOS 10.15, tvOS 13.0, *)
+  public static func loadedFrom(
+    data: Data,
+    filename: String,
+    dispatchQueue: DispatchQueue = .global())
+    async throws -> DotLottieFile
+  {
+    try await withCheckedThrowingContinuation { continuation in
+      loadedFrom(data: data, filename: filename, dispatchQueue: dispatchQueue) { result in
+        continuation.resume(with: result)
+      }
     }
   }
 

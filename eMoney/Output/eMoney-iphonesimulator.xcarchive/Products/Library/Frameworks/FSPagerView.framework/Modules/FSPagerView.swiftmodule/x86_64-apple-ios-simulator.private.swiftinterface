@@ -1,0 +1,242 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 5.9 (swiftlang-5.9.0.128.108 clang-1500.0.40.1)
+// swift-module-flags: -target x86_64-apple-ios13.0-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name FSPagerView
+// swift-module-flags-ignorable: -enable-bare-slash-regex
+@_exported import FSPagerView
+import Swift
+import UIKit
+import _Concurrency
+import _StringProcessing
+import _SwiftConcurrencyShims
+@objc @_inheritsConvenienceInitializers @IBDesignable @_Concurrency.MainActor(unsafe) open class FSPageControl : UIKit.UIControl {
+  @objc @IBInspectable @_Concurrency.MainActor(unsafe) open var numberOfPages: Swift.Int {
+    @objc get
+    @objc set
+  }
+  @objc @IBInspectable @_Concurrency.MainActor(unsafe) open var currentPage: Swift.Int {
+    @objc get
+    @objc set
+  }
+  @objc @IBInspectable @_Concurrency.MainActor(unsafe) open var itemSpacing: CoreFoundation.CGFloat {
+    @objc get
+    @objc set
+  }
+  @objc @IBInspectable @_Concurrency.MainActor(unsafe) open var interitemSpacing: CoreFoundation.CGFloat {
+    @objc get
+    @objc set
+  }
+  @objc @IBInspectable @_Concurrency.MainActor(unsafe) open var contentInsets: UIKit.UIEdgeInsets {
+    @objc get
+    @objc set
+  }
+  @_Concurrency.MainActor(unsafe) @objc override dynamic open var contentHorizontalAlignment: UIKit.UIControl.ContentHorizontalAlignment {
+    @objc get
+    @objc set
+  }
+  @objc @IBInspectable @_Concurrency.MainActor(unsafe) open var hidesForSinglePage: Swift.Bool {
+    @objc get
+    @objc set
+  }
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public init(frame: CoreFoundation.CGRect)
+  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder aDecoder: Foundation.NSCoder)
+  @_Concurrency.MainActor(unsafe) @objc override dynamic open func layoutSubviews()
+  @_Concurrency.MainActor(unsafe) @objc override dynamic open func layoutSublayers(of layer: QuartzCore.CALayer)
+  @objc(setStrokeColor:forState:) @_Concurrency.MainActor(unsafe) open func setStrokeColor(_ strokeColor: UIKit.UIColor?, for state: UIKit.UIControl.State)
+  @objc(setFillColor:forState:) @_Concurrency.MainActor(unsafe) open func setFillColor(_ fillColor: UIKit.UIColor?, for state: UIKit.UIControl.State)
+  @objc(setImage:forState:) @_Concurrency.MainActor(unsafe) open func setImage(_ image: UIKit.UIImage?, for state: UIKit.UIControl.State)
+  @objc(setAlpha:forState:) @_Concurrency.MainActor(unsafe) open func setAlpha(_ alpha: CoreFoundation.CGFloat, for state: UIKit.UIControl.State)
+  @objc(setPath:forState:) @_Concurrency.MainActor(unsafe) open func setPath(_ path: UIKit.UIBezierPath?, for state: UIKit.UIControl.State)
+  @objc deinit
+}
+extension UIKit.UIControl.State : Swift.Hashable {
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+@objc public protocol FSPagerViewDataSource : ObjectiveC.NSObjectProtocol {
+  @objc(numberOfItemsInPagerView:) func numberOfItems(in pagerView: FSPagerView.FSPagerView) -> Swift.Int
+  @objc(pagerView:cellForItemAtIndex:) func pagerView(_ pagerView: FSPagerView.FSPagerView, cellForItemAt index: Swift.Int) -> FSPagerView.FSPagerViewCell
+}
+@objc public protocol FSPagerViewDelegate : ObjectiveC.NSObjectProtocol {
+  @objc(pagerView:shouldHighlightItemAtIndex:) optional func pagerView(_ pagerView: FSPagerView.FSPagerView, shouldHighlightItemAt index: Swift.Int) -> Swift.Bool
+  @objc(pagerView:didHighlightItemAtIndex:) optional func pagerView(_ pagerView: FSPagerView.FSPagerView, didHighlightItemAt index: Swift.Int)
+  @objc(pagerView:shouldSelectItemAtIndex:) optional func pagerView(_ pagerView: FSPagerView.FSPagerView, shouldSelectItemAt index: Swift.Int) -> Swift.Bool
+  @objc(pagerView:didSelectItemAtIndex:) optional func pagerView(_ pagerView: FSPagerView.FSPagerView, didSelectItemAt index: Swift.Int)
+  @objc(pagerView:willDisplayCell:forItemAtIndex:) optional func pagerView(_ pagerView: FSPagerView.FSPagerView, willDisplay cell: FSPagerView.FSPagerViewCell, forItemAt index: Swift.Int)
+  @objc(pagerView:didEndDisplayingCell:forItemAtIndex:) optional func pagerView(_ pagerView: FSPagerView.FSPagerView, didEndDisplaying cell: FSPagerView.FSPagerViewCell, forItemAt index: Swift.Int)
+  @objc(pagerViewWillBeginDragging:) optional func pagerViewWillBeginDragging(_ pagerView: FSPagerView.FSPagerView)
+  @objc(pagerViewWillEndDragging:targetIndex:) optional func pagerViewWillEndDragging(_ pagerView: FSPagerView.FSPagerView, targetIndex: Swift.Int)
+  @objc(pagerViewDidScroll:) optional func pagerViewDidScroll(_ pagerView: FSPagerView.FSPagerView)
+  @objc(pagerViewDidEndScrollAnimation:) optional func pagerViewDidEndScrollAnimation(_ pagerView: FSPagerView.FSPagerView)
+  @objc(pagerViewDidEndDecelerating:) optional func pagerViewDidEndDecelerating(_ pagerView: FSPagerView.FSPagerView)
+}
+@objc @_inheritsConvenienceInitializers @IBDesignable @_Concurrency.MainActor(unsafe) open class FSPagerView : UIKit.UIView, UIKit.UICollectionViewDataSource, UIKit.UICollectionViewDelegate {
+  @objc @IBOutlet @_Concurrency.MainActor(unsafe) weak open var dataSource: (any FSPagerView.FSPagerViewDataSource)?
+  @objc @IBOutlet @_Concurrency.MainActor(unsafe) weak open var delegate: (any FSPagerView.FSPagerViewDelegate)?
+  @objc @_Concurrency.MainActor(unsafe) open var scrollDirection: FSPagerView.FSPagerView.ScrollDirection {
+    @objc get
+    @objc set
+  }
+  @objc @IBInspectable @_Concurrency.MainActor(unsafe) open var automaticSlidingInterval: CoreFoundation.CGFloat {
+    @objc get
+    @objc set
+  }
+  @objc @IBInspectable @_Concurrency.MainActor(unsafe) open var interitemSpacing: CoreFoundation.CGFloat {
+    @objc get
+    @objc set
+  }
+  @objc @IBInspectable @_Concurrency.MainActor(unsafe) open var itemSize: CoreFoundation.CGSize {
+    @objc get
+    @objc set
+  }
+  @objc @IBInspectable @_Concurrency.MainActor(unsafe) open var isInfinite: Swift.Bool {
+    @objc get
+    @objc set
+  }
+  @objc @IBInspectable @_Concurrency.MainActor(unsafe) open var decelerationDistance: Swift.UInt
+  @objc @IBInspectable @_Concurrency.MainActor(unsafe) open var isScrollEnabled: Swift.Bool {
+    @objc get
+    @objc set
+  }
+  @objc @IBInspectable @_Concurrency.MainActor(unsafe) open var bounces: Swift.Bool {
+    @objc get
+    @objc set
+  }
+  @objc @IBInspectable @_Concurrency.MainActor(unsafe) open var alwaysBounceHorizontal: Swift.Bool {
+    @objc get
+    @objc set
+  }
+  @objc @IBInspectable @_Concurrency.MainActor(unsafe) open var alwaysBounceVertical: Swift.Bool {
+    @objc get
+    @objc set
+  }
+  @objc @IBInspectable @_Concurrency.MainActor(unsafe) open var removesInfiniteLoopForSingleItem: Swift.Bool {
+    @objc get
+    @objc set
+  }
+  @objc @IBInspectable @_Concurrency.MainActor(unsafe) open var backgroundView: UIKit.UIView? {
+    @objc get
+    @objc set
+  }
+  @objc @_Concurrency.MainActor(unsafe) open var transformer: FSPagerView.FSPagerViewTransformer? {
+    @objc get
+    @objc set
+  }
+  @objc @_Concurrency.MainActor(unsafe) open var isTracking: Swift.Bool {
+    @objc get
+  }
+  @objc @_Concurrency.MainActor(unsafe) open var scrollOffset: CoreFoundation.CGFloat {
+    @objc get
+  }
+  @objc @_Concurrency.MainActor(unsafe) open var panGestureRecognizer: UIKit.UIPanGestureRecognizer {
+    @objc get
+  }
+  @objc @_Concurrency.MainActor(unsafe) dynamic open var currentIndex: Swift.Int {
+    get
+  }
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public init(frame: CoreFoundation.CGRect)
+  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder aDecoder: Foundation.NSCoder)
+  @_Concurrency.MainActor(unsafe) @objc override dynamic open func layoutSubviews()
+  @_Concurrency.MainActor(unsafe) @objc override dynamic open func willMove(toWindow newWindow: UIKit.UIWindow?)
+  @objc deinit
+  @_Concurrency.MainActor(unsafe) @objc public func numberOfSections(in collectionView: UIKit.UICollectionView) -> Swift.Int
+  @_Concurrency.MainActor(unsafe) @objc public func collectionView(_ collectionView: UIKit.UICollectionView, numberOfItemsInSection section: Swift.Int) -> Swift.Int
+  @_Concurrency.MainActor(unsafe) @objc public func collectionView(_ collectionView: UIKit.UICollectionView, cellForItemAt indexPath: Foundation.IndexPath) -> UIKit.UICollectionViewCell
+  @_Concurrency.MainActor(unsafe) @objc public func collectionView(_ collectionView: UIKit.UICollectionView, shouldHighlightItemAt indexPath: Foundation.IndexPath) -> Swift.Bool
+  @_Concurrency.MainActor(unsafe) @objc public func collectionView(_ collectionView: UIKit.UICollectionView, didHighlightItemAt indexPath: Foundation.IndexPath)
+  @_Concurrency.MainActor(unsafe) @objc public func collectionView(_ collectionView: UIKit.UICollectionView, shouldSelectItemAt indexPath: Foundation.IndexPath) -> Swift.Bool
+  @_Concurrency.MainActor(unsafe) @objc public func collectionView(_ collectionView: UIKit.UICollectionView, didSelectItemAt indexPath: Foundation.IndexPath)
+  @_Concurrency.MainActor(unsafe) @objc public func collectionView(_ collectionView: UIKit.UICollectionView, willDisplay cell: UIKit.UICollectionViewCell, forItemAt indexPath: Foundation.IndexPath)
+  @_Concurrency.MainActor(unsafe) @objc public func collectionView(_ collectionView: UIKit.UICollectionView, didEndDisplaying cell: UIKit.UICollectionViewCell, forItemAt indexPath: Foundation.IndexPath)
+  @_Concurrency.MainActor(unsafe) @objc public func scrollViewDidScroll(_ scrollView: UIKit.UIScrollView)
+  @_Concurrency.MainActor(unsafe) @objc public func scrollViewWillBeginDragging(_ scrollView: UIKit.UIScrollView)
+  @_Concurrency.MainActor(unsafe) @objc public func scrollViewWillEndDragging(_ scrollView: UIKit.UIScrollView, withVelocity velocity: CoreFoundation.CGPoint, targetContentOffset: Swift.UnsafeMutablePointer<CoreFoundation.CGPoint>)
+  @_Concurrency.MainActor(unsafe) @objc public func scrollViewDidEndDecelerating(_ scrollView: UIKit.UIScrollView)
+  @_Concurrency.MainActor(unsafe) @objc public func scrollViewDidEndScrollingAnimation(_ scrollView: UIKit.UIScrollView)
+  @objc(registerClass:forCellWithReuseIdentifier:) @_Concurrency.MainActor(unsafe) open func register(_ cellClass: Swift.AnyClass?, forCellWithReuseIdentifier identifier: Swift.String)
+  @objc(registerNib:forCellWithReuseIdentifier:) @_Concurrency.MainActor(unsafe) open func register(_ nib: UIKit.UINib?, forCellWithReuseIdentifier identifier: Swift.String)
+  @objc(dequeueReusableCellWithReuseIdentifier:atIndex:) @_Concurrency.MainActor(unsafe) open func dequeueReusableCell(withReuseIdentifier identifier: Swift.String, at index: Swift.Int) -> FSPagerView.FSPagerViewCell
+  @objc(reloadData) @_Concurrency.MainActor(unsafe) open func reloadData()
+  @objc(selectItemAtIndex:animated:) @_Concurrency.MainActor(unsafe) open func selectItem(at index: Swift.Int, animated: Swift.Bool)
+  @objc(deselectItemAtIndex:animated:) @_Concurrency.MainActor(unsafe) open func deselectItem(at index: Swift.Int, animated: Swift.Bool)
+  @objc(scrollToItemAtIndex:animated:) @_Concurrency.MainActor(unsafe) open func scrollToItem(at index: Swift.Int, animated: Swift.Bool)
+  @objc(indexForCell:) @_Concurrency.MainActor(unsafe) open func index(for cell: FSPagerView.FSPagerViewCell) -> Swift.Int
+  @objc(cellForItemAtIndex:) @_Concurrency.MainActor(unsafe) open func cellForItem(at index: Swift.Int) -> FSPagerView.FSPagerViewCell?
+}
+extension FSPagerView.FSPagerView {
+  @objc public enum ScrollDirection : Swift.Int {
+    case horizontal
+    case vertical
+    public init?(rawValue: Swift.Int)
+    public typealias RawValue = Swift.Int
+    public var rawValue: Swift.Int {
+      get
+    }
+  }
+  @_Concurrency.MainActor(unsafe) public static let automaticDistance: Swift.UInt
+  @_Concurrency.MainActor(unsafe) public static let automaticSize: CoreFoundation.CGSize
+}
+@objc @_inheritsConvenienceInitializers @_Concurrency.MainActor(unsafe) open class FSPagerViewCell : UIKit.UICollectionViewCell {
+  @objc @_Concurrency.MainActor(unsafe) open var textLabel: UIKit.UILabel? {
+    @objc get
+  }
+  @objc @_Concurrency.MainActor(unsafe) open var imageView: UIKit.UIImageView? {
+    @objc get
+  }
+  @_Concurrency.MainActor(unsafe) @objc override dynamic open var isHighlighted: Swift.Bool {
+    @objc get
+    @objc set
+  }
+  @_Concurrency.MainActor(unsafe) @objc override dynamic open var isSelected: Swift.Bool {
+    @objc get
+    @objc set
+  }
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public init(frame: CoreFoundation.CGRect)
+  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder aDecoder: Foundation.NSCoder)
+  @objc deinit
+  @_Concurrency.MainActor(unsafe) @objc override dynamic open func layoutSubviews()
+  @_Concurrency.MainActor(unsafe) @objc override dynamic open func observeValue(forKeyPath keyPath: Swift.String?, of object: Any?, change: [Foundation.NSKeyValueChangeKey : Any]?, context: Swift.UnsafeMutableRawPointer?)
+}
+@objc @_inheritsConvenienceInitializers @_Concurrency.MainActor(unsafe) open class FSPagerViewLayoutAttributes : UIKit.UICollectionViewLayoutAttributes {
+  @_Concurrency.MainActor(unsafe) open var position: CoreFoundation.CGFloat
+  @_Concurrency.MainActor(unsafe) @objc override dynamic open func isEqual(_ object: Any?) -> Swift.Bool
+  @_Concurrency.MainActor(unsafe) @objc override dynamic open func copy(with zone: ObjectiveC.NSZone? = nil) -> Any
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public init()
+  @objc deinit
+}
+@objc public enum FSPagerViewTransformerType : Swift.Int {
+  case crossFading
+  case zoomOut
+  case depth
+  case overlap
+  case linear
+  case coverFlow
+  case ferrisWheel
+  case invertedFerrisWheel
+  case cubic
+  public init?(rawValue: Swift.Int)
+  public typealias RawValue = Swift.Int
+  public var rawValue: Swift.Int {
+    get
+  }
+}
+@objc open class FSPagerViewTransformer : ObjectiveC.NSObject {
+  weak open var pagerView: FSPagerView.FSPagerView? {
+    get
+  }
+  open var type: FSPagerView.FSPagerViewTransformerType {
+    get
+  }
+  open var minimumScale: CoreFoundation.CGFloat
+  open var minimumAlpha: CoreFoundation.CGFloat
+  @objc public init(type: FSPagerView.FSPagerViewTransformerType)
+  open func applyTransform(to attributes: FSPagerView.FSPagerViewLayoutAttributes)
+  open func proposedInteritemSpacing() -> CoreFoundation.CGFloat
+  @objc deinit
+}
+extension FSPagerView.FSPagerView.ScrollDirection : Swift.Equatable {}
+extension FSPagerView.FSPagerView.ScrollDirection : Swift.Hashable {}
+extension FSPagerView.FSPagerView.ScrollDirection : Swift.RawRepresentable {}
+extension FSPagerView.FSPagerViewTransformerType : Swift.Equatable {}
+extension FSPagerView.FSPagerViewTransformerType : Swift.Hashable {}
+extension FSPagerView.FSPagerViewTransformerType : Swift.RawRepresentable {}

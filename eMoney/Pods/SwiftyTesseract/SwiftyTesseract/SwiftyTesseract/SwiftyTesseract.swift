@@ -82,7 +82,7 @@ public class SwiftyTesseract {
 
   private init(
     languageString: String,
-    dataSource: LanguageModelDataSource = Bundle(identifier: "com.app.taskLocalTester.asdf.asdf.asdf.eMoneySDK")!,
+    dataSource: LanguageModelDataSource = Bundle.main,
     engineMode: EngineMode = .lstmOnly
   ) {
     // save input bundle
@@ -107,11 +107,11 @@ public class SwiftyTesseract {
   ///
   /// - Parameters:
   ///   - languages: Languages of the text to be recognized
-  ///   - dataSource: The LanguageModelDataSource that contains the tessdata folder - default is Bundle(identifier: "com.app.taskLocalTester.asdf.asdf.asdf.eMoneySDK")!
+  ///   - dataSource: The LanguageModelDataSource that contains the tessdata folder - default is Bundle.main
   ///   - engineMode: The tesseract engine mode - default is .lstmOnly
   public convenience init(
     languages: [RecognitionLanguage],
-    dataSource: LanguageModelDataSource = Bundle(identifier: "com.app.taskLocalTester.asdf.asdf.asdf.eMoneySDK")!,
+    dataSource: LanguageModelDataSource = Bundle.main,
     engineMode: EngineMode = .lstmOnly
   ) {
     let stringLanguages = RecognitionLanguage.createLanguageString(from: languages)
@@ -123,11 +123,11 @@ public class SwiftyTesseract {
   ///
   /// - Parameters:
   ///   - language: The language of the text to be recognized
-  ///   - dataSource: The LanguageModelDataSource that contains the tessdata folder - default is Bundle(identifier: "com.app.taskLocalTester.asdf.asdf.asdf.eMoneySDK")!
+  ///   - dataSource: The LanguageModelDataSource that contains the tessdata folder - default is Bundle.main
   ///   - engineMode: The tesseract engine mode - default is .lstmOnly
   public convenience init(
     language: RecognitionLanguage,
-    dataSource: LanguageModelDataSource = Bundle(identifier: "com.app.taskLocalTester.asdf.asdf.asdf.eMoneySDK")!,
+    dataSource: LanguageModelDataSource = Bundle.main,
     engineMode: EngineMode = .lstmOnly
   ) {
     self.init(languages: [language], dataSource: dataSource, engineMode: engineMode)

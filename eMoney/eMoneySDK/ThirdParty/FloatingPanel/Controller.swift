@@ -279,7 +279,7 @@ open class FloatingPanelController: UIViewController {
     open override func loadView() {
         assert(self.storyboard == nil, "Storyboard isn't supported")
 
-        let view = PassthroughView()
+        let view = PassthroughViewFloating()
         view.backgroundColor = .clear
 
         backdropView.frame = view.bounds

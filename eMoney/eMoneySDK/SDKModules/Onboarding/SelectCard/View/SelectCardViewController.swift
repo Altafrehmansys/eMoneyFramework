@@ -8,7 +8,7 @@
 
 import Foundation
 import UIKit
-import FSPagerView
+//import FSPagerView
 
 class SelectCardViewController: BaseViewController {
     

@@ -1,21 +1,15 @@
 PODS:
   - Alamofire (5.8.0)
-  - CryptoSwift (1.6.0)
-  - DropDown (2.3.13)
-  - FSPagerView (0.8.3)
-  - Kingfisher (7.9.0)
-  - lottie-ios (4.2.0)
-  - NVActivityIndicatorView (5.1.1):
-    - NVActivityIndicatorView/Base (= 5.1.1)
-  - NVActivityIndicatorView/Base (5.1.1)
+  - Kingfisher (7.9.1)
+  - lottie-ios (4.3.3)
   - PureLiveSDK (6.4.0.1):
     - PureLiveSDK/Full (= 6.4.0.1)
     - TensorFlowLiteC (= 2.7.0)
   - PureLiveSDK/Full (6.4.0.1):
     - TensorFlowLiteC (= 2.7.0)
-  - SwiftMessages (9.0.6):
-    - SwiftMessages/App (= 9.0.6)
-  - SwiftMessages/App (9.0.6)
+  - SwiftMessages (9.0.8):
+    - SwiftMessages/App (= 9.0.8)
+  - SwiftMessages/App (9.0.8)
   - SwiftyTesseract (3.1.3)
   - TensorFlowLiteC (2.7.0):
     - TensorFlowLiteC/Core (= 2.7.0)
@@ -27,12 +21,8 @@ PODS:
 
 DEPENDENCIES:
   - Alamofire
-  - CryptoSwift (~> 1.6.0)
-  - DropDown
-  - FSPagerView
   - Kingfisher (~> 7.0)
   - lottie-ios
-  - NVActivityIndicatorView
   - PureLiveSDK (from `https://gitlab.com/purelive/purelive-ios-sdk.git`, tag `6.4.0.1`)
   - SwiftMessages
   - SwiftyTesseract (~> 3.1.3)
@@ -41,12 +31,8 @@ DEPENDENCIES:
 SPEC REPOS:
   trunk:
     - Alamofire
-    - CryptoSwift
-    - DropDown
-    - FSPagerView
     - Kingfisher
     - lottie-ios
-    - NVActivityIndicatorView
     - SwiftMessages
     - SwiftyTesseract
     - TensorFlowLiteC
@@ -64,18 +50,14 @@ CHECKOUT OPTIONS:
 
 SPEC CHECKSUMS:
   Alamofire: 0e92e751b3e9e66d7982db43919d01f313b8eb91
-  CryptoSwift: 562f8eceb40e80796fffc668b0cad9313284cfa6
-  DropDown: 8a2116376c1981888557f72ec2ffc9a5e0e456ec
-  FSPagerView: 670405b2f18e2a87fa37f20b00de783e562c25a8
-  Kingfisher: 59f908b6d2f403b0a3e539debb0eec05cb27002c
-  lottie-ios: 809ecf2d460ed650a6aed7aa88b2ec45fab4779c
-  NVActivityIndicatorView: 1f6c5687f1171810aa27a3296814dc2d7dec3667
+  Kingfisher: 1d14e9f59cbe19389f591c929000332bf70efd32
+  lottie-ios: 25e7b2675dad5c3ddad369ac9baab03560c5bfdd
   PureLiveSDK: a8e0d7445146db8da27b393706f7a7e43350b765
-  SwiftMessages: f0c7ef4705a570ad6c5e208b611f4333e660ed92
+  SwiftMessages: 3601317b44ed2e1a54e2c6901b4362a364bf4862
   SwiftyTesseract: 1f3d96668ae92dc2208d9842c8a59bea9fad2cbb
   TensorFlowLiteC: 50d75ed3640c15dcfbaf88ca4326297b445e00a1
   TensorFlowLiteSwift: fe99748dc3d58ae08bd2ff38658e3ade7038670f
 
-PODFILE CHECKSUM: 197597032e2d80573aa3af4bfde18c47227fdf22
+PODFILE CHECKSUM: d78be5365baf02e507667eb76896fa901e2dd267
 
 COCOAPODS: 1.12.1

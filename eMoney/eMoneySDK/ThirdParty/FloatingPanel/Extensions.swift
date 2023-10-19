@@ -1,7 +1,7 @@
 // Copyright 2018-Present Shin Yamamoto. All rights reserved. MIT license.
 
 import UIKit
-
+import Foundation
 // MARK: - CoreGraphics
 
 extension CGFloat {

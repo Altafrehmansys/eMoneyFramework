@@ -7,7 +7,7 @@
 
 import Foundation
 import UIKit
-import CryptoSwift
+//import CryptoSwift
 
 extension String{
     

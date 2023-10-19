@@ -1,0 +1,36 @@
+{
+  "responseCode": "200",
+  "message": "SUCCESS",
+  "data": [
+    {
+      "languageName": "English",
+      "languageCode": "EN",
+      "languageVersion": "1.0.0",
+      "createdDateTime": null
+    },
+    {
+      "languageName": "Arabic",
+      "languageCode": "AR",
+      "languageVersion": "1.0.0",
+      "createdDateTime": null
+    },
+    {
+      "languageName": "Hindi",
+      "languageCode": "HD",
+      "languageVersion": "1.0.0",
+      "createdDateTime": null
+    },
+    {
+      "languageName": "Urdu",
+      "languageCode": "UR",
+      "languageVersion": "1.0.0",
+      "createdDateTime": null
+    },
+    {
+      "languageName": "Malayalam",
+      "languageCode": "ML",
+      "languageVersion": "1.0.0",
+      "createdDateTime": null
+    }
+  ]
+}

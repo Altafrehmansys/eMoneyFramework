@@ -61,7 +61,7 @@ class PresentationController: UIPresentationController {
         addFloatingPanel()
 
         // Forward touch events to the presenting view controller
-        (fpc.view as? PassthroughView)?.eventForwardingView = presentingViewController.view
+        (fpc.view as? PassthroughViewFloating)?.eventForwardingView = presentingViewController.view
     }
 
     @objc func handleBackdrop(tapGesture: UITapGestureRecognizer) {

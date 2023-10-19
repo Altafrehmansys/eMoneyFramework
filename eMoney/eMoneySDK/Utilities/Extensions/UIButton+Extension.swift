@@ -7,7 +7,7 @@
 
 import Foundation
 import UIKit
-enum Padding {
+enum ButtonPadding {
     case left(value:CGFloat)
     case right(value:CGFloat)
     case top(value:CGFloat)
@@ -17,7 +17,7 @@ enum Padding {
     case all(value:CGFloat)
 }
 extension UIButton {
-    func setPadding(_ padding:Padding = .all(value:0)){
+    func setPadding(_ padding:ButtonPadding = .all(value:0)){
         switch padding {
         case .left(let value):
             self.titleEdgeInsets = UIEdgeInsets(top: 0, left: value, bottom: 0, right: 0)

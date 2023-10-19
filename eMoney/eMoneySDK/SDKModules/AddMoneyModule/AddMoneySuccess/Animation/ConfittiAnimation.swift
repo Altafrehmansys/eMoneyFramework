@@ -6,6 +6,7 @@
 //
 
 import Lottie
+import UIKit
 
 final class ConfittiAnimation {
     

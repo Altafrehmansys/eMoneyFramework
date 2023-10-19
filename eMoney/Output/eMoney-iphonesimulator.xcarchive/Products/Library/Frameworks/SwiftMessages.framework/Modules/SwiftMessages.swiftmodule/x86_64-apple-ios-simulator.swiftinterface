@@ -1,0 +1,567 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 5.9 (swiftlang-5.9.0.128.108 clang-1500.0.40.1)
+// swift-module-flags: -target x86_64-apple-ios13.0-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name SwiftMessages
+// swift-module-flags-ignorable: -enable-bare-slash-regex
+import Foundation
+import QuartzCore
+import Swift
+@_exported import SwiftMessages
+import UIKit
+import _Concurrency
+import _StringProcessing
+import _SwiftConcurrencyShims
+public protocol AccessibleMessage {
+  var accessibilityMessage: Swift.String? { get }
+  var accessibilityElement: ObjectiveC.NSObject? { get }
+  var additionalAccessibilityElements: [ObjectiveC.NSObject]? { get }
+}
+public typealias AnimationCompletion = (_ completed: Swift.Bool) -> Swift.Void
+public protocol AnimationDelegate : AnyObject {
+  func hide(animator: any SwiftMessages.Animator)
+  func panStarted(animator: any SwiftMessages.Animator)
+  func panEnded(animator: any SwiftMessages.Animator)
+}
+public struct SafeZoneConflicts : Swift.OptionSet {
+  public let rawValue: Swift.Int
+  public init(rawValue: Swift.Int)
+  public static let statusBar: SwiftMessages.SafeZoneConflicts
+  public static let sensorNotch: SwiftMessages.SafeZoneConflicts
+  public static let homeIndicator: SwiftMessages.SafeZoneConflicts
+  public static let overStatusBar: SwiftMessages.SafeZoneConflicts
+  public typealias ArrayLiteralElement = SwiftMessages.SafeZoneConflicts
+  public typealias Element = SwiftMessages.SafeZoneConflicts
+  public typealias RawValue = Swift.Int
+}
+@_hasMissingDesignatedInitializers public class AnimationContext {
+  final public let messageView: UIKit.UIView
+  final public let containerView: UIKit.UIView
+  final public let safeZoneConflicts: SwiftMessages.SafeZoneConflicts
+  final public let interactiveHide: Swift.Bool
+  @objc deinit
+}
+public protocol Animator : AnyObject {
+  var delegate: (any SwiftMessages.AnimationDelegate)? { get set }
+  func show(context: SwiftMessages.AnimationContext, completion: @escaping SwiftMessages.AnimationCompletion)
+  func hide(context: SwiftMessages.AnimationContext, completion: @escaping SwiftMessages.AnimationCompletion)
+  var showDuration: Foundation.TimeInterval { get }
+  var hideDuration: Foundation.TimeInterval { get }
+}
+public protocol BackgroundViewable {
+  var backgroundView: UIKit.UIView! { get }
+}
+@objc @_inheritsConvenienceInitializers @_Concurrency.MainActor(unsafe) open class BaseView : UIKit.UIView, SwiftMessages.BackgroundViewable, SwiftMessages.MarginAdjustable {
+  @objc @IBOutlet @_Concurrency.MainActor(unsafe) weak open var backgroundView: UIKit.UIView! {
+    @objc get
+    @objc set
+  }
+  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder aDecoder: Foundation.NSCoder)
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public init(frame: CoreFoundation.CGRect)
+  @_Concurrency.MainActor(unsafe) open func installContentView(_ contentView: UIKit.UIView, insets: UIKit.UIEdgeInsets = UIEdgeInsets.zero)
+  @_Concurrency.MainActor(unsafe) open func installBackgroundView(_ backgroundView: UIKit.UIView, insets: UIKit.UIEdgeInsets = UIEdgeInsets.zero)
+  @_Concurrency.MainActor(unsafe) open func installBackgroundVerticalView(_ backgroundView: UIKit.UIView, insets: UIKit.UIEdgeInsets = UIEdgeInsets.zero)
+  @_Concurrency.MainActor(unsafe) open var tapHandler: ((_ view: SwiftMessages.BaseView) -> Swift.Void)? {
+    get
+    set
+  }
+  @_Concurrency.MainActor(unsafe) @objc override dynamic open func point(inside point: CoreFoundation.CGPoint, with event: UIKit.UIEvent?) -> Swift.Bool
+  @_Concurrency.MainActor(unsafe) public var layoutMarginAdditions: UIKit.UIEdgeInsets {
+    get
+    set
+  }
+  @_Concurrency.MainActor(unsafe) open var respectSafeArea: Swift.Bool
+  @objc @IBInspectable @_Concurrency.MainActor(unsafe) open var topLayoutMarginAddition: CoreFoundation.CGFloat
+  @objc @IBInspectable @_Concurrency.MainActor(unsafe) open var leftLayoutMarginAddition: CoreFoundation.CGFloat
+  @objc @IBInspectable @_Concurrency.MainActor(unsafe) open var bottomLayoutMarginAddition: CoreFoundation.CGFloat
+  @objc @IBInspectable @_Concurrency.MainActor(unsafe) open var rightLayoutMarginAddition: CoreFoundation.CGFloat
+  @objc @IBInspectable @_Concurrency.MainActor(unsafe) open var collapseLayoutMarginAdditions: Swift.Bool
+  @objc @IBInspectable @_Concurrency.MainActor(unsafe) open var bounceAnimationOffset: CoreFoundation.CGFloat
+  @_Concurrency.MainActor(unsafe) open var backgroundHeight: CoreFoundation.CGFloat? {
+    get
+    set
+  }
+  @_Concurrency.MainActor(unsafe) @objc override dynamic open func updateConstraints()
+  @objc deinit
+}
+extension SwiftMessages.BaseView {
+  @_Concurrency.MainActor(unsafe) open func configureDropShadow()
+  @_Concurrency.MainActor(unsafe) open func configureNoDropShadow()
+  @_Concurrency.MainActor(unsafe) @objc override dynamic open func layoutSubviews()
+}
+extension SwiftMessages.BaseView {
+  @_Concurrency.MainActor(unsafe) public func configureBackgroundView(sideMargin: CoreFoundation.CGFloat)
+  @_Concurrency.MainActor(unsafe) public func configureBackgroundView(width: CoreFoundation.CGFloat)
+}
+@objc @_inheritsConvenienceInitializers @_Concurrency.MainActor(unsafe) open class CornerRoundingView : UIKit.UIView {
+  @objc @IBInspectable @_Concurrency.MainActor(unsafe) open var cornerRadius: CoreFoundation.CGFloat {
+    @objc get
+    @objc set
+  }
+  @objc @IBInspectable @_Concurrency.MainActor(unsafe) open var roundsLeadingCorners: Swift.Bool
+  @_Concurrency.MainActor(unsafe) open var roundedCorners: UIKit.UIRectCorner {
+    get
+    set
+  }
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public init(frame: CoreFoundation.CGRect)
+  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder aDecoder: Foundation.NSCoder)
+  @_Concurrency.MainActor(unsafe) @objc override dynamic open func layoutSubviews()
+  @objc deinit
+}
+public protocol Identifiable {
+  var id: Swift.String { get }
+}
+public protocol KeyboardTrackingViewDelegate : AnyObject {
+  func keyboardTrackingViewWillChange(change: SwiftMessages.KeyboardTrackingView.Change, userInfo: [Swift.AnyHashable : Any])
+  func keyboardTrackingViewDidChange(change: SwiftMessages.KeyboardTrackingView.Change, userInfo: [Swift.AnyHashable : Any])
+}
+@objc @_inheritsConvenienceInitializers @_Concurrency.MainActor(unsafe) open class KeyboardTrackingView : UIKit.UIView {
+  public enum Change {
+    case show
+    case hide
+    case frame
+    public static func == (a: SwiftMessages.KeyboardTrackingView.Change, b: SwiftMessages.KeyboardTrackingView.Change) -> Swift.Bool
+    public func hash(into hasher: inout Swift.Hasher)
+    public var hashValue: Swift.Int {
+      get
+    }
+  }
+  @_Concurrency.MainActor(unsafe) weak public var delegate: (any SwiftMessages.KeyboardTrackingViewDelegate)?
+  @_Concurrency.MainActor(unsafe) open var isPaused: Swift.Bool {
+    get
+    set
+  }
+  @objc @IBInspectable @_Concurrency.MainActor(unsafe) open var topMargin: CoreFoundation.CGFloat
+  @_Concurrency.MainActor(unsafe) open func willChange(change: SwiftMessages.KeyboardTrackingView.Change, userInfo: [Swift.AnyHashable : Any])
+  @_Concurrency.MainActor(unsafe) open func didChange(change: SwiftMessages.KeyboardTrackingView.Change, userInfo: [Swift.AnyHashable : Any])
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public init(frame: CoreFoundation.CGRect)
+  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder aDecoder: Foundation.NSCoder)
+  @_Concurrency.MainActor(unsafe) @objc override dynamic open func awakeFromNib()
+  @objc deinit
+}
+public protocol MarginAdjustable {
+  var layoutMarginAdditions: UIKit.UIEdgeInsets { get }
+  var collapseLayoutMarginAdditions: Swift.Bool { get set }
+  var respectSafeArea: Swift.Bool { get set }
+  var bounceAnimationOffset: CoreFoundation.CGFloat { get set }
+}
+extension SwiftMessages.MarginAdjustable where Self : UIKit.UIView {
+  public func defaultMarginAdjustment(context: SwiftMessages.AnimationContext) -> UIKit.UIEdgeInsets
+}
+@objc @_inheritsConvenienceInitializers @_Concurrency.MainActor(unsafe) open class MessageView : SwiftMessages.BaseView, SwiftMessages.Identifiable, SwiftMessages.AccessibleMessage {
+  @_Concurrency.MainActor(unsafe) open var buttonTapHandler: ((_ button: UIKit.UIButton) -> Swift.Void)?
+  @_Concurrency.MainActor(unsafe) @objc override dynamic open func point(inside point: CoreFoundation.CGPoint, with event: UIKit.UIEvent?) -> Swift.Bool
+  @objc @IBOutlet @_Concurrency.MainActor(unsafe) open var titleLabel: UIKit.UILabel?
+  @objc @IBOutlet @_Concurrency.MainActor(unsafe) open var bodyLabel: UIKit.UILabel?
+  @objc @IBOutlet @_Concurrency.MainActor(unsafe) open var iconImageView: UIKit.UIImageView?
+  @objc @IBOutlet @_Concurrency.MainActor(unsafe) open var iconLabel: UIKit.UILabel?
+  @objc @IBOutlet @_Concurrency.MainActor(unsafe) open var button: UIKit.UIButton? {
+    @objc get
+    @objc set
+  }
+  @_Concurrency.MainActor(unsafe) open var id: Swift.String {
+    get
+    set
+  }
+  @_Concurrency.MainActor(unsafe) open var accessibilityPrefix: Swift.String?
+  @_Concurrency.MainActor(unsafe) open var accessibilityMessage: Swift.String? {
+    get
+  }
+  @_Concurrency.MainActor(unsafe) public var accessibilityElement: ObjectiveC.NSObject? {
+    get
+  }
+  @_Concurrency.MainActor(unsafe) open var additionalAccessibilityElements: [ObjectiveC.NSObject]? {
+    get
+  }
+  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder aDecoder: Foundation.NSCoder)
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public init(frame: CoreFoundation.CGRect)
+  @objc deinit
+}
+extension SwiftMessages.MessageView {
+  public enum Layout : Swift.String {
+    case messageView
+    case cardView
+    case tabView
+    case statusLine
+    case centeredView
+    public init?(rawValue: Swift.String)
+    public typealias RawValue = Swift.String
+    public var rawValue: Swift.String {
+      get
+    }
+  }
+  @_Concurrency.MainActor(unsafe) public static func viewFromNib<T>(layout: SwiftMessages.MessageView.Layout, filesOwner: Swift.AnyObject = NSNull.init()) -> T where T : SwiftMessages.MessageView
+  @_Concurrency.MainActor(unsafe) public static func viewFromNib<T>(layout: SwiftMessages.MessageView.Layout, bundle: Foundation.Bundle, filesOwner: Swift.AnyObject = NSNull.init()) -> T where T : SwiftMessages.MessageView
+}
+extension SwiftMessages.MessageView {
+  @_Concurrency.MainActor(unsafe) public func configureIcon(withSize size: CoreFoundation.CGSize, contentMode: UIKit.UIView.ContentMode? = nil)
+}
+extension SwiftMessages.MessageView {
+  @_Concurrency.MainActor(unsafe) public func configureTheme(_ theme: SwiftMessages.Theme, iconStyle: SwiftMessages.IconStyle = .default)
+  @_Concurrency.MainActor(unsafe) public func configureTheme(backgroundColor: UIKit.UIColor, foregroundColor: UIKit.UIColor, iconImage: UIKit.UIImage? = nil, iconText: Swift.String? = nil)
+}
+extension SwiftMessages.MessageView {
+  @_Concurrency.MainActor(unsafe) public func configureContent(body: Swift.String)
+  @_Concurrency.MainActor(unsafe) public func configureContent(title: Swift.String, body: Swift.String)
+  @_Concurrency.MainActor(unsafe) public func configureContent(title: Swift.String, body: Swift.String, iconImage: UIKit.UIImage)
+  @_Concurrency.MainActor(unsafe) public func configureContent(title: Swift.String, body: Swift.String, iconText: Swift.String)
+  @_Concurrency.MainActor(unsafe) public func configureContent(title: Swift.String?, body: Swift.String?, iconImage: UIKit.UIImage?, iconText: Swift.String?, buttonImage: UIKit.UIImage?, buttonTitle: Swift.String?, buttonTapHandler: ((_ button: UIKit.UIButton) -> Swift.Void)?)
+}
+@objc @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers public class PhysicsAnimation : ObjectiveC.NSObject, SwiftMessages.Animator {
+  public enum Placement {
+    case top
+    case center
+    case bottom
+    public static func == (a: SwiftMessages.PhysicsAnimation.Placement, b: SwiftMessages.PhysicsAnimation.Placement) -> Swift.Bool
+    public func hash(into hasher: inout Swift.Hasher)
+    public var hashValue: Swift.Int {
+      get
+    }
+  }
+  open var placement: SwiftMessages.PhysicsAnimation.Placement
+  open var showDuration: Swift.Double
+  open var hideDuration: Swift.Double
+  public var panHandler: SwiftMessages.PhysicsPanHandler
+  weak public var delegate: (any SwiftMessages.AnimationDelegate)?
+  @objc override dynamic public init()
+  public func show(context: SwiftMessages.AnimationContext, completion: @escaping SwiftMessages.AnimationCompletion)
+  public func hide(context: SwiftMessages.AnimationContext, completion: @escaping SwiftMessages.AnimationCompletion)
+  @objc public func adjustMargins()
+  @objc deinit
+}
+open class PhysicsPanHandler {
+  public var hideDelay: Swift.Double
+  public struct MotionSnapshot {
+  }
+  final public class State {
+    public init(messageView: UIKit.UIView, containerView: UIKit.UIView)
+    final public func stop()
+    final public var angularVelocity: CoreFoundation.CGFloat {
+      get
+    }
+    @objc deinit
+  }
+  public var state: SwiftMessages.PhysicsPanHandler.State? {
+    get
+  }
+  public var isOffScreen: Swift.Bool {
+    get
+  }
+  public init()
+  public var pan: UIKit.UIPanGestureRecognizer {
+    get
+  }
+  @objc deinit
+}
+open class SwiftMessages {
+  public enum PresentationStyle {
+    case top
+    case bottom
+    case center
+    case custom(animator: any SwiftMessages.Animator)
+  }
+  public enum PresentationContext {
+    case automatic
+    case window(windowLevel: UIKit.UIWindow.Level)
+    case windowScene(any SwiftMessages.WindowScene, windowLevel: UIKit.UIWindow.Level)
+    case viewController(UIKit.UIViewController)
+    case view(UIKit.UIView)
+  }
+  public enum Duration {
+    case automatic
+    case forever
+    case seconds(seconds: Foundation.TimeInterval)
+    case indefinite(delay: Foundation.TimeInterval, minimum: Foundation.TimeInterval)
+  }
+  public enum DimMode {
+    case none
+    case gray(interactive: Swift.Bool)
+    case color(color: UIKit.UIColor, interactive: Swift.Bool)
+    case blur(style: UIKit.UIBlurEffect.Style, alpha: CoreFoundation.CGFloat, interactive: Swift.Bool)
+    public var interactive: Swift.Bool {
+      get
+    }
+    public var modal: Swift.Bool {
+      get
+    }
+  }
+  public enum Event {
+    case willShow(UIKit.UIView)
+    case didShow(UIKit.UIView)
+    case willHide(UIKit.UIView)
+    case didHide(UIKit.UIView)
+    public var view: UIKit.UIView {
+      get
+    }
+    public var id: Swift.String? {
+      get
+    }
+  }
+  public typealias EventListener = (SwiftMessages.SwiftMessages.Event) -> Swift.Void
+  public struct Config {
+    public init()
+    public var presentationStyle: SwiftMessages.SwiftMessages.PresentationStyle
+    public var presentationContext: SwiftMessages.SwiftMessages.PresentationContext {
+      get
+      set
+    }
+    public var duration: SwiftMessages.SwiftMessages.Duration
+    public var dimMode: SwiftMessages.SwiftMessages.DimMode
+    public var interactiveHide: Swift.Bool
+    public var preferredStatusBarStyle: UIKit.UIStatusBarStyle?
+    public var prefersStatusBarHidden: Swift.Bool?
+    public var shouldAutorotate: Swift.Bool
+    public var ignoreDuplicates: Swift.Bool
+    public var eventListeners: [SwiftMessages.SwiftMessages.EventListener]
+    public var becomeKeyWindow: Swift.Bool?
+    public var dimModeAccessibilityLabel: Swift.String
+    @available(iOS 13, *)
+    public var overrideUserInterfaceStyle: UIKit.UIUserInterfaceStyle {
+      get
+      set
+    }
+    public var windowViewController: ((_ config: SwiftMessages.SwiftMessages.Config) -> SwiftMessages.WindowViewController)?
+    public var keyboardTrackingView: SwiftMessages.KeyboardTrackingView?
+  }
+  public init()
+  open func show(config: SwiftMessages.SwiftMessages.Config, view: UIKit.UIView)
+  public func show(view: UIKit.UIView)
+  public typealias ViewProvider = () -> UIKit.UIView
+  open func show(config: SwiftMessages.SwiftMessages.Config, viewProvider: @escaping SwiftMessages.SwiftMessages.ViewProvider)
+  public func show(viewProvider: @escaping SwiftMessages.SwiftMessages.ViewProvider)
+  open func hide(animated: Swift.Bool = true)
+  open func hideAll()
+  open func hide(id: Swift.String)
+  open func hideCounted(id: Swift.String)
+  public func count(id: Swift.String) -> Swift.Int
+  public func set(count: Swift.Int, for id: Swift.String)
+  public var defaultConfig: SwiftMessages.SwiftMessages.Config
+  open var pauseBetweenMessages: Swift.Double
+  @objc deinit
+}
+extension SwiftMessages.SwiftMessages {
+  public func current<T>() -> T? where T : UIKit.UIView
+  public func current<T>(id: Swift.String) -> T? where T : UIKit.UIView
+  public func queued<T>(id: Swift.String) -> T? where T : UIKit.UIView
+  public func currentOrQueued<T>(id: Swift.String) -> T? where T : UIKit.UIView
+}
+extension SwiftMessages.SwiftMessages {
+  public func hide(animator: any SwiftMessages.Animator)
+  public func panStarted(animator: any SwiftMessages.Animator)
+  public func panEnded(animator: any SwiftMessages.Animator)
+}
+extension SwiftMessages.SwiftMessages {
+  public class func viewFromNib<T>(_ filesOwner: Swift.AnyObject = NSNull.init()) throws -> T where T : UIKit.UIView
+  public class func viewFromNib<T>(named name: Swift.String, filesOwner: Swift.AnyObject = NSNull.init()) throws -> T where T : UIKit.UIView
+  public class func viewFromNib<T>(named name: Swift.String, bundle: Foundation.Bundle, filesOwner: Swift.AnyObject = NSNull.init()) throws -> T where T : UIKit.UIView
+}
+extension SwiftMessages.SwiftMessages {
+  public static var sharedInstance: SwiftMessages.SwiftMessages {
+    get
+  }
+  public static func show(viewProvider: @escaping SwiftMessages.SwiftMessages.ViewProvider)
+  public static func show(config: SwiftMessages.SwiftMessages.Config, viewProvider: @escaping SwiftMessages.SwiftMessages.ViewProvider)
+  public static func show(view: UIKit.UIView)
+  public static func show(config: SwiftMessages.SwiftMessages.Config, view: UIKit.UIView)
+  public static func hide(animated: Swift.Bool = true)
+  public static func hideAll()
+  public static func hide(id: Swift.String)
+  public static func hideCounted(id: Swift.String)
+  public static var defaultConfig: SwiftMessages.SwiftMessages.Config {
+    get
+    set
+  }
+  public static var pauseBetweenMessages: Foundation.TimeInterval {
+    get
+    set
+  }
+  public static func current<T>(id: Swift.String) -> T? where T : UIKit.UIView
+  public static func queued<T>(id: Swift.String) -> T? where T : UIKit.UIView
+  public static func currentOrQueued<T>(id: Swift.String) -> T? where T : UIKit.UIView
+  public static func count(id: Swift.String) -> Swift.Int
+  public static func set(count: Swift.Int, for id: Swift.String)
+}
+@objc @_inheritsConvenienceInitializers @_Concurrency.MainActor(unsafe) open class SwiftMessagesSegue : UIKit.UIStoryboardSegue {
+  public enum Layout {
+    case topMessage
+    case bottomMessage
+    case topCard
+    case topTab
+    case bottomCard
+    case bottomTab
+    case centered
+    public static func == (a: SwiftMessages.SwiftMessagesSegue.Layout, b: SwiftMessages.SwiftMessagesSegue.Layout) -> Swift.Bool
+    public func hash(into hasher: inout Swift.Hasher)
+    public var hashValue: Swift.Int {
+      get
+    }
+  }
+  public enum Containment {
+    case content
+    case background
+    case backgroundVertical
+    public static func == (a: SwiftMessages.SwiftMessagesSegue.Containment, b: SwiftMessages.SwiftMessagesSegue.Containment) -> Swift.Bool
+    public func hash(into hasher: inout Swift.Hasher)
+    public var hashValue: Swift.Int {
+      get
+    }
+  }
+  @_Concurrency.MainActor(unsafe) public var presentationStyle: SwiftMessages.SwiftMessages.PresentationStyle {
+    get
+    set
+  }
+  @_Concurrency.MainActor(unsafe) public var dimMode: SwiftMessages.SwiftMessages.DimMode {
+    get
+    set
+  }
+  @_Concurrency.MainActor(unsafe) public var duration: SwiftMessages.SwiftMessages.Duration {
+    get
+    set
+  }
+  @_Concurrency.MainActor(unsafe) public var interactiveHide: Swift.Bool {
+    get
+    set
+  }
+  @_Concurrency.MainActor(unsafe) public var eventListeners: [SwiftMessages.SwiftMessages.EventListener] {
+    get
+    set
+  }
+  @_Concurrency.MainActor(unsafe) public var overrideModalPresentationStyle: Swift.Bool
+  @_Concurrency.MainActor(unsafe) public var messageView: SwiftMessages.BaseView
+  @_Concurrency.MainActor(unsafe) public var containerView: SwiftMessages.CornerRoundingView
+  @_Concurrency.MainActor(unsafe) public var containment: SwiftMessages.SwiftMessagesSegue.Containment
+  @_Concurrency.MainActor(unsafe) public var keyboardTrackingView: SwiftMessages.KeyboardTrackingView? {
+    get
+    set
+  }
+  @_Concurrency.MainActor(unsafe) @objc override dynamic open func perform()
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public init(identifier: Swift.String?, source: UIKit.UIViewController, destination: UIKit.UIViewController)
+  @objc deinit
+}
+extension SwiftMessages.SwiftMessagesSegue {
+  @_Concurrency.MainActor(unsafe) public func configure(layout: SwiftMessages.SwiftMessagesSegue.Layout)
+}
+extension SwiftMessages.SwiftMessagesSegue : UIKit.UIViewControllerTransitioningDelegate {
+  @_Concurrency.MainActor(unsafe) @objc dynamic public func animationController(forPresented presented: UIKit.UIViewController, presenting: UIKit.UIViewController, source: UIKit.UIViewController) -> (any UIKit.UIViewControllerAnimatedTransitioning)?
+  @_Concurrency.MainActor(unsafe) @objc dynamic public func animationController(forDismissed dismissed: UIKit.UIViewController) -> (any UIKit.UIViewControllerAnimatedTransitioning)?
+}
+public enum Theme {
+  case info
+  case success
+  case warning
+  case error
+  public static func == (a: SwiftMessages.Theme, b: SwiftMessages.Theme) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+public enum Icon : Swift.String {
+  case error
+  case warning
+  case success
+  case info
+  case errorLight
+  case warningLight
+  case successLight
+  case infoLight
+  case errorSubtle
+  case warningSubtle
+  case successSubtle
+  case infoSubtle
+  public var image: UIKit.UIImage {
+    get
+  }
+  public init?(rawValue: Swift.String)
+  public typealias RawValue = Swift.String
+  public var rawValue: Swift.String {
+    get
+  }
+}
+public enum IconStyle {
+  case `default`
+  case light
+  case subtle
+  case none
+  public func image(theme: SwiftMessages.Theme) -> UIKit.UIImage?
+  public static func == (a: SwiftMessages.IconStyle, b: SwiftMessages.IconStyle) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+@objc @_hasMissingDesignatedInitializers public class TopBottomAnimation : ObjectiveC.NSObject, SwiftMessages.Animator {
+  public enum Style {
+    case top
+    case bottom
+    public static func == (a: SwiftMessages.TopBottomAnimation.Style, b: SwiftMessages.TopBottomAnimation.Style) -> Swift.Bool
+    public func hash(into hasher: inout Swift.Hasher)
+    public var hashValue: Swift.Int {
+      get
+    }
+  }
+  weak public var delegate: (any SwiftMessages.AnimationDelegate)?
+  final public let style: SwiftMessages.TopBottomAnimation.Style
+  public var showDuration: Swift.Double
+  public var hideDuration: Swift.Double
+  public var springDamping: CoreFoundation.CGFloat
+  public var closeSpeedThreshold: CoreFoundation.CGFloat
+  public var closePercentThreshold: CoreFoundation.CGFloat
+  public var closeAbsoluteThreshold: CoreFoundation.CGFloat
+  public var panGestureRecognizer: UIKit.UIPanGestureRecognizer {
+    get
+  }
+  public init(style: SwiftMessages.TopBottomAnimation.Style)
+  public func show(context: SwiftMessages.AnimationContext, completion: @escaping SwiftMessages.AnimationCompletion)
+  public func hide(context: SwiftMessages.AnimationContext, completion: @escaping SwiftMessages.AnimationCompletion)
+  @objc public func adjustMargins()
+  @objc deinit
+}
+extension UIKit.UIEdgeInsets {
+  public static func + (left: UIKit.UIEdgeInsets, right: UIKit.UIEdgeInsets) -> UIKit.UIEdgeInsets
+  public static func - (left: UIKit.UIEdgeInsets, right: UIKit.UIEdgeInsets) -> UIKit.UIEdgeInsets
+}
+public class Weak<T> where T : AnyObject {
+  weak public var value: T?
+  public init(value: T?)
+  @objc deinit
+}
+public protocol WindowScene {
+}
+@available(iOS 13.0, *)
+extension UIKit.UIWindowScene : SwiftMessages.WindowScene {
+}
+@objc @_Concurrency.MainActor(unsafe) open class WindowViewController : UIKit.UIViewController {
+  @_Concurrency.MainActor(unsafe) @objc override dynamic open var shouldAutorotate: Swift.Bool {
+    @objc get
+  }
+  @_Concurrency.MainActor(unsafe) @objc convenience dynamic public init()
+  @_Concurrency.MainActor(unsafe) public init(config: SwiftMessages.SwiftMessages.Config)
+  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder aDecoder: Foundation.NSCoder)
+  @_Concurrency.MainActor(unsafe) @objc override dynamic open var preferredStatusBarStyle: UIKit.UIStatusBarStyle {
+    @objc get
+  }
+  @_Concurrency.MainActor(unsafe) @objc override dynamic open var prefersStatusBarHidden: Swift.Bool {
+    @objc get
+  }
+  @objc deinit
+}
+extension SwiftMessages.KeyboardTrackingView.Change : Swift.Equatable {}
+extension SwiftMessages.KeyboardTrackingView.Change : Swift.Hashable {}
+extension SwiftMessages.MessageView.Layout : Swift.Equatable {}
+extension SwiftMessages.MessageView.Layout : Swift.Hashable {}
+extension SwiftMessages.MessageView.Layout : Swift.RawRepresentable {}
+extension SwiftMessages.PhysicsAnimation.Placement : Swift.Equatable {}
+extension SwiftMessages.PhysicsAnimation.Placement : Swift.Hashable {}
+extension SwiftMessages.SwiftMessages : SwiftMessages.AnimationDelegate {}
+extension SwiftMessages.SwiftMessagesSegue.Layout : Swift.Equatable {}
+extension SwiftMessages.SwiftMessagesSegue.Layout : Swift.Hashable {}
+extension SwiftMessages.SwiftMessagesSegue.Containment : Swift.Equatable {}
+extension SwiftMessages.SwiftMessagesSegue.Containment : Swift.Hashable {}
+extension SwiftMessages.Theme : Swift.Equatable {}
+extension SwiftMessages.Theme : Swift.Hashable {}
+extension SwiftMessages.Icon : Swift.Equatable {}
+extension SwiftMessages.Icon : Swift.Hashable {}
+extension SwiftMessages.Icon : Swift.RawRepresentable {}
+extension SwiftMessages.IconStyle : Swift.Equatable {}
+extension SwiftMessages.IconStyle : Swift.Hashable {}
+extension SwiftMessages.TopBottomAnimation.Style : Swift.Equatable {}
+extension SwiftMessages.TopBottomAnimation.Style : Swift.Hashable {}

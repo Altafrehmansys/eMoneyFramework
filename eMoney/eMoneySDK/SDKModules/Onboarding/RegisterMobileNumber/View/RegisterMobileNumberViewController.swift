@@ -113,6 +113,10 @@ public class RegisterMobileNumberViewController: BaseViewController {
         viewField.prefixColor = AppColor.eAnd_Black_80
         viewField.state = .normal
         viewField.setupConfigurations()
+        viewField.text = SDKColors.shared.msisdn?.formattedPhoneNumber ?? ""
+        if !viewField.text.isEmpty {
+            viewField.state = .disabled
+        }
         //        self.viewTop.addGradient(colors: [
         //            AppColor.backGroundHeaderGradiant1,
         //            AppColor.backGroundHeaderGradiant2

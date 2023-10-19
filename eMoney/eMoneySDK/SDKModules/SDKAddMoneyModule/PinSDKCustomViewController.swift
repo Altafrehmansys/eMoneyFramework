@@ -34,6 +34,7 @@ class PinSDKCustomViewController: BaseViewController {
         if SDKColors.shared.accessToken == nil {
             self.getToken()
         } else {
+            Loader.shared.showFullScreen()
             sendOTP()
         }
     }
@@ -41,18 +42,27 @@ class PinSDKCustomViewController: BaseViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
-        Loader.shared.showFullScreen()
     }
     
     func getToken() {
+        Loader.shared.showFullScreen()
         var request = URLRequest(url: URL(string: "https://enmoneyapim.azure-api.net/gettoken/v1/token?authorization=Basic%20bW9iaWxlLWZlOnBhc3N3b3JkMTIz")!)
         request.method = HTTPMethod.post
         request.headers.add(HTTPHeader(name: "custom_header", value: "pre_prod"))
-        request.headers.add(HTTPHeader(name: "client_id",   value: SDKColors.shared.clientID!))
+        if let clientId = SDKColors.shared.clientID {
+            request.headers.add(HTTPHeader(name: "client_id",   value: clientId))
+        }
         
         URLSession.shared.dataTask(with: request) { [weak self] (data, response, error) in
+            if let error = error {
+                Loader.shared.hideFullScreen()
+                SDKColors.shared.onFailure?("", error.localizedDescription)
+            }
             if let data = data {
                 self?.parseData(data)
+            } else {
+                Loader.shared.hideFullScreen()
+                
             }
         }.resume()
     }
@@ -69,6 +79,7 @@ class PinSDKCustomViewController: BaseViewController {
         catch {
             print(error)
             Loader.shared.hideFullScreen()
+            SDKColors.shared.onFailure?("", error.localizedDescription)
         }
     }
     
@@ -93,11 +104,11 @@ class PinSDKCustomViewController: BaseViewController {
                 let val = try? pin.aesEncrypt(key:EncryptionKey.pinKey)
                 request.pin = val
                 request.isNewLogin = true
-                request.identity = SDKColors.shared.msisdn
+                request.identity = SDKColors.shared.msisdn?.planPhoneNumberString
                 
                 if GlobalData.shared.isDeviceChanged && GlobalData.shared.msisdnStatusData?.oldDeviceId != nil {
                     request.oldDeviceId = GlobalData.shared.msisdnStatusData?.oldDeviceId ?? ""
-                }else{
+                } else {
                     request.oldDeviceId = ""
                 }
                 
@@ -129,8 +140,15 @@ class PinSDKCustomViewController: BaseViewController {
     func sendOTP() {
         Task {
             do {
+                guard let msisdn = SDKColors.shared.msisdn else {
+                    Loader.shared.hideFullScreen()
+                    SDKColors.shared.onFailure?("", "msisdn is missing")
+                    return
+                }
+                let planeNumber = msisdn.planPhoneNumberString
                 let request = VerifyMobileNumberOtpSendRequestModel(isSingleAccount: true,
-                                                                    msisdn: SDKColors.shared.msisdn!,
+                                                                    msisdn:planeNumber,
+                                                                    identity: planeNumber,
                                                                     flowName: "AddMoney")
                 
                 let addPostObject:VerifyMobileNumberResponseModel? = try await ApiManager.shared.execute(OnboardingApiRouter.otpSendToMobile(param: request))
@@ -144,7 +162,9 @@ class PinSDKCustomViewController: BaseViewController {
             } catch let error as AppError {
                 print("\(#function) error")
                 print(error.localizedDescription)
+                Alert.showBottomSheetError(title: error.title, message: error.errorDescription)
                 Loader.shared.hideFullScreen()
+                SDKColors.shared.onFailure?(error.errorCode, error.errorDescription)
             }
         }
     }

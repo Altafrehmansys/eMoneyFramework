@@ -586,7 +586,10 @@ open class SwiftMessages {
     fileprivate func enqueue(presenter: Presenter) {
         if presenter.config.ignoreDuplicates {
             counts[presenter.id] = (counts[presenter.id] ?? 0) + 1
-            if _current?.id == presenter.id && _current?.isHiding == false { return }
+            if let _current,
+                _current.id == presenter.id,
+               !_current.isHiding,
+               !_current.isOrphaned { return }
             if queue.filter({ $0.id == presenter.id }).count > 0 { return }
         }
         func doEnqueue() {
@@ -606,7 +609,8 @@ open class SwiftMessages {
     }
     
     fileprivate func dequeueNext() {
-        guard self._current == nil, queue.count > 0 else { return }
+        guard queue.count > 0 else { return }
+        if let _current, !_current.isOrphaned { return }
         let current = queue.removeFirst()
         self._current = current
         // Set `autohideToken` before the animation starts in case
@@ -811,7 +815,7 @@ extension SwiftMessages {
     public class func viewFromNib<T: UIView>(_ filesOwner: AnyObject = NSNull.init()) throws -> T {
         let name = T.description().components(separatedBy: ".").last
         assert(name != nil)
-        let view: T = try internalViewFromNib(named: name!, bundle: Bundle(identifier: "com.app.taskLocalTester.asdf.asdf.asdf.eMoneySDK")!, filesOwner: filesOwner)
+        let view: T = try internalViewFromNib(named: name!, bundle: nil, filesOwner: filesOwner)
         return view
     }
     
@@ -828,7 +832,7 @@ extension SwiftMessages {
      - Returns: An instance of generic view type `T`.
      */
     public class func viewFromNib<T: UIView>(named name: String, filesOwner: AnyObject = NSNull.init()) throws -> T {
-        let view: T = try internalViewFromNib(named: name, bundle: Bundle(identifier: "com.app.taskLocalTester.asdf.asdf.asdf.eMoneySDK")!, filesOwner: filesOwner)
+        let view: T = try internalViewFromNib(named: name, bundle: nil, filesOwner: filesOwner)
         return view
     }
     
@@ -855,8 +859,8 @@ extension SwiftMessages {
         if let bundle = bundle {
             resolvedBundle = bundle
         } else {
-            if Bundle(identifier: "com.app.taskLocalTester.asdf.asdf.asdf.eMoneySDK")!.path(forResource: name, ofType: "nib") != nil {
-                resolvedBundle = Bundle(identifier: "com.app.taskLocalTester.asdf.asdf.asdf.eMoneySDK")!
+            if Bundle.main.path(forResource: name, ofType: "nib") != nil {
+                resolvedBundle = Bundle.main
             } else {
                 resolvedBundle = Bundle.sm_frameworkBundle()
             }

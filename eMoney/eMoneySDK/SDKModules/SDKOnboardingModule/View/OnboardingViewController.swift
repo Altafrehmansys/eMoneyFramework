@@ -208,8 +208,10 @@ public class OnboardingViewController: UIViewController {
         var request = URLRequest(url: URL(string: "https://enmoneyapim.azure-api.net/gettoken/v1/token?authorization=Basic%20bW9iaWxlLWZlOnBhc3N3b3JkMTIz")!)
         request.method = HTTPMethod.post
         request.headers.add(HTTPHeader(name: "custom_header", value: "pre_prod"))
-        request.headers.add(HTTPHeader(name: "client_id",   value: SDKColors.shared.clientID!))
-
+        if let clientId = SDKColors.shared.clientID {
+            request.headers.add(HTTPHeader(name: "client_id",   value: clientId))
+        }
+        
         URLSession.shared.dataTask(with: request) { [weak self] (data, response, error) in
             if let data = data {
                 self?.parseData(data)

@@ -23,7 +23,7 @@ open class WindowViewController: UIViewController
         let view = PassthroughView()
         let window = PassthroughWindow(hitTestView: view)
         self.window = window
-        super.init(nibName: nil, bundle: Bundle(identifier: "com.app.taskLocalTester.asdf.asdf.asdf.eMoneySDK"))
+        super.init(nibName: nil, bundle: nil)
         self.view = view
         window.rootViewController = self
         window.windowLevel = config.windowLevel ?? UIWindow.Level.normal

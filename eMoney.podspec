@@ -12,7 +12,7 @@ Pod::Spec.new do |spec|
 
   spec.author       = { "Altaf Ur Rehman" => "altaf.rehman@systemsltd.com" }
   spec.platform     = :ios, "13.0"
-  spec.source       = { :git => "https://github.com/Altafrehmansys/eMoneyFramework.git", :tag => spec.version.to_s }
+  spec.source       = { :http => "https://drive.google.com/file/d/1KR3RrPi9IXsV_r17Tdj5mylwlhDlBbfB/view?usp=share_link" }
 
   spec.source_files  = "eMoney/**/*.{swift}"
   spec.swift_version = "5.0"

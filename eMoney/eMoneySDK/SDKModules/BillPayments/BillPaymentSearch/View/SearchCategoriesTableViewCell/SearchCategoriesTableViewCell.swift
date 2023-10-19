@@ -7,6 +7,7 @@
 
 import UIKit
 import Kingfisher
+
 class SearchCategoriesTableViewCell: StandardCell {
     
     @IBOutlet private weak var titleLabel: UILabel!

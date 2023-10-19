@@ -1,5 +1,4 @@
 ${PODS_ROOT}/Target Support Files/Pods-eMoneySDK/Pods-eMoneySDK-resources.sh
-${BUILT_PRODUCTS_DIR}/DropDown/DropDown.framework/DropDownCell.nib
 ${PODS_ROOT}/PureLiveSDK/PureLiveSDKResources.bundle
 ${PODS_ROOT}/PureLiveSDK/PureLiveSDKOnDeviceResources.bundle
 ${PODS_CONFIGURATION_BUILD_DIR}/SwiftMessages/SwiftMessages.bundle

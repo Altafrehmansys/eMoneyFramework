@@ -6,7 +6,7 @@
 //
 
 import Foundation
-import NVActivityIndicatorView
+//import NVActivityIndicatorView
 import UIKit
 
 class Loader {
@@ -70,11 +70,16 @@ class Loader {
         }
         
         if !flag {
+            
             let bgView = UIView(frame: view?.frame ?? keyWindow.frame)
             bgView.backgroundColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.20)
             bgView.restorationIdentifier = self.restorationIdentifier
             let frame = CGRect(x: 0, y: 0, width: 100, height: 100)
-            let nvActivity = NVActivityIndicatorView(frame: frame, type: .ballSpinFadeLoader, color: AppColor.eAnd_Red, padding: 10)
+            let nvActivity = UIActivityIndicatorView.init(frame: frame)
+            nvActivity.color = AppColor.eAnd_Red
+//            nvActivity.startAnimating()
+            
+//            let nvActivity = NVActivityIndicatorView(frame: frame, type: .ballSpinFadeLoader, color: AppColor.eAnd_Red, padding: 10)
             nvActivity.startAnimating()
             nvActivity.center = view?.center ?? keyWindow.center
             bgView.addSubview(nvActivity)
@@ -162,7 +167,9 @@ extension Loader {
             bgView.backgroundColor = .clear
             bgView.restorationIdentifier = self.restorationIdentifier
             let frame = CGRect(x: 0, y: 0, width: 100, height: 100)
-            let nvActivity = NVActivityIndicatorView(frame: frame, type: .ballSpinFadeLoader, color: AppColor.eAnd_Red, padding: 20)
+//            let nvActivity = NVActivityIndicatorView(frame: frame, type: .ballSpinFadeLoader, color: AppColor.eAnd_Red, padding: 20)
+            let nvActivity = UIActivityIndicatorView.init(frame: frame)
+            nvActivity.color = AppColor.eAnd_Red
             nvActivity.startAnimating()
             nvActivity.center = bgView.center
             bgView.addSubview(nvActivity)

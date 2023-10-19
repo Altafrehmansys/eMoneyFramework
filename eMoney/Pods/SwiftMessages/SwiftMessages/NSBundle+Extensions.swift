@@ -16,14 +16,13 @@ extension Bundle {
 
         let candidates = [
             // Bundle should be present here when the package is linked into an App.
-            Bundle(identifier: "com.app.taskLocalTester.asdf.asdf.asdf.eMoneySDK")!.resourceURL,
+            Bundle.main.resourceURL,
 
             // Bundle should be present here when the package is linked into a framework.
-//            Bundle(for: BundleToken.self).resourceURL,
-            Bundle(identifier: "com.app.taskLocalTester.asdf.asdf.asdf.eMoneySDK")!.resourceURL,
+            Bundle(for: BundleToken.self).resourceURL,
 
             // For command-line tools.
-            Bundle(identifier: "com.app.taskLocalTester.asdf.asdf.asdf.eMoneySDK")!.bundleURL,
+            Bundle.main.bundleURL,
         ]
 
         let bundleNames = [

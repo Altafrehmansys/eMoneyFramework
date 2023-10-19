@@ -1,0 +1,11 @@
+framework module eMoneySDK {
+  umbrella header "eMoneySDK.h"
+  export *
+
+  module * { export * }
+}
+
+module eMoneySDK.Swift {
+  header "eMoneySDK-Swift.h"
+  requires objc
+}

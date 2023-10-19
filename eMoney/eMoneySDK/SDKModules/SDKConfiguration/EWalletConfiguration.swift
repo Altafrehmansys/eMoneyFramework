@@ -29,13 +29,14 @@ public class EWalletSDK {
         self.loadLanguagePack()
     }
     
-    public func startWithOnboarding(in controller: UIViewController, onSuccess: ((String) -> ())?, onFailure: ((String, String) -> ())?) {
+    public func startWithOnboarding(in controller: UIViewController, msisdn: String, onSuccess: ((String) -> ())?, onFailure: ((String, String) -> ())?) {
         let onboardingView = OnboardingViewController.instantiate(fromAppStoryboard: .Onboarding)
         onboardingView.modalPresentationStyle = .overCurrentContext
         onboardingView.onSuccess = onSuccess
         onboardingView.onFailure = onFailure
-//        onboardingView.msisdn = msisdn
+        onboardingView.msisdn = msisdn
         onboardingView.clientID = configuration.clientId
+        SDKColors.shared.clientID = configuration.clientId
         onboardingView.partnerName = configuration.partnerName
         onboardingView.receivedTheme = configuration.theme
         controller.present(onboardingView, animated: true)
@@ -48,6 +49,7 @@ public class EWalletSDK {
         onboardingView.onFailure = onFailure
         onboardingView.msisdn = msisdn
         onboardingView.clientID = configuration.clientId
+        SDKColors.shared.clientID = configuration.clientId
         onboardingView.partnerName = configuration.partnerName
         onboardingView.receivedTheme = configuration.theme
         controller.present(onboardingView, animated: true)

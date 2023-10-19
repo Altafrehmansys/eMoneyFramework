@@ -33,14 +33,14 @@ extension LottieAnimation {
   /// Loads an animation model from a bundle by its name. Returns `nil` if an animation is not found.
   ///
   /// - Parameter name: The name of the json file without the json extension. EG "StarAnimation"
-  /// - Parameter bundle: The bundle in which the animation is located. Defaults to `Bundle(identifier: "com.app.taskLocalTester.asdf.asdf.asdf.eMoneySDK")!`
+  /// - Parameter bundle: The bundle in which the animation is located. Defaults to `Bundle.main`
   /// - Parameter subdirectory: A subdirectory in the bundle in which the animation is located. Optional.
   /// - Parameter animationCache: A cache for holding loaded animations. Defaults to `LottieAnimationCache.shared`. Optional.
   ///
   /// - Returns: Deserialized `LottieAnimation`. Optional.
   public static func named(
     _ name: String,
-    bundle: Bundle = Bundle(identifier: "com.app.taskLocalTester.asdf.asdf.asdf.eMoneySDK")!,
+    bundle: Bundle = Bundle.main,
     subdirectory: String? = nil,
     animationCache: AnimationCacheProvider? = LottieAnimationCache.shared)
     -> LottieAnimation?
@@ -105,12 +105,12 @@ extension LottieAnimation {
 
   ///    Loads an animation model from the asset catalog by its name. Returns `nil` if an animation is not found.
   ///    - Parameter name: The name of the json file in the asset catalog. EG "StarAnimation"
-  ///    - Parameter bundle: The bundle in which the animation is located. Defaults to `Bundle(identifier: "com.app.taskLocalTester.asdf.asdf.asdf.eMoneySDK")!`
+  ///    - Parameter bundle: The bundle in which the animation is located. Defaults to `Bundle.main`
   ///    - Parameter animationCache: A cache for holding loaded animations. Defaults to `LottieAnimationCache.shared` Optional.
   ///    - Returns: Deserialized `LottieAnimation`. Optional.
   public static func asset(
     _ name: String,
-    bundle: Bundle = Bundle(identifier: "com.app.taskLocalTester.asdf.asdf.asdf.eMoneySDK")!,
+    bundle: Bundle = Bundle.main,
     animationCache: AnimationCacheProvider? = LottieAnimationCache.shared)
     -> LottieAnimation?
   {

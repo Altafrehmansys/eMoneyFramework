@@ -20,7 +20,7 @@ extension LottieAnimationView {
   /// If none is supplied Lottie will search in the supplied bundle for images.
   public convenience init(
     name: String,
-    bundle: Bundle = Bundle(identifier: "com.app.taskLocalTester.asdf.asdf.asdf.eMoneySDK")!,
+    bundle: Bundle = Bundle.main,
     subdirectory: String? = nil,
     imageProvider: AnimationImageProvider? = nil,
     animationCache: AnimationCacheProvider? = LottieAnimationCache.shared,
@@ -87,7 +87,7 @@ extension LottieAnimationView {
   /// If none is supplied Lottie will search in the supplied bundle for images.
   public convenience init(
     asset name: String,
-    bundle: Bundle = Bundle(identifier: "com.app.taskLocalTester.asdf.asdf.asdf.eMoneySDK")!,
+    bundle: Bundle = Bundle.main,
     imageProvider: AnimationImageProvider? = nil,
     animationCache: AnimationCacheProvider? = LottieAnimationCache.shared,
     configuration: LottieConfiguration = .shared)
@@ -102,14 +102,14 @@ extension LottieAnimationView {
   /// Loads a Lottie animation from a .lottie file in the supplied bundle.
   ///
   /// - Parameter dotLottieName: The name of the lottie file without the lottie extension. EG "StarAnimation"
-  /// - Parameter bundle: The bundle in which the lottie is located. Defaults to `Bundle(identifier: "com.app.taskLocalTester.asdf.asdf.asdf.eMoneySDK")!`
+  /// - Parameter bundle: The bundle in which the lottie is located. Defaults to `Bundle.main`
   /// - Parameter subdirectory: A subdirectory in the bundle in which the lottie is located. Optional.
   /// - Parameter animationId: Animation id to play. Optional
   /// - Parameter completion: A closure that is called when the .lottie file is finished loading
   /// Defaults to first animation in file
   public convenience init(
     dotLottieName name: String,
-    bundle: Bundle = Bundle(identifier: "com.app.taskLocalTester.asdf.asdf.asdf.eMoneySDK")!,
+    bundle: Bundle = Bundle.main,
     subdirectory: String? = nil,
     animationId: String? = nil,
     dotLottieCache: DotLottieCacheProvider? = DotLottieCache.sharedCache,
@@ -191,7 +191,7 @@ extension LottieAnimationView {
   /// Defaults to first animation in file
   public convenience init(
     dotLottieAsset name: String,
-    bundle: Bundle = Bundle(identifier: "com.app.taskLocalTester.asdf.asdf.asdf.eMoneySDK")!,
+    bundle: Bundle = Bundle.main,
     animationId: String? = nil,
     dotLottieCache: DotLottieCacheProvider? = DotLottieCache.sharedCache,
     configuration: LottieConfiguration = .shared,

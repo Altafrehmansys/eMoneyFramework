@@ -7,6 +7,7 @@
 
 import Foundation
 import SwiftMessages
+import UIKit
 
 protocol ToastMessageViewDelegate:AnyObject{
     func closeBtnTapped()
