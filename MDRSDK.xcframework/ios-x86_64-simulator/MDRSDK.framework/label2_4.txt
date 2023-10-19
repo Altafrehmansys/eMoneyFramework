@@ -1,0 +1,6 @@
+background
+visa
+eid_front
+eid_back
+passport
+other_id

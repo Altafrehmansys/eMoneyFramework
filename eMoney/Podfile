@@ -3,7 +3,7 @@ platform :ios, '13.0'
 target 'eMoneySDK' do
   # Comment the next line if you don't want to use dynamic frameworks
   project './eMoneySDK.xcodeproj'
-  use_frameworks! :linkage => :static
+#  use_frameworks! :linkage => :static
 
   pod 'Alamofire'
   #pod 'NVActivityIndicatorView'

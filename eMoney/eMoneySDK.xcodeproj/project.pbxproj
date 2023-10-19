@@ -1714,7 +1714,7 @@
 		BCBFA8F02AA0739F009035B7 /* UINavigationItemExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCBFA2FB2AA0739C009035B7 /* UINavigationItemExtension.swift */; };
 		BCBFA8F12AA0739F009035B7 /* UIDevice+JailBroken.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCBFA2FC2AA0739C009035B7 /* UIDevice+JailBroken.swift */; };
 		BCBFA8F22AA0739F009035B7 /* UICollectionViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCBFA2FD2AA0739C009035B7 /* UICollectionViewExtension.swift */; };
-		BCBFA8F32AA0739F009035B7 /* DataExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCBFA2FE2AA0739C009035B7 /* DataExtension.swift */; };
+		BCBFA8F32AA0739F009035B7 /* DataExtension-eMoney.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCBFA2FE2AA0739C009035B7 /* DataExtension-eMoney.swift */; };
 		BCBFA8F42AA0739F009035B7 /* UINavigationControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCBFA2FF2AA0739C009035B7 /* UINavigationControllerExtension.swift */; };
 		BCBFA8F52AA0739F009035B7 /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCBFA3002AA0739C009035B7 /* StringExtension.swift */; };
 		BCBFA8F62AA0739F009035B7 /* DictionaryExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCBFA3012AA0739C009035B7 /* DictionaryExtension.swift */; };
@@ -3457,7 +3457,7 @@
 		BCBFA2FB2AA0739C009035B7 /* UINavigationItemExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UINavigationItemExtension.swift; sourceTree = "<group>"; };
 		BCBFA2FC2AA0739C009035B7 /* UIDevice+JailBroken.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIDevice+JailBroken.swift"; sourceTree = "<group>"; };
 		BCBFA2FD2AA0739C009035B7 /* UICollectionViewExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UICollectionViewExtension.swift; sourceTree = "<group>"; };
-		BCBFA2FE2AA0739C009035B7 /* DataExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataExtension.swift; sourceTree = "<group>"; };
+		BCBFA2FE2AA0739C009035B7 /* DataExtension-eMoney.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DataExtension-eMoney.swift"; sourceTree = "<group>"; };
 		BCBFA2FF2AA0739C009035B7 /* UINavigationControllerExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UINavigationControllerExtension.swift; sourceTree = "<group>"; };
 		BCBFA3002AA0739C009035B7 /* StringExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
 		BCBFA3012AA0739C009035B7 /* DictionaryExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DictionaryExtension.swift; sourceTree = "<group>"; };
@@ -14437,7 +14437,7 @@
 				BCBFA2FB2AA0739C009035B7 /* UINavigationItemExtension.swift */,
 				BCBFA2FC2AA0739C009035B7 /* UIDevice+JailBroken.swift */,
 				BCBFA2FD2AA0739C009035B7 /* UICollectionViewExtension.swift */,
-				BCBFA2FE2AA0739C009035B7 /* DataExtension.swift */,
+				BCBFA2FE2AA0739C009035B7 /* DataExtension-eMoney.swift */,
 				BCBFA2FF2AA0739C009035B7 /* UINavigationControllerExtension.swift */,
 				BCBFA3002AA0739C009035B7 /* StringExtension.swift */,
 				BCBFA3012AA0739C009035B7 /* DictionaryExtension.swift */,
@@ -15160,7 +15160,7 @@
 				BCBFA5942AA0739D009035B7 /* BillCompleteRechargePresenter.swift in Sources */,
 				BCBFA4E82AA0739D009035B7 /* SavedBillCell.swift in Sources */,
 				2721E1D92AE018C2009E307C /* CompactMap.swift in Sources */,
-				BCBFA8F32AA0739F009035B7 /* DataExtension.swift in Sources */,
+				BCBFA8F32AA0739F009035B7 /* DataExtension-eMoney.swift in Sources */,
 				BCBFA7E22AA0739E009035B7 /* AutoAddMoneyCell.swift in Sources */,
 				BCBFA60C2AA0739D009035B7 /* AddMoneySelectBankInteractor.swift in Sources */,
 				BCBFA6F32AA0739E009035B7 /* TransferExpandedTableViewCell.swift in Sources */,

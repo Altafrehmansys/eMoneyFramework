@@ -1,0 +1,1945 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 5.9 (swiftlang-5.9.0.128.108 clang-1500.0.40.1)
+// swift-module-flags: -target x86_64-apple-ios13.0-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name eMoneySDK
+// swift-module-flags-ignorable: -enable-bare-slash-regex
+import AVFoundation
+import Alamofire
+import CommonCrypto
+import ContactsUI
+import CoreGraphics
+import CoreImage
+import CoreLocation
+import CryptoKit
+import CryptoSwift
+import DeveloperToolsSupport
+import DropDown
+import EFRSDK
+import FSPagerView
+import Foundation
+import Kingfisher
+import LeanSDK
+import LocalAuthentication
+import Lottie
+import MDRSDK
+import MapKit
+import NVActivityIndicatorView
+import PassKit
+import Photos
+import QuartzCore
+import Swift
+import SwiftMessages
+import SwiftUI
+import UIKit
+import UserNotifications
+import Vision
+import WebKit
+import _Concurrency
+import _StringProcessing
+import _SwiftConcurrencyShims
+@_exported import eMoneySDK
+import os.log
+import os
+@_hasMissingDesignatedInitializers @objc(FloatingPanelGrabberView) @_Concurrency.MainActor(unsafe) public class GrabberView : UIKit.UIView {
+  @_Concurrency.MainActor(unsafe) public var barColor: UIKit.UIColor {
+    get
+    set
+  }
+  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder aDecoder: Foundation.NSCoder)
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public func layoutSubviews()
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public func hitTest(_ point: CoreFoundation.CGPoint, with event: UIKit.UIEvent?) -> UIKit.UIView?
+  @objc deinit
+}
+@objc @_inheritsConvenienceInitializers @_Concurrency.MainActor(unsafe) public class AOModalStatusView : UIKit.UIView {
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public init(frame: CoreFoundation.CGRect)
+  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder aDecoder: Foundation.NSCoder)
+  @_Concurrency.MainActor(unsafe) public func set(image: UIKit.UIImage)
+  @_Concurrency.MainActor(unsafe) public func set(headline text: Swift.String)
+  @_Concurrency.MainActor(unsafe) public func set(subheading text: Swift.String)
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public func layoutSubviews()
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public func didMoveToSuperview()
+  @objc deinit
+}
+@_inheritsConvenienceInitializers public class ThinWormDrawer : eMoneySDK.AdvancedPageControlDrawerParentWithIndicator, eMoneySDK.AdvancedPageControlDraw {
+  public func draw(_ rect: CoreFoundation.CGRect)
+  override public init(numberOfPages: Swift.Int? = super, height: CoreFoundation.CGFloat? = super, width: CoreFoundation.CGFloat? = super, space: CoreFoundation.CGFloat? = super, raduis: CoreFoundation.CGFloat? = super, currentItem: CoreFoundation.CGFloat? = super, indicatorColor: UIKit.UIColor? = super, dotsColor: UIKit.UIColor? = super, isBordered: Swift.Bool = super, borderColor: UIKit.UIColor = super, borderWidth: CoreFoundation.CGFloat = super, indicatorBorderColor: UIKit.UIColor = super, indicatorBorderWidth: CoreFoundation.CGFloat = super)
+  @objc deinit
+}
+@objc @_inheritsConvenienceInitializers @_Concurrency.MainActor(unsafe) public class InternetConnectionErrorViewController : eMoneySDK.BaseViewController {
+  @_Concurrency.MainActor(unsafe) @objc convenience dynamic public init()
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public func viewDidLoad()
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public init(nibName nibNameOrNil: Swift.String?, bundle nibBundleOrNil: Foundation.Bundle?)
+  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder: Foundation.NSCoder)
+  @objc deinit
+}
+@_inheritsConvenienceInitializers public class ColorBlendDrawer : eMoneySDK.AdvancedPageControlDrawerParentWithIndicator, eMoneySDK.AdvancedPageControlDraw {
+  public func draw(_ rect: CoreFoundation.CGRect)
+  override public init(numberOfPages: Swift.Int? = super, height: CoreFoundation.CGFloat? = super, width: CoreFoundation.CGFloat? = super, space: CoreFoundation.CGFloat? = super, raduis: CoreFoundation.CGFloat? = super, currentItem: CoreFoundation.CGFloat? = super, indicatorColor: UIKit.UIColor? = super, dotsColor: UIKit.UIColor? = super, isBordered: Swift.Bool = super, borderColor: UIKit.UIColor = super, borderWidth: CoreFoundation.CGFloat = super, indicatorBorderColor: UIKit.UIColor = super, indicatorBorderWidth: CoreFoundation.CGFloat = super)
+  @objc deinit
+}
+@_inheritsConvenienceInitializers public class WormDrawer : eMoneySDK.AdvancedPageControlDrawerParentWithIndicator, eMoneySDK.AdvancedPageControlDraw {
+  public func draw(_ rect: CoreFoundation.CGRect)
+  override public init(numberOfPages: Swift.Int? = super, height: CoreFoundation.CGFloat? = super, width: CoreFoundation.CGFloat? = super, space: CoreFoundation.CGFloat? = super, raduis: CoreFoundation.CGFloat? = super, currentItem: CoreFoundation.CGFloat? = super, indicatorColor: UIKit.UIColor? = super, dotsColor: UIKit.UIColor? = super, isBordered: Swift.Bool = super, borderColor: UIKit.UIColor = super, borderWidth: CoreFoundation.CGFloat = super, indicatorBorderColor: UIKit.UIColor = super, indicatorBorderWidth: CoreFoundation.CGFloat = super)
+  @objc deinit
+}
+@objc @_inheritsConvenienceInitializers @_Concurrency.MainActor(unsafe) public class BaseViewController : UIKit.UIViewController {
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public func viewDidLoad()
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public func viewWillDisappear(_ animated: Swift.Bool)
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public func viewWillAppear(_ animated: Swift.Bool)
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public init(nibName nibNameOrNil: Swift.String?, bundle nibBundleOrNil: Foundation.Bundle?)
+  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder: Foundation.NSCoder)
+  @objc deinit
+}
+extension eMoneySDK.BetterSegmentedControl {
+  @objc @_hasMissingDesignatedInitializers @_Concurrency.MainActor(unsafe) open class IndicatorView : UIKit.UIView {
+    @_Concurrency.MainActor(unsafe) @objc override dynamic open var frame: CoreFoundation.CGRect {
+      @objc get
+      @objc set
+    }
+    @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder aDecoder: Foundation.NSCoder)
+    @objc deinit
+  }
+}
+public protocol OTPTextFieldData : AnyObject {
+  func numberOfPins() -> Swift.Int
+  func otpTextField(viewAt index: Swift.Int) -> any eMoneySDK.PinContainer
+  func otpTextField(sizeForViewAt index: Swift.Int) -> CoreFoundation.CGSize
+  func spaceBetweenViews() -> CoreFoundation.CGFloat
+  func showSeperatorBetweenFields() -> Swift.Bool
+  func showBorderOnMainView() -> Swift.Bool
+}
+public protocol TypographyExtensions : UIKit.UILabel {
+  var lineHeight: CoreFoundation.CGFloat? { get set }
+}
+extension UIKit.UILabel : eMoneySDK.TypographyExtensions {
+  @_Concurrency.MainActor(unsafe) public var lineHeight: CoreFoundation.CGFloat? {
+    get
+    set
+  }
+}
+@_hasMissingDesignatedInitializers public class SDKColors {
+  public var clientID: Swift.String?
+  public var accessToken: Swift.String?
+  public var msisdn: Swift.String?
+  public var partnerName: Swift.String?
+  public var onSuccess: ((Swift.String) -> ())?
+  public var onFailure: ((Swift.String, Swift.String) -> ())?
+  @objc deinit
+}
+public struct EWalletTheme {
+  public var buttonBackgroundColor: Swift.String?
+  public var buttonTextColor: Swift.String?
+  public var buttonFont: UIKit.UIFont?
+  public var toolBarTitleColor: Swift.String?
+  public var toolBarLabelColor: Swift.String?
+  public var toolBarIconColor: Swift.String?
+  public var checkBoxColor: Swift.String?
+  public var segmentBarColor: Swift.String?
+  public init(buttonBackgroundColor: Swift.String? = nil, buttonTextColor: Swift.String? = nil, buttonFont: UIKit.UIFont? = nil, toolBarTitleColor: Swift.String? = nil, toolBarLabelColor: Swift.String? = nil, toolBarIconColor: Swift.String? = nil, checkBoxColor: Swift.String? = nil, segmentBarColor: Swift.String? = nil)
+}
+public class IconWithLabel {
+  public init(icon: UIKit.UIImage, title: Swift.String)
+  @objc deinit
+}
+@_inheritsConvenienceInitializers public class SwapDrawer : eMoneySDK.AdvancedPageControlDrawerParentWithIndicator, eMoneySDK.AdvancedPageControlDraw {
+  public func draw(_ rect: CoreFoundation.CGRect)
+  override public init(numberOfPages: Swift.Int? = super, height: CoreFoundation.CGFloat? = super, width: CoreFoundation.CGFloat? = super, space: CoreFoundation.CGFloat? = super, raduis: CoreFoundation.CGFloat? = super, currentItem: CoreFoundation.CGFloat? = super, indicatorColor: UIKit.UIColor? = super, dotsColor: UIKit.UIColor? = super, isBordered: Swift.Bool = super, borderColor: UIKit.UIColor = super, borderWidth: CoreFoundation.CGFloat = super, indicatorBorderColor: UIKit.UIColor = super, indicatorBorderWidth: CoreFoundation.CGFloat = super)
+  @objc deinit
+}
+@_inheritsConvenienceInitializers @available(iOSApplicationExtension, unavailable)
+@objc @_Concurrency.MainActor(unsafe) open class IQPreviousNextView : UIKit.UIView {
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public init(frame: CoreFoundation.CGRect)
+  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder: Foundation.NSCoder)
+  @objc deinit
+}
+@objc public protocol FloatingPanelBehavior {
+  @objc optional var springDecelerationRate: CoreFoundation.CGFloat { get }
+  @objc optional var springResponseTime: CoreFoundation.CGFloat { get }
+  @objc optional var momentumProjectionRate: CoreFoundation.CGFloat { get }
+  @objc optional func shouldProjectMomentum(_ fpc: eMoneySDK.FloatingPanelController, to proposedTargetPosition: eMoneySDK.FloatingPanelState) -> Swift.Bool
+  @objc optional func redirectionalProgress(_ fpc: eMoneySDK.FloatingPanelController, from: eMoneySDK.FloatingPanelState, to: eMoneySDK.FloatingPanelState) -> CoreFoundation.CGFloat
+  @objc optional func allowsRubberBanding(for edge: UIKit.UIRectEdge) -> Swift.Bool
+  @objc optional var removalInteractionVelocityThreshold: CoreFoundation.CGFloat { get }
+}
+open class FloatingPanelDefaultBehavior : eMoneySDK.FloatingPanelBehavior {
+  public init()
+  @objc open var springDecelerationRate: CoreFoundation.CGFloat {
+    @objc get
+  }
+  @objc open var springResponseTime: CoreFoundation.CGFloat {
+    @objc get
+  }
+  @objc open var momentumProjectionRate: CoreFoundation.CGFloat {
+    @objc get
+  }
+  @objc open func redirectionalProgress(_ fpc: eMoneySDK.FloatingPanelController, from: eMoneySDK.FloatingPanelState, to: eMoneySDK.FloatingPanelState) -> CoreFoundation.CGFloat
+  @objc open func allowsRubberBanding(for edge: UIKit.UIRectEdge) -> Swift.Bool
+  @objc open var removalInteractionVelocityThreshold: CoreFoundation.CGFloat
+  @objc deinit
+}
+public protocol Localizable {
+  var localized: Swift.String { get }
+}
+extension Swift.String : eMoneySDK.Localizable {
+  public var localized: Swift.String {
+    get
+  }
+}
+extension UIKit.UILabel {
+  @objc @_Concurrency.MainActor(unsafe) dynamic public func cstmlayoutSubviews()
+}
+public protocol PinContainer : AnyObject {
+  var view: UIKit.UIView { get }
+  func set(value: Swift.String?)
+  func clear()
+  func setupState(isActive: Swift.Bool, isError: Swift.Bool)
+}
+extension eMoneySDK.PinContainer where Self : UIKit.UIView {
+  public var view: UIKit.UIView {
+    get
+  }
+}
+@_inheritsConvenienceInitializers @objc(FloatingPanelSurfaceAppearance) @objcMembers public class SurfaceAppearance : ObjectiveC.NSObject {
+  @_inheritsConvenienceInitializers @objc(FloatingPanelSurfaceAppearanceShadow) public class Shadow : ObjectiveC.NSObject {
+    @objc public var hidden: Swift.Bool
+    @objc public var color: UIKit.UIColor
+    @objc public var offset: CoreFoundation.CGSize
+    @objc public var opacity: Swift.Float
+    @objc public var radius: CoreFoundation.CGFloat
+    @objc public var spread: CoreFoundation.CGFloat
+    @objc override dynamic public init()
+    @objc deinit
+  }
+  @objc public var backgroundColor: UIKit.UIColor?
+  @objc public var cornerRadius: CoreFoundation.CGFloat
+  @objc @available(iOS 13.0, *)
+  public var cornerCurve: QuartzCore.CALayerCornerCurve {
+    @objc get
+    @objc set
+  }
+  @objc public var shadows: [eMoneySDK.SurfaceAppearance.Shadow]
+  @objc public var borderColor: UIKit.UIColor?
+  @objc public var borderWidth: CoreFoundation.CGFloat
+  @objc override dynamic public init()
+  @objc deinit
+}
+@_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @objc(FloatingPanelSurfaceView) @objcMembers @_Concurrency.MainActor(unsafe) public class SurfaceView : UIKit.UIView {
+  @objc @_Concurrency.MainActor(unsafe) final public let grabberHandle: eMoneySDK.GrabberView
+  @objc @_Concurrency.MainActor(unsafe) public var grabberHandlePadding: CoreFoundation.CGFloat {
+    @objc get
+    @objc set
+  }
+  @objc @_Concurrency.MainActor(unsafe) public var grabberAreaOffset: CoreFoundation.CGFloat
+  @objc @_Concurrency.MainActor(unsafe) public var grabberHandleSize: CoreFoundation.CGSize {
+    @objc get
+    @objc set
+  }
+  @objc @_Concurrency.MainActor(unsafe) weak public var contentView: UIKit.UIView?
+  @objc @_Concurrency.MainActor(unsafe) public var contentPadding: UIKit.UIEdgeInsets {
+    @objc get
+    @objc set
+  }
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public var backgroundColor: UIKit.UIColor? {
+    @objc get
+    @objc set
+  }
+  @objc @_Concurrency.MainActor(unsafe) public var appearance: eMoneySDK.SurfaceAppearance {
+    @objc get
+    @objc set
+  }
+  @objc @_Concurrency.MainActor(unsafe) public var containerMargins: UIKit.UIEdgeInsets {
+    @objc get
+    @objc set
+  }
+  @objc @_Concurrency.MainActor(unsafe) final public let containerView: UIKit.UIView
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public class var requiresConstraintBasedLayout: Swift.Bool {
+    @objc get
+  }
+  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder aDecoder: Foundation.NSCoder)
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public func updateConstraints()
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public func layoutSubviews()
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public var intrinsicContentSize: CoreFoundation.CGSize {
+    @objc get
+  }
+  @objc deinit
+}
+@_inheritsConvenienceInitializers public class JumpDrawer : eMoneySDK.AdvancedPageControlDrawerParentWithIndicator, eMoneySDK.AdvancedPageControlDraw {
+  public func draw(_ rect: CoreFoundation.CGRect)
+  override public init(numberOfPages: Swift.Int? = super, height: CoreFoundation.CGFloat? = super, width: CoreFoundation.CGFloat? = super, space: CoreFoundation.CGFloat? = super, raduis: CoreFoundation.CGFloat? = super, currentItem: CoreFoundation.CGFloat? = super, indicatorColor: UIKit.UIColor? = super, dotsColor: UIKit.UIColor? = super, isBordered: Swift.Bool = super, borderColor: UIKit.UIColor = super, borderWidth: CoreFoundation.CGFloat = super, indicatorBorderColor: UIKit.UIColor = super, indicatorBorderWidth: CoreFoundation.CGFloat = super)
+  @objc deinit
+}
+@objc public protocol FloatingPanelLayout {
+  @objc var position: eMoneySDK.FloatingPanelPosition { get }
+  @objc var initialState: eMoneySDK.FloatingPanelState { get }
+  @objc var anchors: [eMoneySDK.FloatingPanelState : any eMoneySDK.FloatingPanelLayoutAnchoring] { get }
+  @objc optional func prepareLayout(surfaceView: UIKit.UIView, in view: UIKit.UIView) -> [UIKit.NSLayoutConstraint]
+  @objc optional func backdropAlpha(for state: eMoneySDK.FloatingPanelState) -> CoreFoundation.CGFloat
+}
+@objc @_inheritsConvenienceInitializers @objcMembers open class FloatingPanelBottomLayout : ObjectiveC.NSObject, eMoneySDK.FloatingPanelLayout {
+  @objc override dynamic public init()
+  @objc open var initialState: eMoneySDK.FloatingPanelState {
+    @objc get
+  }
+  @objc open var anchors: [eMoneySDK.FloatingPanelState : any eMoneySDK.FloatingPanelLayoutAnchoring] {
+    @objc get
+  }
+  @objc open var position: eMoneySDK.FloatingPanelPosition {
+    @objc get
+  }
+  @objc open func prepareLayout(surfaceView: UIKit.UIView, in view: UIKit.UIView) -> [UIKit.NSLayoutConstraint]
+  @objc open func backdropAlpha(for state: eMoneySDK.FloatingPanelState) -> CoreFoundation.CGFloat
+  @objc deinit
+}
+@_inheritsConvenienceInitializers public class ScaleDrawer : eMoneySDK.AdvancedPageControlDrawerParentWithIndicator, eMoneySDK.AdvancedPageControlDraw {
+  public func draw(_ rect: CoreFoundation.CGRect)
+  override public init(numberOfPages: Swift.Int? = super, height: CoreFoundation.CGFloat? = super, width: CoreFoundation.CGFloat? = super, space: CoreFoundation.CGFloat? = super, raduis: CoreFoundation.CGFloat? = super, currentItem: CoreFoundation.CGFloat? = super, indicatorColor: UIKit.UIColor? = super, dotsColor: UIKit.UIColor? = super, isBordered: Swift.Bool = super, borderColor: UIKit.UIColor = super, borderWidth: CoreFoundation.CGFloat = super, indicatorBorderColor: UIKit.UIColor = super, indicatorBorderWidth: CoreFoundation.CGFloat = super)
+  @objc deinit
+}
+@objc @_inheritsConvenienceInitializers final public class DefaultTextFieldAdapter : ObjectiveC.NSObject {
+  @objc override dynamic public init()
+  @objc deinit
+}
+extension eMoneySDK.DefaultTextFieldAdapter : eMoneySDK.OTPTextFieldData {
+  final public func showBorderOnMainView() -> Swift.Bool
+  final public func showSeperatorBetweenFields() -> Swift.Bool
+  final public func spaceBetweenViews() -> CoreFoundation.CGFloat
+  final public func numberOfPins() -> Swift.Int
+  final public func otpTextField(viewAt index: Swift.Int) -> any eMoneySDK.PinContainer
+  final public func otpTextField(sizeForViewAt index: Swift.Int) -> CoreFoundation.CGSize
+}
+extension Swift.String {
+  public func formatFor(phoneNumber: Swift.String, shouldRemoveLastDigit: Swift.Bool = false) -> Swift.String
+  public var formattedPhoneNumber: Swift.String {
+    get
+  }
+  public var planPhoneNumberString: Swift.String {
+    get
+  }
+}
+@objc @_inheritsConvenienceInitializers @_Concurrency.MainActor(unsafe) open class FloatingSegmentedControl : UIKit.UIView, eMoneySDK.NibInstantiatable {
+  @_Concurrency.MainActor(unsafe) weak open var target: ObjectiveC.NSObject?
+  @_Concurrency.MainActor(unsafe) public var action: ObjectiveC.Selector?
+  @_Concurrency.MainActor(unsafe) public var isAnimateFocusMoving: Swift.Bool
+  @_Concurrency.MainActor(unsafe) public var focusedIndex: Swift.Int {
+    get
+    set
+  }
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public init(frame: CoreFoundation.CGRect)
+  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder: Foundation.NSCoder)
+  @_Concurrency.MainActor(unsafe) @objc override dynamic open func awakeFromNib()
+  @_Concurrency.MainActor(unsafe) @objc override dynamic open var intrinsicContentSize: CoreFoundation.CGSize {
+    @objc get
+  }
+  @_Concurrency.MainActor(unsafe) @objc override dynamic open func prepareForInterfaceBuilder()
+  @_Concurrency.MainActor(unsafe) @objc override dynamic open func layoutSubviews()
+  @_Concurrency.MainActor(unsafe) public func setSegments(with titles: [Swift.String])
+  @_Concurrency.MainActor(unsafe) public func move(to index: Swift.Int)
+  @_Concurrency.MainActor(unsafe) public func addTarget(_ target: ObjectiveC.NSObject, action selector: ObjectiveC.Selector)
+  @objc deinit
+}
+@objc @_inheritsConvenienceInitializers @_Concurrency.MainActor(unsafe) public class OnboardingViewController : UIKit.UIViewController {
+  @_Concurrency.MainActor(unsafe) public var onSuccess: ((Swift.String) -> ())?
+  @_Concurrency.MainActor(unsafe) public var onFailure: ((Swift.String, Swift.String) -> ())?
+  @_Concurrency.MainActor(unsafe) public var receivedTheme: eMoneySDK.EWalletTheme?
+  @_Concurrency.MainActor(unsafe) public var clientID: Swift.String?
+  @_Concurrency.MainActor(unsafe) public var partnerName: Swift.String?
+  @_Concurrency.MainActor(unsafe) public var msisdn: Swift.String?
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public func viewDidLoad()
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public func viewDidAppear(_ animdated: Swift.Bool)
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public func viewWillAppear(_ animated: Swift.Bool)
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public func shouldPerformSegue(withIdentifier identifier: Swift.String, sender: Any?) -> Swift.Bool
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public func prepare(for segue: UIKit.UIStoryboardSegue, sender: Any?)
+  @objc deinit
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public init(nibName nibNameOrNil: Swift.String?, bundle nibBundleOrNil: Foundation.Bundle?)
+  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder: Foundation.NSCoder)
+}
+@objc open class FloatingPanelState : ObjectiveC.NSObject, Foundation.NSCopying, Swift.RawRepresentable {
+  public typealias RawValue = Swift.String
+  required public init?(rawValue: eMoneySDK.FloatingPanelState.RawValue)
+  @objc public init(rawValue: eMoneySDK.FloatingPanelState.RawValue, order: Swift.Int)
+  final public let rawValue: eMoneySDK.FloatingPanelState.RawValue
+  final public let order: Swift.Int
+  @objc public func copy(with zone: ObjectiveC.NSZone? = nil) -> Any
+  @objc override dynamic public var description: Swift.String {
+    @objc get
+  }
+  @objc override dynamic public var debugDescription: Swift.String {
+    @objc get
+  }
+  @objc(Full) public static let full: eMoneySDK.FloatingPanelState
+  @objc(Half) public static let half: eMoneySDK.FloatingPanelState
+  @objc(Tip) public static let tip: eMoneySDK.FloatingPanelState
+  @objc(Hidden) public static let hidden: eMoneySDK.FloatingPanelState
+  @objc deinit
+}
+@available(iOSApplicationExtension, unavailable)
+@objc final public class IQInvocation : ObjectiveC.NSObject {
+  @objc weak final public var target: Swift.AnyObject?
+  @objc final public var action: ObjectiveC.Selector
+  @objc public init(_ target: Swift.AnyObject, _ action: ObjectiveC.Selector)
+  @objc final public func invoke(from: Any)
+  @objc deinit
+}
+@available(iOSApplicationExtension, unavailable)
+@objc public enum IQAutoToolbarManageBehaviour : Swift.Int {
+  case bySubviews
+  case byTag
+  case byPosition
+  public init?(rawValue: Swift.Int)
+  public typealias RawValue = Swift.Int
+  public var rawValue: Swift.Int {
+    get
+  }
+}
+@available(iOSApplicationExtension, unavailable)
+@objc public enum IQPreviousNextDisplayMode : Swift.Int {
+  case `default`
+  case alwaysHide
+  case alwaysShow
+  public init?(rawValue: Swift.Int)
+  public typealias RawValue = Swift.Int
+  public var rawValue: Swift.Int {
+    get
+  }
+}
+@available(iOSApplicationExtension, unavailable)
+@objc public enum IQEnableMode : Swift.Int {
+  case `default`
+  case enabled
+  case disabled
+  public init?(rawValue: Swift.Int)
+  public typealias RawValue = Swift.Int
+  public var rawValue: Swift.Int {
+    get
+  }
+}
+@available(iOSApplicationExtension, unavailable)
+extension eMoneySDK.IQKeyboardManager {
+  @objc final public func reloadInputViews()
+}
+@available(iOSApplicationExtension, unavailable)
+extension eMoneySDK.IQKeyboardManager {
+  @objc final public var canGoPrevious: Swift.Bool {
+    @objc get
+  }
+  @objc final public var canGoNext: Swift.Bool {
+    @objc get
+  }
+  @discardableResult
+  @objc final public func goPrevious() -> Swift.Bool
+  @discardableResult
+  @objc final public func goNext() -> Swift.Bool
+}
+@available(iOSApplicationExtension, unavailable)
+@objc extension UIKit.UIScrollView {
+  @objc @_Concurrency.MainActor(unsafe) dynamic public var shouldIgnoreScrollingAdjustment: Swift.Bool {
+    @objc get
+    @objc set(newValue)
+  }
+  @objc @_Concurrency.MainActor(unsafe) dynamic public var shouldIgnoreContentInsetAdjustment: Swift.Bool {
+    @objc get
+    @objc set(newValue)
+  }
+  @objc @_Concurrency.MainActor(unsafe) dynamic public var shouldRestoreScrollViewContentOffset: Swift.Bool {
+    @objc get
+    @objc set(newValue)
+  }
+}
+@_inheritsConvenienceInitializers public class ExtendedDotDrawer : eMoneySDK.AdvancedPageControlDrawerParentWithIndicator, eMoneySDK.AdvancedPageControlDraw {
+  public func draw(_ rect: CoreFoundation.CGRect)
+  override public init(numberOfPages: Swift.Int? = super, height: CoreFoundation.CGFloat? = super, width: CoreFoundation.CGFloat? = super, space: CoreFoundation.CGFloat? = super, raduis: CoreFoundation.CGFloat? = super, currentItem: CoreFoundation.CGFloat? = super, indicatorColor: UIKit.UIColor? = super, dotsColor: UIKit.UIColor? = super, isBordered: Swift.Bool = super, borderColor: UIKit.UIColor = super, borderWidth: CoreFoundation.CGFloat = super, indicatorBorderColor: UIKit.UIColor = super, indicatorBorderWidth: CoreFoundation.CGFloat = super)
+  @objc deinit
+}
+@_inheritsConvenienceInitializers @available(iOSApplicationExtension, unavailable)
+@objc @_Concurrency.MainActor(unsafe) open class IQTextView : UIKit.UITextView {
+  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder aDecoder: Foundation.NSCoder)
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public init(frame: CoreFoundation.CGRect, textContainer: UIKit.NSTextContainer?)
+  @_Concurrency.MainActor(unsafe) @objc override dynamic open func awakeFromNib()
+  @objc deinit
+  @objc @IBInspectable @_Concurrency.MainActor(unsafe) open var placeholderTextColor: UIKit.UIColor? {
+    @objc get
+    @objc set
+  }
+  @objc @IBInspectable @_Concurrency.MainActor(unsafe) open var placeholder: Swift.String? {
+    @objc get
+    @objc set
+  }
+  @_Concurrency.MainActor(unsafe) open var attributedPlaceholder: Foundation.NSAttributedString? {
+    get
+    set
+  }
+  @_Concurrency.MainActor(unsafe) @objc override dynamic open func layoutSubviews()
+  @_Concurrency.MainActor(unsafe) @objc override dynamic open var text: Swift.String! {
+    @objc get
+    @objc set
+  }
+  @_Concurrency.MainActor(unsafe) @objc override dynamic open var attributedText: Foundation.NSAttributedString! {
+    @objc get
+    @objc set
+  }
+  @_Concurrency.MainActor(unsafe) @objc override dynamic open var font: UIKit.UIFont? {
+    @objc get
+    @objc set
+  }
+  @_Concurrency.MainActor(unsafe) @objc override dynamic open var textAlignment: UIKit.NSTextAlignment {
+    @objc get
+    @objc set
+  }
+  @_Concurrency.MainActor(unsafe) @objc override weak dynamic open var delegate: (any UIKit.UITextViewDelegate)? {
+    @objc get
+    @objc set
+  }
+  @_Concurrency.MainActor(unsafe) @objc override dynamic open var intrinsicContentSize: CoreFoundation.CGSize {
+    @objc get
+  }
+}
+@available(iOS 13.4, *)
+extension eMoneySDK.BetterSegmentedControl : UIKit.UIPointerInteractionDelegate {
+  @_Concurrency.MainActor(unsafe) @objc dynamic public func pointerInteraction(_ interaction: UIKit.UIPointerInteraction, regionFor request: UIKit.UIPointerRegionRequest, defaultRegion: UIKit.UIPointerRegion) -> UIKit.UIPointerRegion?
+  @_Concurrency.MainActor(unsafe) @objc dynamic public func pointerInteraction(_ interaction: UIKit.UIPointerInteraction, styleFor region: UIKit.UIPointerRegion) -> UIKit.UIPointerStyle?
+}
+extension eMoneySDK.BetterSegmentedControl {
+  @_Concurrency.MainActor(unsafe) public class func appleStyled(frame: CoreFoundation.CGRect, titles: [Swift.String]) -> eMoneySDK.BetterSegmentedControl
+}
+extension UIKit.UIImage {
+  public func flipIfNeeded() -> UIKit.UIImage?
+}
+@objc public protocol FloatingPanelLayoutAnchoring {
+  @objc var referenceGuide: eMoneySDK.FloatingPanelLayoutReferenceGuide { get }
+  @objc func layoutConstraints(_ fpc: eMoneySDK.FloatingPanelController, for position: eMoneySDK.FloatingPanelPosition) -> [UIKit.NSLayoutConstraint]
+}
+@objc final public class FloatingPanelLayoutAnchor : ObjectiveC.NSObject, eMoneySDK.FloatingPanelLayoutAnchoring {
+  @objc public init(absoluteInset: CoreFoundation.CGFloat, edge: eMoneySDK.FloatingPanelReferenceEdge, referenceGuide: eMoneySDK.FloatingPanelLayoutReferenceGuide)
+  @objc public init(fractionalInset: CoreFoundation.CGFloat, edge: eMoneySDK.FloatingPanelReferenceEdge, referenceGuide: eMoneySDK.FloatingPanelLayoutReferenceGuide)
+  @objc final public let referenceGuide: eMoneySDK.FloatingPanelLayoutReferenceGuide
+  @objc deinit
+}
+extension eMoneySDK.FloatingPanelLayoutAnchor {
+  @objc final public func layoutConstraints(_ vc: eMoneySDK.FloatingPanelController, for position: eMoneySDK.FloatingPanelPosition) -> [UIKit.NSLayoutConstraint]
+}
+@objc final public class FloatingPanelIntrinsicLayoutAnchor : ObjectiveC.NSObject, eMoneySDK.FloatingPanelLayoutAnchoring {
+  @objc public init(absoluteOffset offset: CoreFoundation.CGFloat, referenceGuide: eMoneySDK.FloatingPanelLayoutReferenceGuide = .safeArea)
+  @objc public init(fractionalOffset offset: CoreFoundation.CGFloat, referenceGuide: eMoneySDK.FloatingPanelLayoutReferenceGuide = .safeArea)
+  @objc final public let referenceGuide: eMoneySDK.FloatingPanelLayoutReferenceGuide
+  @objc deinit
+}
+extension eMoneySDK.FloatingPanelIntrinsicLayoutAnchor {
+  @objc final public func layoutConstraints(_ vc: eMoneySDK.FloatingPanelController, for position: eMoneySDK.FloatingPanelPosition) -> [UIKit.NSLayoutConstraint]
+}
+@objc final public class FloatingPanelAdaptiveLayoutAnchor : ObjectiveC.NSObject, eMoneySDK.FloatingPanelLayoutAnchoring {
+  @objc public init(absoluteOffset offset: CoreFoundation.CGFloat, contentLayout: UIKit.UILayoutGuide, referenceGuide: eMoneySDK.FloatingPanelLayoutReferenceGuide, contentBoundingGuide: eMoneySDK.FloatingPanelLayoutContentBoundingGuide = .none)
+  @objc public init(fractionalOffset offset: CoreFoundation.CGFloat, contentLayout: UIKit.UILayoutGuide, referenceGuide: eMoneySDK.FloatingPanelLayoutReferenceGuide, contentBoundingGuide: eMoneySDK.FloatingPanelLayoutContentBoundingGuide = .none)
+  @objc final public let referenceGuide: eMoneySDK.FloatingPanelLayoutReferenceGuide
+  @objc final public let contentBoundingGuide: eMoneySDK.FloatingPanelLayoutContentBoundingGuide
+  @objc deinit
+}
+extension eMoneySDK.FloatingPanelAdaptiveLayoutAnchor {
+  @objc final public func layoutConstraints(_ vc: eMoneySDK.FloatingPanelController, for position: eMoneySDK.FloatingPanelPosition) -> [UIKit.NSLayoutConstraint]
+}
+extension eMoneySDK.BetterSegmentedControl {
+  public enum Option {
+    case indicatorViewBackgroundColor(UIKit.UIColor)
+    case indicatorViewInset(CoreFoundation.CGFloat)
+    case indicatorViewBorderWidth(CoreFoundation.CGFloat)
+    case indicatorViewBorderColor(UIKit.UIColor)
+    case alwaysAnnouncesValue(Swift.Bool)
+    case announcesValueImmediately(Swift.Bool)
+    case panningDisabled(Swift.Bool)
+    case animationDuration(Foundation.TimeInterval)
+    case animationSpringDamping(CoreFoundation.CGFloat)
+    case backgroundColor(UIKit.UIColor)
+    case cornerRadius(CoreFoundation.CGFloat)
+  }
+}
+public protocol AdvancedPageControlDraw {
+  var currentItem: CoreFoundation.CGFloat { get set }
+  var size: CoreFoundation.CGFloat { get set }
+  var numberOfPages: Swift.Int { get set }
+  func draw(_ rect: CoreFoundation.CGRect)
+}
+public class AdvancedPageControlDrawerParentWithIndicator : eMoneySDK.AdvancedPageControlDrawerParent {
+  public init(numberOfPages: Swift.Int? = 5, height: CoreFoundation.CGFloat? = 16, width: CoreFoundation.CGFloat? = 16, space: CoreFoundation.CGFloat? = 16, raduis: CoreFoundation.CGFloat? = 8, currentItem: CoreFoundation.CGFloat? = 0, indicatorColor: UIKit.UIColor? = .lightGray, dotsColor: UIKit.UIColor? = UIColor.lightGray, isBordered: Swift.Bool = false, borderColor: UIKit.UIColor = .lightGray, borderWidth: CoreFoundation.CGFloat = 1, indicatorBorderColor: UIKit.UIColor = .lightGray, indicatorBorderWidth: CoreFoundation.CGFloat = 2)
+  @objc deinit
+}
+public class AdvancedPageControlDrawerParent {
+  public var numberOfPages: Swift.Int
+  public var size: CoreFoundation.CGFloat
+  public var currentItem: CoreFoundation.CGFloat
+  public var items: [Swift.Int]
+  public init(numberOfPages: Swift.Int? = 5, height: CoreFoundation.CGFloat? = 16, width: CoreFoundation.CGFloat? = 16, space: CoreFoundation.CGFloat? = 16, raduis: CoreFoundation.CGFloat? = 16, currentItem: CoreFoundation.CGFloat? = 0, dotsColor: UIKit.UIColor? = UIColor.lightGray, isBordered: Swift.Bool = false, borderColor: UIKit.UIColor = .lightGray, borderWidth: CoreFoundation.CGFloat = 1)
+  @objc deinit
+}
+@objc @_inheritsConvenienceInitializers @_Concurrency.MainActor(unsafe) public class LoginViewController : eMoneySDK.BaseViewController {
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public func viewDidLoad()
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public func viewWillAppear(_ animated: Swift.Bool)
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public init(nibName nibNameOrNil: Swift.String?, bundle nibBundleOrNil: Foundation.Bundle?)
+  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder: Foundation.NSCoder)
+  @objc deinit
+}
+extension UIKit.UISpringTimingParameters {
+  @_Concurrency.MainActor(unsafe) convenience public init(decelerationRate: CoreFoundation.CGFloat, frequencyResponse: CoreFoundation.CGFloat, initialVelocity: CoreFoundation.CGVector = .zero)
+  @_Concurrency.MainActor(unsafe) convenience public init(dampingRatio: CoreFoundation.CGFloat, frequencyResponse: CoreFoundation.CGFloat, initialVelocity: CoreFoundation.CGVector = .zero)
+}
+@objc @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @_Concurrency.MainActor(unsafe) public class AdvancedPageControlView : UIKit.UIView {
+  @_Concurrency.MainActor(unsafe) public var numberOfPages: Swift.Int {
+    get
+    set(val)
+  }
+  @_Concurrency.MainActor(unsafe) public var drawer: any eMoneySDK.AdvancedPageControlDraw
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public init(frame: CoreFoundation.CGRect)
+  @_Concurrency.MainActor(unsafe) public func setPageOffset(_ offset: CoreFoundation.CGFloat)
+  @_Concurrency.MainActor(unsafe) public func setPage(_ index: Swift.Int)
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public var intrinsicContentSize: CoreFoundation.CGSize {
+    @objc get
+  }
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public func draw(_ rect: CoreFoundation.CGRect)
+  @objc deinit
+}
+extension UIKit.UIView {
+  @_Concurrency.MainActor(unsafe) public func gradientBorder(width: CoreFoundation.CGFloat, colors: [UIKit.UIColor], startPoint: CoreFoundation.CGPoint = CGPoint(x: 0.5, y: 0.0), endPoint: CoreFoundation.CGPoint = CGPoint(x: 0.5, y: 1.0), andRoundCornersWithRadius cornerRadius: CoreFoundation.CGFloat = 0)
+  @_Concurrency.MainActor(unsafe) public func getExistingGradientLayer(layerName: Swift.String) -> QuartzCore.CAGradientLayer?
+  @_Concurrency.MainActor(unsafe) public func roundCorners(corners: UIKit.UIRectCorner, radius: CoreFoundation.CGFloat)
+  @_Concurrency.MainActor(unsafe) public func addGradient(colors: [UIKit.UIColor], locations: [Foundation.NSNumber]?, startPoint: CoreFoundation.CGPoint, endPoint: CoreFoundation.CGPoint, cornerRadius: CoreFoundation.CGFloat = 16)
+}
+@available(iOSApplicationExtension, unavailable)
+@objc extension UIKit.UIView {
+  @objc @_Concurrency.MainActor(unsafe) dynamic public func viewContainingController() -> UIKit.UIViewController?
+  @objc @_Concurrency.MainActor(unsafe) dynamic public func topMostController() -> UIKit.UIViewController?
+  @objc @_Concurrency.MainActor(unsafe) dynamic public func parentContainerViewController() -> UIKit.UIViewController?
+  @objc @_Concurrency.MainActor(unsafe) dynamic public func superviewOfClassType(_ classType: UIKit.UIView.Type, belowView: UIKit.UIView? = nil) -> UIKit.UIView?
+}
+@_inheritsConvenienceInitializers public class InfiniteDrawer : eMoneySDK.AdvancedPageControlDrawerParentWithIndicator, eMoneySDK.AdvancedPageControlDraw {
+  public func draw(_ rect: CoreFoundation.CGRect)
+  override public init(numberOfPages: Swift.Int? = super, height: CoreFoundation.CGFloat? = super, width: CoreFoundation.CGFloat? = super, space: CoreFoundation.CGFloat? = super, raduis: CoreFoundation.CGFloat? = super, currentItem: CoreFoundation.CGFloat? = super, indicatorColor: UIKit.UIColor? = super, dotsColor: UIKit.UIColor? = super, isBordered: Swift.Bool = super, borderColor: UIKit.UIColor = super, borderWidth: CoreFoundation.CGFloat = super, indicatorBorderColor: UIKit.UIColor = super, indicatorBorderWidth: CoreFoundation.CGFloat = super)
+  @objc deinit
+}
+public enum FontName : Swift.String {
+  case Regular
+  case SemiBold
+  case Medium
+  case Light
+  public init?(rawValue: Swift.String)
+  public typealias RawValue = Swift.String
+  public var rawValue: Swift.String {
+    get
+  }
+}
+public enum FontSize : CoreFoundation.CGFloat {
+  case body5
+  case body4
+  case body3
+  case body2
+  case body1
+  case h7
+  case h6
+  case h5, h4
+  case h3
+  case h2
+  case h1
+  public init?(rawValue: CoreFoundation.CGFloat)
+  public typealias RawValue = CoreFoundation.CGFloat
+  public var rawValue: CoreFoundation.CGFloat {
+    get
+  }
+}
+public struct AppFont {
+  public static func font(name: eMoneySDK.FontName, size: eMoneySDK.FontSize) -> UIKit.UIFont
+  public static func appRegular(size: eMoneySDK.FontSize) -> UIKit.UIFont
+  public static func appSemiBold(size: eMoneySDK.FontSize) -> UIKit.UIFont
+  public static func appMedium(size: eMoneySDK.FontSize) -> UIKit.UIFont
+  public static func appLight(size: eMoneySDK.FontSize) -> UIKit.UIFont
+}
+@objc public enum FloatingPanelPosition : Swift.Int {
+  case top
+  case left
+  case bottom
+  case right
+  public init?(rawValue: Swift.Int)
+  public typealias RawValue = Swift.Int
+  public var rawValue: Swift.Int {
+    get
+  }
+}
+public protocol NibInstantiatable {
+  static var nibName: Swift.String { get }
+  static func nib(inBundle bundle: Foundation.Bundle?) -> UIKit.UINib
+  static func fromNib<T>(inBundle bundle: Foundation.Bundle?, filesOwner: Any?) -> T where T : UIKit.UIView
+}
+extension eMoneySDK.NibInstantiatable where Self : UIKit.UIView {
+  public static var nibName: Swift.String {
+    get
+  }
+  public static func nib(inBundle bundle: Foundation.Bundle?) -> UIKit.UINib
+  public static func fromNib<T>(inBundle bundle: Foundation.Bundle? = nil, filesOwner: Any? = nil) -> T where T : UIKit.UIView
+}
+@objc @_inheritsConvenienceInitializers @_Concurrency.MainActor(unsafe) public class BaseInputView : UIKit.UIView, UIKit.UITextInput {
+  @_Concurrency.MainActor(unsafe) @objc public var hasText: Swift.Bool {
+    @objc get
+  }
+  @_Concurrency.MainActor(unsafe) @objc public func insertText(_ text: Swift.String)
+  @_Concurrency.MainActor(unsafe) @objc public func deleteBackward()
+  @_Concurrency.MainActor(unsafe) @objc public var selectedTextRange: UIKit.UITextRange? {
+    @objc get
+    @objc set(selectedTextRange)
+  }
+  @_Concurrency.MainActor(unsafe) @objc public var markedTextRange: UIKit.UITextRange? {
+    @objc get
+  }
+  @_Concurrency.MainActor(unsafe) @objc public var markedTextStyle: [Foundation.NSAttributedString.Key : Any]? {
+    @objc get
+    @objc set(markedTextStyle)
+  }
+  @_Concurrency.MainActor(unsafe) @objc public var beginningOfDocument: UIKit.UITextPosition {
+    @objc get
+  }
+  @_Concurrency.MainActor(unsafe) @objc public var endOfDocument: UIKit.UITextPosition {
+    @objc get
+  }
+  @_Concurrency.MainActor(unsafe) @objc public var inputDelegate: (any UIKit.UITextInputDelegate)? {
+    @objc get
+    @objc set(inputDelegate)
+  }
+  @_Concurrency.MainActor(unsafe) @objc public var tokenizer: any UIKit.UITextInputTokenizer {
+    @objc get
+  }
+  @_Concurrency.MainActor(unsafe) @objc public func replace(_ range: UIKit.UITextRange, withText text: Swift.String)
+  @_Concurrency.MainActor(unsafe) @objc public func setMarkedText(_ markedText: Swift.String?, selectedRange: Foundation.NSRange)
+  @_Concurrency.MainActor(unsafe) @objc public func unmarkText()
+  @_Concurrency.MainActor(unsafe) @objc public func textRange(from fromPosition: UIKit.UITextPosition, to toPosition: UIKit.UITextPosition) -> UIKit.UITextRange?
+  @_Concurrency.MainActor(unsafe) @objc public func position(from position: UIKit.UITextPosition, offset: Swift.Int) -> UIKit.UITextPosition?
+  @_Concurrency.MainActor(unsafe) @objc public func position(from position: UIKit.UITextPosition, in direction: UIKit.UITextLayoutDirection, offset: Swift.Int) -> UIKit.UITextPosition?
+  @_Concurrency.MainActor(unsafe) @objc public func compare(_ position: UIKit.UITextPosition, to other: UIKit.UITextPosition) -> Foundation.ComparisonResult
+  @_Concurrency.MainActor(unsafe) @objc public func offset(from: UIKit.UITextPosition, to toPosition: UIKit.UITextPosition) -> Swift.Int
+  @_Concurrency.MainActor(unsafe) @objc public func position(within range: UIKit.UITextRange, farthestIn direction: UIKit.UITextLayoutDirection) -> UIKit.UITextPosition?
+  @_Concurrency.MainActor(unsafe) @objc public func characterRange(byExtending position: UIKit.UITextPosition, in direction: UIKit.UITextLayoutDirection) -> UIKit.UITextRange?
+  @_Concurrency.MainActor(unsafe) @objc public func baseWritingDirection(for position: UIKit.UITextPosition, in direction: UIKit.UITextStorageDirection) -> UIKit.NSWritingDirection
+  @_Concurrency.MainActor(unsafe) @objc public func setBaseWritingDirection(_ writingDirection: UIKit.NSWritingDirection, for range: UIKit.UITextRange)
+  @_Concurrency.MainActor(unsafe) @objc public func firstRect(for range: UIKit.UITextRange) -> CoreFoundation.CGRect
+  @_Concurrency.MainActor(unsafe) @objc public func caretRect(for position: UIKit.UITextPosition) -> CoreFoundation.CGRect
+  @_Concurrency.MainActor(unsafe) @objc public func selectionRects(for range: UIKit.UITextRange) -> [UIKit.UITextSelectionRect]
+  @_Concurrency.MainActor(unsafe) @objc public func closestPosition(to point: CoreFoundation.CGPoint) -> UIKit.UITextPosition?
+  @_Concurrency.MainActor(unsafe) @objc public func closestPosition(to point: CoreFoundation.CGPoint, within range: UIKit.UITextRange) -> UIKit.UITextPosition?
+  @_Concurrency.MainActor(unsafe) @objc public func characterRange(at point: CoreFoundation.CGPoint) -> UIKit.UITextRange?
+  @_Concurrency.MainActor(unsafe) @objc public func text(in range: UIKit.UITextRange) -> Swift.String?
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public init(frame: CoreFoundation.CGRect)
+  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder: Foundation.NSCoder)
+  @objc deinit
+}
+extension eMoneySDK.BaseInputView : UIKit.UITextInputTokenizer {
+  @_Concurrency.MainActor(unsafe) @objc dynamic public func rangeEnclosingPosition(_ position: UIKit.UITextPosition, with granularity: UIKit.UITextGranularity, inDirection direction: UIKit.UITextDirection) -> UIKit.UITextRange?
+  @_Concurrency.MainActor(unsafe) @objc dynamic public func isPosition(_ position: UIKit.UITextPosition, atBoundary granularity: UIKit.UITextGranularity, inDirection direction: UIKit.UITextDirection) -> Swift.Bool
+  @_Concurrency.MainActor(unsafe) @objc dynamic public func position(from position: UIKit.UITextPosition, toBoundary granularity: UIKit.UITextGranularity, inDirection direction: UIKit.UITextDirection) -> UIKit.UITextPosition?
+  @_Concurrency.MainActor(unsafe) @objc dynamic public func isPosition(_ position: UIKit.UITextPosition, withinTextUnit granularity: UIKit.UITextGranularity, inDirection direction: UIKit.UITextDirection) -> Swift.Bool
+}
+@_inheritsConvenienceInitializers @available(iOSApplicationExtension, unavailable)
+@objc @_Concurrency.MainActor(unsafe) open class IQBarButtonItem : UIKit.UIBarButtonItem {
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public init()
+  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder aDecoder: Foundation.NSCoder)
+  @_Concurrency.MainActor(unsafe) @objc override dynamic open var tintColor: UIKit.UIColor? {
+    @objc get
+    @objc set
+  }
+  @objc @_Concurrency.MainActor(unsafe) open func setTarget(_ target: Swift.AnyObject?, action: ObjectiveC.Selector?)
+  @objc @_Concurrency.MainActor(unsafe) open var invocation: eMoneySDK.IQInvocation?
+  @objc deinit
+}
+@available(iOSApplicationExtension, unavailable)
+extension eMoneySDK.IQKeyboardManager {
+  @objc final public var enableDebugging: Swift.Bool {
+    @objc get
+    @objc set(newValue)
+  }
+  @objc final public func registerAllNotifications()
+  @objc final public func unregisterAllNotifications()
+  public struct Static {
+  }
+}
+@_inheritsConvenienceInitializers @available(iOSApplicationExtension, unavailable)
+@objc final public class IQKeyboardReturnKeyHandler : ObjectiveC.NSObject {
+  @objc weak final public var delegate: (any UIKit.UITextFieldDelegate & UIKit.UITextViewDelegate)?
+  @objc final public var lastTextFieldReturnKeyType: UIKit.UIReturnKeyType {
+    @objc get
+    @objc set
+  }
+  @objc override dynamic public init()
+  @objc public init(controller: UIKit.UIViewController)
+  @objc deinit
+  @objc final public func addTextFieldView(_ view: UIKit.UIView)
+  @objc final public func removeTextFieldView(_ view: UIKit.UIView)
+  @objc final public func addResponderFromView(_ view: UIKit.UIView)
+  @objc final public func removeResponderFromView(_ view: UIKit.UIView)
+}
+@available(iOSApplicationExtension, unavailable)
+extension eMoneySDK.IQKeyboardReturnKeyHandler : UIKit.UITextFieldDelegate {
+  @_Concurrency.MainActor(unsafe) @objc final public func textFieldShouldBeginEditing(_ textField: UIKit.UITextField) -> Swift.Bool
+  @_Concurrency.MainActor(unsafe) @objc final public func textFieldShouldEndEditing(_ textField: UIKit.UITextField) -> Swift.Bool
+  @_Concurrency.MainActor(unsafe) @objc final public func textFieldDidBeginEditing(_ textField: UIKit.UITextField)
+  @_Concurrency.MainActor(unsafe) @objc final public func textFieldDidEndEditing(_ textField: UIKit.UITextField)
+  @available(iOS 10.0, *)
+  @_Concurrency.MainActor(unsafe) @objc final public func textFieldDidEndEditing(_ textField: UIKit.UITextField, reason: UIKit.UITextField.DidEndEditingReason)
+  @_Concurrency.MainActor(unsafe) @objc final public func textField(_ textField: UIKit.UITextField, shouldChangeCharactersIn range: Foundation.NSRange, replacementString string: Swift.String) -> Swift.Bool
+  @_Concurrency.MainActor(unsafe) @objc final public func textFieldShouldClear(_ textField: UIKit.UITextField) -> Swift.Bool
+  @_Concurrency.MainActor(unsafe) @objc final public func textFieldShouldReturn(_ textField: UIKit.UITextField) -> Swift.Bool
+}
+@available(iOSApplicationExtension, unavailable)
+extension eMoneySDK.IQKeyboardReturnKeyHandler : UIKit.UITextViewDelegate {
+  @_Concurrency.MainActor(unsafe) @objc final public func textViewShouldBeginEditing(_ textView: UIKit.UITextView) -> Swift.Bool
+  @_Concurrency.MainActor(unsafe) @objc final public func textViewShouldEndEditing(_ textView: UIKit.UITextView) -> Swift.Bool
+  @_Concurrency.MainActor(unsafe) @objc final public func textViewDidBeginEditing(_ textView: UIKit.UITextView)
+  @_Concurrency.MainActor(unsafe) @objc final public func textViewDidEndEditing(_ textView: UIKit.UITextView)
+  @_Concurrency.MainActor(unsafe) @objc final public func textView(_ textView: UIKit.UITextView, shouldChangeTextIn range: Foundation.NSRange, replacementText text: Swift.String) -> Swift.Bool
+  @_Concurrency.MainActor(unsafe) @objc final public func textViewDidChange(_ textView: UIKit.UITextView)
+  @_Concurrency.MainActor(unsafe) @objc final public func textViewDidChangeSelection(_ textView: UIKit.UITextView)
+  @available(iOS 10.0, *)
+  @_Concurrency.MainActor(unsafe) @objc final public func textView(_ aTextView: UIKit.UITextView, shouldInteractWith URL: Foundation.URL, in characterRange: Foundation.NSRange, interaction: UIKit.UITextItemInteraction) -> Swift.Bool
+  @available(iOS 10.0, *)
+  @_Concurrency.MainActor(unsafe) @objc final public func textView(_ aTextView: UIKit.UITextView, shouldInteractWith textAttachment: UIKit.NSTextAttachment, in characterRange: Foundation.NSRange, interaction: UIKit.UITextItemInteraction) -> Swift.Bool
+  @available(iOS, deprecated: 10.0)
+  @_Concurrency.MainActor(unsafe) @objc final public func textView(_ aTextView: UIKit.UITextView, shouldInteractWith URL: Foundation.URL, in characterRange: Foundation.NSRange) -> Swift.Bool
+  @available(iOS, deprecated: 10.0)
+  @_Concurrency.MainActor(unsafe) @objc final public func textView(_ aTextView: UIKit.UITextView, shouldInteractWith textAttachment: UIKit.NSTextAttachment, in characterRange: Foundation.NSRange) -> Swift.Bool
+  @available(iOS 16.0, *)
+  @_Concurrency.MainActor(unsafe) @objc final public func textView(_ aTextView: UIKit.UITextView, editMenuForTextIn range: Foundation.NSRange, suggestedActions: [UIKit.UIMenuElement]) -> UIKit.UIMenu?
+  @available(iOS 16.0, *)
+  @_Concurrency.MainActor(unsafe) @objc final public func textView(_ aTextView: UIKit.UITextView, willPresentEditMenuWith animator: any UIKit.UIEditMenuInteractionAnimating)
+  @available(iOS 16.0, *)
+  @_Concurrency.MainActor(unsafe) @objc final public func textView(_ aTextView: UIKit.UITextView, willDismissEditMenuWith animator: any UIKit.UIEditMenuInteractionAnimating)
+}
+@objc @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @_Concurrency.MainActor(unsafe) final public class CustomThumbView : UIKit.UIView {
+  @objc deinit
+}
+extension eMoneySDK.CustomThumbView {
+  @_Concurrency.MainActor(unsafe) @objc override final public func layoutSubviews()
+}
+@_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @available(iOSApplicationExtension, unavailable)
+@objc @_Concurrency.MainActor(unsafe) open class IQTitleBarButtonItem : eMoneySDK.IQBarButtonItem {
+  @objc @_Concurrency.MainActor(unsafe) open var titleFont: UIKit.UIFont? {
+    @objc get
+    @objc set
+  }
+  @_Concurrency.MainActor(unsafe) @objc override dynamic open var title: Swift.String? {
+    @objc get
+    @objc set
+  }
+  @objc @_Concurrency.MainActor(unsafe) open var titleColor: UIKit.UIColor? {
+    @objc get
+    @objc set
+  }
+  @objc @_Concurrency.MainActor(unsafe) open var selectableTitleColor: UIKit.UIColor? {
+    @objc get
+    @objc set
+  }
+  @_Concurrency.MainActor(unsafe) @objc override open var invocation: eMoneySDK.IQInvocation? {
+    @objc get
+    @objc set
+  }
+  @objc @_Concurrency.MainActor(unsafe) convenience public init(title: Swift.String?)
+  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder aDecoder: Foundation.NSCoder)
+  @objc deinit
+}
+@available(iOSApplicationExtension, unavailable)
+public let kIQUseDefaultKeyboardDistance: CoreFoundation.CGFloat
+@available(iOSApplicationExtension, unavailable)
+@objc extension UIKit.UIView {
+  @objc @_Concurrency.MainActor(unsafe) dynamic public var keyboardDistanceFromTextField: CoreFoundation.CGFloat {
+    @objc get
+    @objc set(newValue)
+  }
+  @objc @_Concurrency.MainActor(unsafe) dynamic public var ignoreSwitchingByNextPrevious: Swift.Bool {
+    @objc get
+    @objc set(newValue)
+  }
+  @objc @_Concurrency.MainActor(unsafe) dynamic public var enableMode: eMoneySDK.IQEnableMode {
+    @objc get
+    @objc set(newValue)
+  }
+  @objc @_Concurrency.MainActor(unsafe) dynamic public var shouldResignOnTouchOutsideMode: eMoneySDK.IQEnableMode {
+    @objc get
+    @objc set(newValue)
+  }
+}
+@objc @_inheritsConvenienceInitializers @_Concurrency.MainActor(unsafe) public class RegisterMobileNumberViewController : eMoneySDK.BaseViewController {
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public func viewDidLoad()
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public func viewWillAppear(_ animated: Swift.Bool)
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public init(nibName nibNameOrNil: Swift.String?, bundle nibBundleOrNil: Foundation.Bundle?)
+  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder: Foundation.NSCoder)
+  @objc deinit
+}
+extension Foundation.NSMutableAttributedString {
+  public func setAsLink(textToFind: Swift.String, linkURL: Swift.String) -> Swift.Bool
+}
+@objc @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @IBDesignable @_Concurrency.MainActor(unsafe) public class CustomSwitch : UIKit.UIControl {
+  @_Concurrency.MainActor(unsafe) public var animationDelay: Swift.Double
+  @_Concurrency.MainActor(unsafe) public var animationSpriteWithDamping: CoreFoundation.CGFloat
+  @_Concurrency.MainActor(unsafe) public var initialSpringVelocity: CoreFoundation.CGFloat
+  @_Concurrency.MainActor(unsafe) public var animationOptions: UIKit.UIView.AnimationOptions
+  @objc @IBInspectable @_Concurrency.MainActor(unsafe) public var isOn: Swift.Bool
+  @_Concurrency.MainActor(unsafe) public var animationDuration: Swift.Double
+  @objc @IBInspectable @_Concurrency.MainActor(unsafe) public var padding: CoreFoundation.CGFloat {
+    @objc get
+    @objc set
+  }
+  @objc @IBInspectable @_Concurrency.MainActor(unsafe) public var onTintColor: UIKit.UIColor {
+    @objc get
+    @objc set
+  }
+  @objc @IBInspectable @_Concurrency.MainActor(unsafe) public var offTintColor: UIKit.UIColor {
+    @objc get
+    @objc set
+  }
+  @IBInspectable @_Concurrency.MainActor(unsafe) @objc dynamic public var cornerRadius: CoreFoundation.CGFloat {
+    @objc get
+    @objc set
+  }
+  @objc @IBInspectable @_Concurrency.MainActor(unsafe) public var thumbTintColor: UIKit.UIColor {
+    @objc get
+    @objc set
+  }
+  @objc @IBInspectable @_Concurrency.MainActor(unsafe) public var thumbCornerRadius: CoreFoundation.CGFloat {
+    @objc get
+    @objc set
+  }
+  @objc @IBInspectable @_Concurrency.MainActor(unsafe) public var thumbSize: CoreFoundation.CGSize {
+    @objc get
+    @objc set
+  }
+  @objc @IBInspectable @_Concurrency.MainActor(unsafe) public var thumbImage: UIKit.UIImage? {
+    @objc get
+    @objc set
+  }
+  @_Concurrency.MainActor(unsafe) public var onImage: UIKit.UIImage? {
+    get
+    set
+  }
+  @_Concurrency.MainActor(unsafe) public var offImage: UIKit.UIImage? {
+    get
+    set
+  }
+  @objc @IBInspectable @_Concurrency.MainActor(unsafe) public var thumbShadowColor: UIKit.UIColor {
+    @objc get
+    @objc set
+  }
+  @objc @IBInspectable @_Concurrency.MainActor(unsafe) public var thumbShadowOffset: CoreFoundation.CGSize {
+    @objc get
+    @objc set
+  }
+  @objc @IBInspectable @_Concurrency.MainActor(unsafe) public var thumbShaddowRadius: CoreFoundation.CGFloat {
+    @objc get
+    @objc set
+  }
+  @objc @IBInspectable @_Concurrency.MainActor(unsafe) public var thumbShaddowOppacity: Swift.Float {
+    @objc get
+    @objc set
+  }
+  @_Concurrency.MainActor(unsafe) public var labelOff: UIKit.UILabel
+  @_Concurrency.MainActor(unsafe) public var labelOn: UIKit.UILabel
+  @_Concurrency.MainActor(unsafe) public var areLabelsShown: Swift.Bool {
+    get
+    set
+  }
+  @_Concurrency.MainActor(unsafe) public var thumbView: eMoneySDK.CustomThumbView
+  @_Concurrency.MainActor(unsafe) public var onImageView: UIKit.UIImageView
+  @_Concurrency.MainActor(unsafe) public var offImageView: UIKit.UIImageView
+  @_Concurrency.MainActor(unsafe) public var onPoint: CoreFoundation.CGPoint
+  @_Concurrency.MainActor(unsafe) public var offPoint: CoreFoundation.CGPoint
+  @_Concurrency.MainActor(unsafe) public var isAnimating: Swift.Bool
+  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder aDecoder: Foundation.NSCoder)
+  @objc deinit
+}
+extension eMoneySDK.CustomSwitch {
+  @_Concurrency.MainActor(unsafe) @objc override dynamic open func beginTracking(_ touch: UIKit.UITouch, with event: UIKit.UIEvent?) -> Swift.Bool
+}
+extension eMoneySDK.CustomSwitch {
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public func layoutSubviews()
+}
+@objc @_inheritsConvenienceInitializers @_Concurrency.MainActor(unsafe) final public class DefaultPinView : UIKit.UIView {
+  @_Concurrency.MainActor(unsafe) @objc override final public func awakeFromNib()
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public init(frame: CoreFoundation.CGRect)
+  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder: Foundation.NSCoder)
+  @objc deinit
+}
+extension eMoneySDK.DefaultPinView : eMoneySDK.PinContainer {
+  @_Concurrency.MainActor(unsafe) final public func set(value: Swift.String?)
+  @_Concurrency.MainActor(unsafe) final public func clear()
+  @_Concurrency.MainActor(unsafe) final public func setupState(isActive: Swift.Bool, isError: Swift.Bool)
+}
+@_inheritsConvenienceInitializers public class ThinWormHeadsDrawer : eMoneySDK.AdvancedPageControlDrawerParentWithIndicator, eMoneySDK.AdvancedPageControlDraw {
+  public func draw(_ rect: CoreFoundation.CGRect)
+  override public init(numberOfPages: Swift.Int? = super, height: CoreFoundation.CGFloat? = super, width: CoreFoundation.CGFloat? = super, space: CoreFoundation.CGFloat? = super, raduis: CoreFoundation.CGFloat? = super, currentItem: CoreFoundation.CGFloat? = super, indicatorColor: UIKit.UIColor? = super, dotsColor: UIKit.UIColor? = super, isBordered: Swift.Bool = super, borderColor: UIKit.UIColor = super, borderWidth: CoreFoundation.CGFloat = super, indicatorBorderColor: UIKit.UIColor = super, indicatorBorderWidth: CoreFoundation.CGFloat = super)
+  @objc deinit
+}
+@objc public protocol FloatingPanelControllerDelegate {
+  @objc(floatingPanel:layoutForTraitCollection:) optional func floatingPanel(_ fpc: eMoneySDK.FloatingPanelController, layoutFor newCollection: UIKit.UITraitCollection) -> any eMoneySDK.FloatingPanelLayout
+  @objc(floatingPanel:layoutForSize:) optional func floatingPanel(_ fpc: eMoneySDK.FloatingPanelController, layoutFor size: CoreFoundation.CGSize) -> any eMoneySDK.FloatingPanelLayout
+  @objc(floatingPanel:animatorForPresentingToState:) optional func floatingPanel(_ fpc: eMoneySDK.FloatingPanelController, animatorForPresentingTo state: eMoneySDK.FloatingPanelState) -> UIKit.UIViewPropertyAnimator
+  @objc(floatingPanel:animatorForDismissingWithVelocity:) optional func floatingPanel(_ fpc: eMoneySDK.FloatingPanelController, animatorForDismissingWith velocity: CoreFoundation.CGVector) -> UIKit.UIViewPropertyAnimator
+  @objc optional func floatingPanelDidChangeState(_ fpc: eMoneySDK.FloatingPanelController)
+  @objc optional func floatingPanelShouldBeginDragging(_ fpc: eMoneySDK.FloatingPanelController) -> Swift.Bool
+  @objc optional func floatingPanelDidMove(_ fpc: eMoneySDK.FloatingPanelController)
+  @objc optional func floatingPanelWillBeginDragging(_ fpc: eMoneySDK.FloatingPanelController)
+  @objc optional func floatingPanelWillEndDragging(_ fpc: eMoneySDK.FloatingPanelController, withVelocity velocity: CoreFoundation.CGPoint, targetState: Swift.UnsafeMutablePointer<eMoneySDK.FloatingPanelState>)
+  @objc optional func floatingPanelDidEndDragging(_ fpc: eMoneySDK.FloatingPanelController, willAttract attract: Swift.Bool)
+  @objc optional func floatingPanelWillBeginAttracting(_ fpc: eMoneySDK.FloatingPanelController, to state: eMoneySDK.FloatingPanelState)
+  @objc optional func floatingPanelDidEndAttracting(_ fpc: eMoneySDK.FloatingPanelController)
+  @objc(floatingPanel:shouldRemoveAtLocation:withVelocity:) optional func floatingPanel(_ fpc: eMoneySDK.FloatingPanelController, shouldRemoveAt location: CoreFoundation.CGPoint, with velocity: CoreFoundation.CGVector) -> Swift.Bool
+  @objc(floatingPanelWillRemove:) optional func floatingPanelWillRemove(_ fpc: eMoneySDK.FloatingPanelController)
+  @objc optional func floatingPanelDidRemove(_ fpc: eMoneySDK.FloatingPanelController)
+  @objc(floatingPanel:contentOffsetForPinningScrollView:) optional func floatingPanel(_ fpc: eMoneySDK.FloatingPanelController, contentOffsetForPinning trackingScrollView: UIKit.UIScrollView) -> CoreFoundation.CGPoint
+}
+@_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @objc @_Concurrency.MainActor(unsafe) open class FloatingPanelController : UIKit.UIViewController {
+  @objc public enum ContentInsetAdjustmentBehavior : Swift.Int {
+    case always
+    case never
+    public init?(rawValue: Swift.Int)
+    public typealias RawValue = Swift.Int
+    public var rawValue: Swift.Int {
+      get
+    }
+  }
+  @objc public enum ContentMode : Swift.Int {
+    case `static`
+    case fitToBounds
+    public init?(rawValue: Swift.Int)
+    public typealias RawValue = Swift.Int
+    public var rawValue: Swift.Int {
+      get
+    }
+  }
+  @objc @_Concurrency.MainActor(unsafe) weak public var delegate: (any eMoneySDK.FloatingPanelControllerDelegate)? {
+    @objc get
+    @objc set
+  }
+  @objc @_Concurrency.MainActor(unsafe) public var surfaceView: eMoneySDK.SurfaceView! {
+    @objc get
+  }
+  @objc @_Concurrency.MainActor(unsafe) public var backdropView: eMoneySDK.BackdropView! {
+    @objc get
+  }
+  @objc @_Concurrency.MainActor(unsafe) weak public var trackingScrollView: UIKit.UIScrollView? {
+    @objc get
+  }
+  @objc @_Concurrency.MainActor(unsafe) public var panGestureRecognizer: eMoneySDK.FloatingPanelPanGestureRecognizer {
+    @objc get
+  }
+  @objc @_Concurrency.MainActor(unsafe) public var state: eMoneySDK.FloatingPanelState {
+    @objc get
+  }
+  @objc @_Concurrency.MainActor(unsafe) public var isAttracting: Swift.Bool {
+    @objc get
+  }
+  @objc @_Concurrency.MainActor(unsafe) public var layout: any eMoneySDK.FloatingPanelLayout {
+    @objc get
+    @objc set
+  }
+  @objc @_Concurrency.MainActor(unsafe) public var behavior: any eMoneySDK.FloatingPanelBehavior {
+    @objc get
+    @objc set
+  }
+  @objc @_Concurrency.MainActor(unsafe) public var adjustedContentInsets: UIKit.UIEdgeInsets {
+    @objc get
+  }
+  @objc @_Concurrency.MainActor(unsafe) public var contentInsetAdjustmentBehavior: eMoneySDK.FloatingPanelController.ContentInsetAdjustmentBehavior
+  @objc @_Concurrency.MainActor(unsafe) public var isRemovalInteractionEnabled: Swift.Bool {
+    @objc(isRemovalInteractionEnabled) get
+    @objc(setRemovalInteractionEnabled:) set
+  }
+  @objc @_Concurrency.MainActor(unsafe) public var contentViewController: UIKit.UIViewController? {
+    @objc get
+    @objc set
+  }
+  @_Concurrency.MainActor(unsafe) public var nearbyState: eMoneySDK.FloatingPanelState {
+    get
+  }
+  @objc @_Concurrency.MainActor(unsafe) public var contentMode: eMoneySDK.FloatingPanelController.ContentMode {
+    @objc get
+    @objc set
+  }
+  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder aDecoder: Foundation.NSCoder)
+  @objc @_Concurrency.MainActor(unsafe) public init(delegate: (any eMoneySDK.FloatingPanelControllerDelegate)? = nil)
+  @_Concurrency.MainActor(unsafe) @objc override dynamic open func loadView()
+  @_Concurrency.MainActor(unsafe) @objc override dynamic open func viewDidLayoutSubviews()
+  @_Concurrency.MainActor(unsafe) @objc override dynamic open func viewWillTransition(to size: CoreFoundation.CGSize, with coordinator: any UIKit.UIViewControllerTransitionCoordinator)
+  @_Concurrency.MainActor(unsafe) @objc override dynamic open func willTransition(to newCollection: UIKit.UITraitCollection, with coordinator: any UIKit.UIViewControllerTransitionCoordinator)
+  @_Concurrency.MainActor(unsafe) @objc override dynamic open func viewWillDisappear(_ animated: Swift.Bool)
+  @_Concurrency.MainActor(unsafe) @objc override dynamic open var childForStatusBarStyle: UIKit.UIViewController? {
+    @objc get
+  }
+  @_Concurrency.MainActor(unsafe) @objc override dynamic open var childForStatusBarHidden: UIKit.UIViewController? {
+    @objc get
+  }
+  @_Concurrency.MainActor(unsafe) @objc override dynamic open var childForScreenEdgesDeferringSystemGestures: UIKit.UIViewController? {
+    @objc get
+  }
+  @_Concurrency.MainActor(unsafe) @objc override dynamic open var childForHomeIndicatorAutoHidden: UIKit.UIViewController? {
+    @objc get
+  }
+  @objc(show:completion:) @_Concurrency.MainActor(unsafe) public func show(animated: Swift.Bool = false, completion: (() -> Swift.Void)? = nil)
+  @objc(hide:completion:) @_Concurrency.MainActor(unsafe) public func hide(animated: Swift.Bool = false, completion: (() -> Swift.Void)? = nil)
+  @objc(addPanelToParent:at:animated:completion:) @_Concurrency.MainActor(unsafe) public func addPanel(toParent parent: UIKit.UIViewController, at viewIndex: Swift.Int = -1, animated: Swift.Bool = false, completion: (() -> Swift.Void)? = nil)
+  @objc(removePanelFromParent:completion:) @_Concurrency.MainActor(unsafe) public func removePanelFromParent(animated: Swift.Bool, completion: (() -> Swift.Void)? = nil)
+  @objc(moveToState:animated:completion:) @_Concurrency.MainActor(unsafe) public func move(to: eMoneySDK.FloatingPanelState, animated: Swift.Bool, completion: (() -> Swift.Void)? = nil)
+  @_Concurrency.MainActor(unsafe) public func set(contentViewController: UIKit.UIViewController?)
+  @objc(trackScrollView:) @_Concurrency.MainActor(unsafe) public func track(scrollView: UIKit.UIScrollView)
+  @_Concurrency.MainActor(unsafe) public func followScrollViewBouncing()
+  @objc(untrackScrollView:) @_Concurrency.MainActor(unsafe) public func untrack(scrollView: UIKit.UIScrollView)
+  @_Concurrency.MainActor(unsafe) @objc override dynamic open func accessibilityPerformEscape() -> Swift.Bool
+  @objc @_Concurrency.MainActor(unsafe) public func invalidateLayout()
+  @objc @_Concurrency.MainActor(unsafe) public func surfaceLocation(for state: eMoneySDK.FloatingPanelState) -> CoreFoundation.CGPoint
+  @objc @_Concurrency.MainActor(unsafe) public var surfaceLocation: CoreFoundation.CGPoint {
+    @objc get
+    @objc set
+  }
+  @objc deinit
+}
+extension UIKit.UIViewController {
+  @objc @_Concurrency.MainActor(unsafe) dynamic public func fp_original_dismiss(animated flag: Swift.Bool, completion: (() -> Swift.Void)? = nil)
+  @objc @_Concurrency.MainActor(unsafe) dynamic public func fp_dismiss(animated flag: Swift.Bool, completion: (() -> Swift.Void)? = nil)
+}
+@objc @_inheritsConvenienceInitializers @_Concurrency.MainActor(unsafe) public class ToolTipVC : UIKit.UIViewController {
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public func viewDidLoad()
+  @_Concurrency.MainActor(unsafe) public func showToolTip(onItem viewItem: UIKit.UIView, cmView: UIKit.UIView, arrowDirection: UIKit.UIPopoverArrowDirection = .any, viewSize: CoreFoundation.CGSize = CGSize(width: CGFloat(0), height: CGFloat(0)))
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public init(nibName nibNameOrNil: Swift.String?, bundle nibBundleOrNil: Foundation.Bundle?)
+  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder: Foundation.NSCoder)
+  @objc deinit
+}
+extension eMoneySDK.ToolTipVC : UIKit.UIPopoverPresentationControllerDelegate {
+  @_Concurrency.MainActor(unsafe) @objc dynamic public func adaptivePresentationStyle(for controller: UIKit.UIPresentationController) -> UIKit.UIModalPresentationStyle
+}
+@objc @_inheritsConvenienceInitializers @IBDesignable @_Concurrency.MainActor(unsafe) public class BaseButton : UIKit.UIButton {
+  @_Concurrency.MainActor(unsafe) convenience public init(frameRect: CoreFoundation.CGRect)
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public init(frame: CoreFoundation.CGRect)
+  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder aDecoder: Foundation.NSCoder)
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public func prepareForInterfaceBuilder()
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public func awakeFromNib()
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public func layoutSubviews()
+  @objc deinit
+}
+@_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @available(iOSApplicationExtension, unavailable)
+@objc @_Concurrency.MainActor(unsafe) open class IQToolbar : UIKit.UIToolbar, UIKit.UIInputViewAudioFeedback {
+  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder aDecoder: Foundation.NSCoder)
+  @objc @_Concurrency.MainActor(unsafe) open var previousBarButton: eMoneySDK.IQBarButtonItem {
+    @objc get
+    @objc set(newValue)
+  }
+  @objc @_Concurrency.MainActor(unsafe) open var nextBarButton: eMoneySDK.IQBarButtonItem {
+    @objc get
+    @objc set(newValue)
+  }
+  @objc @_Concurrency.MainActor(unsafe) open var titleBarButton: eMoneySDK.IQTitleBarButtonItem {
+    @objc get
+    @objc set(newValue)
+  }
+  @objc @_Concurrency.MainActor(unsafe) open var doneBarButton: eMoneySDK.IQBarButtonItem {
+    @objc get
+    @objc set(newValue)
+  }
+  @objc @_Concurrency.MainActor(unsafe) open var fixedSpaceBarButton: eMoneySDK.IQBarButtonItem {
+    @objc get
+    @objc set(newValue)
+  }
+  @_Concurrency.MainActor(unsafe) @objc override dynamic open func sizeThatFits(_ size: CoreFoundation.CGSize) -> CoreFoundation.CGSize
+  @_Concurrency.MainActor(unsafe) @objc override dynamic open var tintColor: UIKit.UIColor! {
+    @objc get
+    @objc set
+  }
+  @_Concurrency.MainActor(unsafe) @objc override dynamic open func layoutSubviews()
+  @_Concurrency.MainActor(unsafe) @objc open var enableInputClicksWhenVisible: Swift.Bool {
+    @objc get
+  }
+  @objc deinit
+}
+public struct EWalletConfiguration {
+  public init(partnerName: Swift.String, clientId: Swift.String, theme: eMoneySDK.EWalletTheme?)
+}
+public class EWalletSDK {
+  public init(configuration: eMoneySDK.EWalletConfiguration)
+  public func startWithOnboarding(in controller: UIKit.UIViewController, msisdn: Swift.String, onSuccess: ((Swift.String) -> ())?, onFailure: ((Swift.String, Swift.String) -> ())?)
+  public func startWithAddMoney(in controller: UIKit.UIViewController, msisdn: Swift.String, onSuccess: ((Swift.String) -> ())?, onFailure: ((Swift.String, Swift.String) -> ())?)
+  public func loadLanguagePack()
+  @objc deinit
+}
+@_inheritsConvenienceInitializers public class DropDrawer : eMoneySDK.AdvancedPageControlDrawerParentWithIndicator, eMoneySDK.AdvancedPageControlDraw {
+  public func draw(_ rect: CoreFoundation.CGRect)
+  override public init(numberOfPages: Swift.Int? = super, height: CoreFoundation.CGFloat? = super, width: CoreFoundation.CGFloat? = super, space: CoreFoundation.CGFloat? = super, raduis: CoreFoundation.CGFloat? = super, currentItem: CoreFoundation.CGFloat? = super, indicatorColor: UIKit.UIColor? = super, dotsColor: UIKit.UIColor? = super, isBordered: Swift.Bool = super, borderColor: UIKit.UIColor = super, borderWidth: CoreFoundation.CGFloat = super, indicatorBorderColor: UIKit.UIColor = super, indicatorBorderWidth: CoreFoundation.CGFloat = super)
+  @objc deinit
+}
+@_inheritsConvenienceInitializers public class ScrollingDrawer : eMoneySDK.AdvancedPageControlDrawerParentWithIndicator, eMoneySDK.AdvancedPageControlDraw {
+  public func draw(_ rect: CoreFoundation.CGRect)
+  override public init(numberOfPages: Swift.Int? = super, height: CoreFoundation.CGFloat? = super, width: CoreFoundation.CGFloat? = super, space: CoreFoundation.CGFloat? = super, raduis: CoreFoundation.CGFloat? = super, currentItem: CoreFoundation.CGFloat? = super, indicatorColor: UIKit.UIColor? = super, dotsColor: UIKit.UIColor? = super, isBordered: Swift.Bool = super, borderColor: UIKit.UIColor = super, borderWidth: CoreFoundation.CGFloat = super, indicatorBorderColor: UIKit.UIColor = super, indicatorBorderWidth: CoreFoundation.CGFloat = super)
+  @objc deinit
+}
+@objc @_inheritsConvenienceInitializers @_Concurrency.MainActor(unsafe) public class SplashViewController : eMoneySDK.BaseViewController {
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public func viewDidLoad()
+  @_Concurrency.MainActor(unsafe) public func didInternetErrorTryAgainTapped()
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public init(nibName nibNameOrNil: Swift.String?, bundle nibBundleOrNil: Foundation.Bundle?)
+  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder: Foundation.NSCoder)
+  @objc deinit
+}
+open class IconWithLabelSegment : eMoneySDK.BetterSegmentedControlSegment {
+  public var icon: UIKit.UIImage
+  public var iconSize: CoreFoundation.CGSize
+  final public let text: Swift.String?
+  public var normalIconTintColor: UIKit.UIColor
+  final public let normalFont: UIKit.UIFont
+  final public let normalTextColor: UIKit.UIColor
+  public var normalBackgroundColor: UIKit.UIColor
+  public var selectedIconTintColor: UIKit.UIColor
+  final public let selectedFont: UIKit.UIFont
+  final public let selectedTextColor: UIKit.UIColor
+  public var selectedBackgroundColor: UIKit.UIColor
+  public init(icon: UIKit.UIImage, text: Swift.String? = nil, iconSize: CoreFoundation.CGSize, numberOfLines: Swift.Int = 1, normalBackgroundColor: UIKit.UIColor? = nil, normalIconTintColor: UIKit.UIColor, normalFont: UIKit.UIFont? = nil, normalTextColor: UIKit.UIColor? = nil, selectedBackgroundColor: UIKit.UIColor? = nil, selectedIconTintColor: UIKit.UIColor, selectedFont: UIKit.UIFont? = nil, selectedTextColor: UIKit.UIColor? = nil, accessibilityIdentifier: Swift.String? = nil)
+  public var intrinsicContentSize: CoreFoundation.CGSize? {
+    get
+  }
+  public var normalView: UIKit.UIView {
+    get
+    set
+  }
+  public var selectedView: UIKit.UIView {
+    get
+    set
+  }
+  @objc deinit
+}
+extension eMoneySDK.IconWithLabelSegment {
+  public class func segments(withIconsAndLabels iconsAndLabelS: [eMoneySDK.IconWithLabel], iconSize: CoreFoundation.CGSize, numberOfLines: Swift.Int = 1, normalBackgroundColor: UIKit.UIColor? = nil, normalIconTintColor: UIKit.UIColor, normalFont: UIKit.UIFont? = nil, normalTextColor: UIKit.UIColor? = nil, selectedBackgroundColor: UIKit.UIColor? = nil, selectedIconTintColor: UIKit.UIColor, selectedFont: UIKit.UIFont? = nil, selectedTextColor: UIKit.UIColor? = nil) -> [any eMoneySDK.BetterSegmentedControlSegment]
+}
+public protocol BetterSegmentedControlSegment {
+  var intrinsicContentSize: CoreFoundation.CGSize? { get }
+  var normalView: UIKit.UIView { get }
+  var selectedView: UIKit.UIView { get }
+}
+@objc @_inheritsConvenienceInitializers @_Concurrency.MainActor(unsafe) final public class FloatingPanelPanGestureRecognizer : UIKit.UIPanGestureRecognizer {
+  @_Concurrency.MainActor(unsafe) @objc override final public func touchesBegan(_ touches: Swift.Set<UIKit.UITouch>, with event: UIKit.UIEvent)
+  @_Concurrency.MainActor(unsafe) @objc override weak final public var delegate: (any UIKit.UIGestureRecognizerDelegate)? {
+    @objc get
+    @objc set
+  }
+  @_Concurrency.MainActor(unsafe) weak final public var delegateProxy: (any UIKit.UIGestureRecognizerDelegate)? {
+    get
+    set
+  }
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public init(target: Any?, action: ObjectiveC.Selector?)
+  @objc deinit
+}
+@objc @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @_Concurrency.MainActor(unsafe) final public class OTPTextField : eMoneySDK.BaseInputView {
+  @_Concurrency.MainActor(unsafe) final public var onBeginEditing: (() -> Swift.Void)?
+  @_Concurrency.MainActor(unsafe) final public var onTextChanged: ((Swift.String?) -> Swift.Void)?
+  @_Concurrency.MainActor(unsafe) final public var onEndEditing: (() -> Swift.Void)?
+  @_Concurrency.MainActor(unsafe) final public var onOTPEnter: ((Swift.String) -> Swift.Void)?
+  @_Concurrency.MainActor(unsafe) @objc override final public var inputView: UIKit.UIView? {
+    @objc get
+    @objc set
+  }
+  @_Concurrency.MainActor(unsafe) @objc override final public var inputAccessoryView: UIKit.UIView? {
+    @objc get
+    @objc set
+  }
+  @_Concurrency.MainActor(unsafe) @objc override final public var canBecomeFirstResponder: Swift.Bool {
+    @objc get
+  }
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public init(frame: CoreFoundation.CGRect)
+  @_Concurrency.MainActor(unsafe) @objc override final public func awakeFromNib()
+  @_Concurrency.MainActor(unsafe) @objc override final public func layoutSubviews()
+  @discardableResult
+  @_Concurrency.MainActor(unsafe) @objc override final public func becomeFirstResponder() -> Swift.Bool
+  @discardableResult
+  @_Concurrency.MainActor(unsafe) @objc override final public func resignFirstResponder() -> Swift.Bool
+  @_Concurrency.MainActor(unsafe) @objc override final public var hasText: Swift.Bool {
+    @objc get
+  }
+  @_Concurrency.MainActor(unsafe) @objc override final public func insertText(_ character: Swift.String)
+  @_Concurrency.MainActor(unsafe) @objc override final public func deleteBackward()
+  @_Concurrency.MainActor(unsafe) @objc override final public func touchesEnded(_ touches: Swift.Set<UIKit.UITouch>, with event: UIKit.UIEvent?)
+  @_Concurrency.MainActor(unsafe) final public func setConfiguration(_ configuration: eMoneySDK.OTPFieldConfiguration)
+  @_Concurrency.MainActor(unsafe) final public func setEnabled(_ enabled: Swift.Bool)
+  @_Concurrency.MainActor(unsafe) final public func setText(_ text: Swift.String)
+  @_Concurrency.MainActor(unsafe) final public func setError()
+  @_Concurrency.MainActor(unsafe) final public func removeError()
+  @_Concurrency.MainActor(unsafe) final public func clear()
+  @objc deinit
+}
+@available(iOSApplicationExtension, unavailable)
+@objc final public class IQBarButtonItemConfiguration : ObjectiveC.NSObject {
+  @objc public init(barButtonSystemItem: UIKit.UIBarButtonItem.SystemItem, action: ObjectiveC.Selector)
+  @objc public init(image: UIKit.UIImage, action: ObjectiveC.Selector)
+  @objc public init(title: Swift.String, action: ObjectiveC.Selector)
+  final public let barButtonSystemItem: UIKit.UIBarButtonItem.SystemItem?
+  @objc final public let image: UIKit.UIImage?
+  @objc final public let title: Swift.String?
+  @objc final public let action: ObjectiveC.Selector?
+  @objc deinit
+}
+@available(iOSApplicationExtension, unavailable)
+@objc extension UIKit.UIImage {
+  @objc public static func keyboardLeftImage() -> UIKit.UIImage?
+  @objc public static func keyboardRightImage() -> UIKit.UIImage?
+  @objc public static func keyboardUpImage() -> UIKit.UIImage?
+  @objc public static func keyboardDownImage() -> UIKit.UIImage?
+  @objc public static func keyboardPreviousImage() -> UIKit.UIImage?
+  @objc public static func keyboardNextImage() -> UIKit.UIImage?
+}
+@available(iOSApplicationExtension, unavailable)
+@objc extension UIKit.UIView {
+  @objc @_Concurrency.MainActor(unsafe) dynamic public var keyboardToolbar: eMoneySDK.IQToolbar {
+    @objc get
+  }
+  @objc @_Concurrency.MainActor(unsafe) dynamic public var shouldHideToolbarPlaceholder: Swift.Bool {
+    @objc get
+    @objc set(newValue)
+  }
+  @objc @_Concurrency.MainActor(unsafe) dynamic public var toolbarPlaceholder: Swift.String? {
+    @objc get
+    @objc set(newValue)
+  }
+  @objc @_Concurrency.MainActor(unsafe) dynamic public var drawingToolbarPlaceholder: Swift.String? {
+    @objc get
+  }
+  @objc @_Concurrency.MainActor(unsafe) dynamic public func addKeyboardToolbarWithTarget(target: Swift.AnyObject?, titleText: Swift.String?, rightBarButtonConfiguration: eMoneySDK.IQBarButtonItemConfiguration?, previousBarButtonConfiguration: eMoneySDK.IQBarButtonItemConfiguration? = nil, nextBarButtonConfiguration: eMoneySDK.IQBarButtonItemConfiguration? = nil)
+  @objc @_Concurrency.MainActor(unsafe) dynamic public func addDoneOnKeyboardWithTarget(_ target: Swift.AnyObject?, action: ObjectiveC.Selector, shouldShowPlaceholder: Swift.Bool = false)
+  @objc @_Concurrency.MainActor(unsafe) dynamic public func addDoneOnKeyboardWithTarget(_ target: Swift.AnyObject?, action: ObjectiveC.Selector, titleText: Swift.String?)
+  @objc @_Concurrency.MainActor(unsafe) dynamic public func addRightButtonOnKeyboardWithImage(_ image: UIKit.UIImage, target: Swift.AnyObject?, action: ObjectiveC.Selector, shouldShowPlaceholder: Swift.Bool = false)
+  @objc @_Concurrency.MainActor(unsafe) dynamic public func addRightButtonOnKeyboardWithImage(_ image: UIKit.UIImage, target: Swift.AnyObject?, action: ObjectiveC.Selector, titleText: Swift.String?)
+  @objc @_Concurrency.MainActor(unsafe) dynamic public func addRightButtonOnKeyboardWithText(_ text: Swift.String, target: Swift.AnyObject?, action: ObjectiveC.Selector, shouldShowPlaceholder: Swift.Bool = false)
+  @objc @_Concurrency.MainActor(unsafe) dynamic public func addRightButtonOnKeyboardWithText(_ text: Swift.String, target: Swift.AnyObject?, action: ObjectiveC.Selector, titleText: Swift.String?)
+  @objc @_Concurrency.MainActor(unsafe) dynamic public func addCancelDoneOnKeyboardWithTarget(_ target: Swift.AnyObject?, cancelAction: ObjectiveC.Selector, doneAction: ObjectiveC.Selector, shouldShowPlaceholder: Swift.Bool = false)
+  @objc @_Concurrency.MainActor(unsafe) dynamic public func addRightLeftOnKeyboardWithTarget(_ target: Swift.AnyObject?, leftButtonTitle: Swift.String, rightButtonTitle: Swift.String, leftButtonAction: ObjectiveC.Selector, rightButtonAction: ObjectiveC.Selector, shouldShowPlaceholder: Swift.Bool = false)
+  @objc @_Concurrency.MainActor(unsafe) dynamic public func addRightLeftOnKeyboardWithTarget(_ target: Swift.AnyObject?, leftButtonImage: UIKit.UIImage, rightButtonImage: UIKit.UIImage, leftButtonAction: ObjectiveC.Selector, rightButtonAction: ObjectiveC.Selector, shouldShowPlaceholder: Swift.Bool = false)
+  @objc @_Concurrency.MainActor(unsafe) dynamic public func addCancelDoneOnKeyboardWithTarget(_ target: Swift.AnyObject?, cancelAction: ObjectiveC.Selector, doneAction: ObjectiveC.Selector, titleText: Swift.String?)
+  @objc @_Concurrency.MainActor(unsafe) dynamic public func addRightLeftOnKeyboardWithTarget(_ target: Swift.AnyObject?, leftButtonTitle: Swift.String, rightButtonTitle: Swift.String, leftButtonAction: ObjectiveC.Selector, rightButtonAction: ObjectiveC.Selector, titleText: Swift.String?)
+  @objc @_Concurrency.MainActor(unsafe) dynamic public func addRightLeftOnKeyboardWithTarget(_ target: Swift.AnyObject?, leftButtonImage: UIKit.UIImage, rightButtonImage: UIKit.UIImage, leftButtonAction: ObjectiveC.Selector, rightButtonAction: ObjectiveC.Selector, titleText: Swift.String?)
+  @objc @_Concurrency.MainActor(unsafe) dynamic public func addPreviousNextDoneOnKeyboardWithTarget(_ target: Swift.AnyObject?, previousAction: ObjectiveC.Selector, nextAction: ObjectiveC.Selector, doneAction: ObjectiveC.Selector, shouldShowPlaceholder: Swift.Bool = false)
+  @objc @_Concurrency.MainActor(unsafe) dynamic public func addPreviousNextRightOnKeyboardWithTarget(_ target: Swift.AnyObject?, rightButtonImage: UIKit.UIImage, previousAction: ObjectiveC.Selector, nextAction: ObjectiveC.Selector, rightButtonAction: ObjectiveC.Selector, shouldShowPlaceholder: Swift.Bool = false)
+  @objc @_Concurrency.MainActor(unsafe) dynamic public func addPreviousNextRightOnKeyboardWithTarget(_ target: Swift.AnyObject?, rightButtonTitle: Swift.String, previousAction: ObjectiveC.Selector, nextAction: ObjectiveC.Selector, rightButtonAction: ObjectiveC.Selector, shouldShowPlaceholder: Swift.Bool = false)
+  @objc @_Concurrency.MainActor(unsafe) dynamic public func addPreviousNextDoneOnKeyboardWithTarget(_ target: Swift.AnyObject?, previousAction: ObjectiveC.Selector, nextAction: ObjectiveC.Selector, doneAction: ObjectiveC.Selector, titleText: Swift.String?)
+  @objc @_Concurrency.MainActor(unsafe) dynamic public func addPreviousNextRightOnKeyboardWithTarget(_ target: Swift.AnyObject?, rightButtonImage: UIKit.UIImage, previousAction: ObjectiveC.Selector, nextAction: ObjectiveC.Selector, rightButtonAction: ObjectiveC.Selector, titleText: Swift.String?)
+  @objc @_Concurrency.MainActor(unsafe) dynamic public func addPreviousNextRightOnKeyboardWithTarget(_ target: Swift.AnyObject?, rightButtonTitle: Swift.String, previousAction: ObjectiveC.Selector, nextAction: ObjectiveC.Selector, rightButtonAction: ObjectiveC.Selector, titleText: Swift.String?)
+}
+prefix operator /
+@available(iOSApplicationExtension, unavailable)
+@objc extension UIKit.UIViewController {
+  @objc @_Concurrency.MainActor(unsafe) dynamic open func parentIQContainerViewController() -> UIKit.UIViewController?
+  @objc @available(*, deprecated, message: "Due to change in core-logic of handling distance between textField and keyboard distance, this layout contraint tweak is no longer needed and things will just work out of the box regardless of constraint pinned with safeArea/layoutGuide/superview.")
+  @IBOutlet @_Concurrency.MainActor(unsafe) dynamic public var IQLayoutGuideConstraint: UIKit.NSLayoutConstraint? {
+    @objc get
+    @objc set(newValue)
+  }
+}
+public struct OTPFieldConfiguration {
+  public let adapter: any eMoneySDK.OTPTextFieldData
+  public let keyboardType: UIKit.UIKeyboardType
+  public let keyboardAppearance: UIKit.UIKeyboardAppearance
+  public let autocorrectionType: UIKit.UITextAutocorrectionType
+  public let allowedCharactersSet: Foundation.CharacterSet
+  public init(adapter: any eMoneySDK.OTPTextFieldData, keyboardType: UIKit.UIKeyboardType = .numberPad, keyboardAppearance: UIKit.UIKeyboardAppearance = .light, autocorrectionType: UIKit.UITextAutocorrectionType = .no, allowedCharactersSet: Foundation.CharacterSet = .alphanumerics)
+}
+open class IconSegment : eMoneySDK.BetterSegmentedControlSegment {
+  public var icon: UIKit.UIImage
+  public var iconSize: CoreFoundation.CGSize
+  public var normalIconTintColor: UIKit.UIColor
+  public var normalBackgroundColor: UIKit.UIColor
+  public var selectedIconTintColor: UIKit.UIColor
+  public var selectedBackgroundColor: UIKit.UIColor
+  public init(icon: UIKit.UIImage, iconSize: CoreFoundation.CGSize, normalBackgroundColor: UIKit.UIColor? = nil, normalIconTintColor: UIKit.UIColor, selectedBackgroundColor: UIKit.UIColor? = nil, selectedIconTintColor: UIKit.UIColor)
+  public var intrinsicContentSize: CoreFoundation.CGSize? {
+    get
+  }
+  public var normalView: UIKit.UIView {
+    get
+    set
+  }
+  public var selectedView: UIKit.UIView {
+    get
+    set
+  }
+  @objc deinit
+}
+extension eMoneySDK.IconSegment {
+  public class func segments(withIcons icons: [UIKit.UIImage], iconSize: CoreFoundation.CGSize, normalBackgroundColor: UIKit.UIColor? = nil, normalIconTintColor: UIKit.UIColor, selectedBackgroundColor: UIKit.UIColor? = nil, selectedIconTintColor: UIKit.UIColor) -> [any eMoneySDK.BetterSegmentedControlSegment]
+}
+@_inheritsConvenienceInitializers public class SlideDrawer : eMoneySDK.AdvancedPageControlDrawerParentWithIndicator, eMoneySDK.AdvancedPageControlDraw {
+  public func draw(_ rect: CoreFoundation.CGRect)
+  override public init(numberOfPages: Swift.Int? = super, height: CoreFoundation.CGFloat? = super, width: CoreFoundation.CGFloat? = super, space: CoreFoundation.CGFloat? = super, raduis: CoreFoundation.CGFloat? = super, currentItem: CoreFoundation.CGFloat? = super, indicatorColor: UIKit.UIColor? = super, dotsColor: UIKit.UIColor? = super, isBordered: Swift.Bool = super, borderColor: UIKit.UIColor = super, borderWidth: CoreFoundation.CGFloat = super, indicatorBorderColor: UIKit.UIColor = super, indicatorBorderWidth: CoreFoundation.CGFloat = super)
+  @objc deinit
+}
+open class LabelSegment : eMoneySDK.BetterSegmentedControlSegment {
+  final public let text: Swift.String?
+  final public let normalFont: UIKit.UIFont
+  final public let normalTextColor: UIKit.UIColor
+  final public let normalBackgroundColor: UIKit.UIColor
+  final public let selectedFont: UIKit.UIFont
+  final public let selectedTextColor: UIKit.UIColor
+  final public let selectedBackgroundColor: UIKit.UIColor
+  public init(text: Swift.String? = nil, numberOfLines: Swift.Int = 1, normalBackgroundColor: UIKit.UIColor? = nil, normalFont: UIKit.UIFont? = nil, normalTextColor: UIKit.UIColor? = nil, selectedBackgroundColor: UIKit.UIColor? = nil, selectedFont: UIKit.UIFont? = nil, selectedTextColor: UIKit.UIColor? = nil, accessibilityIdentifier: Swift.String? = nil)
+  public var intrinsicContentSize: CoreFoundation.CGSize? {
+    get
+  }
+  public var normalView: UIKit.UIView {
+    get
+    set
+  }
+  public var selectedView: UIKit.UIView {
+    get
+    set
+  }
+  open func createLabel(withText text: Swift.String?, backgroundColor: UIKit.UIColor, font: UIKit.UIFont, textColor: UIKit.UIColor, accessibilityIdentifier: Swift.String?) -> UIKit.UILabel
+  @objc deinit
+}
+extension eMoneySDK.LabelSegment {
+  public class func segments(withTitles titles: [Swift.String], numberOfLines: Swift.Int = 1, normalBackgroundColor: UIKit.UIColor? = nil, normalFont: UIKit.UIFont? = nil, normalTextColor: UIKit.UIColor? = nil, selectedBackgroundColor: UIKit.UIColor? = nil, selectedFont: UIKit.UIFont? = nil, selectedTextColor: UIKit.UIColor? = nil) -> [any eMoneySDK.BetterSegmentedControlSegment]
+}
+@objc @_inheritsConvenienceInitializers @IBDesignable @_Concurrency.MainActor(unsafe) open class BetterSegmentedControl : UIKit.UIControl {
+  @_Concurrency.MainActor(unsafe) public static let noSegment: Swift.Int
+  @_Concurrency.MainActor(unsafe) public var index: Swift.Int {
+    get
+  }
+  @_Concurrency.MainActor(unsafe) public var segments: [any eMoneySDK.BetterSegmentedControlSegment] {
+    get
+    set
+  }
+  @_Concurrency.MainActor(unsafe) final public let indicatorView: eMoneySDK.BetterSegmentedControl.IndicatorView
+  @objc @IBInspectable @_Concurrency.MainActor(unsafe) public var alwaysAnnouncesValue: Swift.Bool
+  @objc @IBInspectable @_Concurrency.MainActor(unsafe) public var announcesValueImmediately: Swift.Bool
+  @objc @IBInspectable @_Concurrency.MainActor(unsafe) public var panningDisabled: Swift.Bool
+  @objc @IBInspectable @_Concurrency.MainActor(unsafe) public var cornerRadiusSegment: CoreFoundation.CGFloat {
+    @objc get
+    @objc set
+  }
+  @objc @IBInspectable @_Concurrency.MainActor(unsafe) public var indicatorViewBackgroundColor: UIKit.UIColor? {
+    @objc get
+    @objc set
+  }
+  @objc @IBInspectable @_Concurrency.MainActor(unsafe) public var indicatorViewInset: CoreFoundation.CGFloat {
+    @objc get
+    @objc set
+  }
+  @objc @IBInspectable @_Concurrency.MainActor(unsafe) public var indicatorViewBorderWidth: CoreFoundation.CGFloat {
+    @objc get
+    @objc set
+  }
+  @objc @IBInspectable @_Concurrency.MainActor(unsafe) public var indicatorViewBorderColor: UIKit.UIColor? {
+    @objc get
+    @objc set
+  }
+  @objc @IBInspectable @_Concurrency.MainActor(unsafe) public var animationDuration: Swift.Double
+  @objc @IBInspectable @_Concurrency.MainActor(unsafe) public var animationSpringDamping: CoreFoundation.CGFloat
+  @objc @IBInspectable @_Concurrency.MainActor(unsafe) public var segmentPadding: CoreFoundation.CGFloat {
+    @objc get
+    @objc set
+  }
+  @_Concurrency.MainActor(unsafe) @objc override dynamic open var intrinsicContentSize: CoreFoundation.CGSize {
+    @objc get
+  }
+  @_Concurrency.MainActor(unsafe) public init(frame: CoreFoundation.CGRect, segments: [any eMoneySDK.BetterSegmentedControlSegment], index: Swift.Int = 0, options: [eMoneySDK.BetterSegmentedControl.Option]? = nil)
+  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder aDecoder: Foundation.NSCoder)
+  @_Concurrency.MainActor(unsafe) @objc convenience override dynamic public init(frame: CoreFoundation.CGRect)
+  @_Concurrency.MainActor(unsafe) @objc override dynamic open func layoutSubviews()
+  @_Concurrency.MainActor(unsafe) public func setIndex(_ index: Swift.Int, animated: Swift.Bool = true, shouldSendValueChangedEvent: Swift.Bool = false)
+  @_Concurrency.MainActor(unsafe) public func setOptions(_ options: [eMoneySDK.BetterSegmentedControl.Option])
+  @objc deinit
+}
+extension eMoneySDK.BetterSegmentedControl : UIKit.UIGestureRecognizerDelegate {
+  @_Concurrency.MainActor(unsafe) @objc override dynamic open func gestureRecognizerShouldBegin(_ gestureRecognizer: UIKit.UIGestureRecognizer) -> Swift.Bool
+}
+public func addColor(_ color1: UIKit.UIColor, with color2: UIKit.UIColor) -> UIKit.UIColor
+public func multiplyColor(_ color: UIKit.UIColor, by multiplier: CoreFoundation.CGFloat) -> UIKit.UIColor
+public func + (color1: UIKit.UIColor, color2: UIKit.UIColor) -> UIKit.UIColor
+public func * (color: UIKit.UIColor, multiplier: Swift.Double) -> UIKit.UIColor
+extension UIKit.UITableView {
+  @_Concurrency.MainActor(unsafe) public func registerCell(type: UIKit.UITableViewCell.Type, identifier: Swift.String? = nil)
+  @_Concurrency.MainActor(unsafe) public func dequeueCell<T>(withType type: UIKit.UITableViewCell.Type) -> T? where T : UIKit.UITableViewCell
+  @_Concurrency.MainActor(unsafe) public func dequeueCell<T>(withType type: UIKit.UITableViewCell.Type, for indexPath: Foundation.IndexPath) -> T? where T : UIKit.UITableViewCell
+}
+extension UIKit.UITableViewCell {
+  @_Concurrency.MainActor(unsafe) public static var identifier: Swift.String {
+    get
+  }
+}
+extension eMoneySDK.BetterSegmentedControl {
+  @_Concurrency.MainActor(unsafe) @objc override dynamic open func prepareForInterfaceBuilder()
+  @_Concurrency.MainActor(unsafe) @objc override dynamic open func awakeFromNib()
+}
+@available(iOSApplicationExtension, unavailable)
+extension eMoneySDK.IQKeyboardManager {
+  @objc final public var movedDistance: CoreFoundation.CGFloat {
+    @objc get
+  }
+  @objc final public var movedDistanceChanged: ((CoreFoundation.CGFloat) -> Swift.Void)? {
+    @objc get
+    @objc set(newValue)
+  }
+}
+@objc @IBDesignable @_Concurrency.MainActor(unsafe) open class TagView : UIKit.UIButton {
+  @IBInspectable @_Concurrency.MainActor(unsafe) @objc dynamic open var cornerRadius: CoreFoundation.CGFloat {
+    @objc get
+    @objc set
+  }
+  @IBInspectable @_Concurrency.MainActor(unsafe) @objc dynamic open var borderWidth: CoreFoundation.CGFloat {
+    @objc get
+    @objc set
+  }
+  @IBInspectable @_Concurrency.MainActor(unsafe) @objc dynamic open var borderColor: UIKit.UIColor? {
+    @objc get
+    @objc set
+  }
+  @objc @IBInspectable @_Concurrency.MainActor(unsafe) open var textColor: UIKit.UIColor {
+    @objc get
+    @objc set
+  }
+  @objc @IBInspectable @_Concurrency.MainActor(unsafe) open var selectedTextColor: UIKit.UIColor {
+    @objc get
+    @objc set
+  }
+  @objc @IBInspectable @_Concurrency.MainActor(unsafe) open var titleLineBreakMode: UIKit.NSLineBreakMode {
+    @objc get
+    @objc set
+  }
+  @objc @IBInspectable @_Concurrency.MainActor(unsafe) open var paddingY: CoreFoundation.CGFloat {
+    @objc get
+    @objc set
+  }
+  @objc @IBInspectable @_Concurrency.MainActor(unsafe) open var paddingX: CoreFoundation.CGFloat {
+    @objc get
+    @objc set
+  }
+  @objc @IBInspectable @_Concurrency.MainActor(unsafe) open var tagBackgroundColor: UIKit.UIColor {
+    @objc get
+    @objc set
+  }
+  @objc @IBInspectable @_Concurrency.MainActor(unsafe) open var highlightedBackgroundColor: UIKit.UIColor? {
+    @objc get
+    @objc set
+  }
+  @objc @IBInspectable @_Concurrency.MainActor(unsafe) open var selectedBorderColor: UIKit.UIColor? {
+    @objc get
+    @objc set
+  }
+  @objc @IBInspectable @_Concurrency.MainActor(unsafe) open var selectedBackgroundColor: UIKit.UIColor? {
+    @objc get
+    @objc set
+  }
+  @objc @IBInspectable @_Concurrency.MainActor(unsafe) open var textFont: UIKit.UIFont {
+    @objc get
+    @objc set
+  }
+  @_Concurrency.MainActor(unsafe) @objc override dynamic open var isHighlighted: Swift.Bool {
+    @objc get
+    @objc set
+  }
+  @_Concurrency.MainActor(unsafe) @objc override dynamic open var isSelected: Swift.Bool {
+    @objc get
+    @objc set
+  }
+  @objc @IBInspectable @_Concurrency.MainActor(unsafe) open var enableRemoveButton: Swift.Bool {
+    @objc get
+    @objc set
+  }
+  @objc @IBInspectable @_Concurrency.MainActor(unsafe) open var removeButtonIconSize: CoreFoundation.CGFloat {
+    @objc get
+    @objc set
+  }
+  @objc @IBInspectable @_Concurrency.MainActor(unsafe) open var removeIconLineWidth: CoreFoundation.CGFloat {
+    @objc get
+    @objc set
+  }
+  @objc @IBInspectable @_Concurrency.MainActor(unsafe) open var removeIconLineColor: UIKit.UIColor {
+    @objc get
+    @objc set
+  }
+  @_Concurrency.MainActor(unsafe) open var onTap: ((eMoneySDK.TagView) -> Swift.Void)?
+  @_Concurrency.MainActor(unsafe) open var onLongPress: ((eMoneySDK.TagView) -> Swift.Void)?
+  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder aDecoder: Foundation.NSCoder)
+  @_Concurrency.MainActor(unsafe) public init(title: Swift.String)
+  @_Concurrency.MainActor(unsafe) @objc override dynamic open var intrinsicContentSize: CoreFoundation.CGSize {
+    @objc get
+  }
+  @_Concurrency.MainActor(unsafe) @objc override dynamic open func layoutSubviews()
+  @objc deinit
+}
+extension UIKit.UICollectionView {
+  @_Concurrency.MainActor(unsafe) public func registerCell(type: UIKit.UICollectionViewCell.Type, identifier: Swift.String? = nil)
+  @_Concurrency.MainActor(unsafe) public func dequeueCell<T>(withType type: UIKit.UICollectionViewCell.Type, for indexPath: Foundation.IndexPath) -> T? where T : UIKit.UICollectionViewCell
+}
+extension UIKit.UICollectionReusableView {
+  @_Concurrency.MainActor(unsafe) public static var identifier: Swift.String {
+    get
+  }
+}
+public struct CardDetails : Swift.Hashable, Swift.Identifiable {
+  public var number: Swift.String?
+  public var name: Swift.String?
+  public var expiryDate: Swift.String?
+  public var cvcNumber: Swift.String?
+  public var type: eMoneySDK.CardType
+  public var industry: eMoneySDK.CardIndustry
+  public init(numberWithDelimiters: Swift.String? = nil, name: Swift.String? = nil, expiryDate: Swift.String? = nil, cvcNumber: Swift.String? = nil)
+  public var id: Swift.Int {
+    get
+  }
+  public func hash(into hasher: inout Swift.Hasher)
+  public static func == (a: eMoneySDK.CardDetails, b: eMoneySDK.CardDetails) -> Swift.Bool
+  public typealias ID = Swift.Int
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+public enum CardType : Swift.String, Swift.CaseIterable, Swift.Identifiable {
+  case debit
+  case credit
+  case masterCard
+  case visa
+  case amex
+  case discover
+  case dinersClubOrCarteBlanche
+  case unknown
+  public init(number: Swift.String?)
+  public var id: Swift.Int {
+    get
+  }
+  public init?(rawValue: Swift.String)
+  public typealias AllCases = [eMoneySDK.CardType]
+  public typealias ID = Swift.Int
+  public typealias RawValue = Swift.String
+  public static var allCases: [eMoneySDK.CardType] {
+    get
+  }
+  public var rawValue: Swift.String {
+    get
+  }
+}
+public enum CardIndustry : Swift.String, Swift.CaseIterable, Swift.Identifiable {
+  case industry
+  case airlines
+  case airlinesFinancialAndFuture
+  case travelAndEntertainment
+  case bankingAndFinancial
+  case merchandisingAndBanking
+  case petroleum
+  case healthcareAndTelecom
+  case national
+  case unknown
+  public init(firstDigit: Swift.String.Element?)
+  public var id: Swift.Int {
+    get
+  }
+  public init?(rawValue: Swift.String)
+  public typealias AllCases = [eMoneySDK.CardIndustry]
+  public typealias ID = Swift.Int
+  public typealias RawValue = Swift.String
+  public static var allCases: [eMoneySDK.CardIndustry] {
+    get
+  }
+  public var rawValue: Swift.String {
+    get
+  }
+}
+@objc public enum FloatingPanelReferenceEdge : Swift.Int {
+  case top
+  case left
+  case bottom
+  case right
+  public init?(rawValue: Swift.Int)
+  public typealias RawValue = Swift.Int
+  public var rawValue: Swift.Int {
+    get
+  }
+}
+@objc public enum FloatingPanelLayoutReferenceGuide : Swift.Int {
+  case superview = 0
+  case safeArea = 1
+  public init?(rawValue: Swift.Int)
+  public typealias RawValue = Swift.Int
+  public var rawValue: Swift.Int {
+    get
+  }
+}
+@objc public enum FloatingPanelLayoutContentBoundingGuide : Swift.Int {
+  case none = 0
+  case superview = 1
+  case safeArea = 2
+  public init?(rawValue: Swift.Int)
+  public typealias RawValue = Swift.Int
+  public var rawValue: Swift.Int {
+    get
+  }
+}
+@objc public protocol TagListViewDelegate {
+  @objc optional func tagPressed(_ title: Swift.String, tagView: eMoneySDK.TagView, sender: eMoneySDK.TagListView)
+  @objc optional func tagRemoveButtonPressed(_ title: Swift.String, tagView: eMoneySDK.TagView, sender: eMoneySDK.TagListView)
+}
+@objc @_inheritsConvenienceInitializers @IBDesignable @_Concurrency.MainActor(unsafe) open class TagListView : UIKit.UIView {
+  @objc @IBInspectable @_Concurrency.MainActor(unsafe) dynamic open var textColor: UIKit.UIColor {
+    @objc get
+    @objc set
+  }
+  @objc @IBInspectable @_Concurrency.MainActor(unsafe) dynamic open var selectedTextColor: UIKit.UIColor {
+    @objc get
+    @objc set
+  }
+  @objc @IBInspectable @_Concurrency.MainActor(unsafe) dynamic open var tagLineBreakMode: UIKit.NSLineBreakMode {
+    @objc get
+    @objc set
+  }
+  @objc @IBInspectable @_Concurrency.MainActor(unsafe) dynamic open var tagBackgroundColor: UIKit.UIColor {
+    @objc get
+    @objc set
+  }
+  @objc @IBInspectable @_Concurrency.MainActor(unsafe) dynamic open var tagHighlightedBackgroundColor: UIKit.UIColor? {
+    @objc get
+    @objc set
+  }
+  @objc @IBInspectable @_Concurrency.MainActor(unsafe) dynamic open var tagSelectedBackgroundColor: UIKit.UIColor? {
+    @objc get
+    @objc set
+  }
+  @IBInspectable @_Concurrency.MainActor(unsafe) @objc dynamic open var cornerRadius: CoreFoundation.CGFloat {
+    @objc get
+    @objc set
+  }
+  @IBInspectable @_Concurrency.MainActor(unsafe) @objc dynamic open var borderWidth: CoreFoundation.CGFloat {
+    @objc get
+    @objc set
+  }
+  @IBInspectable @_Concurrency.MainActor(unsafe) @objc dynamic open var borderColor: UIKit.UIColor? {
+    @objc get
+    @objc set
+  }
+  @objc @IBInspectable @_Concurrency.MainActor(unsafe) dynamic open var selectedBorderColor: UIKit.UIColor? {
+    @objc get
+    @objc set
+  }
+  @objc @IBInspectable @_Concurrency.MainActor(unsafe) dynamic open var paddingY: CoreFoundation.CGFloat {
+    @objc get
+    @objc set
+  }
+  @objc @IBInspectable @_Concurrency.MainActor(unsafe) dynamic open var paddingX: CoreFoundation.CGFloat {
+    @objc get
+    @objc set
+  }
+  @objc @IBInspectable @_Concurrency.MainActor(unsafe) dynamic open var marginY: CoreFoundation.CGFloat {
+    @objc get
+    @objc set
+  }
+  @objc @IBInspectable @_Concurrency.MainActor(unsafe) dynamic open var marginX: CoreFoundation.CGFloat {
+    @objc get
+    @objc set
+  }
+  @objc @IBInspectable @_Concurrency.MainActor(unsafe) dynamic open var minWidth: CoreFoundation.CGFloat {
+    @objc get
+    @objc set
+  }
+  @objc public enum Alignment : Swift.Int {
+    case left
+    case center
+    case right
+    case leading
+    case trailing
+    public init?(rawValue: Swift.Int)
+    public typealias RawValue = Swift.Int
+    public var rawValue: Swift.Int {
+      get
+    }
+  }
+  @objc @IBInspectable @_Concurrency.MainActor(unsafe) open var alignment: eMoneySDK.TagListView.Alignment {
+    @objc get
+    @objc set
+  }
+  @IBInspectable @_Concurrency.MainActor(unsafe) @objc dynamic open var shadowColor: UIKit.UIColor? {
+    @objc get
+    @objc set
+  }
+  @IBInspectable @_Concurrency.MainActor(unsafe) @objc dynamic open var shadowRadius: CoreFoundation.CGFloat {
+    @objc get
+    @objc set
+  }
+  @IBInspectable @_Concurrency.MainActor(unsafe) @objc dynamic open var shadowOffset: CoreFoundation.CGSize {
+    @objc get
+    @objc set
+  }
+  @IBInspectable @_Concurrency.MainActor(unsafe) @objc dynamic open var shadowOpacity: Swift.Float {
+    @objc get
+    @objc set
+  }
+  @objc @IBInspectable @_Concurrency.MainActor(unsafe) dynamic open var enableRemoveButton: Swift.Bool {
+    @objc get
+    @objc set
+  }
+  @objc @IBInspectable @_Concurrency.MainActor(unsafe) dynamic open var removeButtonIconSize: CoreFoundation.CGFloat {
+    @objc get
+    @objc set
+  }
+  @objc @IBInspectable @_Concurrency.MainActor(unsafe) dynamic open var removeIconLineWidth: CoreFoundation.CGFloat {
+    @objc get
+    @objc set
+  }
+  @objc @IBInspectable @_Concurrency.MainActor(unsafe) dynamic open var removeIconLineColor: UIKit.UIColor {
+    @objc get
+    @objc set
+  }
+  @objc @_Concurrency.MainActor(unsafe) dynamic open var textFont: UIKit.UIFont {
+    @objc get
+    @objc set
+  }
+  @objc @IBOutlet @_Concurrency.MainActor(unsafe) weak open var delegate: (any eMoneySDK.TagListViewDelegate)?
+  @_Concurrency.MainActor(unsafe) open var tagViews: [eMoneySDK.TagView] {
+    get
+  }
+  @_Concurrency.MainActor(unsafe) @objc override dynamic open func prepareForInterfaceBuilder()
+  @_Concurrency.MainActor(unsafe) @objc override dynamic open func layoutSubviews()
+  @_Concurrency.MainActor(unsafe) @objc override dynamic open var intrinsicContentSize: CoreFoundation.CGSize {
+    @objc get
+  }
+  @discardableResult
+  @_Concurrency.MainActor(unsafe) open func addTag(_ title: Swift.String) -> eMoneySDK.TagView
+  @discardableResult
+  @_Concurrency.MainActor(unsafe) open func addTags(_ titles: [Swift.String]) -> [eMoneySDK.TagView]
+  @discardableResult
+  @_Concurrency.MainActor(unsafe) open func addTagView(_ tagView: eMoneySDK.TagView) -> eMoneySDK.TagView
+  @discardableResult
+  @_Concurrency.MainActor(unsafe) open func addTagViews(_ tagViewList: [eMoneySDK.TagView]) -> [eMoneySDK.TagView]
+  @discardableResult
+  @_Concurrency.MainActor(unsafe) open func insertTag(_ title: Swift.String, at index: Swift.Int) -> eMoneySDK.TagView
+  @discardableResult
+  @_Concurrency.MainActor(unsafe) open func insertTagView(_ tagView: eMoneySDK.TagView, at index: Swift.Int) -> eMoneySDK.TagView
+  @_Concurrency.MainActor(unsafe) open func setTitle(_ title: Swift.String, at index: Swift.Int)
+  @_Concurrency.MainActor(unsafe) open func removeTag(_ title: Swift.String)
+  @_Concurrency.MainActor(unsafe) open func removeTagView(_ tagView: eMoneySDK.TagView)
+  @_Concurrency.MainActor(unsafe) open func removeAllTags()
+  @_Concurrency.MainActor(unsafe) open func selectedTags() -> [eMoneySDK.TagView]
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public init(frame: CoreFoundation.CGRect)
+  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder: Foundation.NSCoder)
+  @objc deinit
+}
+@available(iOSApplicationExtension, unavailable)
+extension eMoneySDK.IQKeyboardManager {
+  public typealias SizeBlock = (_ size: CoreFoundation.CGSize) -> Swift.Void
+  @objc final public func registerKeyboardSizeChange(identifier: Swift.AnyHashable, sizeHandler: @escaping eMoneySDK.IQKeyboardManager.SizeBlock)
+  @objc final public func unregisterKeyboardSizeChange(identifier: Swift.AnyHashable)
+  @objc final public var keyboardShowing: Swift.Bool {
+    @objc get
+  }
+  @objc final public var keyboardFrame: CoreFoundation.CGRect {
+    @objc get
+  }
+}
+@_hasMissingDesignatedInitializers @objc(FloatingPanelBackdropView) @_Concurrency.MainActor(unsafe) public class BackdropView : UIKit.UIView {
+  @objc @_Concurrency.MainActor(unsafe) public var dismissalTapGestureRecognizer: UIKit.UITapGestureRecognizer
+  @objc deinit
+}
+@_inheritsConvenienceInitializers public class InfiniteScrollingDrawer : eMoneySDK.AdvancedPageControlDrawerParentWithIndicator, eMoneySDK.AdvancedPageControlDraw {
+  public func draw(_ rect: CoreFoundation.CGRect)
+  override public init(numberOfPages: Swift.Int? = super, height: CoreFoundation.CGFloat? = super, width: CoreFoundation.CGFloat? = super, space: CoreFoundation.CGFloat? = super, raduis: CoreFoundation.CGFloat? = super, currentItem: CoreFoundation.CGFloat? = super, indicatorColor: UIKit.UIColor? = super, dotsColor: UIKit.UIColor? = super, isBordered: Swift.Bool = super, borderColor: UIKit.UIColor = super, borderWidth: CoreFoundation.CGFloat = super, indicatorBorderColor: UIKit.UIColor = super, indicatorBorderWidth: CoreFoundation.CGFloat = super)
+  @objc deinit
+}
+@_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @available(iOSApplicationExtension, unavailable)
+@objc final public class IQKeyboardManager : ObjectiveC.NSObject {
+  @objc public static let shared: eMoneySDK.IQKeyboardManager
+  @objc final public var enable: Swift.Bool {
+    @objc get
+    @objc set
+  }
+  @objc final public var keyboardDistanceFromTextField: CoreFoundation.CGFloat
+  @objc final public var enableAutoToolbar: Swift.Bool {
+    @objc get
+    @objc set
+  }
+  @objc final public var toolbarManageBehaviour: eMoneySDK.IQAutoToolbarManageBehaviour
+  @objc final public var shouldToolbarUsesTextFieldTintColor: Swift.Bool
+  @objc final public var toolbarTintColor: UIKit.UIColor?
+  @objc final public var toolbarBarTintColor: UIKit.UIColor?
+  @objc final public var previousNextDisplayMode: eMoneySDK.IQPreviousNextDisplayMode
+  @objc final public var toolbarPreviousBarButtonItemImage: UIKit.UIImage?
+  @objc final public var toolbarNextBarButtonItemImage: UIKit.UIImage?
+  @objc final public var toolbarDoneBarButtonItemImage: UIKit.UIImage?
+  @objc final public var toolbarPreviousBarButtonItemText: Swift.String?
+  @objc final public var toolbarPreviousBarButtonItemAccessibilityLabel: Swift.String?
+  @objc final public var toolbarNextBarButtonItemText: Swift.String?
+  @objc final public var toolbarNextBarButtonItemAccessibilityLabel: Swift.String?
+  @objc final public var toolbarDoneBarButtonItemText: Swift.String?
+  @objc final public var toolbarDoneBarButtonItemAccessibilityLabel: Swift.String?
+  @objc final public var shouldShowToolbarPlaceholder: Swift.Bool
+  @objc final public var placeholderFont: UIKit.UIFont?
+  @objc final public var placeholderColor: UIKit.UIColor?
+  @objc final public var placeholderButtonColor: UIKit.UIColor?
+  @objc final public var overrideKeyboardAppearance: Swift.Bool
+  @objc final public var keyboardAppearance: UIKit.UIKeyboardAppearance
+  @objc final public var shouldResignOnTouchOutside: Swift.Bool {
+    @objc get
+    @objc set
+  }
+  @objc final public var resignFirstResponderGesture: UIKit.UITapGestureRecognizer {
+    @objc get
+    @objc set
+  }
+  @discardableResult
+  @objc final public func resignFirstResponder() -> Swift.Bool
+  @objc final public var shouldPlayInputClicks: Swift.Bool
+  @objc final public var layoutIfNeededOnUpdate: Swift.Bool
+  @objc final public var disabledDistanceHandlingClasses: [UIKit.UIViewController.Type]
+  @objc final public var enabledDistanceHandlingClasses: [UIKit.UIViewController.Type]
+  @objc final public var disabledToolbarClasses: [UIKit.UIViewController.Type]
+  @objc final public var enabledToolbarClasses: [UIKit.UIViewController.Type]
+  @objc final public var toolbarPreviousNextAllowedClasses: [UIKit.UIView.Type]
+  @objc final public var disabledTouchResignedClasses: [UIKit.UIViewController.Type]
+  @objc final public var enabledTouchResignedClasses: [UIKit.UIViewController.Type]
+  @objc final public var touchResignedGestureIgnoreClasses: [UIKit.UIView.Type]
+  @objc final public func registerTextFieldViewClass(_ aClass: UIKit.UIView.Type, didBeginEditingNotificationName: Swift.String, didEndEditingNotificationName: Swift.String)
+  @objc final public func unregisterTextFieldViewClass(_ aClass: UIKit.UIView.Type, didBeginEditingNotificationName: Swift.String, didEndEditingNotificationName: Swift.String)
+  @objc deinit
+  @objc final public func reloadLayoutIfNeeded()
+}
+@available(iOSApplicationExtension, unavailable)
+extension eMoneySDK.IQKeyboardManager : UIKit.UIGestureRecognizerDelegate {
+  @_Concurrency.MainActor(unsafe) @objc final public func gestureRecognizer(_ gestureRecognizer: UIKit.UIGestureRecognizer, shouldRecognizeSimultaneouslyWith otherGestureRecognizer: UIKit.UIGestureRecognizer) -> Swift.Bool
+  @_Concurrency.MainActor(unsafe) @objc final public func gestureRecognizer(_ gestureRecognizer: UIKit.UIGestureRecognizer, shouldReceive touch: UIKit.UITouch) -> Swift.Bool
+}
+@available(iOSApplicationExtension, unavailable)
+extension eMoneySDK.IQAutoToolbarManageBehaviour : Swift.Equatable {}
+@available(iOSApplicationExtension, unavailable)
+extension eMoneySDK.IQAutoToolbarManageBehaviour : Swift.Hashable {}
+@available(iOSApplicationExtension, unavailable)
+extension eMoneySDK.IQAutoToolbarManageBehaviour : Swift.RawRepresentable {}
+@available(iOSApplicationExtension, unavailable)
+extension eMoneySDK.IQPreviousNextDisplayMode : Swift.Equatable {}
+@available(iOSApplicationExtension, unavailable)
+extension eMoneySDK.IQPreviousNextDisplayMode : Swift.Hashable {}
+@available(iOSApplicationExtension, unavailable)
+extension eMoneySDK.IQPreviousNextDisplayMode : Swift.RawRepresentable {}
+@available(iOSApplicationExtension, unavailable)
+extension eMoneySDK.IQEnableMode : Swift.Equatable {}
+@available(iOSApplicationExtension, unavailable)
+extension eMoneySDK.IQEnableMode : Swift.Hashable {}
+@available(iOSApplicationExtension, unavailable)
+extension eMoneySDK.IQEnableMode : Swift.RawRepresentable {}
+extension eMoneySDK.FontName : Swift.Equatable {}
+extension eMoneySDK.FontName : Swift.Hashable {}
+extension eMoneySDK.FontName : Swift.RawRepresentable {}
+extension eMoneySDK.FontSize : Swift.Equatable {}
+extension eMoneySDK.FontSize : Swift.Hashable {}
+extension eMoneySDK.FontSize : Swift.RawRepresentable {}
+extension eMoneySDK.FloatingPanelPosition : Swift.Equatable {}
+extension eMoneySDK.FloatingPanelPosition : Swift.Hashable {}
+extension eMoneySDK.FloatingPanelPosition : Swift.RawRepresentable {}
+extension eMoneySDK.FloatingPanelController.ContentInsetAdjustmentBehavior : Swift.Equatable {}
+extension eMoneySDK.FloatingPanelController.ContentInsetAdjustmentBehavior : Swift.Hashable {}
+extension eMoneySDK.FloatingPanelController.ContentInsetAdjustmentBehavior : Swift.RawRepresentable {}
+extension eMoneySDK.FloatingPanelController.ContentMode : Swift.Equatable {}
+extension eMoneySDK.FloatingPanelController.ContentMode : Swift.Hashable {}
+extension eMoneySDK.FloatingPanelController.ContentMode : Swift.RawRepresentable {}
+extension eMoneySDK.CardType : Swift.Equatable {}
+extension eMoneySDK.CardType : Swift.Hashable {}
+extension eMoneySDK.CardType : Swift.RawRepresentable {}
+extension eMoneySDK.CardIndustry : Swift.Equatable {}
+extension eMoneySDK.CardIndustry : Swift.Hashable {}
+extension eMoneySDK.CardIndustry : Swift.RawRepresentable {}
+extension eMoneySDK.FloatingPanelReferenceEdge : Swift.Equatable {}
+extension eMoneySDK.FloatingPanelReferenceEdge : Swift.Hashable {}
+extension eMoneySDK.FloatingPanelReferenceEdge : Swift.RawRepresentable {}
+extension eMoneySDK.FloatingPanelLayoutReferenceGuide : Swift.Equatable {}
+extension eMoneySDK.FloatingPanelLayoutReferenceGuide : Swift.Hashable {}
+extension eMoneySDK.FloatingPanelLayoutReferenceGuide : Swift.RawRepresentable {}
+extension eMoneySDK.FloatingPanelLayoutContentBoundingGuide : Swift.Equatable {}
+extension eMoneySDK.FloatingPanelLayoutContentBoundingGuide : Swift.Hashable {}
+extension eMoneySDK.FloatingPanelLayoutContentBoundingGuide : Swift.RawRepresentable {}
+extension eMoneySDK.TagListView.Alignment : Swift.Equatable {}
+extension eMoneySDK.TagListView.Alignment : Swift.Hashable {}
+extension eMoneySDK.TagListView.Alignment : Swift.RawRepresentable {}

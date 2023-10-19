@@ -1,0 +1,442 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 5.4 (swiftlang-1205.0.26.9 clang-1205.0.19.55)
+// swift-module-flags: -target i386-apple-ios10.0-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name PureLiveSDK
+import AVFoundation
+import Accelerate
+import CommonCrypto
+import Compression
+import CoreData
+import CoreFoundation
+import CoreGraphics
+import CoreImage
+import Dispatch
+import Foundation
+import ImageIO
+import MobileCoreServices
+import Swift
+import SystemConfiguration
+import TensorFlowLiteC
+import UIKit
+import VideoToolbox
+import simd
+@available(iOS 11.0, *)
+public var PureLiveSDK: PureLiveSDK.PureLiveSDKProtocol {
+  get
+}
+public func PureLiveSDK(licenseSources: [PureLiveSDK.LicenseSource], completion: @escaping ((PureLiveSDK.LicenseData?, PureLiveSDK.LicenseError?) -> Swift.Void))
+public struct Analysis {
+  public init(media: [PureLiveSDK.PureLiveMedia]?, type: PureLiveSDK.AnalysisType, mode: PureLiveSDK.AnalysisMode, params: [Swift.String : Any]?)
+  public init(media: [PureLiveSDK.PureLiveMedia]?, type: PureLiveSDK.AnalysisType, mode: PureLiveSDK.AnalysisMode)
+}
+public func AnalysisRequestBuilder(_ folderId: Swift.String? = nil) -> PureLiveSDK.PureLiveRequestProtocol
+public typealias FaceCaptureCompletion = ([PureLiveSDK.PureLiveMedia]?, PureLiveSDK.PureLiveVerificationStatus?) -> Swift.Void
+public protocol PureLiveRequestProtocol : AnyObject {
+  func addAnalysis(_ analysis: PureLiveSDK.Analysis)
+  func addMedia(_ media: PureLiveSDK.PureLiveMedia)
+  func addMedia(_ media: [PureLiveSDK.PureLiveMedia])
+  func addFolderId(_ folderId: Swift.String)
+  func addFolderMeta(_ meta: [Swift.String : Any])
+  @discardableResult
+  func run(scenarioProgressHandler: @escaping ((PureLiveSDK.ScenarioState) -> Swift.Void), uploadProgressHandler: @escaping ((PureLiveSDK.AnalysisStatus) -> Swift.Void), completionHandler: @escaping (PureLiveSDK.AnalysisResult?, Swift.Error?) -> Swift.Void) -> PureLiveSDK.PureLiveCancelableRequest?
+}
+public protocol PureLiveSDKProtocol : AnyObject {
+  var resultsObserver: (([PureLiveSDK.PureLiveVerificationResult]) -> Swift.Void) { get set }
+  var journalObserver: ((Swift.String) -> Swift.Void) { get set }
+  var licenseResult: ((PureLiveSDK.LicenseData?, PureLiveSDK.LicenseError?) -> Swift.Void) { get set }
+  var localizationCode: PureLiveSDK.PureLiveLocalizationCode? { get set }
+  var host: Swift.String { get }
+  var attemptSettings: PureLiveSDK.PureLiveAttemptSettings { get set }
+  var customization: PureLiveSDK.PureLiveCustomization { get set }
+  var version: Swift.String { get }
+  var licenseData: PureLiveSDK.LicenseData? { get }
+  @discardableResult
+  func login(_ login: Swift.String, password: Swift.String, completion: @escaping (Swift.String?, Swift.Error?) -> Swift.Void) -> PureLiveSDK.PureLiveCancelableRequest
+  func isLoggedIn() -> Swift.Bool
+  func logout()
+  func setPermanentAccessToken(_ accessToken: Swift.String)
+  @available(*, deprecated, message: "Use createVerificationVCWithDelegate with PureLiveLivenessDelegate")
+  func createVerificationVCWithDelegate(_ delegate: PureLiveSDK.PureLiveVerificationDelegate, actions: [PureLiveSDK.PureLiveVerificationMovement]) throws -> UIKit.UIViewController
+  @available(*, deprecated, message: "Use createVerificationVCWithDelegate with PureLiveLivenessDelegate")
+  func createVerificationVCWithDelegate(_ delegate: PureLiveSDK.PureLiveVerificationDelegate, actions: [PureLiveSDK.PureLiveVerificationMovement], cameraPosition: AVFoundation.AVCaptureDevice.Position) throws -> UIKit.UIViewController
+  func createVerificationVCWithDelegate(_ delegate: PureLiveSDK.PureLiveLivenessDelegate, actions: [PureLiveSDK.PureLiveVerificationMovement]) throws -> UIKit.UIViewController
+  func createVerificationVCWithDelegate(_ delegate: PureLiveSDK.PureLiveLivenessDelegate, actions: [PureLiveSDK.PureLiveVerificationMovement], cameraPosition: AVFoundation.AVCaptureDevice.Position) throws -> UIKit.UIViewController
+  func createVerificationVC(actions: [PureLiveSDK.PureLiveVerificationMovement], completion: @escaping PureLiveSDK.FaceCaptureCompletion) throws -> UIKit.UIViewController
+  func createVerificationVC(actions: [PureLiveSDK.PureLiveVerificationMovement], cameraPosition: AVFoundation.AVCaptureDevice.Position, completion: @escaping PureLiveSDK.FaceCaptureCompletion) throws -> UIKit.UIViewController
+  func createVerificationVC(actions: [PureLiveSDK.PureLiveVerificationMovement], completion: @escaping ([PureLiveSDK.PureLiveVerificationResult]) -> Swift.Void) throws -> UIKit.UIViewController
+  func createVerificationVC(actions: [PureLiveSDK.PureLiveVerificationMovement], cameraPosition: AVFoundation.AVCaptureDevice.Position, completion: @escaping ([PureLiveSDK.PureLiveVerificationResult]) -> Swift.Void) throws -> UIKit.UIViewController
+  func prepareVerificationStruct(image: UIKit.UIImage, movement: PureLiveSDK.PureLiveVerificationMovement) -> PureLiveSDK.PureLiveVerificationResult
+  func prepareVerificationStruct(media: PureLiveSDK.PureLiveVideo) -> PureLiveSDK.PureLiveVerificationResult
+  @discardableResult
+  func analyse(results: [PureLiveSDK.PureLiveVerificationResult], analyseStates: Swift.Set<PureLiveSDK.PureLiveAnalysesState>, fileUploadProgress: @escaping ((Foundation.Progress) -> Swift.Void), completion: @escaping (PureLiveSDK.AnalyseResolutionStatus?, Swift.Error?) -> Swift.Void) -> PureLiveSDK.PureLiveCancelableRequest
+  @discardableResult
+  func analyse(folderId: Swift.String, results: [PureLiveSDK.PureLiveVerificationResult], analyseStates: Swift.Set<PureLiveSDK.PureLiveAnalysesState>, fileUploadProgress: @escaping ((Foundation.Progress) -> Swift.Void), completion: @escaping (PureLiveSDK.AnalyseResolutionStatus?, Swift.Error?) -> Swift.Void) -> PureLiveSDK.PureLiveCancelableRequest
+  func runOnDeviceLivenessAnalysis(result: PureLiveSDK.PureLiveVerificationResult, completion: @escaping (PureLiveSDK.AnalyseResolutionStatus?, Swift.Error?) -> Swift.Void)
+  func runOnDeviceLivenessAnalysis(result: PureLiveSDK.PureLiveVerificationResult, completion: @escaping (PureLiveSDK.AnalyseResolutionStatus?, Swift.Float?, Swift.Error?) -> Swift.Void)
+  func runOnDeviceLivenessAnalysis(results: [PureLiveSDK.PureLiveVerificationResult], completion: @escaping (PureLiveSDK.AnalyseResolutionStatus?, Swift.Float?, Swift.Error?) -> Swift.Void)
+  func runOnDeviceBiometryAnalysis(firstResult: PureLiveSDK.PureLiveVerificationResult, secondResult: PureLiveSDK.PureLiveVerificationResult, completion: @escaping (PureLiveSDK.AnalyseResolutionStatus?, Swift.Error?) -> Swift.Void)
+  func runOnDeviceBiometryAnalysis(firstResult: PureLiveSDK.PureLiveVerificationResult, secondResult: PureLiveSDK.PureLiveVerificationResult, completion: @escaping (PureLiveSDK.AnalyseResolutionStatus?, Swift.Float?, Swift.Error?) -> Swift.Void)
+  @discardableResult
+  func addToFolder(results: [PureLiveSDK.PureLiveVerificationResult], fileUploadProgress: @escaping ((Foundation.Progress) -> Swift.Void), completion: @escaping (Swift.String?, Swift.Error?) -> Swift.Void) -> PureLiveSDK.PureLiveCancelableRequest
+  @discardableResult
+  func addToFolder(folderId: Swift.String, results: [PureLiveSDK.PureLiveVerificationResult], fileUploadProgress: @escaping ((Foundation.Progress) -> Swift.Void), completion: @escaping (Swift.String?, Swift.Error?) -> Swift.Void) -> PureLiveSDK.PureLiveCancelableRequest
+  @available(*, deprecated, message: "Use documentAnalyse without analyseStates")
+  @discardableResult
+  func documentAnalyse(documentPhoto: PureLiveSDK.DocumentPhoto, results: [PureLiveSDK.PureLiveVerificationResult], analyseStates: Swift.Set<PureLiveSDK.PureLiveAnalysesState>, scenarioState: @escaping ((PureLiveSDK.ScenarioState) -> Swift.Void), fileUploadProgress: @escaping ((Foundation.Progress) -> Swift.Void), completion: @escaping (PureLiveSDK.AnalyseResolutionStatus?, [PureLiveSDK.AnalyseResolution]?, Swift.Error?) -> Swift.Void) -> PureLiveSDK.PureLiveCancelableRequest
+  @discardableResult
+  func documentAnalyse(documentPhoto: PureLiveSDK.DocumentPhoto, results: [PureLiveSDK.PureLiveVerificationResult], analysisTypes: Swift.Set<PureLiveSDK.AnalysisType>, scenarioState: @escaping ((PureLiveSDK.ScenarioState) -> Swift.Void), fileUploadProgress: @escaping ((Foundation.Progress) -> Swift.Void), completion: @escaping (PureLiveSDK.AnalyseResolutionStatus?, [PureLiveSDK.AnalyseResolution]?, Swift.Error?) -> Swift.Void) -> PureLiveSDK.PureLiveCancelableRequest
+  @discardableResult
+  func documentAnalyse(documentPhoto: PureLiveSDK.DocumentPhoto, results: [PureLiveSDK.PureLiveVerificationResult], scenarioState: @escaping ((PureLiveSDK.ScenarioState) -> Swift.Void), fileUploadProgress: @escaping ((Foundation.Progress) -> Swift.Void), completion: @escaping (PureLiveSDK.AnalyseResolutionStatus?, [PureLiveSDK.AnalyseResolution]?, Swift.Error?) -> Swift.Void) -> PureLiveSDK.PureLiveCancelableRequest
+  @discardableResult
+  func uploadAndAnalyse(results: [PureLiveSDK.PureLiveVerificationResult], documentPhoto: PureLiveSDK.DocumentPhoto?, analysisTypes: Swift.Set<PureLiveSDK.AnalysisType>, scenarioState: @escaping ((PureLiveSDK.ScenarioState) -> Swift.Void), fileUploadProgress: @escaping ((Foundation.Progress) -> Swift.Void), completion: @escaping (PureLiveSDK.AnalyseResolutionStatus?, [PureLiveSDK.AnalyseResolution]?, Swift.Error?) -> Swift.Void) -> PureLiveSDK.PureLiveCancelableRequest
+  @discardableResult
+  func uploadAndAnalyse(results: [PureLiveSDK.PureLiveVerificationResult], documentPhoto: PureLiveSDK.DocumentPhoto?, analysisTypes: Swift.Set<PureLiveSDK.AnalysisType>, metadata: [Swift.String : Any]?, scenarioState: @escaping ((PureLiveSDK.ScenarioState) -> Swift.Void), fileUploadProgress: @escaping ((Foundation.Progress) -> Swift.Void), completion: @escaping (PureLiveSDK.AnalyseResolutionStatus?, [PureLiveSDK.AnalyseResolution]?, Swift.Error?) -> Swift.Void) -> PureLiveSDK.PureLiveCancelableRequest
+  @discardableResult
+  func uploadAndAnalyse(folderId: Swift.String, results: [PureLiveSDK.PureLiveVerificationResult], documentPhoto: PureLiveSDK.DocumentPhoto?, analysisTypes: Swift.Set<PureLiveSDK.AnalysisType>, scenarioState: @escaping ((PureLiveSDK.ScenarioState) -> Swift.Void), fileUploadProgress: @escaping ((Foundation.Progress) -> Swift.Void), completion: @escaping (PureLiveSDK.AnalyseResolutionStatus?, [PureLiveSDK.AnalyseResolution]?, Swift.Error?) -> Swift.Void) -> PureLiveSDK.PureLiveCancelableRequest
+  @discardableResult
+  func uploadAndAnalyse(folderId: Swift.String?, media: [PureLiveSDK.PureLiveMedia], analysisTypes: Swift.Set<PureLiveSDK.AnalysisType>, scenarioState: @escaping ((PureLiveSDK.ScenarioState) -> Swift.Void), fileUploadProgress: @escaping ((Foundation.Progress) -> Swift.Void), completion: @escaping (PureLiveSDK.AnalyseResolutionStatus?, [PureLiveSDK.AnalyseResolution]?, Swift.Error?) -> Swift.Void) -> PureLiveSDK.PureLiveCancelableRequest
+  func cleanTempDirectory()
+  func configure(with host: Swift.String)
+  func set(licenseBundle: Foundation.Bundle) throws
+  func set(licenseBundle: Foundation.Bundle, licenseSources: [PureLiveSDK.LicenseSource])
+  func setLicense(from path: Swift.String)
+}
+public protocol PureLiveCancelableRequest {
+  func cancel()
+}
+@available(*, deprecated, message: "Use PureLiveLivenessDelegate")
+public protocol PureLiveVerificationDelegate : AnyObject {
+  func onPureLiveVerificationResult(results: [PureLiveSDK.PureLiveVerificationResult])
+}
+public protocol PureLiveLivenessDelegate : AnyObject {
+  func onPureLiveLivenessResult(results: [PureLiveSDK.PureLiveMedia])
+  func onError(status: PureLiveSDK.PureLiveVerificationStatus?)
+}
+public enum PureLiveAnalysesState : Swift.String {
+  case liveness
+  case quality
+  public init?(rawValue: Swift.String)
+  public typealias RawValue = Swift.String
+  public var rawValue: Swift.String {
+    get
+  }
+}
+public struct PureLiveVerificationResult {
+  public var status: PureLiveSDK.PureLiveVerificationStatus {
+    get
+  }
+  public var movement: PureLiveSDK.PureLiveVerificationMovement {
+    get
+  }
+  public var videoURL: Foundation.URL? {
+    get
+  }
+  public var bestShotURL: Foundation.URL? {
+    get
+  }
+  public var preferredMediaURL: Foundation.URL? {
+    get
+  }
+  public var timestamp: Foundation.Date {
+    get
+  }
+}
+public struct PureLiveLivenessResult {
+  public var status: PureLiveSDK.PureLiveVerificationStatus {
+    get
+  }
+  public var media: PureLiveSDK.PureLiveMedia
+}
+public struct PureLiveMedia {
+  public init(movement: PureLiveSDK.PureLiveVerificationMovement?, mediaType: PureLiveSDK.MediaType, metaData: [Swift.String : Any]?, videoURL: Foundation.URL?, bestShotURL: Foundation.URL?, preferredMediaURL: Foundation.URL?, timestamp: Foundation.Date)
+  public init(mediaType: PureLiveSDK.MediaType, metaData: [Swift.String : Any]?, preferredMediaURL: Foundation.URL?, timestamp: Foundation.Date)
+  public var movement: PureLiveSDK.PureLiveVerificationMovement?
+  public var mediaType: PureLiveSDK.MediaType
+  public var metaData: [Swift.String : Any]?
+  public var videoURL: Foundation.URL?
+  public var bestShotURL: Foundation.URL?
+  public var preferredMediaURL: Foundation.URL?
+  public var timestamp: Foundation.Date
+}
+public struct PureLiveVideo {
+  public init(movement: PureLiveSDK.PureLiveVerificationMovement, videoURL: Foundation.URL?, bestShotURL: Foundation.URL?, preferredMediaURL: Foundation.URL?, timestamp: Foundation.Date)
+  public var movement: PureLiveSDK.PureLiveVerificationMovement
+  public var videoURL: Foundation.URL?
+  public var bestShotURL: Foundation.URL?
+  public var preferredMediaURL: Foundation.URL?
+  public var timestamp: Foundation.Date
+}
+public enum PureLiveVerificationStatus {
+  case userProcessedSuccessfully
+  case userNotProcessed
+  case failedBecauseUserCancelled
+  case failedBecauseCameraPermissionDenied
+  case failedBecauseOfBackgroundMode
+  case failedBecauseOfTimeout
+  case failedBecauseOfAttemptLimit
+  case failedBecausePreparingTimeout
+  case failedBecauseOfLowMemory
+  public static func == (a: PureLiveSDK.PureLiveVerificationStatus, b: PureLiveSDK.PureLiveVerificationStatus) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+public struct PureLiveAttemptSettings {
+  public var faceAlignmentTimeout: Swift.Double?
+  public init(singleCount: Swift.Int? = nil, commonCount: Swift.Int? = nil, faceAlignmentTimeout: Swift.Double? = nil)
+}
+public enum PureLiveVerificationMovement {
+  @available(*, deprecated, message: "Deprecated")
+  case close
+  @available(*, deprecated, message: "Deprecated")
+  case far
+  case smile
+  case eyes
+  case scanning
+  case selfie
+  case one_shot
+  case left
+  case right
+  case down
+  case up
+  public static func == (a: PureLiveSDK.PureLiveVerificationMovement, b: PureLiveSDK.PureLiveVerificationMovement) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+public enum PureLiveLocalizationCode {
+  case ru, en, hy, kk
+  public static func == (a: PureLiveSDK.PureLiveLocalizationCode, b: PureLiveSDK.PureLiveLocalizationCode) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+public struct PureLiveCustomization {
+  @available(*, deprecated, message: "Use centerHintCustomization")
+  public var textColor: UIKit.UIColor
+  public var buttonColor: PureLiveSDK.PureLiveButtonColors
+  @available(iOS, renamed: "faceFrameCustomization")
+  public var ovalCustomization: PureLiveSDK.PureLiveFaceFrameCustomization {
+    get
+    set
+  }
+  public var faceFrameCustomization: PureLiveSDK.PureLiveFaceFrameCustomization
+  public var centerHintCustomization: PureLiveSDK.PureLiveCenterHintCustomization
+  public var customCloseButton: UIKit.UIButton?
+}
+public struct PureLiveButtonColors {
+  public var darkColor: UIKit.UIColor
+  public var lightColor: UIKit.UIColor
+}
+public struct PureLiveCenterHintCustomization {
+  public var textColor: UIKit.UIColor
+  public var textFont: UIKit.UIFont?
+  public var textPosition: Swift.Int?
+}
+public struct PureLiveFaceFrameCustomization {
+  public enum GeometryType {
+    case oval
+    case rect(cornerRadius: CoreGraphics.CGFloat)
+  }
+  public var strokeWidth: CoreGraphics.CGFloat
+  public var successStrokeColor: UIKit.UIColor
+  public var failStrokeColor: UIKit.UIColor
+  public var geometryType: PureLiveSDK.PureLiveFaceFrameCustomization.GeometryType
+}
+public enum PureLiveJournalEvent : Swift.String {
+  case unknown
+  case livenessSessionInitialization
+  case livenessCheckStart
+  case actionStart
+  case actionRestart
+  case actionFinish
+  case actionFailed
+  case livenessCheckFinish
+  case actionFacePositionFixed
+  case actionFacePositionRecommendation
+  case actionRecordStart
+  case actionRecordFinish
+  case actionRecordSaved
+  case brightnessChanged
+  case error
+  case request
+  case response
+  public init?(rawValue: Swift.String)
+  public typealias RawValue = Swift.String
+  public var rawValue: Swift.String {
+    get
+  }
+}
+public struct PureLiveFrameCustomization {
+  public var backgroundColor: UIKit.UIColor
+}
+public struct DocumentPhoto {
+  public init(front: Foundation.URL?, back: Foundation.URL?)
+  public var front: Foundation.URL?
+  public var back: Foundation.URL?
+}
+@_inheritsConvenienceInitializers public class DocumentAnalyseResolution : PureLiveSDK.AnalyseResolution {
+  public func getTextValue(by fieldName: Swift.String) -> Swift.String?
+  override public init(type: Swift.String, status: PureLiveSDK.AnalyseResolutionStatus, folderID: Swift.String?)
+  override public init(type: Swift.String, status: PureLiveSDK.AnalyseResolutionStatus, folderID: Swift.String?, score: Swift.Float?)
+  @objc deinit
+}
+public struct DocumentDataBlock {
+}
+public enum AnalyseResolutionStatus : Swift.String {
+  case initial
+  case processing
+  case failed
+  case finished
+  case declined
+  case success
+  case operatorRequired
+  public init?(rawValue: Swift.String)
+  public typealias RawValue = Swift.String
+  public var rawValue: Swift.String {
+    get
+  }
+}
+public enum ScenarioState {
+  case addToFolder, addAnalyses, waitAnalysisResult
+  public static func == (a: PureLiveSDK.ScenarioState, b: PureLiveSDK.ScenarioState) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+public class AnalyseResolution {
+  public var status: PureLiveSDK.AnalyseResolutionStatus
+  public var type: Swift.String
+  public var folderID: Swift.String?
+  public var score: Swift.Float?
+  public init(type: Swift.String, status: PureLiveSDK.AnalyseResolutionStatus, folderID: Swift.String?)
+  public init(type: Swift.String, status: PureLiveSDK.AnalyseResolutionStatus, folderID: Swift.String?, score: Swift.Float?)
+  @objc deinit
+}
+public class AnalysisResult {
+  public var status: PureLiveSDK.AnalyseResolutionStatus
+  public var analysis: [PureLiveSDK.AnalyseResolution]
+  public init(status: PureLiveSDK.AnalyseResolutionStatus, analysis: [PureLiveSDK.AnalyseResolution])
+  @objc deinit
+}
+public struct LicenseData {
+  public var appIDS: [Swift.String]
+  public var expires: Foundation.TimeInterval
+  public var features: PureLiveSDK.Features
+  public var configs: PureLiveSDK.ABTestingConfigs?
+}
+public enum LicenseSource {
+  case licenseFilePath(Swift.String)
+}
+public enum AnalysisType {
+  case quality, document, biometry, blackList
+  public static func == (a: PureLiveSDK.AnalysisType, b: PureLiveSDK.AnalysisType) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+public enum MediaType {
+  case movement
+  case documentBack
+  case documentFront
+  public static func == (a: PureLiveSDK.MediaType, b: PureLiveSDK.MediaType) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+public enum AnalysisMode {
+  case onDevice, serverBased, hybrid
+  public static func == (a: PureLiveSDK.AnalysisMode, b: PureLiveSDK.AnalysisMode) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+public struct AnalysisStatus {
+  public let media: PureLiveSDK.PureLiveMedia
+  public let index: Swift.Int
+  public let from: Swift.Int
+  public let progress: Foundation.Progress
+  public let cancelableRequest: PureLiveSDK.PureLiveCancelableRequest
+}
+public struct ResponseError : Foundation.LocalizedError {
+  public var errorDescription: Swift.String? {
+    get
+  }
+}
+public struct Features : Swift.Codable {
+  public func encode(to encoder: Swift.Encoder) throws
+  public init(from decoder: Swift.Decoder) throws
+}
+public enum LicenseError : Swift.Int, Swift.Error {
+  case invalidLicenseObjectData
+  case inv101
+  case inv102
+  case inv103
+  case inv104
+  case inv105
+  case inv106
+  case inv107
+  case invalidAppId
+  case licenseExpired
+  case inv110
+  public init?(rawValue: Swift.Int)
+  public typealias RawValue = Swift.Int
+  public var rawValue: Swift.Int {
+    get
+  }
+}
+extension LicenseError : Foundation.LocalizedError {
+  public var errorDescription: Swift.String? {
+    get
+  }
+}
+extension UIImage {
+  convenience public init?(pixelBuffer: CoreVideo.CVPixelBuffer)
+}
+extension CGImage {
+  public static func create(pixelBuffer: CoreVideo.CVPixelBuffer) -> CoreGraphics.CGImage?
+}
+public struct ABTestingConfigs : Swift.Codable {
+  public struct AttemptsCount : Swift.Codable {
+    public func encode(to encoder: Swift.Encoder) throws
+    public init(from decoder: Swift.Decoder) throws
+  }
+  public struct RelativeOvalSizes : Swift.Codable {
+    public func encode(to encoder: Swift.Encoder) throws
+    public init(from decoder: Swift.Decoder) throws
+  }
+  public func encode(to encoder: Swift.Encoder) throws
+  public init(from decoder: Swift.Decoder) throws
+}
+extension PureLiveSDK.PureLiveAnalysesState : Swift.Equatable {}
+extension PureLiveSDK.PureLiveAnalysesState : Swift.Hashable {}
+extension PureLiveSDK.PureLiveAnalysesState : Swift.RawRepresentable {}
+extension PureLiveSDK.PureLiveVerificationStatus : Swift.Equatable {}
+extension PureLiveSDK.PureLiveVerificationStatus : Swift.Hashable {}
+extension PureLiveSDK.PureLiveVerificationMovement : Swift.Equatable {}
+extension PureLiveSDK.PureLiveVerificationMovement : Swift.Hashable {}
+extension PureLiveSDK.PureLiveLocalizationCode : Swift.Equatable {}
+extension PureLiveSDK.PureLiveLocalizationCode : Swift.Hashable {}
+extension PureLiveSDK.PureLiveJournalEvent : Swift.Equatable {}
+extension PureLiveSDK.PureLiveJournalEvent : Swift.Hashable {}
+extension PureLiveSDK.PureLiveJournalEvent : Swift.RawRepresentable {}
+extension PureLiveSDK.AnalyseResolutionStatus : Swift.Equatable {}
+extension PureLiveSDK.AnalyseResolutionStatus : Swift.Hashable {}
+extension PureLiveSDK.AnalyseResolutionStatus : Swift.RawRepresentable {}
+extension PureLiveSDK.ScenarioState : Swift.Equatable {}
+extension PureLiveSDK.ScenarioState : Swift.Hashable {}
+extension PureLiveSDK.AnalysisType : Swift.Equatable {}
+extension PureLiveSDK.AnalysisType : Swift.Hashable {}
+extension PureLiveSDK.MediaType : Swift.Equatable {}
+extension PureLiveSDK.MediaType : Swift.Hashable {}
+extension PureLiveSDK.AnalysisMode : Swift.Equatable {}
+extension PureLiveSDK.AnalysisMode : Swift.Hashable {}
+extension PureLiveSDK.LicenseError : Swift.Equatable {}
+extension PureLiveSDK.LicenseError : Swift.Hashable {}
+extension PureLiveSDK.LicenseError : Swift.RawRepresentable {}

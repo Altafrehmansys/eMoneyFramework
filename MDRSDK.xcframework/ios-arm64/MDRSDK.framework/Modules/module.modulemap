@@ -1,0 +1,4 @@
+framework module MDRSDK {
+  header "MDRSDK-Swift.h"
+  requires objc
+}

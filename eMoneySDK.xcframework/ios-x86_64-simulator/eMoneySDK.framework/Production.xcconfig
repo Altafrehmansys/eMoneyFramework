@@ -1,0 +1,19 @@
+//
+//  Production.xcconfig
+//  e&money
+//
+//  Created by Shujaat Ali Khan on 02/03/2023.
+//
+
+// Configuration settings file format documentation can be found at:
+// https://help.apple.com/xcode/#/dev745c5c974
+
+SERVER_URL                   =  https:\/\/mobileapp.e-wallet.ae/mwallet-rest/api/
+NSLOG_ENABLED                =  false
+FCM_CONFIG_PLIST             =  GoogleService-Info
+ADJUST_ENVIRONMENT           =  production
+ADJUST_LOGLEVEL              =  7
+ADJUST_APPTOKEN              =  1uaq8j1ipn5s
+LEAN_APP_TOKEN               =  167a50c8-d129-4cd1-b9ea-ebf5b2744fde
+IS_LEAN_SANDBOX_ENABLED      =  false
+ENVIRONMENT_NAME                  =  Production

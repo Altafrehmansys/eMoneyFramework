@@ -17,6 +17,7 @@
 				8BADD1F2906B19F8E599D276162EEB5B /* PBXTargetDependency */,
 			);
 			name = PureLiveSDK;
+			productName = PureLiveSDK;
 		};
 		AC559E53E13B6FBEF4F5CC310A73AFE6 /* TensorFlowLiteC */ = {
 			isa = PBXAggregateTarget;
@@ -26,6 +27,7 @@
 			dependencies = (
 			);
 			name = TensorFlowLiteC;
+			productName = TensorFlowLiteC;
 		};
 /* End PBXAggregateTarget section */
 
@@ -621,7 +623,7 @@
 		0581046C489DDF0411BEC05BD0A635C2 /* infoIcon@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "infoIcon@2x.png"; path = "SwiftMessages/Resources/infoIcon@2x.png"; sourceTree = "<group>"; };
 		05C392E5F3BE29FFE2122AEF503CD7B8 /* TextAnimator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TextAnimator.swift; path = Sources/Private/Model/Text/TextAnimator.swift; sourceTree = "<group>"; };
 		0600877337725BAF4EB2F5CA90C1E67C /* String+Extensions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "String+Extensions.swift"; path = "SwiftyTesseract/SwiftyTesseract/Extensions/String+Extensions.swift"; sourceTree = "<group>"; };
-		0601D2B779C245F22140A83D543F0A2D /* PureLiveSDK.xcframework */ = {isa = PBXFileReference; includeInIndex = 1; path = PureLiveSDK.xcframework; sourceTree = "<group>"; };
+		0601D2B779C245F22140A83D543F0A2D /* PureLiveSDK.xcframework */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = wrapper.xcframework; path = PureLiveSDK.xcframework; sourceTree = "<group>"; };
 		06CE203CB440EF510C8DCAB354FDDA11 /* infoIconLight@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "infoIconLight@2x.png"; path = "SwiftMessages/Resources/infoIconLight@2x.png"; sourceTree = "<group>"; };
 		06D0BD3F2EB2C95A39CB90E2F5D50DE3 /* URLSessionConfiguration+Alamofire.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "URLSessionConfiguration+Alamofire.swift"; path = "Source/URLSessionConfiguration+Alamofire.swift"; sourceTree = "<group>"; };
 		070674705B743D84D1A3FDCE45278F61 /* Group.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Group.swift; path = Sources/Private/Model/ShapeItems/Group.swift; sourceTree = "<group>"; };
@@ -862,7 +864,7 @@
 		753DD909979478A0C1B33E0524504EF1 /* SwiftMessages-SwiftMessages */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = "SwiftMessages-SwiftMessages"; path = SwiftMessages.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
 		75CDAEE48C70851C43E6FC54E383CCFF /* URLConvertible+URLRequestConvertible.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "URLConvertible+URLRequestConvertible.swift"; path = "Source/URLConvertible+URLRequestConvertible.swift"; sourceTree = "<group>"; };
 		7686307059991DF7D5EBD8E7E208159F /* ShapeLayerModel.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ShapeLayerModel.swift; path = Sources/Private/Model/Layers/ShapeLayerModel.swift; sourceTree = "<group>"; };
-		773D764ED80FCAD0D434F6060120B899 /* libtesseract.xcframework */ = {isa = PBXFileReference; includeInIndex = 1; name = libtesseract.xcframework; path = SwiftyTesseract/libtesseract.xcframework; sourceTree = "<group>"; };
+		773D764ED80FCAD0D434F6060120B899 /* libtesseract.xcframework */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = wrapper.xcframework; name = libtesseract.xcframework; path = SwiftyTesseract/libtesseract.xcframework; sourceTree = "<group>"; };
 		775147BCC61DFEAD5800E10ED94EB7B4 /* EpoxyableView+SwiftUIView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "EpoxyableView+SwiftUIView.swift"; path = "Sources/Private/EmbeddedLibraries/EpoxyCore/SwiftUI/EpoxyableView+SwiftUIView.swift"; sourceTree = "<group>"; };
 		77FC83E267DDF497D52F84DF0CEA3DB1 /* IndexChangeset.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = IndexChangeset.swift; path = Sources/Private/EmbeddedLibraries/EpoxyCore/Diffing/IndexChangeset.swift; sourceTree = "<group>"; };
 		78F286DEBFB61C56F7CE7847F7F385FB /* LayerProperty.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = LayerProperty.swift; path = Sources/Private/CoreAnimation/Animations/LayerProperty.swift; sourceTree = "<group>"; };
@@ -938,7 +940,7 @@
 		9C93BB9B9A246F02F2A014D84188A867 /* Data+Compression.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Data+Compression.swift"; path = "Sources/Private/EmbeddedLibraries/ZipFoundation/Data+Compression.swift"; sourceTree = "<group>"; };
 		9CB823755B9EAB20330F8E04A2CC9AB4 /* URLRequest+Alamofire.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "URLRequest+Alamofire.swift"; path = "Source/URLRequest+Alamofire.swift"; sourceTree = "<group>"; };
 		9D7D4D6497C8B5992BD5BA0B88BE5846 /* Animator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Animator.swift; path = SwiftMessages/Animator.swift; sourceTree = "<group>"; };
-		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		9DE63CD0FE5E8C8C948C1D10D1D81633 /* EpoxySwiftUIHostingView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = EpoxySwiftUIHostingView.swift; path = Sources/Private/EmbeddedLibraries/EpoxyCore/SwiftUI/EpoxySwiftUIHostingView.swift; sourceTree = "<group>"; };
 		9E2BAC41ABAB4D969F4C44B6E06D8E10 /* PassthroughView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PassthroughView.swift; path = SwiftMessages/PassthroughView.swift; sourceTree = "<group>"; };
 		9E3A22DC113D6EBF5C146E22FB734816 /* LottiePlaybackMode.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = LottiePlaybackMode.swift; path = Sources/Public/Animation/LottiePlaybackMode.swift; sourceTree = "<group>"; };
@@ -1230,7 +1232,6 @@
 				944D1DDA789DBCC6030D55D208105BDB /* Frameworks */,
 				9B359E29790577B2CDDFDB021B01912F /* Support Files */,
 			);
-			name = SwiftyTesseract;
 			path = SwiftyTesseract;
 			sourceTree = "<group>";
 		};
@@ -1312,7 +1313,6 @@
 				E6AE91476C1991C012B8B68C8C11A315 /* Core */,
 				5823523FCCC6F24DD734C5CD4DCD922B /* Support Files */,
 			);
-			name = TensorFlowLiteC;
 			path = TensorFlowLiteC;
 			sourceTree = "<group>";
 		};
@@ -1409,7 +1409,6 @@
 				37FBB0BA64A53AC3206D7625A0DC1048 /* App */,
 				3480219CC8DF0A827A59E33E2322AF0E /* Support Files */,
 			);
-			name = SwiftMessages;
 			path = SwiftMessages;
 			sourceTree = "<group>";
 		};
@@ -1419,7 +1418,6 @@
 				D46743D9F6F011948D4F54C105569926 /* Core */,
 				B81DB8FDC069E1B74DD6BADCBDA816BB /* Support Files */,
 			);
-			name = TensorFlowLiteSwift;
 			path = TensorFlowLiteSwift;
 			sourceTree = "<group>";
 		};
@@ -1489,7 +1487,6 @@
 				871FD3B2058F0899FF3CEB7F84A426EA /* WKInterfaceImage+Kingfisher.swift */,
 				DA471FE4CDF12754552C82DCC278C646 /* Support Files */,
 			);
-			name = Kingfisher;
 			path = Kingfisher;
 			sourceTree = "<group>";
 		};
@@ -1797,7 +1794,6 @@
 				0EFC1BEFF189BEBD152F0F327B85FA6F /* WillDisplayProviding.swift */,
 				7E1E667B672FA05796FC8C6F894722A7 /* Support Files */,
 			);
-			name = "lottie-ios";
 			path = "lottie-ios";
 			sourceTree = "<group>";
 		};
@@ -1807,7 +1803,6 @@
 				2BD6424E2B838D5197FEA95115BEE5DA /* Full */,
 				3B441326862BDD9ADC892EC622FAB5E2 /* Support Files */,
 			);
-			name = PureLiveSDK;
 			path = PureLiveSDK;
 			sourceTree = "<group>";
 		};
@@ -1853,7 +1848,6 @@
 				CB8DA26D9CE7C9DBDED3B6B78D0DBD7B /* Validation.swift */,
 				15A2DAD7D17E1948A94205CE0CB9BD1F /* Support Files */,
 			);
-			name = Alamofire;
 			path = Alamofire;
 			sourceTree = "<group>";
 		};
@@ -3277,6 +3271,7 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
+				EXCLUDED_ARCHS = "";
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -3384,6 +3379,7 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				EXCLUDED_ARCHS = "";
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_PREPROCESSOR_DEFINITIONS = (

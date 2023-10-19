@@ -1,0 +1,4 @@
+framework module PureLiveSDK {
+  header "PureLiveSDK-Swift.h"
+  requires objc
+}

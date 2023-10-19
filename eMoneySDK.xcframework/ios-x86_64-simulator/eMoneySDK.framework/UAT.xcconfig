@@ -1,0 +1,19 @@
+//
+//  UAT.xcconfig
+//  e&money
+//
+//  Created by Shujaat Ali Khan on 02/03/2023.
+//
+
+// Configuration settings file format documentation can be found at:
+// https://help.apple.com/xcode/#/dev745c5c974
+
+SERVER_URL                   =  https:\/\/uat-swypapp.etisalat.ae/mwallet-rest/api/
+NSLOG_ENABLED                =  true
+FCM_CONFIG_PLIST             =  GoogleService-Info-ent
+ADJUST_ENVIRONMENT           =  sandbox
+ADJUST_LOGLEVEL              =  1
+ADJUST_APPTOKEN              =  1uaq8j1ipn5s
+LEAN_APP_TOKEN               =  7c1dcbcd-4020-472d-8532-dcbac905e239
+IS_LEAN_SANDBOX_ENABLED      =  true
+ENVIRONMENT_NAME                  =  UAT
