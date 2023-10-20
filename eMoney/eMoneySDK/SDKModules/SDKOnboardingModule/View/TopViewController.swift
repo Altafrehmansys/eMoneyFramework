@@ -34,8 +34,8 @@ class TopViewController: SDKBaseViewController {
         self.view.addGestureRecognizer(swipeDown)
         
         if let color = SDKColors.shared.receivedTheme?.toolBarIconColor {
-            self.crossButton.tintColor = UIColor(hex: color)
-        } 
+            self.crossButton.tintColor = color//UIColor(hex: color)
+        }
     }
     
     override func viewWillAppear(_ animated: Bool) {

@@ -23,7 +23,6 @@ public struct EWalletConfiguration {
 public class EWalletSDK {
     let configuration: EWalletConfiguration
     
-    
     public init(configuration: EWalletConfiguration) {
         self.configuration = configuration
         self.loadLanguagePack()
@@ -55,11 +54,16 @@ public class EWalletSDK {
         controller.present(onboardingView, animated: true)
     }
     
-    public func loadLanguagePack() {
-        if UIApplication.isFirstLaunchAfterUpdate(){
+    public func enableLogs(_ isEnable: Bool) {
+        SDKColors.shared.logsEnabled = isEnable
+    }
+    
+    private func loadLanguagePack() {
+        LocaleManager.setAppleLanguageTo("ar")
+//        if UIApplication.isFirstLaunchAfterUpdate(){
             LocaleManager.shared.LoadLanguagePackFromLocalFile()
-        } else {
-            LocaleManager.shared.loadLanguagePack()
-        }
+//        } else {
+//            LocaleManager.shared.loadLanguagePack()
+//        }
     }
 }

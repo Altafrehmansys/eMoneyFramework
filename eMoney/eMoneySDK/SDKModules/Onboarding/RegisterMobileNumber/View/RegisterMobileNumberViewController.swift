@@ -43,15 +43,16 @@ public class RegisterMobileNumberViewController: BaseViewController {
         super.viewDidLoad()
         
         UIFont.registerFontsIfNeeded()
-        if UIApplication.isFirstLaunchAfterUpdate(){
-            print("LoadLanguagePackFromLocalFile")
-            LocaleManager.shared.LoadLanguagePackFromLocalFile()
-        } else {
-            print("loadLanguagePack")
-            LocaleManager.shared.loadLanguagePack()
-        }
+//        if UIApplication.isFirstLaunchAfterUpdate(){
+//            print("LoadLanguagePackFromLocalFile")
+//            LocaleManager.shared.LoadLanguagePackFromLocalFile()
+//        } else {
+//            print("loadLanguagePack")
+//            LocaleManager.shared.loadLanguagePack()
+//        }
         if "sign_up_future".localized == "sign_up_future"  {
             print("language pack not loaded")
+//            LocaleManager.shared.LoadLanguagePackFromLocalFile()
 //            self.getLangPack(selectedLang: LocaleManager.currentLanguage())
         } else {
             print("language pack loaded")
@@ -183,7 +184,7 @@ public class RegisterMobileNumberViewController: BaseViewController {
         print(#function)
         var mutableAttrString = NSMutableAttributedString(string: "i_accept_the".localized, attributes: [ NSAttributedString.Key.foregroundColor: AppColor.eAnd_Black_80,NSAttributedString.Key.font:AppFont.appRegular(size: .body4)])
         mutableAttrString.append(NSAttributedString(string: " "))
-        var mutableAttrString1 = NSMutableAttributedString(string: "terms_and_conditions_capital".localized, attributes: [ NSAttributedString.Key.foregroundColor: AppColor.eAnd_Error_100,NSAttributedString.Key.font:AppFont.appMedium(size: .body4)])
+        var mutableAttrString1 = NSMutableAttributedString(string: "term_condition".localized.capitalized, attributes: [ NSAttributedString.Key.foregroundColor: AppColor.eAnd_Error_100,NSAttributedString.Key.font:AppFont.appMedium(size: .body4)])
         mutableAttrString.append(mutableAttrString1)
         
         labelTermsAndCond.attributedText = mutableAttrString

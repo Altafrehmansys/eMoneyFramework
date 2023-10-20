@@ -41,12 +41,13 @@ class LocaleManager {
     }
     
     func loadLanguagePack(){
+        print("Language file Name: \(langFileName)")
         let langData = [String:LanguagePackData].load(fromFileName: langFileName) ?? [:]
         
         languageInfo = langData["langData"]?.languageInformation
         languagePack = langData["langData"]?.languagePack ?? [:]
-        
     }
+    
     func saveLanguagePack(data:LanguagePackData){
         languageInfo = data.languageInformation
         languagePack = data.languagePack ?? [:]
@@ -100,12 +101,18 @@ class LocaleManager {
     func LoadLanguagePackFromLocalFile() {
         do {
             for fileName in LanguageFileName.allCases {
+                print("LoadLanguage from local\n fileName: \(fileName)")
                 if let bundlePath = Bundle.main.path(forResource: fileName.rawValue, ofType: "json"),
                    let jsonData = try String(contentsOfFile: bundlePath).data(using: .utf8) {
+                    print("Get data from local file")
                     let decodedData = try JSONDecoder().decode(LanguagePackResponseModel.self, from: jsonData)
+                    print("Data Decode")
                     if let langData = decodedData.data {
+                        print("Get data")
                         try ["langData":langData].saveToDisk(withName: fileName.rawValue)
+                        print("Language saved to disk")
                         if fileName.rawValue == getFileName(){
+                            print("Load language pack data \(langData.languagePack)")
                             languageInfo = langData.languageInformation
                             languagePack = langData.languagePack ?? [:]
                         }

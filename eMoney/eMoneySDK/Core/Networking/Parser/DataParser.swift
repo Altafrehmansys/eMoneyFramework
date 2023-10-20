@@ -25,9 +25,9 @@ class DataParser: DataParserProtocol {
     }
    
     class func logRequest<T: Codable>(response: DataResponse<T, AFError>) {
-//        if Environment.logsEnabled == false {
-//            return
-//        }
+        guard SDKColors.shared.logsEnabled else {
+            return
+        }
         
         var dataJSON = response.data?.prettyJSONString() ?? ""
         

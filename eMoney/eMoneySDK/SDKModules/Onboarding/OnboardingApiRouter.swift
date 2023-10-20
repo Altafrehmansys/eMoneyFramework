@@ -72,8 +72,17 @@ enum OnboardingApiRouter: RequestProtocol {
             return EndPoints.Onboarding.verifyEmail
         case .cardColor:
             return EndPoints.Onboarding.cardColor
+        case .getToken:
+            return EndPoints.Onboarding.tokenGetter
+        }
+    }
+    
+    var queryParameters: [String: String] {
+        switch self {
         case .getToken(let token):
-            return "\(EndPoints.Onboarding.tokenGetter)?authorization=\(token)"
+            return ["authorization":token]
+        default:
+            return [:]
         }
     }
     
@@ -124,7 +133,7 @@ enum OnboardingApiRouter: RequestProtocol {
             return ["email":email]
         case .cardColor(let param):
             return CommonMethods.codableToDictionary(codableObject: param)
-        case .getToken(let param):
+        case .getToken:
             return [:]
             
         }

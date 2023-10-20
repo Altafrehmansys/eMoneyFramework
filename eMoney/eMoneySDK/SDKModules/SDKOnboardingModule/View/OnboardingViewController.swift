@@ -191,32 +191,34 @@ public class OnboardingViewController: UIViewController {
     }
     
     func getToken() {
-//        Task {
-//            do {
-//                let response:TokenResponseModel? = try await ApiManager.shared.execute(OnboardingApiRouter.getToken(token: "Basic%20bW9iaWxlLWZlOnBhc3N3b3JkMTIz"))
-//                await MainActor.run {
-//                    SDKColors.shared.accessToken = response?.data?.accessToken
-//                }
-//
-//            } catch let error as AppError {
-//                await MainActor.run {
-//                    print(error)
-//                    Loader.shared.hideFullScreen()
-//                }
-//            }
-//        }
-        var request = URLRequest(url: URL(string: "https://enmoneyapim.azure-api.net/gettoken/v1/token?authorization=Basic%20bW9iaWxlLWZlOnBhc3N3b3JkMTIz")!)
-        request.method = HTTPMethod.post
-        request.headers.add(HTTPHeader(name: "custom_header", value: "pre_prod"))
-        if let clientId = SDKColors.shared.clientID {
-            request.headers.add(HTTPHeader(name: "client_id",   value: clientId))
-        }
-        
-        URLSession.shared.dataTask(with: request) { [weak self] (data, response, error) in
-            if let data = data {
-                self?.parseData(data)
+        Loader.shared.showFullScreen()
+        Task {
+            do {
+                let response:TokenResponseModel? = try await ApiManager.shared.execute(OnboardingApiRouter.getToken(token: "Basic bW9iaWxlLWZlOnBhc3N3b3JkMTIz"))
+                await MainActor.run {
+                    Loader.shared.hideFullScreen()
+                    SDKColors.shared.accessToken = response?.data?.accessToken
+                }
+
+            } catch let error as AppError {
+                await MainActor.run {
+                    print(error)
+                    Loader.shared.hideFullScreen()
+                }
             }
-        }.resume()
+        }
+//        var request = URLRequest(url: URL(string: "https://enmoneyapim.azure-api.net/gettoken/v1/token?authorization=Basic%20bW9iaWxlLWZlOnBhc3N3b3JkMTIz")!)
+//        request.method = HTTPMethod.post
+//        request.headers.add(HTTPHeader(name: "custom_header", value: "pre_prod"))
+//        if let clientId = SDKColors.shared.clientID {
+//            request.headers.add(HTTPHeader(name: "client_id",   value: clientId))
+//        }
+//        
+//        URLSession.shared.dataTask(with: request) { [weak self] (data, response, error) in
+//            if let data = data {
+//                self?.parseData(data)
+//            }
+//        }.resume()
     }
     
     func parseData(_ data : Data) {

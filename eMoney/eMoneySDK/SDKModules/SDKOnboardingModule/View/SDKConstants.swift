@@ -16,6 +16,7 @@ public class SDKColors {
     public var partnerName: String?
     public var onSuccess: ((String) -> ())?
     public var onFailure: ((String, String) -> ())?
+    private var isLogEnable: Bool = true
     
     private init() {
         
@@ -27,28 +28,37 @@ public class SDKColors {
     func setReceivedColor(theme: EWalletTheme?) {
         self.receivedTheme = theme
     }
+    
+    public var logsEnabled: Bool {
+        set {
+            isLogEnable = newValue
+        }
+        get {
+            isLogEnable
+        }
+    }
 }
 
 public struct EWalletTheme {
-    public var buttonBackgroundColor: String?
-    public var buttonTextColor: String?
+    public var buttonBackgroundColor: UIColor?
+    public var buttonTextColor: UIColor?
     public var buttonFont: UIFont?
     
-    public var toolBarTitleColor: String?
-    public var toolBarLabelColor: String?
-    public var toolBarIconColor: String?
+    public var toolBarTitleColor: UIColor?
+    public var toolBarLabelColor: UIColor?
+    public var toolBarIconColor: UIColor?
     
-    public var checkBoxColor: String?
-    public var segmentBarColor: String?
+    public var checkBoxColor: UIColor?
+    public var segmentBarColor: UIColor?
     
-    public init(buttonBackgroundColor: String? = nil,
-                buttonTextColor: String? = nil,
+    public init(buttonBackgroundColor: UIColor? = nil,
+                buttonTextColor: UIColor? = nil,
                 buttonFont: UIFont? = nil,
-                toolBarTitleColor: String? = nil,
-                toolBarLabelColor: String? = nil,
-                toolBarIconColor: String? = nil,
-                checkBoxColor: String? = nil,
-                segmentBarColor: String? = nil) {
+                toolBarTitleColor: UIColor? = nil,
+                toolBarLabelColor: UIColor? = nil,
+                toolBarIconColor: UIColor? = nil,
+                checkBoxColor: UIColor? = nil,
+                segmentBarColor: UIColor? = nil) {
         self.buttonBackgroundColor = buttonBackgroundColor
         self.buttonTextColor = buttonTextColor
         self.buttonFont = buttonFont

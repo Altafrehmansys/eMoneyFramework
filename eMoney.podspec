@@ -12,7 +12,7 @@ Pod::Spec.new do |spec|
 
   spec.author       = { "Altaf Ur Rehman" => "altaf.rehman@systemsltd.com" }
   spec.platform     = :ios, "13.0"
-  spec.source       = { :http => "https://drive.google.com/file/d/1rE6-UKvQAFmt-KH3vu3onUO4n2QHFmET/view?usp=share_link" }
+  spec.source       = { :http => "https://drive.google.com/file/d/1rE6-UKvQAFmt-KH3vu3onUO4n2QHFmET/view?usp=share_link"}
 
   spec.source_files  = "eMoney/**/*.{swift}"
   spec.swift_version = "5.0"

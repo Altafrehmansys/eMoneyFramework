@@ -162,8 +162,9 @@ extension BaseButton {
     }
     
     private func setColorFromOr(color: UIColor) {
-        if let color = SDKColors.shared.receivedTheme?.buttonTextColor {
-            setTitleColor(UIColor(hex: color), for: UIControl.State.normal)
+        if let themeColor = SDKColors.shared.receivedTheme?.buttonTextColor {
+//            setTitleColor(UIColor(hex: color), for: UIControl.State.normal)
+            setTitleColor(themeColor, for: UIControl.State.normal)
         } else {
             setTitleColor(color, for: UIControl.State.normal)
         }
@@ -223,8 +224,9 @@ extension BaseButton {
         gradient.endPoint       = CGPoint(x: 1, y: 0.2)
         gradient.cornerRadius   = CGFloat(self.buttonHeight/2)
         layer.cornerRadius      = CGFloat(self.buttonHeight/2)
-        if let color = SDKColors.shared.receivedTheme?.buttonBackgroundColor {
-            self.backgroundColor = UIColor(hex: color)
+        if let themeColor = SDKColors.shared.receivedTheme?.buttonBackgroundColor {
+//            self.backgroundColor = UIColor(hex: color)
+            self.backgroundColor = themeColor
         } else {
             layer.insertSublayer(gradient, at: 0)
             gradientLayer           = gradient
