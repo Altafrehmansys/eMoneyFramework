@@ -328,7 +328,7 @@ extension AddMoneyPresenter {
         }
         
         if openState != .managedSavedAccount {
-            self.getBankAccountsList()
+//            self.getBankAccountsList()
             self.getCardsList()
         }
         self.getOptionsList()

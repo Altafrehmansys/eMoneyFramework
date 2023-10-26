@@ -67,9 +67,9 @@ extension AddMoneyViewController: AddMoneyViewProtocol {
         view.backgroundColor = .clear
         backgroundView.backgroundColor = AppColor.eAnd_bottom_sheet_background
         
-        mainContainerView.layer.cornerRadius = 20.0
+        mainContainerView.layer.cornerRadius = 0
         mainContainerView.layer.masksToBounds = true
-        mainContainerView.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner]
+//        mainContainerView.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner]
     }
     
     func reloadData() {
@@ -94,7 +94,7 @@ extension AddMoneyViewController: AddMoneyViewProtocol {
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(dismissView))
         self.backgroundView.addGestureRecognizer(tapGesture)
         
-        self.addSwipeDown(on: self.mainContainerView)
+//        self.addSwipeDown(on: self.mainContainerView)
     }
     
     private func checkingTableViewScrolling() {

@@ -43,9 +43,11 @@ extension RegisterMobileNumberPresenter: RegisterMobileNumberInteractorOutputPro
     func registerStatusRequestResponse(response: RegisterMobileNumberResponseModel) {
         Loader.shared.hideFullScreen()
         if let data = response.data {
+            GlobalData.shared.status = data.status
             GlobalData.shared.msisdnStatusData = data
             GlobalData.shared.isSingleAccount = data.isSingleAccount ?? false
             view?.registerStatusRequestResponse(response: response)
+//            self.checkUserStatus()
         }
     }
     
@@ -56,4 +58,36 @@ extension RegisterMobileNumberPresenter: RegisterMobileNumberInteractorOutputPro
     }
     
     
+}
+
+extension RegisterMobileNumberPresenter {
+    func checkUserStatus() {
+        guard let msisdnStatus = GlobalData.shared.msisdnStatusData?.status else {return}
+        let status = MsisdnStatus(rawValue: msisdnStatus) ?? .none
+        
+        switch status {
+        case .registered:
+            SDKColors.shared.onFailure?("", EWalletErrorCode.ONBOARDING_ALREADY_REGISTERED.rawValue)
+            router?.go(to: .dismiss)
+        case .notExist:
+            view?.navigateToVerify()
+        case .activated:
+//            Alert.showBottomSheetError(title: "your_account_is_blocked".localized, message: "")
+//            view?.navigateToVerify()
+            SDKColors.shared.onFailure?("", EWalletErrorCode.ONBOARDING_ALREADY_REGISTERED.rawValue)
+            router?.go(to: .dismiss)
+        case .pinReset:
+//            router?.go(to: .Login)
+            SDKColors.shared.onFailure?("", EWalletErrorCode.ONBOARDING_REGISTERED_RESET_PIN.rawValue)
+            router?.go(to: .dismiss)
+        case .blocked:
+            Alert.showBottomSheetError(title: "your_account_is_blocked".localized, message: "")
+            SDKColors.shared.onFailure?("", EWalletErrorCode.BLOCKED_ACCOUNT.rawValue)
+        case .suspended:
+            Alert.showBottomSheetError(title: "Account suspended".localized, message: "")
+            SDKColors.shared.onFailure?("", EWalletErrorCode.SUSPENDED_ACCOUNT.rawValue)
+        case .none:
+            break
+        }
+    }
 }

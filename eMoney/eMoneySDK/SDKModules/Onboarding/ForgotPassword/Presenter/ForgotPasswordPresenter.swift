@@ -20,7 +20,7 @@ class ForgotPasswordPresenter {
 extension ForgotPasswordPresenter: ForgotPasswordPresenterProtocol {
     
     func loadData() {
-    
+        
     }
     func backToLogin(){
         router?.go(to: .backToLogin)

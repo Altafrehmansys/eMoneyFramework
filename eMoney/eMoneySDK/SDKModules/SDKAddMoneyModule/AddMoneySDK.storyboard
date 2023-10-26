@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="oSs-1X-egP">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="22154" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="oSs-1X-egP">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21679"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22130"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -22,7 +22,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="393" height="44"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="duf-2e-ytZ">
-                                        <rect key="frame" x="83.333333333333329" y="8.6666666666666679" width="226.33333333333343" height="35.333333333333329"/>
+                                        <rect key="frame" x="83.333333333333329" y="8.6666666666666679" width="226.33333333333337" height="35.333333333333329"/>
                                         <subviews>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_e&amp;money" translatesAutoresizingMaskIntoConstraints="NO" id="lDl-xs-gdH">
                                                 <rect key="frame" x="21.333333333333343" y="0.0" width="183.66666666666666" height="35.333333333333336"/>
@@ -129,6 +129,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <view alpha="0.40000000000000002" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ImO-7d-Nsk">
+                                <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
                             <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5UE-Ao-qwH">
                                 <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="SYt-nH-iSC">
@@ -158,15 +162,19 @@
                         <constraints>
                             <constraint firstAttribute="bottom" secondItem="Ywv-8b-5J4" secondAttribute="bottom" constant="-15" id="0vS-pl-tqT"/>
                             <constraint firstItem="Lgl-id-nI7" firstAttribute="leading" secondItem="NN0-Gc-5bE" secondAttribute="leading" id="4Im-5J-g0s"/>
+                            <constraint firstItem="NN0-Gc-5bE" firstAttribute="trailing" secondItem="ImO-7d-Nsk" secondAttribute="trailing" id="Coj-ck-lcm"/>
                             <constraint firstAttribute="trailing" secondItem="5UE-Ao-qwH" secondAttribute="trailing" id="EfL-HW-UqS"/>
                             <constraint firstItem="Ywv-8b-5J4" firstAttribute="leading" secondItem="NN0-Gc-5bE" secondAttribute="leading" id="IkV-Xs-ekg"/>
                             <constraint firstItem="Ywv-8b-5J4" firstAttribute="top" secondItem="NN0-Gc-5bE" secondAttribute="top" constant="330" id="Jce-4T-hZI"/>
+                            <constraint firstItem="ImO-7d-Nsk" firstAttribute="top" secondItem="zEG-eA-yZw" secondAttribute="top" id="R7l-Qw-Lme"/>
                             <constraint firstItem="5UE-Ao-qwH" firstAttribute="top" secondItem="zEG-eA-yZw" secondAttribute="top" id="R9D-mm-cVg"/>
                             <constraint firstItem="5UE-Ao-qwH" firstAttribute="leading" secondItem="NN0-Gc-5bE" secondAttribute="leading" id="Va0-ny-Nh4"/>
                             <constraint firstAttribute="bottom" secondItem="5UE-Ao-qwH" secondAttribute="bottom" id="YOy-a9-Ac0"/>
                             <constraint firstItem="Lgl-id-nI7" firstAttribute="trailing" secondItem="NN0-Gc-5bE" secondAttribute="trailing" id="cUA-od-J9Y"/>
                             <constraint firstItem="Ywv-8b-5J4" firstAttribute="top" secondItem="Lgl-id-nI7" secondAttribute="bottom" id="eKl-eI-Sok"/>
                             <constraint firstItem="Ywv-8b-5J4" firstAttribute="trailing" secondItem="NN0-Gc-5bE" secondAttribute="trailing" id="jQc-dC-3Oa"/>
+                            <constraint firstItem="ImO-7d-Nsk" firstAttribute="leading" secondItem="NN0-Gc-5bE" secondAttribute="leading" id="khq-y0-ttW"/>
+                            <constraint firstAttribute="bottom" secondItem="ImO-7d-Nsk" secondAttribute="bottom" id="rNQ-XA-W8f"/>
                         </constraints>
                     </view>
                     <connections>

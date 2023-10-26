@@ -222,6 +222,9 @@ class ReEnterPinViewController: BaseViewController {
         obj.newPin = self.pinPassword
         obj.otp = encryptOtp
         obj.pin = ""
+        obj.flowName = "Upgrade"
+        obj.transactionId = "971549996938-02364892152"
+        obj.credentialType = "pincode"
         presenter?.callResetApi(resetPinObj: obj)
     }
     func setFlowJourney(){

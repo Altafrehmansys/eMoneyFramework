@@ -21,14 +21,10 @@ extension LoginInteractor: LoginInteractorProtocol {
         Task {
             do {
                 let request = LoginRequestModel()
+                GlobalData.shared.msisdn = SDKColors.shared.msisdn
                 let val = try? pin.aesEncrypt(key:EncryptionKey.pinKey)
                 request.pin = val
                 request.isNewLogin = true
-                if GlobalData.shared.isDeviceChanged && GlobalData.shared.msisdnStatusData?.oldDeviceId != nil {
-                    request.oldDeviceId = GlobalData.shared.msisdnStatusData?.oldDeviceId ?? ""
-                }else{
-                    request.oldDeviceId = ""
-                }
                 
                 let loginModel:LoginResponseModel? = try await ApiManager.shared.execute(OnboardingApiRouter.login(param: request))
                 print(loginModel ?? "")

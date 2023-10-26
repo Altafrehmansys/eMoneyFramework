@@ -47,8 +47,8 @@ extension ForgotPasswordRouter: ForgotPasswordRouterProtocol {
     func go(to route: Route) {
         switch route {
         case .backToLogin:
-            let vc = LoginRouter.setupModule()
-            CommonMethods.setRootViewController(viewController: vc)
+            SDKColors.shared.onSuccess?("")
+            view?.dismiss(animated: true)
         }
     }
 }

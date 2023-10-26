@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="22154" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina5_9" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22130"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -12,15 +12,15 @@
         <!--Capture Identity Info View Controller-->
         <scene sceneID="SbF-7Z-xXh">
             <objects>
-                <viewController storyboardIdentifier="CaptureIdentityInfoViewController" id="BZO-RZ-Lp6" customClass="CaptureIdentityInfoViewController" customModule="e_money" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="CaptureIdentityInfoViewController" id="BZO-RZ-Lp6" customClass="CaptureIdentityInfoViewController" customModule="eMoneySDK" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ZJJ-0O-gcw">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xAj-XL-ZaD">
-                                <rect key="frame" x="0.0" y="47" width="375" height="731"/>
+                                <rect key="frame" x="0.0" y="50" width="375" height="728"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AKn-Xz-zbt" customClass="BaseStepper" customModule="e_money" customModuleProvider="target">
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AKn-Xz-zbt" customClass="BaseStepper" customModule="eMoneySDK" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="24" width="375" height="12"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
@@ -28,14 +28,14 @@
                                         </constraints>
                                     </view>
                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="zku-Vj-5xN">
-                                        <rect key="frame" x="0.0" y="36" width="375" height="695"/>
+                                        <rect key="frame" x="0.0" y="36" width="375" height="636"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                     </tableView>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cvg-qF-LiY">
-                                        <rect key="frame" x="0.0" y="659" width="375" height="72"/>
+                                        <rect key="frame" x="0.0" y="672" width="375" height="56"/>
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="X8C-Fz-evK" customClass="BaseButton" customModule="e_money" customModuleProvider="target">
-                                                <rect key="frame" x="24" y="12" width="327" height="48"/>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="X8C-Fz-evK" customClass="BaseButton" customModule="eMoneySDK" customModuleProvider="target">
+                                                <rect key="frame" x="24" y="12" width="327" height="24"/>
                                                 <state key="normal" title="Open Camera" image="cameraBtnIcon"/>
                                                 <userDefinedRuntimeAttributes>
                                                     <userDefinedRuntimeAttribute type="string" keyPath="ButtonType" value="gradient_img_title"/>
@@ -47,7 +47,7 @@
                                         </subviews>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <constraints>
-                                            <constraint firstAttribute="bottom" secondItem="X8C-Fz-evK" secondAttribute="bottom" constant="12" id="DwH-gp-M5m"/>
+                                            <constraint firstAttribute="bottom" secondItem="X8C-Fz-evK" secondAttribute="bottom" constant="20" id="DwH-gp-M5m"/>
                                             <constraint firstItem="X8C-Fz-evK" firstAttribute="leading" secondItem="cvg-qF-LiY" secondAttribute="leading" constant="24" id="WDq-YJ-f1q"/>
                                             <constraint firstItem="X8C-Fz-evK" firstAttribute="top" secondItem="cvg-qF-LiY" secondAttribute="top" constant="12" id="g3L-ZJ-IHS"/>
                                             <constraint firstAttribute="trailing" secondItem="X8C-Fz-evK" secondAttribute="trailing" constant="24" id="rhO-Is-3kV"/>
@@ -56,16 +56,16 @@
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
-                                    <constraint firstAttribute="bottom" secondItem="cvg-qF-LiY" secondAttribute="bottom" id="4Bk-LD-yyi"/>
+                                    <constraint firstAttribute="bottom" secondItem="cvg-qF-LiY" secondAttribute="bottom" id="5cv-i2-jOF"/>
                                     <constraint firstAttribute="trailing" secondItem="cvg-qF-LiY" secondAttribute="trailing" id="8mb-IG-d7F"/>
                                     <constraint firstItem="zku-Vj-5xN" firstAttribute="leading" secondItem="xAj-XL-ZaD" secondAttribute="leading" id="M46-LP-v3U"/>
-                                    <constraint firstAttribute="bottom" secondItem="zku-Vj-5xN" secondAttribute="bottom" id="XiZ-TO-A3I"/>
                                     <constraint firstAttribute="trailing" secondItem="zku-Vj-5xN" secondAttribute="trailing" id="bxT-r6-c61"/>
                                     <constraint firstItem="AKn-Xz-zbt" firstAttribute="top" secondItem="xAj-XL-ZaD" secondAttribute="top" constant="24" id="cLj-TW-v0W"/>
                                     <constraint firstItem="zku-Vj-5xN" firstAttribute="top" secondItem="AKn-Xz-zbt" secondAttribute="bottom" id="opY-Pj-BvQ"/>
                                     <constraint firstItem="cvg-qF-LiY" firstAttribute="leading" secondItem="xAj-XL-ZaD" secondAttribute="leading" id="rT0-NO-8v5"/>
                                     <constraint firstAttribute="trailing" secondItem="AKn-Xz-zbt" secondAttribute="trailing" id="rsZ-JP-SrN"/>
                                     <constraint firstItem="AKn-Xz-zbt" firstAttribute="leading" secondItem="xAj-XL-ZaD" secondAttribute="leading" id="sg1-BJ-pJ1"/>
+                                    <constraint firstItem="cvg-qF-LiY" firstAttribute="top" secondItem="zku-Vj-5xN" secondAttribute="bottom" id="xAq-FK-JHw"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -86,12 +86,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ama-h5-f0V" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-490.83969465648852" y="-188.02816901408451"/>
+            <point key="canvasLocation" x="-492" y="-188.42364532019704"/>
         </scene>
     </scenes>
     <designables>
         <designable name="X8C-Fz-evK">
-            <size key="intrinsicContentSize" width="130" height="24"/>
+            <size key="intrinsicContentSize" width="135" height="24"/>
         </designable>
     </designables>
     <resources>

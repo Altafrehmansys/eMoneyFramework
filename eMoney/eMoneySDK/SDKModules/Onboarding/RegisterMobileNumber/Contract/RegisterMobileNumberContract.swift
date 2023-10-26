@@ -11,6 +11,7 @@ import Foundation
 protocol RegisterMobileNumberViewProtocol: ViperView {
     func registerStatusRequestResponse(response: RegisterMobileNumberResponseModel)
     func registerStatusRequestResponseError(error: AppError)
+    func navigateToVerify()
 }
 
 protocol RegisterMobileNumberPresenterProtocol: ViperPresenter {
@@ -18,6 +19,7 @@ protocol RegisterMobileNumberPresenterProtocol: ViperPresenter {
     func navigateToVerify(msisdn : String, ref: RegisterMobileNumberViewController)
     func validateOtpAndSelection(msidn : String,isTermsChecked:Bool,isPrivacyChecked : Bool) -> (msidn : Bool, isTermsChecked : Bool, isPrivacyChecked : Bool)
     func navigateToTermsCondition(privacyType : PrivacypolicyType)
+    func checkUserStatus()
     
 }
 

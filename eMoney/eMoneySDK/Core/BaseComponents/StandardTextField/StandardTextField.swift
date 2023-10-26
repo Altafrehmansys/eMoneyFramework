@@ -423,12 +423,21 @@ final class StandardTextField: UIView {
 
 // MARK: - Private Methods
 extension StandardTextField {
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        overrideUserInterfaceStyle = .light
+    }
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        overrideUserInterfaceStyle = .light
+    }
     
     func setupConfigurations(state:States = .normal) {
         self.state = state
         titleLabel.font = titleLabelFont
         titleLabel.isHidden = entryType.isTitleHidden
         textField.textColor = textFieldTextColor
+        self.overrideUserInterfaceStyle = .light
         if let attributedText = textField.attributedText, attributedText.string.isEmpty {
             textField.font = textFieldFont
         }
@@ -453,7 +462,6 @@ extension StandardTextField {
         view = loadViewFromNib()
         view.frame = bounds
         view.translatesAutoresizingMaskIntoConstraints = false
-        
         DispatchQueue.main.async { [unowned self] in // To avoid some unexpected behaviours, make sure all UI setup is done in main thread
             addSubview(view)
             NSLayoutConstraint.activate([
@@ -484,6 +492,7 @@ extension StandardTextField {
         let bundle = Bundle(identifier: "com.app.taskLocalTester.asdf.asdf.asdf.eMoneySDK")
         let nib = UINib(nibName: String(describing: StandardTextField.self), bundle: bundle)
         let view = nib.instantiate(withOwner: self, options: nil)[0] as! UIView
+        view.overrideUserInterfaceStyle = .light
         return view
     }
     
@@ -548,7 +557,12 @@ extension StandardTextField {
     }
     
     private func changeTitleLabelColorIfNeeded(withAnimation: Bool = true) {
-        containerView.layer.borderColor = state.borderColor
+        if traitCollection.userInterfaceStyle == .light {
+            containerView.layer.borderColor = state.borderColor
+        } else {
+            containerView.layer.borderColor = state.borderColor
+        }
+        
         titleLabel.textColor = textField.isFirstResponder ? AppColor.eAnd_Grey_100 : AppColor.eAnd_Grey_50
         
         UIView.animate(withDuration: withAnimation ? 0.2 : 0) {

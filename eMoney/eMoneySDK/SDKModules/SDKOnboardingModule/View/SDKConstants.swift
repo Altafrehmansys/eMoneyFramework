@@ -13,10 +13,12 @@ public class SDKColors {
     public var clientID: String?
     public var accessToken: String?
     public var msisdn: String?
+    public var flowName: String?
     public var partnerName: String?
     public var onSuccess: ((String) -> ())?
     public var onFailure: ((String, String) -> ())?
     private var isLogEnable: Bool = true
+    public var environment: Environment?
     
     private init() {
         
@@ -70,4 +72,14 @@ public struct EWalletTheme {
     }
 }
 
+public class SDKNavigationStack {
+    static let shared  = SDKNavigationStack()
+    var baseViewController: UIViewController?
+    
+    private init() {
+        
+    }
+    
+    
+}
 //use the above colors like this UIColor(hex: "#D9ECF5")

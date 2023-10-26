@@ -14,6 +14,7 @@ class RegisterMobileNumberRouter {
     enum Route {
         case navigateToOtp(msisdn: String, ref: RegisterMobileNumberViewController)
         case navigateToPrivacy(privacyEnumType:PrivacypolicyType)
+        case dismiss
     }
     
     // MARK: Properties
@@ -82,6 +83,8 @@ extension RegisterMobileNumberRouter: RegisterMobileNumberRouterProtocol {
             vc.enumPrivacyType = privacyEnumType
             vc.isLoadDirectUrl = true
             view?.present(vc, animated: true)
+        case .dismiss:
+            view?.dismiss(animated: true)
         }
     }
 }

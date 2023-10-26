@@ -14,6 +14,8 @@ protocol OtpPopupViewProtocol: ViperView {
     func otpVerifyRequestResponse(response: VerifyMobileNumberResponseModel)
     func initiatePinRequestResponse(response: InitiatePinResponseModel)
     func verifyMobileRequestResponseError(error: AppError)
+    func forgetPinOtpSendRequestResponse(response: VerifyMobileNumberResponseModel)
+    func forgetPinOtpSendError(error: AppError)
 }
 
 protocol OtpPopupPresenterProtocol: ViperPresenter {
@@ -24,15 +26,17 @@ protocol OtpPopupPresenterProtocol: ViperPresenter {
     var toTitle: String { get set }
 
     func checkotpSendRequestResponse()
-    func verifyOtpRequestResponse(otp : String,flowType : UserJourneyFlow)
+    func verifyOtpRequestResponse(otp : String)
     func initiatePinRequest(resend:Bool, questionSkip : Bool,unblock : Bool)
     func navigateToFailedOtp(model : VerifyMobileNumberResponseModel)
+    func navigateSetPin()
 }
 
 protocol OtpPopupInteractorProtocol: ViperInteractor {
-    func checkotpSendRequestResponseFromServer(with flowName: FlowNames?)
-    func verifyOtpRequestResponseFromServer(with otp: String, and flowName: FlowNames?)
+    func checkotpSendRequestResponseFromServer()
+    func verifyOtpRequestResponseFromServer(with otp: String)
     func initiatePinRequestFromServer(resend: Bool, isQuestionSkip: Bool, isUnblockFlow: Bool)
+    func checkForgetPinOtpSendRequestResponseFromServer()
 }
 
 protocol OtpPopupInteractorOutputProtocol: AnyObject {
@@ -42,6 +46,8 @@ protocol OtpPopupInteractorOutputProtocol: AnyObject {
     func otpVerifyRequestResponse(response: VerifyMobileNumberResponseModel)
     func initiatePinRequestResponse(response: InitiatePinResponseModel)
     func verifyMobileRequestResponseError(error: AppError)
+    func forgetPinOtpSendRequestResponse(response: VerifyMobileNumberResponseModel)
+    func forgetPinOtpSendRequestError(error: AppError)
 }
 
 protocol OtpPopupRouterProtocol: ViperRouter {

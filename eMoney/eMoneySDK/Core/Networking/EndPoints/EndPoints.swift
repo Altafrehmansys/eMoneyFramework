@@ -35,6 +35,7 @@ enum EndPoints {
 //    https://enmoneyapim.azure-api.net/registration/v1/status
         
         static let otpSend                  = "otp/\(route)send"
+        static let forgetPin                  = "registrations/\(route)/generateOtpForCredentials"
         static let tokenGetter              = "gettoken/\(route)token"
 //        static let otpSend                  = "\(route)registration/otp/send"
 //        static let otpVerify                = "\(route)registration/otp/verify"
@@ -54,7 +55,7 @@ enum EndPoints {
         static let liveness                 = "profile/\(route)liveness"
 //        static let liveness                 = "registration/liveness"
 //        static let rhserv                   = "registration/rh-serv"
-        static let rhserv                   = "profile/\(route)rh-serv"
+        static let rhserv                   = "profile/\(route)/rh-serv"
 //    https://enmoneyapim.azure-api.net/profile/v1/rh-serv
         static let termsAndCondition        = "content/html"
 //    https://enmoneyapim.azure-api.net/onboarding/v1/register

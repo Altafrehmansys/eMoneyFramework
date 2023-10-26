@@ -20,6 +20,7 @@ public class BaseViewController: UIViewController, InternetConnectionErrorViewCo
         
         // Do any additional setup after loading the view.
         self.hideBackButton()
+        overrideUserInterfaceStyle = .light
     }
     
     private func changeTextColorsFromSDK() {

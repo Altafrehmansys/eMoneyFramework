@@ -76,8 +76,10 @@ extension AddMoneySuccessRouter: AddMoneySuccessRouterProtocol {
             view?.present(ac, animated: true)
             
         case .returnBackToHome:
-            let vc = CustomTabbarViewController()
-            CommonMethods.setRootViewControllerWithoutNavigation(viewController: vc)
+            SDKColors.shared.onSuccess?("funds_added_successfully".localized)
+            view?.dismiss(animated: true)
+//            let vc = CustomTabbarViewController()
+//            CommonMethods.setRootViewControllerWithoutNavigation(viewController: vc)
         }
     }
 }

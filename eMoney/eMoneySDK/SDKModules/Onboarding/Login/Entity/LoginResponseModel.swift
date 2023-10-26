@@ -8,11 +8,9 @@
 
 import Foundation
 
-class LoginRequestModel:Codable{
+class LoginRequestModel: Codable {
     var isNewLogin:Bool?
     var pin:String?
-    var oldDeviceId:String?
-    var identity: String?
 }
 
 class LoginResponseModel: BaseResponseModel {

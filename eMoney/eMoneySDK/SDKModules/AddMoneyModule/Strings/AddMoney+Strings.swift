@@ -358,6 +358,9 @@ extension Strings {
         static var enterOTPNumber: String {
             return "enter_otp_number".localized
         }
+        static var enterOTPEmail: String {
+            return "email_sent".localized
+        }
         static var adding: String {
             return "adding".localized
         }

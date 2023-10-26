@@ -19,6 +19,7 @@ class Alert {
         var config = SwiftMessages.defaultConfig
         config.presentationStyle = .top
         config.presentationContext = .window(windowLevel: .normal)
+        config.overrideUserInterfaceStyle = .light
         SwiftMessages.show(view: error)
     }
     
@@ -45,6 +46,7 @@ class Alert {
         config.presentationContext = .window(windowLevel: .statusBar)
         config.duration = .forever
         config.dimMode = .gray(interactive: true)
+        config.overrideUserInterfaceStyle = .light
         SwiftMessages.show(config: config, view: error)
     }
     
@@ -56,6 +58,7 @@ class Alert {
         var config = SwiftMessages.defaultConfig
         config.presentationStyle = .bottom
         config.presentationContext = .window(windowLevel: .normal)
+        config.overrideUserInterfaceStyle = .light
         SwiftMessages.show(view: toast)
     }
     
@@ -127,6 +130,7 @@ class Alert {
         config.presentationStyle = .top
         config.presentationContext = .window(windowLevel: .alert)
         config.duration = .seconds(seconds: 4)
+        config.overrideUserInterfaceStyle = .light
         SwiftMessages.show(config: config, view: view)
     }
 }

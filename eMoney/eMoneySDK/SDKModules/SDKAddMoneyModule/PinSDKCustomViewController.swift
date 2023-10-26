@@ -46,25 +46,44 @@ class PinSDKCustomViewController: BaseViewController {
     
     func getToken() {
         Loader.shared.showFullScreen()
-        var request = URLRequest(url: URL(string: "https://enmoneyapim.azure-api.net/gettoken/v1/token?authorization=Basic%20bW9iaWxlLWZlOnBhc3N3b3JkMTIz")!)
-        request.method = HTTPMethod.post
-        request.headers.add(HTTPHeader(name: "custom_header", value: "pre_prod"))
-        if let clientId = SDKColors.shared.clientID {
-            request.headers.add(HTTPHeader(name: "client_id",   value: clientId))
+        Task {
+            do {
+                let response:TokenResponseModel? = try await ApiManager.shared.execute(OnboardingApiRouter.getToken(token: "Basic bW9iaWxlLWZlOnBhc3N3b3JkMTIz"))
+                await MainActor.run {
+//                    Loader.shared.hideFullScreen()
+                    SDKColors.shared.accessToken = response?.data?.accessToken
+                    self.sendOTP()
+                }
+
+            } catch let error as AppError {
+                await MainActor.run {
+                    print(error)
+                    Loader.shared.hideFullScreen()
+                    SDKColors.shared.onFailure?("", error.errorDescription)
+                    Alert.showError(title: error.title, message: error.errorDescription)
+                }
+            }
         }
         
-        URLSession.shared.dataTask(with: request) { [weak self] (data, response, error) in
-            if let error = error {
-                Loader.shared.hideFullScreen()
-                SDKColors.shared.onFailure?("", error.localizedDescription)
-            }
-            if let data = data {
-                self?.parseData(data)
-            } else {
-                Loader.shared.hideFullScreen()
-                
-            }
-        }.resume()
+//        var request = URLRequest(url: URL(string: "https://enmoneyapim.azure-api.net/gettoken/v1/token?authorization=Basic%20bW9iaWxlLWZlOnBhc3N3b3JkMTIz")!)
+//        request.method = HTTPMethod.post
+//        request.headers.add(HTTPHeader(name: "custom_header", value: "pre_prod"))
+//        if let clientId = SDKColors.shared.clientID {
+//            request.headers.add(HTTPHeader(name: "client_id",   value: clientId))
+//        }
+//        
+//        URLSession.shared.dataTask(with: request) { [weak self] (data, response, error) in
+//            if let error = error {
+//                Loader.shared.hideFullScreen()
+//                SDKColors.shared.onFailure?("", error.localizedDescription)
+//            }
+//            if let data = data {
+//                self?.parseData(data)
+//            } else {
+//                Loader.shared.hideFullScreen()
+//                
+//            }
+//        }.resume()
     }
     
     func parseData(_ data : Data) {
@@ -90,10 +109,15 @@ class PinSDKCustomViewController: BaseViewController {
         }
     }
     
-    func routToSelectCard() {
+    func routToAddMoney() {
         let vc = AddMoneyRouter.setupModule()
-        vc.modalPresentationStyle = .overCurrentContext
-        self.navigationController?.present(vc, animated: true)
+//        vc.modalPresentationStyle = .overFullScreen
+//        let nv = BaseNavigationController(rootViewController: vc)
+//        self.dismiss(animated: true) {
+//            SDKNavigationStack.shared.baseViewController?.present(nv, animated: true)
+        self.navigationController?.pushViewController(vc, animated: true)
+//            self.view.window?.rootViewController?.present(vc, animated: true)
+//        }
     }
     
     func loginUser(pin: String) {
@@ -104,35 +128,36 @@ class PinSDKCustomViewController: BaseViewController {
                 let val = try? pin.aesEncrypt(key:EncryptionKey.pinKey)
                 request.pin = val
                 request.isNewLogin = true
-                request.identity = SDKColors.shared.msisdn?.planPhoneNumberString
+//                request.identity = SDKColors.shared.msisdn?.planPhoneNumberString
+//                request.msisdn = SDKColors.shared.msisdn?.planPhoneNumberString
+//                request.flowName = "AddMoney"
                 
-                if GlobalData.shared.isDeviceChanged && GlobalData.shared.msisdnStatusData?.oldDeviceId != nil {
-                    request.oldDeviceId = GlobalData.shared.msisdnStatusData?.oldDeviceId ?? ""
-                } else {
-                    request.oldDeviceId = ""
-                }
+//                if GlobalData.shared.isDeviceChanged && GlobalData.shared.msisdnStatusData?.oldDeviceId != nil {
+//                    request.oldDeviceId = GlobalData.shared.msisdnStatusData?.oldDeviceId ?? ""
+//                } else {
+//                    request.oldDeviceId = ""
+//                }
                 
                 let loginModel:LoginResponseModel? = try await ApiManager.shared.execute(OnboardingApiRouter.login(param: request))
-                print(loginModel ?? "")
+
                 await MainActor.run {
                     if loginModel != nil {
 //                        output?.loginRequestResponse(response: loginModel!)
                         // Show cards screen
                         Loader.shared.hideFullScreen()
                         UserDefaultHelper.userLoginPin = pin
-                        routToSelectCard()
+                        UserDefaultHelper.userSessionToken = loginModel?.data?.userToken
+                        routToAddMoney()
                     }
                 }
-                
             } catch let error as AppError {
                 print(error.localizedDescription)
                 await MainActor.run {
 //                    output?.loginRequestResponseError(error:error)
                     // Show error
+                    Alert.showBottomSheetError(title: error.title, message: error.errorDescription)
                     Loader.shared.hideFullScreen()
-                    
                 }
-                
             }
         }
     }
@@ -148,8 +173,7 @@ class PinSDKCustomViewController: BaseViewController {
                 let planeNumber = msisdn.planPhoneNumberString
                 let request = VerifyMobileNumberOtpSendRequestModel(isSingleAccount: true,
                                                                     msisdn:planeNumber,
-                                                                    identity: planeNumber,
-                                                                    flowName: "AddMoney")
+                                                                    identity: planeNumber)
                 
                 let addPostObject:VerifyMobileNumberResponseModel? = try await ApiManager.shared.execute(OnboardingApiRouter.otpSendToMobile(param: request))
                 await MainActor.run {

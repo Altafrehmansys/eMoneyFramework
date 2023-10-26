@@ -18,6 +18,8 @@ class OtpPopupViewController: BaseViewController {
     @IBOutlet weak var labelName: UILabel!
     @IBOutlet weak var labelPaying: UILabel!
     @IBOutlet weak var backGroundView: UIView!
+    @IBOutlet weak var labelNameView: UIView!
+    @IBOutlet weak var labelPayingView: UIView!
     
     @IBOutlet weak var buttonResendOtp: UIButton!
     @IBOutlet weak var amountField: BaseAmountField!
@@ -25,7 +27,7 @@ class OtpPopupViewController: BaseViewController {
     @IBOutlet weak var viewBottomConstraint: NSLayoutConstraint!
     
     var delegate: OtpPopupDelegate?
-
+    var userJourney: UserJourneyFlow? = nil
     var presenter: OtpPopupPresenterProtocol?
     var otpInputCode = String()
     var timer : Timer?
@@ -53,15 +55,26 @@ class OtpPopupViewController: BaseViewController {
         self.isHideNavigation(false)
 
         if TimerOtp.shared.timeCounter == 0 {
+//            SDKColors.shared.flowName == ""
             self.presenter?.checkotpSendRequestResponse()
         }
         TimerOtp.shared.delegate = self
         
-        let formatedPhoneNumber = CommonMethods.getFormattedStringForPhoneNumberWithCode(phoneNumber: "+\(presenter?.msisdn ?? "")")
-        let otpSentence = Strings.AddMoney.enterOTPNumber + formatedPhoneNumber
-        labelOtpNumber.text = otpSentence
+        if userJourney == .forgotPin {
+            labelOtpNumber.text = Strings.AddMoney.enterOTPEmail
+        } else {
+            let formatedPhoneNumber = CommonMethods.getFormattedStringForPhoneNumberWithCode(phoneNumber: SDKColors.shared.msisdn ?? "")
+            let otpSentence = Strings.AddMoney.enterOTPNumber + formatedPhoneNumber
+            labelOtpNumber.text = otpSentence
+        }
+        
         labelOtpNumber.font = AppFont.appRegular(size: .body2)
         labelOtpNumber.textColor = AppColor.eAnd_Black_80
+        labelOtpNumber.isHidden = userJourney == .forgotPin
+        
+        labelNameView.isHidden = userJourney == .forgotPin
+        labelPayingView.isHidden = userJourney == .forgotPin
+        amountField.isHidden = userJourney == .forgotPin
         
         labelPaying.text = presenter?.addingText
         labelPaying.font = AppFont.appRegular(size: .body4)
@@ -71,14 +84,14 @@ class OtpPopupViewController: BaseViewController {
         labelName.font = AppFont.appRegular(size: .body4)
         labelName.textColor = AppColor.eAnd_Grey_100
         
-        labelHaventRecieve.text = Strings.AddMoney.haventReceived
-        labelHaventRecieve.textColor = AppColor.eAnd_Black_80
-        labelHaventRecieve.font = AppFont.appRegular(size: .body4)
-        
         amountField.isUserInteractionEnabled = false
         amountField.currentColor = AppColor.eAnd_Black_80
         amountField.settingView(desc: "")
         amountField.text = presenter?.amount
+        
+        labelHaventRecieve.text = Strings.AddMoney.haventReceived
+        labelHaventRecieve.textColor = AppColor.eAnd_Black_80
+        labelHaventRecieve.font = AppFont.appRegular(size: .body4)
         
         buttonResendOtp.setTitle(Strings.AddMoney.resendOtp, for: .normal)
         buttonResendOtp.setTitleColor(AppColor.eAnd_Red_100, for: .normal)
@@ -102,7 +115,13 @@ class OtpPopupViewController: BaseViewController {
                 return
             }
             self?.otpInputCode = otpCode
-            self?.presenter?.verifyOtpRequestResponse(otp: self?.otpInputCode ?? "", flowType: .onboarding)
+            
+            if self?.userJourney == .forgotPin {
+                GlobalData.shared.otp = otpCode
+                self?.presenter?.navigateSetPin()
+            } else {
+                self?.presenter?.verifyOtpRequestResponse(otp: self?.otpInputCode ?? "")
+            }
         }
         
        addToolbar()
@@ -207,6 +226,15 @@ extension OtpPopupViewController: OtpPopupViewProtocol {
             verifyCount += 1
             self.setError(with: error.errorDescription, isError: true)
         }
+    }
+    
+    func forgetPinOtpSendRequestResponse(response: VerifyMobileNumberResponseModel) {
+        labelOtpNumber.text = Strings.AddMoney.enterOTPEmail + " \(response.data?.email ?? "")"
+    }
+    
+    func forgetPinOtpSendError(error: AppError) {
+        Loader.shared.hideFullScreen()
+        Alert.showBottomSheetError(title: error.errorDescription, message: "")
     }
 }
 

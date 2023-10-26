@@ -22,14 +22,14 @@ struct VerifyMobileNumberOtpSendRequestModel:Codable{
     var isSingleAccount:Bool?
     var msisdn:String?
     var identity:String?
-    var flowName:String?
+//    var flowName:String?
 }
 
 struct VerifyMobileNumberOtpVerifyRequestModel:Codable{
     var otp:String?
     var msisdn:String?
     var status:String?
-    var flowName:String?
+//    var flowName:String?
 }
 
 class VerifyMobileNumberResponseModel: BaseResponseModel {

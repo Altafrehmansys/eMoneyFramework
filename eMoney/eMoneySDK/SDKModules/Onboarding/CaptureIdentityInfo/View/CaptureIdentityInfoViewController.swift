@@ -84,14 +84,15 @@ class CaptureIdentityInfoViewController: BaseViewController {
     @IBAction func openCameraTapped(_ sender: Any) {
         if !isScreenTypeSelfi {
             CommonMethods.checkCameraAccess { success in
-                if success {
-                    EWalletEFROCRManager.init(delegate: self)
+                DispatchQueue.main.async {
+                    if success {
+                        let _ = EWalletEFROCRManager.init(delegate: self)
+                    }
                 }
             }
         }else{
             presenter?.moveToLivenessCheck()
         }
-
     }
 }
 

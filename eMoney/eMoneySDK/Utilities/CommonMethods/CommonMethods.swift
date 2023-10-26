@@ -99,12 +99,16 @@ class CommonMethods: NSObject{
             number = String(number.dropFirst(4))
             number = "0" + number
         }
+        if number.hasPrefix("971") {
+            number = String(number.dropFirst(3))
+            number = "0" + number
+        }
         if number.hasPrefix("00971") {
             number = String(number.dropFirst(5))
             number = "0" + number
         }
         
-        return CommonMethods.isValidatedByRegex(text: phoneNumber, regex: "^(5)[0-9]{8,8}$")
+        return CommonMethods.isValidatedByRegex(text: number, regex: "^(5)[0-9]{8,8}$")
     }
     
     static func validateUAEMobileNumberWithOutCode(phoneNumber:String,regex:String = "^(5)[0-9]{8,8}$") -> Bool {
@@ -136,10 +140,12 @@ class CommonMethods: NSObject{
     }
     
     static func getFormattedStringForPhoneNumberWithCode(phoneNumber:String) -> String {
-        var codeString = "+971"
+        let codeString = "+971"
         var numberString = phoneNumber
         if phoneNumber.hasPrefix("+971") {
             numberString = phoneNumber.components(separatedBy: "+971").last ?? ""
+        } else if phoneNumber.hasPrefix("971") {
+            numberString = phoneNumber.components(separatedBy: "971").last ?? ""
         }else if phoneNumber.hasPrefix("0"){
             numberString.remove(at: phoneNumber.startIndex)
         }

@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="22154" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina5_9" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22130"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -13,7 +13,7 @@
         <!--Add Money View Controller-->
         <scene sceneID="ReX-xC-wTE">
             <objects>
-                <viewController storyboardIdentifier="AddMoneyViewController" id="d05-8j-ksg" customClass="AddMoneyViewController" customModule="e_money" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="AddMoneyViewController" id="d05-8j-ksg" customClass="AddMoneyViewController" customModule="eMoneySDK" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="PXq-j8-9uy">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -23,9 +23,9 @@
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="j6c-Dv-wN2">
-                                <rect key="frame" x="0.0" y="440" width="375" height="372"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uju-Kj-VM6">
+                                    <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uju-Kj-VM6">
                                         <rect key="frame" x="157.66666666666666" y="8" width="60" height="4"/>
                                         <color key="backgroundColor" name="e&amp;_Grey_50"/>
                                         <constraints>
@@ -38,7 +38,7 @@
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                     </view>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YdJ-t2-1QM">
+                                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YdJ-t2-1QM">
                                         <rect key="frame" x="327" y="32" width="24" height="24"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="24" id="LSZ-oH-nWt"/>
@@ -50,11 +50,11 @@
                                             <action selector="crossButtonTappedAction:" destination="d05-8j-ksg" eventType="touchUpInside" id="SCS-JZ-QFv"/>
                                         </connections>
                                     </button>
-                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="hnX-el-Tr9" customClass="ContentSizedTableView" customModule="e_money" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="56" width="375" height="300"/>
+                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="hnX-el-Tr9" customClass="ContentSizedTableView" customModule="eMoneySDK" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="32" width="375" height="764"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="300" id="tTM-TO-Jeg"/>
+                                            <constraint firstAttribute="height" constant="764" id="jQ9-ta-ri5"/>
                                         </constraints>
                                     </tableView>
                                 </subviews>
@@ -62,10 +62,10 @@
                                 <constraints>
                                     <constraint firstItem="uju-Kj-VM6" firstAttribute="top" secondItem="j6c-Dv-wN2" secondAttribute="top" constant="8" id="95e-dw-MrW"/>
                                     <constraint firstItem="uju-Kj-VM6" firstAttribute="centerX" secondItem="j6c-Dv-wN2" secondAttribute="centerX" id="NY4-5r-Jrv"/>
+                                    <constraint firstItem="hnX-el-Tr9" firstAttribute="top" secondItem="uju-Kj-VM6" secondAttribute="bottom" constant="20" id="dEN-gv-jb0"/>
                                     <constraint firstItem="hnX-el-Tr9" firstAttribute="leading" secondItem="j6c-Dv-wN2" secondAttribute="leading" id="fGy-Zf-6PB"/>
                                     <constraint firstAttribute="bottom" secondItem="hnX-el-Tr9" secondAttribute="bottom" constant="16" id="hKG-YH-ZLJ"/>
                                     <constraint firstAttribute="trailing" secondItem="YdJ-t2-1QM" secondAttribute="trailing" constant="24" id="k5y-vV-NnT"/>
-                                    <constraint firstItem="hnX-el-Tr9" firstAttribute="top" secondItem="YdJ-t2-1QM" secondAttribute="bottom" id="lze-oi-AcW"/>
                                     <constraint firstItem="YdJ-t2-1QM" firstAttribute="top" secondItem="j6c-Dv-wN2" secondAttribute="top" constant="32" id="vPb-B2-gLF"/>
                                     <constraint firstAttribute="trailing" secondItem="hnX-el-Tr9" secondAttribute="trailing" id="wS1-Dd-iGe"/>
                                 </constraints>
@@ -77,7 +77,7 @@
                             <constraint firstItem="j6c-Dv-wN2" firstAttribute="leading" secondItem="PXq-j8-9uy" secondAttribute="leading" id="BR1-6d-GCv"/>
                             <constraint firstAttribute="trailing" secondItem="MRR-hU-Ang" secondAttribute="trailing" id="KdC-w7-VA0"/>
                             <constraint firstItem="MRR-hU-Ang" firstAttribute="leading" secondItem="PXq-j8-9uy" secondAttribute="leading" id="ZC7-ze-yvj"/>
-                            <constraint firstItem="j6c-Dv-wN2" firstAttribute="top" relation="greaterThanOrEqual" secondItem="PXq-j8-9uy" secondAttribute="top" constant="80" id="boH-rm-yUq"/>
+                            <constraint firstItem="j6c-Dv-wN2" firstAttribute="top" secondItem="PXq-j8-9uy" secondAttribute="top" id="boH-rm-yUq"/>
                             <constraint firstAttribute="trailing" secondItem="j6c-Dv-wN2" secondAttribute="trailing" id="hDb-yf-cwg"/>
                             <constraint firstAttribute="bottom" secondItem="MRR-hU-Ang" secondAttribute="bottom" id="rLq-B6-b9T"/>
                             <constraint firstItem="MRR-hU-Ang" firstAttribute="top" secondItem="PXq-j8-9uy" secondAttribute="top" id="v9g-5I-hcb"/>
@@ -88,7 +88,7 @@
                         <outlet property="backgroundView" destination="MRR-hU-Ang" id="32s-QC-Z6w"/>
                         <outlet property="mainContainerView" destination="j6c-Dv-wN2" id="Hun-wc-4YW"/>
                         <outlet property="tableView" destination="hnX-el-Tr9" id="fhn-9j-HIF"/>
-                        <outlet property="tableViewHeightConstraint" destination="tTM-TO-Jeg" id="nxw-gi-Rsd"/>
+                        <outlet property="tableViewHeightConstraint" destination="jQ9-ta-ri5" id="L2B-YN-ddU"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LVZ-54-nZT" userLabel="First Responder" sceneMemberID="firstResponder"/>

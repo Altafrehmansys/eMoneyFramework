@@ -97,7 +97,7 @@ extension AddMoneyConfirmAmountRouter: AddMoneyConfirmAmountRouterProtocol {
             self.view?.present(vc, animated: true)
             
         case .loadOTPScreen(let msisdn, let addingText, let amount, let toTitle):
-            let input = OtpPopupRouter.Input(msisdn: msisdn, addingText: addingText, amount: amount, toTitle: toTitle, flowName: .addMoney)
+            let input = OtpPopupRouter.Input(msisdn: msisdn, addingText: addingText, amount: amount, toTitle: toTitle, userJourney: .onboarding)
             let vc = OtpPopupRouter.setupModule(input: input)
             vc.modalPresentationStyle = .overCurrentContext
             vc.delegate = self.view as? OtpPopupDelegate

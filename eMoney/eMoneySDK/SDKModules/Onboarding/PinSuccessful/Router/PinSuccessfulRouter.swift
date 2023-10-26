@@ -47,7 +47,9 @@ extension PinSuccessfulRouter: PinSuccessfulRouterProtocol {
     func go(to route: Route) {
         switch route {
         case .loginView:
-            view?.navigationController?.popToRootViewController(animated: true)
+            SDKColors.shared.onSuccess?("")
+            view?.dismiss(animated: true)
+//            view?.navigationController?.popToRootViewController(animated: true)
         }
     }
 }

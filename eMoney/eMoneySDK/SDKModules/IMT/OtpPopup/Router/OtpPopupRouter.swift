@@ -12,6 +12,7 @@ import UIKit
 class OtpPopupRouter {
 
     enum Route {
+        case newPin
         case failedOtp(model:VerifyMobileNumberResponseModel)
     }
     
@@ -26,7 +27,7 @@ class OtpPopupRouter {
         var addingText: String
         var amount: String
         var toTitle: String
-        var flowName: FlowNames? = nil
+        var userJourney: UserJourneyFlow? = nil
     }
     
     static func setupModule(input: Input) -> OtpPopupViewController {
@@ -45,7 +46,7 @@ class OtpPopupRouter {
         presenter.addingText = input.addingText
         presenter.amount = input.amount
         presenter.toTitle = input.toTitle
-        presenter.flowName = input.flowName
+        presenter.userJourney = input.userJourney
 
         router.view = viewController
 
@@ -60,6 +61,10 @@ extension OtpPopupRouter: OtpPopupRouterProtocol {
     
     func go(to route: Route) {
         switch route {
+        case .newPin:
+            let vc = RegisterPinRouter.setupModule()
+            vc.userJourneyEnum = .forgotPin
+            view?.navigationController?.pushViewController(vc, animated: true)
         case .failedOtp(let model):
             let vc = FailedOtpRouter.setupModule()
             vc.responseObj = model

@@ -52,7 +52,7 @@ extension AddMoneyInteractor: AddMoneyInteractorProtocol {
             do {
                 var request = WalletRegistrationRequestModel()
                 request.pin = UserDefaultHelper.userLoginPin ?? ""
-                request.identity = SDKColors.shared.msisdn
+//                request.identity = SDKColors.shared.msisdn
                 let response: CardResponseObjectModel? = try await ApiManager.shared.execute(AddMoneyApiRouter.listCards(param: request))
                 await MainActor.run {
                     if let response {

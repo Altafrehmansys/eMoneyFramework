@@ -13,6 +13,7 @@ class VerifyMobileNumberRouter {
     
     enum Route {
         case SelectMethod
+        case captureIdentity
         case RegisterPin(otp:String)
         case FastTrack
         case Login
@@ -51,10 +52,11 @@ extension VerifyMobileNumberRouter: VerifyMobileNumberRouterProtocol {
     func go(to route: Route) {
         switch route {
         case .SelectMethod:
+            let vc = RegistrationMethodsRouter.setupModule()
+            view?.navigationController?.pushViewController(vc, animated: true)
+        case .captureIdentity:
             let vc = CaptureIdentityInfoRouter.setupModule()
             view?.navigationController?.pushViewController(vc, animated: true)
-//            let vc = RegistrationMethodsRouter.setupModule()
-//            view?.navigationController?.pushViewController(vc, animated: true)
         case .RegisterPin(let otp):
             let vc = RegisterPinRouter.setupModule()
             vc.userJourneyEnum = .forgotPin

@@ -17,18 +17,22 @@ class OtpPopupPresenter {
     var addingText: String = ""
     var amount: String = ""
     var toTitle: String = ""
-    var flowName: FlowNames?
+    var userJourney: UserJourneyFlow?
 }
 
 extension OtpPopupPresenter: OtpPopupPresenterProtocol {
     func checkotpSendRequestResponse() {
         Loader.shared.showFullScreen()
-        interactor?.checkotpSendRequestResponseFromServer(with: self.flowName)
+        if userJourney == .forgotPin {
+            interactor?.checkForgetPinOtpSendRequestResponseFromServer()
+        } else {
+            interactor?.checkotpSendRequestResponseFromServer()
+        }
     }
     
-    func verifyOtpRequestResponse(otp: String, flowType: UserJourneyFlow) {
+    func verifyOtpRequestResponse(otp: String) {
         Loader.shared.showFullScreen()
-        interactor?.verifyOtpRequestResponseFromServer(with: otp, and: self.flowName)
+        interactor?.verifyOtpRequestResponseFromServer(with: otp)
     }
     
     func initiatePinRequest(resend: Bool, questionSkip: Bool, unblock: Bool) {
@@ -37,6 +41,10 @@ extension OtpPopupPresenter: OtpPopupPresenterProtocol {
     
     func navigateToFailedOtp(model : VerifyMobileNumberResponseModel) {
         router?.go(to: .failedOtp(model: model))
+    }
+    
+    func navigateSetPin() {
+        router?.go(to: .newPin)
     }
 }
 
@@ -59,5 +67,13 @@ extension OtpPopupPresenter: OtpPopupInteractorOutputProtocol {
     
     func verifyMobileRequestResponseError(error: AppError) {
         view?.verifyMobileRequestResponseError(error: error)
+    }
+    
+    func forgetPinOtpSendRequestResponse(response: VerifyMobileNumberResponseModel) {
+        view?.forgetPinOtpSendRequestResponse(response: response)
+    }
+    
+    func forgetPinOtpSendRequestError(error: AppError) {
+        view?.forgetPinOtpSendError(error: error)
     }
 }

@@ -42,21 +42,29 @@ class BaseRequest:Codable{
         self.osType = "iOS"
         self.lang = LocaleManager.shared.appLocale
         self.deviceId = getDeviceId()
-        if let msisdn = UserDefaultHelper.msisdn {
-            self.msisdn = msisdn
-            self.identity = msisdn
-        }else if let msisdn = GlobalData.shared.msisdn {
+        if let msisdn = SDKColors.shared.msisdn?.planPhoneNumberString {
             self.msisdn = msisdn
             self.identity = msisdn
         }
+        
+        if let flowName = SDKColors.shared.flowName {
+            self.flowName = flowName
+        }
+//        if let msisdn = UserDefaultHelper.msisdn {
+//            self.msisdn = msisdn
+//            self.identity = msisdn
+//        }else if let msisdn = GlobalData.shared.msisdn {
+//            self.msisdn = msisdn
+//            self.identity = msisdn
+//        }
         if let processId = GlobalData.shared.msisdnStatusData?.processId {
             self.processId = processId
         }
-        if let flowName = GlobalData.shared.msisdnStatusData?.flowName {
-            self.flowName = flowName
-        }else if let flowName = GlobalData.shared.loginData?.flowName {
-            self.flowName = flowName
-        }
+//        if let flowName = GlobalData.shared.msisdnStatusData?.flowName {
+//            self.flowName = flowName
+//        }else if let flowName = GlobalData.shared.loginData?.flowName {
+//            self.flowName = flowName
+//        }
         if let partnerName = SDKColors.shared.partnerName {
             self.code = partnerName
         }

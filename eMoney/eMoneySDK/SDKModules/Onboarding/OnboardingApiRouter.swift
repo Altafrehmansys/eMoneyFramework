@@ -29,6 +29,7 @@ enum OnboardingApiRouter: RequestProtocol {
     case verifyEmail(email:String)
     case cardColor(param:SelectCardRequestModel)
     case getToken(token: String)
+    case forgetPinSendOtp
     
     var path: String {
         switch self {
@@ -42,6 +43,8 @@ enum OnboardingApiRouter: RequestProtocol {
             return EndPoints.Onboarding.registerationStatus
         case .otpSendToMobile:
             return EndPoints.Onboarding.otpSend
+        case .forgetPinSendOtp:
+            return EndPoints.Onboarding.forgetPin
         case .otpVerifyNumber:
             return EndPoints.Onboarding.otpVerify
         case .allLanguages:
@@ -107,6 +110,8 @@ enum OnboardingApiRouter: RequestProtocol {
             return CommonMethods.codableToDictionary(codableObject: param)
         case .otpSendToMobile(let param):
             return CommonMethods.codableToDictionary(codableObject: param)
+        case .forgetPinSendOtp:
+            return [:]
         case .otpVerifyNumber(let param):
             return CommonMethods.codableToDictionary(codableObject: param)
         case .ocrAnalyze(let param):
@@ -146,7 +151,7 @@ enum OnboardingApiRouter: RequestProtocol {
             return .POST
         case .registerationStatus:
             return .POST
-        case .otpSendToMobile:
+        case .otpSendToMobile, .forgetPinSendOtp:
             return .POST
         case .otpVerifyNumber:
             return .POST

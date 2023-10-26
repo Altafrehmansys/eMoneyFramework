@@ -249,7 +249,6 @@ public class RegisterMobileNumberViewController: BaseViewController {
         }
         self.buttonEnableDisableValidation()
         self.viewField.resignFirstResponder()
-        
     }
     
     @IBAction func buttonJoinTapped(_ sender: Any) {
@@ -259,28 +258,26 @@ public class RegisterMobileNumberViewController: BaseViewController {
         print(#function)
         print(msisdn)
         
-        
         presenter?.checkMobileNumberStatus(msisdn:msisdn)
-        
     }
+    
     func navigateToVerify(){
-        
         presenter?.navigateToVerify(msisdn: msisdn, ref: self)
     }
-    
-    
-    
 }
 
 // MARK: Viper View Delegates
 extension RegisterMobileNumberViewController: RegisterMobileNumberViewProtocol {
     func registerStatusRequestResponse(response: RegisterMobileNumberResponseModel) {
         SDKColors.shared.onSuccess?("\(#function) with response \(response)")
-        navigateToVerify()
+//        navigateToVerify()
+        presenter?.checkUserStatus()
     }
     
     func registerStatusRequestResponseError(error: AppError) {
         SDKColors.shared.onFailure?("\(error.errorCode)", "\(error.localizedDescription)")
         print("error")
+//        Alert.showError(title: error.title, message: error.errorDescription)
+        Alert.showBottomSheetError(title: error.title, message: error.errorDescription)
     }
 }

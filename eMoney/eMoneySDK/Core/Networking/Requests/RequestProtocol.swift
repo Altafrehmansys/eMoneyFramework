@@ -20,7 +20,14 @@ protocol RequestProtocol:URLRequestConvertible {
 // MARK: - Default RequestProtocol
 extension RequestProtocol {
     var baseURL: String {
-    return "https://enmoneyapim.azure-api.net/"
+        switch SDKColors.shared.environment {
+        case .staging:
+            return "https://enmoneyapim.azure-api.net/"
+        case .production:
+            return "https://enmoneyapim.azure-api.net/"
+        case .none:
+            return "https://enmoneyapim.azure-api.net/"
+        }
 //        return "https://preprod-digitalapp.etisalat.ae/mwallet-rest/api/"
         //        return Environment.serverURL
     }

@@ -280,7 +280,7 @@ extension VerifyMobileNumberViewController: VerifyMobileNumberViewProtocol {
         verifyCount += 1
         self.setError(isError: true,errMsg: error.errorDescription)
         SDKColors.shared.onFailure?("\(error.errorCode)", "\(error.localizedDescription)")
-         Alert.showError(title: error.title, message: error.errorDescription)
+//         Alert.showError(title: error.title, message: error.errorDescription)
 //        Alert.showBottomSheetError(title: error.title, message: error.errorDescription)
     }
     

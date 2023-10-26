@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="22154" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina5_9" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22130"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -20,7 +20,7 @@
         <!--Selfi Preview View Controller-->
         <scene sceneID="sa7-ia-2Jn">
             <objects>
-                <viewController storyboardIdentifier="SelfiPreviewViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="0b3-jO-YOT" customClass="SelfiPreviewViewController" customModule="e_money" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SelfiPreviewViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="0b3-jO-YOT" customClass="SelfiPreviewViewController" customModule="eMoneySDK" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="vLv-pq-qDw">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -45,14 +45,14 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="syo-eU-ev7">
-                                <rect key="frame" x="0.0" y="47" width="375" height="48"/>
+                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="syo-eU-ev7">
+                                <rect key="frame" x="0.0" y="50" width="375" height="0.0"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="y8N-V5-dbY" customClass="BaseStepper" customModule="e_money" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="24" width="375" height="12"/>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="y8N-V5-dbY" customClass="BaseStepper" customModule="eMoneySDK" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="0.0"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="12" id="wxV-R9-SR0"/>
+                                            <constraint firstAttribute="height" id="wxV-R9-SR0"/>
                                         </constraints>
                                     </view>
                                 </subviews>
@@ -60,8 +60,8 @@
                                 <constraints>
                                     <constraint firstItem="y8N-V5-dbY" firstAttribute="leading" secondItem="syo-eU-ev7" secondAttribute="leading" id="b38-He-lcx"/>
                                     <constraint firstAttribute="trailing" secondItem="y8N-V5-dbY" secondAttribute="trailing" id="dYS-fe-gZh"/>
-                                    <constraint firstAttribute="bottom" secondItem="y8N-V5-dbY" secondAttribute="bottom" constant="12" id="sHH-qc-LTv"/>
-                                    <constraint firstItem="y8N-V5-dbY" firstAttribute="top" secondItem="syo-eU-ev7" secondAttribute="top" constant="24" id="tyF-Ey-ubL"/>
+                                    <constraint firstAttribute="bottom" secondItem="y8N-V5-dbY" secondAttribute="bottom" id="sHH-qc-LTv"/>
+                                    <constraint firstItem="y8N-V5-dbY" firstAttribute="top" secondItem="syo-eU-ev7" secondAttribute="top" id="tyF-Ey-ubL"/>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Bjf-tm-fFn">
@@ -96,7 +96,7 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="C0B-wP-Obd">
-                                <rect key="frame" x="37" y="155" width="301" height="379"/>
+                                <rect key="frame" x="37" y="110" width="301" height="424"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Vector 203" translatesAutoresizingMaskIntoConstraints="NO" id="jTL-Ri-Bkh">
                                         <rect key="frame" x="0.0" y="0.0" width="47" height="47"/>
@@ -105,10 +105,10 @@
                                         <rect key="frame" x="254" y="0.0" width="47" height="47"/>
                                     </imageView>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Vector 205" translatesAutoresizingMaskIntoConstraints="NO" id="lrE-7Q-3qq">
-                                        <rect key="frame" x="0.0" y="332" width="47" height="47"/>
+                                        <rect key="frame" x="0.0" y="377" width="47" height="47"/>
                                     </imageView>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Vector 206" translatesAutoresizingMaskIntoConstraints="NO" id="6RV-5p-wbd">
-                                        <rect key="frame" x="254" y="332" width="47" height="47"/>
+                                        <rect key="frame" x="254" y="377" width="47" height="47"/>
                                     </imageView>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -161,7 +161,7 @@
         <!--Liveness Check View Controller-->
         <scene sceneID="WRP-Df-t4Z">
             <objects>
-                <viewController storyboardIdentifier="LivenessCheckViewController" id="JBU-HF-xTT" customClass="LivenessCheckViewController" customModule="e_money" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="LivenessCheckViewController" id="JBU-HF-xTT" customClass="LivenessCheckViewController" customModule="eMoneySDK" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8vT-j9-U0q">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -247,7 +247,7 @@
         <!--Liveness Error View Controller-->
         <scene sceneID="DU4-Cz-gAN">
             <objects>
-                <viewController storyboardIdentifier="LivenessErrorViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="bp7-bz-2mt" customClass="LivenessErrorViewController" customModule="e_money" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="LivenessErrorViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="bp7-bz-2mt" customClass="LivenessErrorViewController" customModule="eMoneySDK" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="qj3-Qx-Xfz">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -281,7 +281,7 @@
                                             </label>
                                         </subviews>
                                     </stackView>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sFi-UZ-lTO" customClass="BaseButton" customModule="e_money" customModuleProvider="target">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sFi-UZ-lTO" customClass="BaseButton" customModule="eMoneySDK" customModuleProvider="target">
                                         <rect key="frame" x="29" y="254.33333333333331" width="317" height="30"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <state key="normal" title="TRY AGAIN"/>
@@ -349,19 +349,19 @@
         <!--Liveness Error View Controller-->
         <scene sceneID="AMF-9N-8vc">
             <objects>
-                <viewController useStoryboardIdentifierAsRestorationIdentifier="YES" id="pnp-Lv-Dw5" customClass="LivenessErrorViewController" customModule="e_money" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController useStoryboardIdentifierAsRestorationIdentifier="YES" id="pnp-Lv-Dw5" customClass="LivenessErrorViewController" customModule="eMoneySDK" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="D8t-3v-7qG">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gb6-kL-t2I">
-                                <rect key="frame" x="0.0" y="47" width="375" height="731"/>
+                                <rect key="frame" x="0.0" y="50" width="375" height="728"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="16plus" translatesAutoresizingMaskIntoConstraints="NO" id="ZlM-Do-N1W">
-                                        <rect key="frame" x="139" y="175" width="97" height="90"/>
+                                        <rect key="frame" x="139" y="173.33333333333334" width="97" height="90.000000000000028"/>
                                     </imageView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="WpX-E6-Kao">
-                                        <rect key="frame" x="24" y="297" width="327" height="137.33333333333337"/>
+                                        <rect key="frame" x="24" y="295.33333333333331" width="327" height="137.33333333333331"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="7CG-hU-fAC">
                                                 <rect key="frame" x="0.0" y="0.0" width="327" height="65.333333333333329"/>
@@ -372,15 +372,15 @@ be registered</string>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="In order to complete registration process, we need to verify you. Your image will be secure and not shared with anyone." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4sz-Ij-2iG">
-                                                <rect key="frame" x="0.0" y="81.333333333333314" width="327" height="56"/>
+                                                <rect key="frame" x="0.0" y="81.333333333333371" width="327" height="56"/>
                                                 <fontDescription key="fontDescription" name="Bariol" family="Bariol" pointSize="16"/>
                                                 <color key="textColor" red="0.35294117650000001" green="0.38823529410000002" blue="0.48627450979999998" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                         </subviews>
                                     </stackView>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tCC-2a-82z" customClass="BaseButton" customModule="e_money" customModuleProvider="target">
-                                        <rect key="frame" x="29" y="685" width="317" height="30"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tCC-2a-82z" customClass="BaseButton" customModule="eMoneySDK" customModuleProvider="target">
+                                        <rect key="frame" x="29" y="682" width="317" height="30"/>
                                         <state key="normal" title="TRY AGAIN"/>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="string" keyPath="ButtonType" value="gradient"/>
@@ -436,7 +436,7 @@ be registered</string>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qdn-su-KZ7">
-                                <rect key="frame" x="0.0" y="550.33333333333337" width="375" height="261.66666666666663"/>
+                                <rect key="frame" x="0.0" y="568.33333333333337" width="375" height="243.66666666666663"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="emoji-sad" translatesAutoresizingMaskIntoConstraints="NO" id="sVk-7N-wMq">
                                         <rect key="frame" x="155.33333333333334" y="35" width="64.333333333333343" height="64"/>
@@ -452,8 +452,8 @@ be registered</string>
                                             </label>
                                         </subviews>
                                     </stackView>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="w76-Tl-Ze3" customClass="BaseButton" customModule="e_money" customModuleProvider="target">
-                                        <rect key="frame" x="29" y="163.66666666666663" width="317" height="48"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="w76-Tl-Ze3" customClass="BaseButton" customModule="eMoneySDK" customModuleProvider="target">
+                                        <rect key="frame" x="29" y="163.66666666666663" width="317" height="30"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <state key="normal" title="TRY AGAIN"/>
                                         <userDefinedRuntimeAttributes>
@@ -518,13 +518,13 @@ be registered</string>
         <!--Fast Track Upgrade Popup View Controller-->
         <scene sceneID="MZO-v3-zzj">
             <objects>
-                <viewController storyboardIdentifier="FastTrackUpgradePopupViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="HBi-eH-htz" customClass="FastTrackUpgradePopupViewController" customModule="e_money" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="FastTrackUpgradePopupViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="HBi-eH-htz" customClass="FastTrackUpgradePopupViewController" customModule="eMoneySDK" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="pss-MW-ucz">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LX0-1l-KIZ">
-                                <rect key="frame" x="0.0" y="391.66666666666674" width="375" height="420.33333333333326"/>
+                                <rect key="frame" x="0.0" y="423.66666666666674" width="375" height="388.33333333333326"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="timer" translatesAutoresizingMaskIntoConstraints="NO" id="4W2-lb-tJ0">
                                         <rect key="frame" x="155.66666666666666" y="35" width="64" height="64"/>
@@ -534,7 +534,7 @@ be registered</string>
                                         </constraints>
                                     </imageView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="OMi-KA-y33">
-                                        <rect key="frame" x="28" y="115.00000000000001" width="319" height="129.33333333333337"/>
+                                        <rect key="frame" x="28" y="114.99999999999996" width="319" height="129.33333333333337"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="vfw-6R-fww">
                                                 <rect key="frame" x="0.0" y="0.0" width="319" height="65.333333333333329"/>
@@ -545,7 +545,7 @@ registration</string>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Allow e&amp; money to use your Etisalat information to complete registration in a few seconds.done" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aDD-Rk-RIo">
-                                                <rect key="frame" x="0.0" y="73.333333333333314" width="319" height="56"/>
+                                                <rect key="frame" x="0.0" y="73.333333333333371" width="319" height="56"/>
                                                 <fontDescription key="fontDescription" name="Bariol" family="Bariol" pointSize="16"/>
                                                 <color key="textColor" red="0.35294117650000001" green="0.38823529410000002" blue="0.48627450979999998" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
@@ -553,10 +553,10 @@ registration</string>
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="cof-HX-09I">
-                                        <rect key="frame" x="29" y="264.33333333333331" width="317" height="106"/>
+                                        <rect key="frame" x="29" y="264.33333333333331" width="317" height="74"/>
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rCz-nw-qSi" customClass="BaseButton" customModule="e_money" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="0.0" width="317" height="48"/>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rCz-nw-qSi" customClass="BaseButton" customModule="eMoneySDK" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="0.0" width="317" height="30"/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <state key="normal" title="TRY AGAIN"/>
                                                 <userDefinedRuntimeAttributes>
@@ -566,8 +566,8 @@ registration</string>
                                                     <action selector="agreeTapped:" destination="HBi-eH-htz" eventType="touchUpInside" id="BJy-6e-qaA"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="K8V-Xr-n3I" customClass="BaseButton" customModule="e_money" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="58" width="317" height="48"/>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="K8V-Xr-n3I" customClass="BaseButton" customModule="eMoneySDK" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="40" width="317" height="34"/>
                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                 <state key="normal" title="Not now, later"/>
                                                 <userDefinedRuntimeAttributes>
@@ -636,7 +636,7 @@ registration</string>
     </scenes>
     <designables>
         <designable name="K8V-Xr-n3I">
-            <size key="intrinsicContentSize" width="101" height="32"/>
+            <size key="intrinsicContentSize" width="111" height="34"/>
         </designable>
         <designable name="rCz-nw-qSi">
             <size key="intrinsicContentSize" width="77" height="30"/>

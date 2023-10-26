@@ -82,7 +82,6 @@ extension ReEnterPinPresenter: ReEnterPinInteractorOutputProtocol {
         view?.onResetRequestError(error: error)
     }
     
-    
     func onRegisterUserResponse(response: RegistrationResponseModel?) {
         Loader.shared.hideFullScreen()
         if let response = response {
@@ -124,7 +123,7 @@ extension ReEnterPinPresenter: ReEnterPinInteractorOutputProtocol {
             if data.result == UserLoginStatus.success.rawValue || data.result == UserLoginStatus.limited.rawValue {
                 //TODO: - call wallet id api
                 UserDefaultHelper.msisdn = GlobalData.shared.msisdn
-                router?.go(to: .navigateToNotificationScreen)
+                router?.go(to: .navigateToSuccess)
             }else{
                 Alert.showBottomSheetError(title: "error".localized, message: data.result ?? "Something went wrong!")
             }

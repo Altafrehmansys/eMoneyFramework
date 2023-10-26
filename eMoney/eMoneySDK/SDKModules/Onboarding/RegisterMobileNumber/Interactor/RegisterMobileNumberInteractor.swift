@@ -24,7 +24,9 @@ extension RegisterMobileNumberInteractor: RegisterMobileNumberInteractorProtocol
                 print(response ?? "")
                 await MainActor.run {
                     if response != nil {
-                        GlobalData.shared.status = response?.data?.status
+//                        GlobalData.shared.status = response?.data?.status
+//                        GlobalData.shared.msisdnStatusData = response?.data
+//                        GlobalData.shared.isSingleAccount = response?.data?.isSingleAccount ?? false
                         output?.registerStatusRequestResponse(response:response!)
                     }
                 }

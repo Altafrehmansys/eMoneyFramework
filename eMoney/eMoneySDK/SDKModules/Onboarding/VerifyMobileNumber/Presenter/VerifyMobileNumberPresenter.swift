@@ -26,7 +26,7 @@ extension VerifyMobileNumberPresenter: VerifyMobileNumberPresenterProtocol {
         interactor?.initiatePinRequestFromServer(resend: resend, isQuestionSkip: questionSkip, isUnblockFlow: unblock)
     }
     func navigateToSelectMethod() {
-        router?.go(to: .SelectMethod)
+        router?.go(to: .captureIdentity)
     }
     func navigateToRegisterPin(otp:String) {
         router?.go(to: .RegisterPin(otp: otp))
@@ -43,7 +43,7 @@ extension VerifyMobileNumberPresenter: VerifyMobileNumberPresenterProtocol {
     func verifyOtpRequestResponse(otp: String, flowType: UserJourneyFlow) {
         flowTypeJourney = flowType
 //        if (Environment.name == .UAT || Environment.name == .PreProduction) && flowType == .onboarding{
-            checkUserStatus()
+//            checkUserStatus()
 //            return
 //        }
         Loader.shared.showFullScreen()
@@ -56,17 +56,20 @@ extension VerifyMobileNumberPresenter: VerifyMobileNumberPresenterProtocol {
         
         switch status {
         case .registered:
-            UserDefaultHelper.msisdn = GlobalData.shared.msisdn
-            router?.go(to: .Login)
+//            UserDefaultHelper.msisdn = GlobalData.shared.msisdn
+//            router?.go(to: .Login)
+//            Alert.showBottomSheetError(title: "account_alreadyregistered".localized, message: "")
+            SDKColors.shared.onFailure?("", "account_alreadyregistered".localized)
         case .notExist:
             if GlobalData.shared.isSingleAccount {
                 if GlobalData.shared.msisdnStatusData?.eidEnable ?? false {
-                    router?.go(to: .SelectMethod)
-                }else{
+                    router?.go(to: .captureIdentity)
+                }
+                else{
                     router?.go(to: .FastTrack)
                 }
-            }else{
-                router?.go(to: .SelectMethod)
+            } else {
+                router?.go(to: .captureIdentity)
             }
         case .activated:
             break
@@ -74,8 +77,9 @@ extension VerifyMobileNumberPresenter: VerifyMobileNumberPresenterProtocol {
             UserDefaultHelper.msisdn = GlobalData.shared.msisdn
             GlobalData.shared.isDeviceChanged = true
             router?.go(to: .Login)
+            SDKColors.shared.onFailure?("", "ONBOARDING_REGISTERED_RESET_PIN")
         case .blocked:
-            Alert.showBottomSheetError(title: "Your account has been blocked", message: "")
+            Alert.showBottomSheetError(title: "your_account_is_blocked".localized, message: "")
             break
         case .suspended:
             Alert.showBottomSheetError(title: "Your account has been suspended", message: "")
@@ -120,7 +124,8 @@ extension VerifyMobileNumberPresenter: VerifyMobileNumberInteractorOutputProtoco
     
     func verifyMobileRequestResponseError(error: AppError) {
         Loader.shared.hideFullScreen()
-        view?.verifyMobileRequestResponseError(error: error)
+        checkUserStatus()
+//        view?.verifyMobileRequestResponseError(error: error)
     }
     
     

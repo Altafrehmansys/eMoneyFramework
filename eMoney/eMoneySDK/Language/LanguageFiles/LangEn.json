@@ -1024,7 +1024,9 @@
             "ready_add_to_google_pay": "Great choice! Ready to add to Google Pay",
             "requested_amount": "Requested amount",
             "btn_pay_bill": "Pay bill",
-            "at":"at"
+            "at":"at",
+            "emoney_account_created_success": "Your e& money account has been created successfully",
+            "emoney_account_created_success_desc": "Manage all your payment needs on GoChat. A virtual prepaid card linked to your e& money account has been created and you can access it from e& money App."
         }
     }
 }

@@ -295,6 +295,8 @@ class SDKBaseViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        overrideUserInterfaceStyle = .light
+        
         let path = UIBezierPath(roundedRect: self.view.bounds,
                                 byRoundingCorners: [.topRight, .topLeft],
                                 cornerRadii: CGSizeMake(20, 20))

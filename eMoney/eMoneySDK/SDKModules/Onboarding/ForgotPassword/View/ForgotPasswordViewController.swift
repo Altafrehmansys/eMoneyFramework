@@ -26,10 +26,17 @@ class ForgotPasswordViewController: BaseViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        setUI()
         presenter?.loadData()
     }
     @IBAction func buttonDoneTapped(_ sender: Any) {
         presenter?.backToLogin()
+    }
+    
+    private func setUI() {
+        labelPin.text = "emoney_account_created_success".localized
+        labelPinDesc.text = "emoney_account_created_success_desc".localized
+        buttonDone.setTitle("ok".localized, for: .normal)
     }
 }
 

@@ -65,13 +65,13 @@ enum AddMoneyApiRouter: RequestProtocol {
     var params: [String:Any] {
         switch self {
         case .getOptionsList(let identifier):
-            return ["resourceTypeIdentifier": identifier]
+            return ["resourceCategoryCode": identifier]
             
         case .addMoneyMetaData:
-            return ["resourceTypeIdentifier": "ADD_MONEY"]
+            return ["resourceCategoryCode": "ADD_MONEY"]
         
         case .getBankAccountsList:
-            return ["flowName": "registered"]
+            return ["resourceCategoryCode": "ADD_MONEY"]
             
         case .verify(let iban):
             return ["iban": iban]
