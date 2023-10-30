@@ -28,6 +28,7 @@ protocol AddMoneyInteractorProtocol: ViperInteractor {
     func getBankAccountsList()
     func getCardsListRequest()
     func initializeAddCard()
+    func getAvailableBalance()
 }
 
 protocol AddMoneyInteractorOutputProtocol: AnyObject {
@@ -42,6 +43,9 @@ protocol AddMoneyInteractorOutputProtocol: AnyObject {
     
     func onAddCard(Response response: AddDebitCardResponseModel)
     func onAddCard(Error error: AppError)
+    
+    func onAvailableBalanceResponse(response: AvailableBalanceResponse?)
+    func onAvailableBalanceError(error: AppError)
 }
 
 protocol AddMoneyRouterProtocol: ViperRouter {

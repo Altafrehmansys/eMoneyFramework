@@ -51,7 +51,7 @@ final class AddNewBeneficiaryCellModel: StandardCellModel {
          titleFont: UIFont = AppFont.appSemiBold(size: .body2),
          titleColor: UIColor = AppColor.eAnd_Black_80,
          subTitle:String,
-         subTitleFont:UIFont = AppFont.appRegular(size: .body2),
+         subTitleFont:UIFont = AppFont.appRegular(size: .body4),
          subTitleColor:UIColor = AppColor.eAnd_Black_80,
          methodType: MethodOptionsBaseTypes? = nil,
          backgroundColor: UIColor = AppColor.eAnd_Baige) {

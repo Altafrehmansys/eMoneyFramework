@@ -25,6 +25,7 @@ class RegistrationRequestModel:Codable{
     var gender:String?
     var isSingleAccount:Bool?
     var profileName:String?
+    var cacheFlow: Bool?
 }
 
 class ResetPinRequestModel:Codable{

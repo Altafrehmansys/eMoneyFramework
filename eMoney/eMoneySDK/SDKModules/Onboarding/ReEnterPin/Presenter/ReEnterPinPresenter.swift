@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 
 class ReEnterPinPresenter {
 
@@ -40,31 +41,45 @@ extension ReEnterPinPresenter: ReEnterPinPresenterProtocol {
     }
     func callRegistrationApi(pin: String, isBiomatricEnabled:Bool) {
         self.isBiomatricEnabled = isBiomatricEnabled
+        
         self.pin = pin
         let request = RegistrationRequestModel()
         request.email = GlobalData.shared.userEmail
-        request.pin = pin
-        request.profileName = UserProfile.noKYC.rawValue
+        let val = try? pin.aesEncrypt(key:EncryptionKey.pinKey)
+        request.pin = val ?? ""
+        request.profileName = UserProfile.physicalKYC.rawValue
         request.isSingleAccount = GlobalData.shared.isSingleAccount
-        if let type = GlobalData.shared.registrationType {
-            switch type {
-            case .noKyc:
-                request.profileName = UserProfile.noKYC.rawValue
-            case .physicalKyc:
-                if let eidInfo = GlobalData.shared.userEidInfo {
-                    request.dateOfBirth = eidInfo.dob
-                    request.nationality = eidInfo.nationalityIso3
-                    request.idNumber = eidInfo.emiratesId
-                    request.idExpiryDate = eidInfo.expiry
-                    request.firstName = eidInfo.firstName
-                    request.middleName = eidInfo.middleName
-                    request.lastName = eidInfo.lastName
-                    request.fullName = eidInfo.fullName
-                    request.gender = eidInfo.sex
-                }
-                request.profileName = UserProfile.physicalKYC.rawValue
-            }
-        }
+        request.dateOfBirth = GlobalData.shared.userEidInfo?.dob ?? ""
+        request.nationality = GlobalData.shared.userEidInfo?.nationalityIso3 ?? ""
+        request.idNumber = GlobalData.shared.userEidInfo?.emiratesId ?? ""
+        request.idExpiryDate = GlobalData.shared.userEidInfo?.expiry ?? ""
+        request.firstName = GlobalData.shared.userEidInfo?.firstName ?? ""
+        request.middleName = GlobalData.shared.userEidInfo?.middleName ?? ""
+        request.lastName = GlobalData.shared.userEidInfo?.lastName ?? ""
+        request.fullName = GlobalData.shared.userEidInfo?.fullName ?? ""
+        request.gender = GlobalData.shared.userEidInfo?.sex ?? ""
+        request.cacheFlow = true
+        
+//        if let type = GlobalData.shared.registrationType {
+//            switch type {
+//            case .noKyc:
+//                request.profileName = UserProfile.noKYC.rawValue
+//            case .physicalKyc:
+//                if let eidInfo = GlobalData.shared.userEidInfo {
+//                    request.dateOfBirth = eidInfo.dob
+//                    request.nationality = eidInfo.nationalityIso3
+//                    request.idNumber = eidInfo.emiratesId
+//                    request.idExpiryDate = eidInfo.expiry
+//                    request.firstName = eidInfo.firstName
+//                    request.middleName = eidInfo.middleName
+//                    request.lastName = eidInfo.lastName
+//                    request.fullName = eidInfo.fullName
+//                    request.gender = eidInfo.sex
+//                }
+//                request.profileName = UserProfile.physicalKYC.rawValue
+//            }
+//        }
+        
         Loader.shared.showFullScreen()
         interactor?.registerUser(request: request)
 
@@ -90,8 +105,10 @@ extension ReEnterPinPresenter: ReEnterPinInteractorOutputProtocol {
             }
             UserDefaultHelper.userLoginPin = self.pin
             GlobalData.shared.registerAsAMLFailed = response.responseCode == "50002" ? true:false
-            Loader.shared.showFullScreen()
-            interactor?.loginUser(pin: self.pin)
+//            Loader.shared.showFullScreen()
+//            interactor?.loginUser(pin: self.pin)
+            UserDefaultHelper.msisdn = GlobalData.shared.msisdn
+            router?.go(to: .navigateToSuccess)
         }
     }
     
@@ -103,8 +120,10 @@ extension ReEnterPinPresenter: ReEnterPinInteractorOutputProtocol {
             }
             UserDefaultHelper.userLoginPin = self.pin
             GlobalData.shared.registerAsAMLFailed = true
-            Loader.shared.showFullScreen()
-            interactor?.loginUser(pin: self.pin)
+//            Loader.shared.showFullScreen()
+//            interactor?.loginUser(pin: self.pin)
+            UserDefaultHelper.msisdn = GlobalData.shared.msisdn
+            router?.go(to: .navigateToSuccess)
         }else{
             Alert.showBottomSheetError(title: error.title, message: error.errorDescription)
         }

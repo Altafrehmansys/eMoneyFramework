@@ -66,6 +66,22 @@ extension AddMoneyInteractor: AddMoneyInteractorProtocol {
             }
         }
     }
+    
+    func getAvailableBalance() {
+        Task {
+            do {
+                let response:AvailableBalanceResponse? = try await ApiManager.shared.execute(AddMoneyApiRouter.availableBalance)
+                await MainActor.run {
+                    output?.onAvailableBalanceResponse(response: response)
+                }
+                
+            } catch let error as AppError {
+                await MainActor.run {
+                    output?.onAvailableBalanceError(error:error)
+                }
+            }
+        }
+    }
 }
 
 // MARK: - Debit Card

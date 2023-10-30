@@ -37,7 +37,7 @@ class OtpPopupRouter {
         let interactor = OtpPopupInteractor()
 
         viewController.presenter =  presenter
-
+        viewController.userJourney = input.userJourney
         presenter.view = viewController
         presenter.router = router
         presenter.interactor = interactor

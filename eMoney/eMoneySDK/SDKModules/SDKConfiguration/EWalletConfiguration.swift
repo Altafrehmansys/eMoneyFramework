@@ -15,6 +15,7 @@ public enum Environment: String {
 enum flowName: String {
     case registration = "registration"
     case addMoney = "AddMoney"
+    case changePin = "ChangePin"
 }
 
 public struct EWalletConfiguration {
@@ -63,7 +64,6 @@ public class EWalletSDK {
         onboardingView.partnerName = configuration.partnerName
         onboardingView.receivedTheme = configuration.theme
         controller.present(onboardingView, animated: true)
-        
     }
     
     public func startWithAddMoney(in controller: UIViewController, msisdn: String, onSuccess: ((String) -> ())?, onFailure: ((String, String) -> ())?) {
@@ -96,11 +96,29 @@ public class EWalletSDK {
         SDKColors.shared.onSuccess = onSuccess
         SDKColors.shared.onFailure = onFailure
         SDKColors.shared.msisdn = msisdn
-        let input = OtpPopupRouter.Input(msisdn: msisdn, addingText: "", amount: "", toTitle: "", userJourney: .forgotPin)
-        let vc = OtpPopupRouter.setupModule(input: input)
-        let nc = BaseNavigationController(rootViewController: vc)
-        nc.modalPresentationStyle = .overCurrentContext
+        let vc = OtpForgotPinPopupRouter.setupModule()
+        vc.modalPresentationStyle = .popover
+        let nc = UINavigationController(rootViewController: vc)
+        nc.modalPresentationStyle = .popover
+        nc.view.layer.cornerRadius = 20.0
+        nc.view.layer.masksToBounds = true
         controller.present(nc, animated: true)
+    }
+    
+    public func startChangePin(in controller: UIViewController, msisdn: String, onSuccess: ((String) -> ())?, onFailure: ((String, String) -> ())?)
+    {
+        SDKColors.shared.flowName = flowName.changePin.rawValue
+        SDKNavigationStack.shared.baseViewController = controller
+        
+        let onboardingView = OnboardingViewController.instantiate(fromAppStoryboard: .AddMoneySDK)
+        onboardingView.modalPresentationStyle = .overCurrentContext
+        onboardingView.onSuccess = onSuccess
+        onboardingView.onFailure = onFailure
+        onboardingView.msisdn = msisdn
+        onboardingView.clientID = configuration.clientId
+        onboardingView.partnerName = configuration.partnerName
+        onboardingView.receivedTheme = configuration.theme
+        controller.present(onboardingView, animated: true)
     }
     
     public func enableLogs(_ isEnable: Bool) {

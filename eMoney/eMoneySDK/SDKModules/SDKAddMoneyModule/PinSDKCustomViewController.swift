@@ -13,20 +13,35 @@ class PinSDKCustomViewController: BaseViewController {
     
     @IBOutlet weak var textFieldPin: StandardTextField!
     @IBOutlet weak var buttonVerify: BaseButton!
+    @IBOutlet weak var btnShowHide: UIButton!
+    @IBOutlet weak var titleLabel: UILabel!
+    
+    var isPasswordHide: Bool = true
+    var delegate : SendDataSDK?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        self.isHideNavigation(false)
         // Do any additional setup after loading the view.
-        
-        self.textFieldPin.title = "Enter Pin"
+        delegate?.sendStringData(string: "enter_pin".localized)
+//        self.navigationItem.setTitle(title:"enter_pin".localized, subtitle: "")
+//        navigationTitleLabel.text = "enter_pin".localized
+        titleLabel.text = "enter_pin_to_login".localized
+        self.textFieldPin.title = "enter_pin".localized
         self.textFieldPin.state = .normal
         self.textFieldPin.textFieldFont = AppFont.appRegular(size: .h7)
         self.textFieldPin.textFieldTextColor = AppColor.eAnd_Black_80
         self.textFieldPin.entryType = .numberPad
         self.textFieldPin.state = .normal
         
-        self.buttonVerify.setTitle("Verify", for: .normal)
+        btnShowHide.setTitle("show".localized, for: .normal)
+        btnShowHide.setTitleColor(AppColor.eAnd_Red_100, for: .normal)
+        btnShowHide.titleLabel?.font = AppFont.appMedium(size: .body4)
+        btnShowHide.setImage(UIImage(named:"eye"), for: .normal)
+        
+        setIsPasswordHide(passwordHide: isPasswordHide)
+        
+        self.buttonVerify.setTitle("verify".localized, for: .normal)
         self.buttonVerify.titleLabel?.font = AppFont.appSemiBold(size: .body2)
         
         IQKeyboardManager.shared.enable = true
@@ -41,7 +56,7 @@ class PinSDKCustomViewController: BaseViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        
+        delegate?.sendStringData(string: "enter_pin".localized)
     }
     
     func getToken() {
@@ -109,15 +124,38 @@ class PinSDKCustomViewController: BaseViewController {
         }
     }
     
+    @IBAction func btnShowHidePressed(_ sender: Any) {
+        isPasswordHide.toggle()
+        setIsPasswordHide(passwordHide: isPasswordHide)
+    }
+    
     func routToAddMoney() {
+        delegate?.sendStringData(string: "Add Money")
         let vc = AddMoneyRouter.setupModule()
-//        vc.modalPresentationStyle = .overFullScreen
-//        let nv = BaseNavigationController(rootViewController: vc)
-//        self.dismiss(animated: true) {
-//            SDKNavigationStack.shared.baseViewController?.present(nv, animated: true)
         self.navigationController?.pushViewController(vc, animated: true)
-//            self.view.window?.rootViewController?.present(vc, animated: true)
-//        }
+    }
+    
+    func setIsPasswordHide(passwordHide : Bool){
+        if passwordHide {
+            btnShowHide.setTitle("show".localized, for: .normal)
+            btnShowHide.setTitleColor(AppColor.eAnd_Error_100, for: .normal)
+            btnShowHide.titleLabel?.font = AppFont.appRegular(size: .body4)
+            btnShowHide.setImage(UIImage(named:"eye"), for: .normal)
+            self.textFieldPin.isSecureTextEntry = true
+        }
+        else {
+            btnShowHide.setTitle("hide".localized, for: .normal)
+            btnShowHide.setTitleColor(AppColor.eAnd_Error_100, for: .normal)
+            btnShowHide.titleLabel?.font = AppFont.appRegular(size: .body4)
+            btnShowHide.setImage(UIImage(named:"eye-slash"), for: .normal)
+            self.textFieldPin.isSecureTextEntry = false
+        }
+    }
+    
+    func routToSetupNewPIN() {
+        delegate?.sendStringData(string: "Reset Pin")
+        let vc = SetUpNewPINRouter.setupModule()
+        self.navigationController?.pushViewController(vc, animated: true)
     }
     
     func loginUser(pin: String) {
@@ -147,7 +185,12 @@ class PinSDKCustomViewController: BaseViewController {
                         Loader.shared.hideFullScreen()
                         UserDefaultHelper.userLoginPin = pin
                         UserDefaultHelper.userSessionToken = loginModel?.data?.userToken
-                        routToAddMoney()
+                        if SDKColors.shared.flowName == flowName.changePin.rawValue {
+                            routToSetupNewPIN()
+                        } else {
+                            routToAddMoney()
+                        }
+                        
                     }
                 }
             } catch let error as AppError {

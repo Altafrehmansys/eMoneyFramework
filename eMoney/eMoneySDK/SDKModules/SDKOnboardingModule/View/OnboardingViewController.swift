@@ -41,6 +41,8 @@ public class OnboardingViewController: UIViewController {
     public override func viewDidLoad() {
         super.viewDidLoad()
         self.setupTopBar()
+        // Register to receive notification in your class
+        NotificationCenter.default.addObserver(self, selector: #selector(self.changeScreenSize(_:)), name: .onChangeScreenSize, object: nil)
     }
     
     public override func viewDidAppear( _ animdated: Bool) {
@@ -92,18 +94,21 @@ public class OnboardingViewController: UIViewController {
         print("\(#function) \(segue.identifier)")
         switch segue.identifier {
         case SegueNames.first:
-            guard let destination = segue.destination as? UINavigationController,
-                  let vc = destination.topViewController as? RegisterMobileNumberViewController else {
-                return
+            if let destination = segue.destination as? UINavigationController,
+               let vc = destination.topViewController as? RegisterMobileNumberViewController {
+                self.navController           = destination
+                vc.delegate                  = self
             }
-            vc.delegate                  = self
-            SDKColors.shared.onSuccess   = self.onSuccess
-            SDKColors.shared.onFailure   = self.onFailure
-            SDKColors.shared.clientID    = clientID
-            SDKColors.shared.partnerName = partnerName
-            SDKColors.shared.msisdn      = msisdn
-            self.navController           = destination
-            SDKColors.shared.setReceivedColor(theme: self.receivedTheme ?? nil)
+            if let destination = segue.destination as? UINavigationController,
+                  let vc = destination.topViewController as? PinSDKCustomViewController {
+                vc.delegate                  = self
+                self.navController           = destination
+            }
+            
+//            SDKColors.shared.clientID    = clientID
+//            SDKColors.shared.partnerName = partnerName
+//            SDKColors.shared.msisdn      = msisdn
+//            SDKColors.shared.setReceivedColor(theme: self.receivedTheme ?? nil)
         case SegueNames.second:
             print("second vc line executed")
         case SegueNames.topView:
@@ -122,6 +127,17 @@ public class OnboardingViewController: UIViewController {
         
         maskLayer.path = path.cgPath
         self.view.layer.mask = maskLayer
+    }
+    
+    // handle notification
+    @objc func changeScreenSize(_ notification: NSNotification) {
+        if let size = notification.userInfo?["size"] as? String {
+            if size == "half" {
+                self.changeScreenSize(size: .halfScreen)
+            } else {
+                self.changeScreenSize(size: .fullScreen)
+            }
+        }
     }
     
     @objc func doneCalled() {
@@ -244,6 +260,8 @@ extension OnboardingViewController: SendDataSDK {
             switch string {
             case "Register":
                 topController.setupTopView(isFirst: true, string)
+            case "enter_pin".localized:
+                topController.setupTopViewForEnterPin(string)
             default:
                 topController.setupTopView(isFirst: false, string)
             }

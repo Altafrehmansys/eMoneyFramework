@@ -53,7 +53,10 @@ class OtpPopupViewController: BaseViewController {
         self.backGroundView.addGestureRecognizer(tapGesture)
         
         self.isHideNavigation(false)
-
+        if userJourney == .forgotPin {
+            self.navigationItem.setTitle(title: "forgot_pin".localized,subtitle: "enter_otp".localized)
+        }
+        
         if TimerOtp.shared.timeCounter == 0 {
 //            SDKColors.shared.flowName == ""
             self.presenter?.checkotpSendRequestResponse()
@@ -229,6 +232,7 @@ extension OtpPopupViewController: OtpPopupViewProtocol {
     }
     
     func forgetPinOtpSendRequestResponse(response: VerifyMobileNumberResponseModel) {
+        Loader.shared.hideFullScreen()
         labelOtpNumber.text = Strings.AddMoney.enterOTPEmail + " \(response.data?.email ?? "")"
     }
     

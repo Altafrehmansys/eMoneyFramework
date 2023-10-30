@@ -24,17 +24,26 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enter your pin" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5kE-jN-D5T">
-                                <rect key="frame" x="16" y="59" width="361" height="21"/>
+                                <rect key="frame" x="16" y="79" width="361" height="21"/>
                                 <fontDescription key="fontDescription" name="SuisseIntl" family="Suisse Int'l" pointSize="16"/>
                                 <color key="textColor" name="e&amp;_Black_80"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0Bh-l8-bro" customClass="StandardTextField" customModule="eMoneySDK" customModuleProvider="target">
-                                <rect key="frame" x="16" y="96" width="361" height="64"/>
+                                <rect key="frame" x="16" y="116" width="361" height="64"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="64" id="Ui0-XY-2Vc"/>
                                 </constraints>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tcb-bm-xZC">
+                                <rect key="frame" x="282" y="190" width="87" height="34.333333333333343"/>
+                                <color key="tintColor" name="e&amp;_Red_100"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" image="eye" title=" Show"/>
+                                <connections>
+                                    <action selector="btnShowHidePressed:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="PZV-60-Lcd"/>
+                                </connections>
+                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NRK-4N-uzr" customClass="BaseButton" customModule="eMoneySDK" customModuleProvider="target">
                                 <rect key="frame" x="16" y="754" width="361" height="48"/>
                                 <constraints>
@@ -53,6 +62,7 @@
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="tcb-bm-xZC" firstAttribute="top" secondItem="0Bh-l8-bro" secondAttribute="bottom" constant="10" id="0BU-xL-nGs"/>
                             <constraint firstItem="0Bh-l8-bro" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="72R-he-5Hl"/>
                             <constraint firstItem="NRK-4N-uzr" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="16" id="CoE-ff-sPz"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="NRK-4N-uzr" secondAttribute="trailing" constant="16" id="EPY-Tg-u89"/>
@@ -64,12 +74,15 @@
                             <constraint firstItem="5kE-jN-D5T" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="Xgy-Bb-VT1"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="5kE-jN-D5T" secondAttribute="trailing" constant="16" id="d8Y-aI-Box"/>
                             <constraint firstAttribute="bottom" secondItem="NRK-4N-uzr" secondAttribute="bottom" constant="50" id="oiu-qt-z8G"/>
-                            <constraint firstItem="5kE-jN-D5T" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="uzp-LT-8sY"/>
+                            <constraint firstItem="5kE-jN-D5T" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="20" id="uzp-LT-8sY"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="tcb-bm-xZC" secondAttribute="trailing" constant="24" id="yEd-Gh-uUy"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="btnShowHide" destination="tcb-bm-xZC" id="0Ab-m3-O2V"/>
                         <outlet property="buttonVerify" destination="NRK-4N-uzr" id="XDz-1H-2wB"/>
                         <outlet property="textFieldPin" destination="0Bh-l8-bro" id="3KU-Pw-kJ7"/>
+                        <outlet property="titleLabel" destination="5kE-jN-D5T" id="bNS-tm-bBn"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -83,8 +96,12 @@
         </designable>
     </designables>
     <resources>
+        <image name="eye" width="16.333333969116211" height="16"/>
         <namedColor name="e&amp;_Black_80">
             <color red="0.18823529411764706" green="0.18823529411764706" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="e&amp;_Red_100">
+            <color red="0.8784313725490196" green="0.031372549019607843" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

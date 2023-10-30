@@ -43,6 +43,10 @@ extension Strings {
         static var savedAccounts: String {
             return "saved_accounts".localized
         }
+        
+        static var debitCards: String {
+            return "cards".localized
+        }
         static var searchResults: String {
             return "search_results".localized
         }

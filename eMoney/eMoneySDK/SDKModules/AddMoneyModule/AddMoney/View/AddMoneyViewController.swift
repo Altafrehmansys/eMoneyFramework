@@ -25,6 +25,7 @@ class AddMoneyViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.presenter.loadData()
+        NotificationCenter.default.post(name: .onChangeScreenSize, object: nil, userInfo: ["size":"half"])
     }
     
     override func viewWillAppear(_ animated: Bool) {

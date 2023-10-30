@@ -113,6 +113,7 @@ extension UIViewController {
         case DEWASendMoneyPaymentDetails = "DEWASendMoneyPaymentDetails"
         case SendMoneyDEWASuccess = "SendMoneyDEWASuccess"
         case OtpPopup = "OtpPopup"
+        case OtpForgotPinPopup = "OtpForgotPinPopup"
         case IMTSelectTransferMethod = "IMTSelectTransferMethod"
         case IMTSendMoney = "IMTSendMoney"
         case ImtTermsCondition = "ImtTermsCondition"

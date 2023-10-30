@@ -13,7 +13,7 @@ class VerifyMobileNumberRouter {
     
     enum Route {
         case SelectMethod
-        case captureIdentity
+        case captureIdentity(delegate: SendDataSDK?)
         case RegisterPin(otp:String)
         case FastTrack
         case Login
@@ -54,8 +54,9 @@ extension VerifyMobileNumberRouter: VerifyMobileNumberRouterProtocol {
         case .SelectMethod:
             let vc = RegistrationMethodsRouter.setupModule()
             view?.navigationController?.pushViewController(vc, animated: true)
-        case .captureIdentity:
+        case .captureIdentity(let delegate):
             let vc = CaptureIdentityInfoRouter.setupModule()
+            vc.delegate = delegate
             view?.navigationController?.pushViewController(vc, animated: true)
         case .RegisterPin(let otp):
             let vc = RegisterPinRouter.setupModule()

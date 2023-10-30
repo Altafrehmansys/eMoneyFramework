@@ -21,6 +21,7 @@ class CaptureIdentityInfoViewController: BaseViewController {
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var openCameraBtn: BaseButton!
 
+    var delegate: SendDataSDK?
     // MARK: Properties
 
     var presenter: CaptureIdentityInfoPresenterProtocol?
@@ -35,6 +36,11 @@ class CaptureIdentityInfoViewController: BaseViewController {
         setupUI()
         presenter?.isScreenTypeSelfi = isScreenTypeSelfi
         presenter?.loadData()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        delegate?.changeScreenSize(size: .fullScreen)
     }
     
     // MARK: - Deallocation

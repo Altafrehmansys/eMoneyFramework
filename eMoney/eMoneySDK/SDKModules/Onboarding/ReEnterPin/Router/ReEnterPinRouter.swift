@@ -57,7 +57,12 @@ extension ReEnterPinRouter: ReEnterPinRouterProtocol {
             CommonMethods.setRootViewController(viewController: vc)
         case .navigateToSuccess :
             let vc = ForgotPasswordRouter.setupModule()
-            view?.navigationController?.pushViewController(vc, animated: true)
+            
+            view?.dismiss(animated: true, completion: {
+                SDKNavigationStack.shared.baseViewController?.present(vc, animated: true)
+            })
+//            let vc = ForgotPasswordRouter.setupModule()
+//            view?.navigationController?.pushViewController(vc, animated: true)
         case .navigateForgotPinSuccess :
             let vc = PinSuccessfulRouter.setupModule()
             view?.navigationController?.pushViewController(vc, animated: true)

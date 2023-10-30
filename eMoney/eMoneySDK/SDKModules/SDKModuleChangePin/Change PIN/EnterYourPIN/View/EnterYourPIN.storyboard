@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="22154" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_72" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22130"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Enter YourPIN View Controller-->
+        <scene sceneID="SbF-7Z-xXh">
+            <objects>
+                <viewController storyboardIdentifier="EnterYourPINViewController" id="BZO-RZ-Lp6" customClass="EnterYourPINViewController" customModule="eMoneySDK" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ZJJ-0O-gcw">
+                        <rect key="frame" x="0.0" y="0.0" width="430" height="932"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view alpha="0.5" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wlV-k3-eto">
+                                <rect key="frame" x="0.0" y="0.0" width="430" height="932"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kKQ-OV-kUI">
+                                <rect key="frame" x="0.0" y="79" width="430" height="853"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AfE-tw-Lm7">
+                                        <rect key="frame" x="185" y="6" width="60" height="4"/>
+                                        <color key="backgroundColor" name="e&amp;_Grey_50"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="60" id="Je3-Zh-LJt"/>
+                                            <constraint firstAttribute="height" constant="4" id="zcg-we-zdg"/>
+                                        </constraints>
+                                    </view>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="QC6-ta-bn4">
+                                        <rect key="frame" x="16" y="50" width="398" height="146.33333333333334"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="1000" verticalCompressionResistancePriority="1000" text="Enter you current PIN" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hGP-uU-0HT">
+                                                <rect key="frame" x="0.0" y="0.0" width="398" height="20.333333333333332"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="e98-MF-JNU" customClass="StandardTextField" customModule="eMoneySDK" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="36.333333333333343" width="398" height="64"/>
+                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="64" id="Bcc-L4-QkC"/>
+                                                </constraints>
+                                            </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5h4-m1-agb">
+                                                <rect key="frame" x="0.0" y="116.33333333333334" width="398" height="30"/>
+                                                <subviews>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7jR-gP-xhV">
+                                                        <rect key="frame" x="311.33333333333331" y="0.0" width="86.666666666666686" height="30"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="30" id="daM-BZ-9Ld"/>
+                                                        </constraints>
+                                                        <color key="tintColor" name="e&amp;_Red_100"/>
+                                                        <state key="normal" title="Button"/>
+                                                        <buttonConfiguration key="configuration" style="plain" image="eye-slash" title=" Show"/>
+                                                        <connections>
+                                                            <action selector="btnShowHidePressed:" destination="BZO-RZ-Lp6" eventType="touchUpInside" id="9PZ-7T-hUN"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
+                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                <constraints>
+                                                    <constraint firstItem="7jR-gP-xhV" firstAttribute="top" secondItem="5h4-m1-agb" secondAttribute="top" id="17X-Nc-NpC"/>
+                                                    <constraint firstAttribute="trailing" secondItem="7jR-gP-xhV" secondAttribute="trailing" id="WWF-8C-9SF"/>
+                                                    <constraint firstAttribute="bottom" secondItem="7jR-gP-xhV" secondAttribute="bottom" id="uwj-ky-CUK"/>
+                                                </constraints>
+                                            </view>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="AfE-tw-Lm7" firstAttribute="centerX" secondItem="kKQ-OV-kUI" secondAttribute="centerX" id="5QS-Zu-TTe"/>
+                                    <constraint firstItem="QC6-ta-bn4" firstAttribute="top" secondItem="AfE-tw-Lm7" secondAttribute="bottom" constant="40" id="Yej-m1-haQ"/>
+                                    <constraint firstItem="QC6-ta-bn4" firstAttribute="leading" secondItem="kKQ-OV-kUI" secondAttribute="leading" constant="16" id="kkG-Fi-75V"/>
+                                    <constraint firstItem="AfE-tw-Lm7" firstAttribute="top" secondItem="kKQ-OV-kUI" secondAttribute="top" constant="6" id="u5s-eh-kBS"/>
+                                    <constraint firstAttribute="trailing" secondItem="QC6-ta-bn4" secondAttribute="trailing" constant="16" id="yNJ-of-n2g"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="20"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7WE-YJ-W7w" customClass="BaseButton" customModule="eMoneySDK" customModuleProvider="target">
+                                <rect key="frame" x="358" y="826" width="48" height="48"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="48" id="TFd-lG-cjb"/>
+                                    <constraint firstAttribute="height" constant="48" id="wod-Qq-x8f"/>
+                                </constraints>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" image="arrow-right-with-background"/>
+                                <connections>
+                                    <action selector="btnNextPressed:" destination="BZO-RZ-Lp6" eventType="touchUpInside" id="nRm-57-RTp"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="RsR-Wb-zLG"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="kKQ-OV-kUI" secondAttribute="bottom" id="DWP-Ph-0qa"/>
+                            <constraint firstItem="kKQ-OV-kUI" firstAttribute="top" secondItem="RsR-Wb-zLG" secondAttribute="top" constant="20" id="KFh-0v-eg6"/>
+                            <constraint firstItem="RsR-Wb-zLG" firstAttribute="trailing" secondItem="7WE-YJ-W7w" secondAttribute="trailing" constant="24" id="Sy8-Uv-hMN"/>
+                            <constraint firstItem="kKQ-OV-kUI" firstAttribute="leading" secondItem="RsR-Wb-zLG" secondAttribute="leading" id="cR6-84-br1"/>
+                            <constraint firstItem="RsR-Wb-zLG" firstAttribute="bottom" secondItem="7WE-YJ-W7w" secondAttribute="bottom" constant="24" id="emU-eG-5SS"/>
+                            <constraint firstItem="kKQ-OV-kUI" firstAttribute="trailing" secondItem="RsR-Wb-zLG" secondAttribute="trailing" id="ke7-0v-hIn"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="btnNext" destination="7WE-YJ-W7w" id="WQU-dR-5Y0"/>
+                        <outlet property="btnShowHide" destination="7jR-gP-xhV" id="dhC-Oy-CCl"/>
+                        <outlet property="cardPINTextField" destination="e98-MF-JNU" id="5fE-RA-Coe"/>
+                        <outlet property="enterYourPINLabel" destination="hGP-uU-0HT" id="S5q-T0-HXR"/>
+                        <outlet property="nextButtonBottomMargin" destination="emU-eG-5SS" id="FI8-9Z-zr6"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ama-h5-f0V" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-491.16279069767444" y="-188.6266094420601"/>
+        </scene>
+    </scenes>
+    <designables>
+        <designable name="7WE-YJ-W7w">
+            <size key="intrinsicContentSize" width="48" height="48"/>
+        </designable>
+    </designables>
+    <resources>
+        <image name="arrow-right-with-background" width="48" height="48"/>
+        <image name="eye-slash" width="16" height="16"/>
+        <namedColor name="e&amp;_Grey_50">
+            <color red="0.74117647058823533" green="0.74117647058823533" blue="0.73725490196078436" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="e&amp;_Red_100">
+            <color red="0.8784313725490196" green="0.031372549019607843" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

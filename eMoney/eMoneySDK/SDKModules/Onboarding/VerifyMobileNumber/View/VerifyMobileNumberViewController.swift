@@ -44,14 +44,12 @@ class VerifyMobileNumberViewController: BaseViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
         self.delegate?.sendStringData(string: "Verify")
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-
-        self.delegate?.changeScreenSize(size: .fullScreen)
+        self.delegate?.changeScreenSize(size: .halfScreen)
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -274,14 +272,54 @@ extension VerifyMobileNumberViewController: VerifyMobileNumberViewProtocol {
     func otpVerifyRequestResponse(response: VerifyMobileNumberResponseModel) {
         SDKColors.shared.onSuccess?("\(#function) with response \(response)")
         print(response)
+        
+        switch userJourneyEnum {
+        case .onboarding :
+            checkUserStatus()
+        case .forgotPin :
+            presenter?.navigateToRegisterPin(otp: "")
+        }
     }
     
     func verifyMobileRequestResponseError(error: AppError) {
         verifyCount += 1
-        self.setError(isError: true,errMsg: error.errorDescription)
         SDKColors.shared.onFailure?("\(error.errorCode)", "\(error.localizedDescription)")
-//         Alert.showError(title: error.title, message: error.errorDescription)
-//        Alert.showBottomSheetError(title: error.title, message: error.errorDescription)
+        checkUserStatus()
+    }
+    
+    func checkUserStatus() {
+        guard let msisdnStatus = GlobalData.shared.msisdnStatusData?.status else {return}
+        let status = MsisdnStatus(rawValue: msisdnStatus) ?? .none
+        
+        switch status {
+        case .registered:
+            SDKColors.shared.onFailure?("", "account_alreadyregistered".localized)
+        case .notExist:
+            if GlobalData.shared.isSingleAccount {
+                if GlobalData.shared.msisdnStatusData?.eidEnable ?? false {
+                    presenter?.navigateToCaptureIdentity(delegate: delegate)
+                }
+                else{
+                    presenter?.navigateToFastTrack()
+                }
+            } else {
+                presenter?.navigateToCaptureIdentity(delegate: delegate)
+            }
+        case .activated:
+            break
+        case .pinReset:
+            UserDefaultHelper.msisdn = GlobalData.shared.msisdn
+            GlobalData.shared.isDeviceChanged = true
+            SDKColors.shared.onFailure?("", "ONBOARDING_REGISTERED_RESET_PIN")
+        case .blocked:
+            Alert.showBottomSheetError(title: "your_account_is_blocked".localized, message: "")
+            break
+        case .suspended:
+            Alert.showBottomSheetError(title: "Your account has been suspended", message: "")
+            break
+        case .none:
+            break
+        }
     }
     
     

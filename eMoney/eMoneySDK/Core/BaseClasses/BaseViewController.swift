@@ -187,7 +187,11 @@ public class BaseViewController: UIViewController, InternetConnectionErrorViewCo
             let img = UIImage.init(named: isWhite ? "backArrow-white":"backArrow-black")?.flipIfNeeded()
             self.addBarButtonItemWithImage(img, .left, self, #selector(self.popViewController))
         }
-        
+    }
+    
+    func createNavCloseBtn(isWhite:Bool = false){
+        let img = UIImage(named: "Close")?.withTintColor(AppColor.eAnd_Grey_100)
+        self.addBarButtonItemWithImage(img, .right, self, #selector(self.dismissController))
     }
     
     //Pop view controller
@@ -195,7 +199,9 @@ public class BaseViewController: UIViewController, InternetConnectionErrorViewCo
         self.navigationController?.popViewController(animated: true)
     }
     
-    
+    @objc func dismissController() {
+        self.dismiss(animated: true)
+    }
     
     //Adding bar button items with given image and its position inside navigation bar and its selector
     /// Adding Navigation bar button for given position (e.g .left , .right)
@@ -303,15 +309,15 @@ extension BaseViewController {
     /// Update the constraint of bottom button when keyboard appearing
     /// provide the bottom padding as well this will be used when the keyboard is hidden
     func updateBottomBtnConstraintOnKeyboardAppearing(_ constraint: NSLayoutConstraint, bottomPadding: CGFloat) {
-        self.keyboardCallBack = { (isHidden, frame) in
-            if isHidden {
+//        self.keyboardCallBack = { (isHidden, frame) in
+//            if isHidden {
                 constraint.constant = bottomPadding
-            } else {
-                
-                let height = UIDevice.current.hasNotch ? (frame.size.height - 20) : frame.size.height
-                constraint.constant = height
-            }
-        }
+//            } else {
+//                
+//                let height = UIDevice.current.hasNotch ? (frame.size.height - 20) : frame.size.height
+//                constraint.constant = height
+//            }
+//        }
     }
 }
 

@@ -37,7 +37,13 @@ final class GenericTitleAndButtonTableViewCell: StandardCell {
 extension GenericTitleAndButtonTableViewCell {
     private func setup() {
         trailingButton.type = .PlainButton
-        trailingButton.titleLabel?.textColor = AppColor.eAnd_Red_100
+        if let color = SDKColors.shared.receivedTheme?.buttonBackgroundColor {
+//            trailingButton.titleLabel?.textColor = color
+            trailingButton.setTitleColor(color, for: .normal)
+        } else {
+            trailingButton.setTitleColor(AppColor.eAnd_Red_100, for: .normal)
+        }
+        
         trailingButton.addTarget(self, action: #selector(trailingButtonTappedAction(_:)), for: .touchUpInside)
     }
 }

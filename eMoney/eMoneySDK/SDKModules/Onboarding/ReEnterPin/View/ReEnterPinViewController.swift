@@ -278,13 +278,13 @@ extension ReEnterPinViewController: ReEnterPinViewProtocol {
 }
 
 extension ReEnterPinViewController: GeneralBottomSheetErrorViewDelegate {
-func tryAgainBtnTapped(index: Int) {
-    if userJourneyEnum == .forgotPin {
-        //resetApiCall()
+    func tryAgainBtnTapped(index: Int) {
+        if userJourneyEnum == .forgotPin {
+            //resetApiCall()
+        }
     }
-}
-func closeBtnTapped() {
+    func closeBtnTapped() {
+        
+    }
     
-}
-
 }

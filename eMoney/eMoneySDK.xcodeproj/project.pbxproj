@@ -7,6 +7,20 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		271763262AEBA0C300F4A5DF /* SuisseIntl-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = BCBFA2DD2AA0739C009035B7 /* SuisseIntl-SemiBold.ttf */; };
+		271763272AEBA0C700F4A5DF /* SuisseIntl-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = BCBFA2DF2AA0739C009035B7 /* SuisseIntl-Regular.ttf */; };
+		271763282AEBA0CB00F4A5DF /* SuisseIntl-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = BCBFA2E02AA0739C009035B7 /* SuisseIntl-Light.ttf */; };
+		271763292AEBA0CF00F4A5DF /* SuisseIntl-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = BCBFA2E12AA0739C009035B7 /* SuisseIntl-Thin.ttf */; };
+		2717632A2AEBA0D300F4A5DF /* SuisseIntl-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = BCBFA2E42AA0739C009035B7 /* SuisseIntl-Medium.ttf */; };
+		2717632D2AEC031F00F4A5DF /* ChangePinApiRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2717632C2AEC031F00F4A5DF /* ChangePinApiRouter.swift */; };
+		2717633D2AEC36A100F4A5DF /* OtpForgotPinPopupContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = 271763312AEC36A100F4A5DF /* OtpForgotPinPopupContract.swift */; };
+		2717633E2AEC36A100F4A5DF /* OtpForgotPinPopupResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 271763332AEC36A100F4A5DF /* OtpForgotPinPopupResponseModel.swift */; };
+		2717633F2AEC36A100F4A5DF /* OtpForgotPinPopupPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 271763352AEC36A100F4A5DF /* OtpForgotPinPopupPresenter.swift */; };
+		271763402AEC36A100F4A5DF /* OtpForgotPinPopup.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 271763372AEC36A100F4A5DF /* OtpForgotPinPopup.storyboard */; };
+		271763412AEC36A100F4A5DF /* OtpForgotPinPopupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 271763382AEC36A100F4A5DF /* OtpForgotPinPopupViewController.swift */; };
+		271763422AEC36A100F4A5DF /* OtpForgotPinPopupInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2717633A2AEC36A100F4A5DF /* OtpForgotPinPopupInteractor.swift */; };
+		271763432AEC36A100F4A5DF /* OtpForgotPinPopupRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2717633C2AEC36A100F4A5DF /* OtpForgotPinPopupRouter.swift */; };
+		271763462AEC3F4D00F4A5DF /* ForgotPin.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 271763452AEC3F4D00F4A5DF /* ForgotPin.storyboard */; };
 		2721DF812ADD224C009E307C /* IQTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2721DF672ADD224C009E307C /* IQTextView.swift */; };
 		2721DF822ADD224C009E307C /* IQKeyboardManager+Internal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2721DF682ADD224C009E307C /* IQKeyboardManager+Internal.swift */; };
 		2721DF832ADD224C009E307C /* IQPreviousNextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2721DF6A2ADD224C009E307C /* IQPreviousNextView.swift */; };
@@ -1685,14 +1699,9 @@
 		BCBFA8D32AA0739F009035B7 /* NibInstantiatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCBFA2D82AA0739C009035B7 /* NibInstantiatable.swift */; };
 		BCBFA8D42AA0739F009035B7 /* AppColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCBFA2DA2AA0739C009035B7 /* AppColor.swift */; };
 		BCBFA8D52AA0739F009035B7 /* NotoSans-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = BCBFA2DC2AA0739C009035B7 /* NotoSans-Regular.ttf */; };
-		BCBFA8D62AA0739F009035B7 /* SuisseIntl-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = BCBFA2DD2AA0739C009035B7 /* SuisseIntl-SemiBold.ttf */; };
 		BCBFA8D72AA0739F009035B7 /* NotoSans-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = BCBFA2DE2AA0739C009035B7 /* NotoSans-Medium.ttf */; };
-		BCBFA8D82AA0739F009035B7 /* SuisseIntl-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = BCBFA2DF2AA0739C009035B7 /* SuisseIntl-Regular.ttf */; };
-		BCBFA8D92AA0739F009035B7 /* SuisseIntl-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = BCBFA2E02AA0739C009035B7 /* SuisseIntl-Light.ttf */; };
-		BCBFA8DA2AA0739F009035B7 /* SuisseIntl-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = BCBFA2E12AA0739C009035B7 /* SuisseIntl-Thin.ttf */; };
 		BCBFA8DB2AA0739F009035B7 /* NotoSans-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = BCBFA2E22AA0739C009035B7 /* NotoSans-SemiBold.ttf */; };
 		BCBFA8DC2AA0739F009035B7 /* NotoSans-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = BCBFA2E32AA0739C009035B7 /* NotoSans-Light.ttf */; };
-		BCBFA8DD2AA0739F009035B7 /* SuisseIntl-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = BCBFA2E42AA0739C009035B7 /* SuisseIntl-Medium.ttf */; };
 		BCBFA8DE2AA0739F009035B7 /* AppFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCBFA2E52AA0739C009035B7 /* AppFont.swift */; };
 		BCBFA8DF2AA0739F009035B7 /* Keyboard.xib in Resources */ = {isa = PBXBuildFile; fileRef = BCBFA2E72AA0739C009035B7 /* Keyboard.xib */; };
 		BCBFA8E02AA0739F009035B7 /* Keyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCBFA2E82AA0739C009035B7 /* Keyboard.swift */; };
@@ -1749,6 +1758,15 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		2717632C2AEC031F00F4A5DF /* ChangePinApiRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePinApiRouter.swift; sourceTree = "<group>"; };
+		271763312AEC36A100F4A5DF /* OtpForgotPinPopupContract.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OtpForgotPinPopupContract.swift; sourceTree = "<group>"; };
+		271763332AEC36A100F4A5DF /* OtpForgotPinPopupResponseModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OtpForgotPinPopupResponseModel.swift; sourceTree = "<group>"; };
+		271763352AEC36A100F4A5DF /* OtpForgotPinPopupPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OtpForgotPinPopupPresenter.swift; sourceTree = "<group>"; };
+		271763372AEC36A100F4A5DF /* OtpForgotPinPopup.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = OtpForgotPinPopup.storyboard; sourceTree = "<group>"; };
+		271763382AEC36A100F4A5DF /* OtpForgotPinPopupViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OtpForgotPinPopupViewController.swift; sourceTree = "<group>"; };
+		2717633A2AEC36A100F4A5DF /* OtpForgotPinPopupInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OtpForgotPinPopupInteractor.swift; sourceTree = "<group>"; };
+		2717633C2AEC36A100F4A5DF /* OtpForgotPinPopupRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OtpForgotPinPopupRouter.swift; sourceTree = "<group>"; };
+		271763452AEC3F4D00F4A5DF /* ForgotPin.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = ForgotPin.storyboard; sourceTree = "<group>"; };
 		2721DF672ADD224C009E307C /* IQTextView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IQTextView.swift; sourceTree = "<group>"; };
 		2721DF682ADD224C009E307C /* IQKeyboardManager+Internal.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "IQKeyboardManager+Internal.swift"; sourceTree = "<group>"; };
 		2721DF6A2ADD224C009E307C /* IQPreviousNextView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IQPreviousNextView.swift; sourceTree = "<group>"; };
@@ -3509,6 +3527,94 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		2717632B2AEBD6BD00F4A5DF /* SDKModuleChangePin */ = {
+			isa = PBXGroup;
+			children = (
+				BCBFA0B52AA0739B009035B7 /* Change PIN */,
+				2717632C2AEC031F00F4A5DF /* ChangePinApiRouter.swift */,
+			);
+			path = SDKModuleChangePin;
+			sourceTree = "<group>";
+		};
+		2717632E2AEC367B00F4A5DF /* SDKForgotPinModule */ = {
+			isa = PBXGroup;
+			children = (
+				271763442AEC3F2400F4A5DF /* ForgotPin */,
+				2717632F2AEC36A100F4A5DF /* OtpForgotPinPopup */,
+			);
+			path = SDKForgotPinModule;
+			sourceTree = "<group>";
+		};
+		2717632F2AEC36A100F4A5DF /* OtpForgotPinPopup */ = {
+			isa = PBXGroup;
+			children = (
+				271763302AEC36A100F4A5DF /* Contract */,
+				271763322AEC36A100F4A5DF /* Entity */,
+				271763342AEC36A100F4A5DF /* Presenter */,
+				271763362AEC36A100F4A5DF /* View */,
+				271763392AEC36A100F4A5DF /* Interactor */,
+				2717633B2AEC36A100F4A5DF /* Router */,
+			);
+			path = OtpForgotPinPopup;
+			sourceTree = "<group>";
+		};
+		271763302AEC36A100F4A5DF /* Contract */ = {
+			isa = PBXGroup;
+			children = (
+				271763312AEC36A100F4A5DF /* OtpForgotPinPopupContract.swift */,
+			);
+			path = Contract;
+			sourceTree = "<group>";
+		};
+		271763322AEC36A100F4A5DF /* Entity */ = {
+			isa = PBXGroup;
+			children = (
+				271763332AEC36A100F4A5DF /* OtpForgotPinPopupResponseModel.swift */,
+			);
+			path = Entity;
+			sourceTree = "<group>";
+		};
+		271763342AEC36A100F4A5DF /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				271763352AEC36A100F4A5DF /* OtpForgotPinPopupPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		271763362AEC36A100F4A5DF /* View */ = {
+			isa = PBXGroup;
+			children = (
+				271763372AEC36A100F4A5DF /* OtpForgotPinPopup.storyboard */,
+				271763382AEC36A100F4A5DF /* OtpForgotPinPopupViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		271763392AEC36A100F4A5DF /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+				2717633A2AEC36A100F4A5DF /* OtpForgotPinPopupInteractor.swift */,
+			);
+			path = Interactor;
+			sourceTree = "<group>";
+		};
+		2717633B2AEC36A100F4A5DF /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				2717633C2AEC36A100F4A5DF /* OtpForgotPinPopupRouter.swift */,
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
+		271763442AEC3F2400F4A5DF /* ForgotPin */ = {
+			isa = PBXGroup;
+			children = (
+				271763452AEC3F4D00F4A5DF /* ForgotPin.storyboard */,
+			);
+			path = ForgotPin;
+			sourceTree = "<group>";
+		};
 		2721DF652ADD224C009E307C /* IQKeyboardManagerSwift */ = {
 			isa = PBXGroup;
 			children = (
@@ -4638,6 +4744,8 @@
 				27EB86692AD532CA009CACFC /* SDKConfiguration */,
 				BC1510E52ACADFE50068906E /* SDKAddMoneyModule */,
 				BC38BD012AB08D2A00C60C33 /* SDKOnboardingModule */,
+				2717632E2AEC367B00F4A5DF /* SDKForgotPinModule */,
+				2717632B2AEBD6BD00F4A5DF /* SDKModuleChangePin */,
 				BCBF99832AA0739A009035B7 /* Home */,
 				BCBF99BA2AA0739A009035B7 /* SendMoney */,
 				BCBF9A862AA0739A009035B7 /* GenericBottomSheet */,
@@ -11509,7 +11617,6 @@
 				BCBFA0742AA0739B009035B7 /* ReportLostCard */,
 				BCBFA0962AA0739B009035B7 /* WalletCardSuccess */,
 				BCBFA0A42AA0739B009035B7 /* CardAccountLimits */,
-				BCBFA0B52AA0739B009035B7 /* ChangeCardPIN */,
 				BCBFA0E02AA0739B009035B7 /* WalletAPIRouter.swift */,
 				BCBFA0E12AA0739B009035B7 /* DeliveryDetails */,
 				BCBFA1012AA0739B009035B7 /* CardDetails */,
@@ -12147,14 +12254,14 @@
 			path = Router;
 			sourceTree = "<group>";
 		};
-		BCBFA0B52AA0739B009035B7 /* ChangeCardPIN */ = {
+		BCBFA0B52AA0739B009035B7 /* Change PIN */ = {
 			isa = PBXGroup;
 			children = (
 				BCBFA0B62AA0739B009035B7 /* EnterYourPIN */,
 				BCBFA0C42AA0739B009035B7 /* SetUpNewPIN */,
 				BCBFA0D22AA0739B009035B7 /* ReEnterYourPIN */,
 			);
-			path = ChangeCardPIN;
+			path = "Change PIN";
 			sourceTree = "<group>";
 		};
 		BCBFA0B62AA0739B009035B7 /* EnterYourPIN */ = {
@@ -14598,6 +14705,7 @@
 				BCBFA5B72AA0739D009035B7 /* DueBillsCollapsedTableViewCell.xib in Resources */,
 				BCBFA63E2AA0739E009035B7 /* KeyValueTableViewCell.xib in Resources */,
 				BCBFA83F2AA0739F009035B7 /* Thankyou.storyboard in Resources */,
+				271763272AEBA0C700F4A5DF /* SuisseIntl-Regular.ttf in Resources */,
 				BCBFA4602AA0739D009035B7 /* PlatSourceCollectionViewTableViewCell.xib in Resources */,
 				BCBFA7D22AA0739E009035B7 /* CardDetails.storyboard in Resources */,
 				BCBFA7282AA0739E009035B7 /* AddRecipent.storyboard in Resources */,
@@ -14657,6 +14765,7 @@
 				BCBFA4A62AA0739D009035B7 /* SelectPlan.storyboard in Resources */,
 				BCBFA5462AA0739D009035B7 /* SingleLineCell.xib in Resources */,
 				BCBFA4432AA0739D009035B7 /* ParkingCell.xib in Resources */,
+				271763402AEC36A100F4A5DF /* OtpForgotPinPopup.storyboard in Resources */,
 				BCBFA7932AA0739E009035B7 /* WalletCardSuccess.storyboard in Resources */,
 				BCBFA5482AA0739D009035B7 /* PromoCell.xib in Resources */,
 				BCBFA4572AA0739D009035B7 /* ParkingZoneTableViewCell.xib in Resources */,
@@ -14667,6 +14776,7 @@
 				BCBFA5E92AA0739D009035B7 /* ProviderTableViewCell.xib in Resources */,
 				BCBFA3BA2AA0739D009035B7 /* BrowseServicesTableViewCell.xib in Resources */,
 				278AE4922AD57DCE00D67674 /* LangAr.json in Resources */,
+				271763292AEBA0CF00F4A5DF /* SuisseIntl-Thin.ttf in Resources */,
 				BCBFA30F2AA0739C009035B7 /* Assets.xcassets in Resources */,
 				BCBFA3782AA0739C009035B7 /* ToolTipView.xib in Resources */,
 				BCBFA33A2AA0739C009035B7 /* BaseStepper.xib in Resources */,
@@ -14694,7 +14804,6 @@
 				BCBFA6B12AA0739E009035B7 /* DownloadAccountDetailsViewController.xib in Resources */,
 				BCBFA48E2AA0739D009035B7 /* BillPaymentCheckout.storyboard in Resources */,
 				BCBFA7C22AA0739E009035B7 /* DeliveryDetailsAddAdressViewController.xib in Resources */,
-				BCBFA8DA2AA0739F009035B7 /* SuisseIntl-Thin.ttf in Resources */,
 				BCBFA3222AA0739C009035B7 /* UATSSL.der in Resources */,
 				BCBFA6172AA0739D009035B7 /* AddBeneficiary.storyboard in Resources */,
 				BCBFA4182AA0739D009035B7 /* SendMoneyEnterAmount.storyboard in Resources */,
@@ -14765,6 +14874,7 @@
 				BCBFA6412AA0739E009035B7 /* AddMoneySuccess.storyboard in Resources */,
 				BCBFA46B2AA0739D009035B7 /* PlateViewTableViewCell.xib in Resources */,
 				BCBFA8372AA0739F009035B7 /* ForgotPassword.storyboard in Resources */,
+				271763282AEBA0CB00F4A5DF /* SuisseIntl-Light.ttf in Resources */,
 				BCBFA7072AA0739E009035B7 /* ImtTermsCondition.storyboard in Resources */,
 				BCBFA6CA2AA0739E009035B7 /* SendAbroad.storyboard in Resources */,
 				BCBFA6042AA0739D009035B7 /* DataNotFoundTableViewCell.xib in Resources */,
@@ -14774,8 +14884,10 @@
 				BCBFA5B42AA0739D009035B7 /* ExpandedBillsTableViewCell.xib in Resources */,
 				BC92E7612A9734390037CCF2 /* AOModalStatusView.xib in Resources */,
 				BCBFA4C02AA0739D009035B7 /* BillSelectPlanDataView.xib in Resources */,
+				2717632A2AEBA0D300F4A5DF /* SuisseIntl-Medium.ttf in Resources */,
 				BCBFA3A22AA0739C009035B7 /* Home.storyboard in Resources */,
 				BCBFA85D2AA0739F009035B7 /* RegisterEmail.storyboard in Resources */,
+				271763262AEBA0C300F4A5DF /* SuisseIntl-SemiBold.ttf in Resources */,
 				BCBFA56E2AA0739D009035B7 /* SendMoneyDEWASuccess.storyboard in Resources */,
 				BCBFA7152AA0739E009035B7 /* CountrySectionHeaderView.xib in Resources */,
 				BCBFA7E82AA0739E009035B7 /* InternetConnectionErrorViewController.xib in Resources */,
@@ -14845,8 +14957,6 @@
 				BCBFA3732AA0739C009035B7 /* tick-circle.json in Resources */,
 				BCBFA57F2AA0739D009035B7 /* SignleLabelPlusCrossButtonCell.xib in Resources */,
 				BCBFA3A42AA0739C009035B7 /* PageControlCell.xib in Resources */,
-				BCBFA8D82AA0739F009035B7 /* SuisseIntl-Regular.ttf in Resources */,
-				BCBFA8D92AA0739F009035B7 /* SuisseIntl-Light.ttf in Resources */,
 				BCBFA5F32AA0739D009035B7 /* BankAlert.storyboard in Resources */,
 				BCBFA3EE2AA0739D009035B7 /* SendMoney.storyboard in Resources */,
 				BCBFA7522AA0739E009035B7 /* WalletCheckout.storyboard in Resources */,
@@ -14858,7 +14968,6 @@
 				BCBFA3B12AA0739D009035B7 /* UpcomingBillCell.xib in Resources */,
 				BCBFA6FF2AA0739E009035B7 /* IMTSelectTransferMethod.storyboard in Resources */,
 				BCBFA50E2AA0739D009035B7 /* BillDEWAAccountDetailsViewController.xib in Resources */,
-				BCBFA8DD2AA0739F009035B7 /* SuisseIntl-Medium.ttf in Resources */,
 				BCBFA4FD2AA0739D009035B7 /* ManageDueBillTableViewCell.xib in Resources */,
 				BCBFA78B2AA0739E009035B7 /* ReportLostCard.storyboard in Resources */,
 				BCBFA72F2AA0739E009035B7 /* TransferProcessingTableViewCell.xib in Resources */,
@@ -14895,7 +15004,6 @@
 				BCBFA3382AA0739C009035B7 /* RedLineView.xib in Resources */,
 				BCBFA7762AA0739E009035B7 /* EAndMoneyAccountsCell.xib in Resources */,
 				BCBFA3132AA0739C009035B7 /* Production.xcconfig in Resources */,
-				BCBFA8D62AA0739F009035B7 /* SuisseIntl-SemiBold.ttf in Resources */,
 				BCBFA7672AA0739E009035B7 /* WalletBankCardRowTableViewCell.xib in Resources */,
 				BCBFA5AD2AA0739D009035B7 /* BottomSheetCollectionView.storyboard in Resources */,
 				BCBFA4C22AA0739D009035B7 /* BillSelectPlanDataCollectionViewCell.xib in Resources */,
@@ -14905,6 +15013,7 @@
 				BCBFA6D92AA0739E009035B7 /* IMTTransferMethodDetailTableViewCell.xib in Resources */,
 				BCBFA8DB2AA0739F009035B7 /* NotoSans-SemiBold.ttf in Resources */,
 				BCBFA4562AA0739D009035B7 /* ParkingRegionTableViewCell.xib in Resources */,
+				271763462AEC3F4D00F4A5DF /* ForgotPin.storyboard in Resources */,
 				BCBFA3D82AA0739D009035B7 /* EmployeeBeneficiaryManageTableViewCell.xib in Resources */,
 				BCBFA3712AA0739C009035B7 /* confitti.json in Resources */,
 				BCBFA7832AA0739E009035B7 /* CancelCardReasonsCell.xib in Resources */,
@@ -15500,6 +15609,7 @@
 				BCBFA89E2AA0739F009035B7 /* LoginViewController.swift in Sources */,
 				BCBFA6F02AA0739E009035B7 /* SuccessfulHeadingTableViewCell.swift in Sources */,
 				BCBFA3552AA0739C009035B7 /* WalletBankAccountResponse.swift in Sources */,
+				2717632D2AEC031F00F4A5DF /* ChangePinApiRouter.swift in Sources */,
 				BCBFA6DE2AA0739E009035B7 /* IMTTransferMethodDetailTableViewCell.swift in Sources */,
 				BCBFA6AD2AA0739E009035B7 /* DownloadAccountDetailsContract.swift in Sources */,
 				BCBFA5192AA0739D009035B7 /* FineDetailResponseModel.swift in Sources */,
@@ -15801,10 +15911,12 @@
 				BCBFA78A2AA0739E009035B7 /* ReportLostCardPresenter.swift in Sources */,
 				BCBFA70C2AA0739E009035B7 /* DeliveryOptionList.swift in Sources */,
 				BCBFA7842AA0739E009035B7 /* CancelCardViewController.swift in Sources */,
+				271763432AEC36A100F4A5DF /* OtpForgotPinPopupRouter.swift in Sources */,
 				BCBFA80C2AA0739F009035B7 /* TermsConditionsResponseModel.swift in Sources */,
 				BCBFA5B12AA0739D009035B7 /* DueBillsDetailResponseModel.swift in Sources */,
 				BCBFA7402AA0739E009035B7 /* TransferDetailsTableViewCell.swift in Sources */,
 				BCBFA49D2AA0739D009035B7 /* PlanBundleCell.swift in Sources */,
+				2717633F2AEC36A100F4A5DF /* OtpForgotPinPopupPresenter.swift in Sources */,
 				BCBFA6C32AA0739E009035B7 /* SendAbroadPickupTableViewCell.swift in Sources */,
 				BCBFA6922AA0739E009035B7 /* AlternateFlowForLeanPresenter.swift in Sources */,
 				BCBFA7342AA0739E009035B7 /* SummaryContract.swift in Sources */,
@@ -15906,6 +16018,7 @@
 				2721E2162AE018C2009E307C /* Shifts.swift in Sources */,
 				BCBFA3152AA0739C009035B7 /* StandardCell.swift in Sources */,
 				BCBFA48F2AA0739D009035B7 /* AccountDetailsContract.swift in Sources */,
+				271763412AEC36A100F4A5DF /* OtpForgotPinPopupViewController.swift in Sources */,
 				BCBFA4BC2AA0739D009035B7 /* BillSelectPlanAiretimeSelectAmonutCollectionViewCell.swift in Sources */,
 				BCBFA8C22AA0739F009035B7 /* ScrollingDrawer.swift in Sources */,
 				BCBFA3232AA0739C009035B7 /* RequestProtocol.swift in Sources */,
@@ -15954,6 +16067,7 @@
 				BCBFA49F2AA0739D009035B7 /* TopUpSegmentCell.swift in Sources */,
 				BCBFA5802AA0739D009035B7 /* DEWAStandardTextFieldCell.swift in Sources */,
 				BCBFA51E2AA0739D009035B7 /* FineDetailRouter.swift in Sources */,
+				2717633D2AEC36A100F4A5DF /* OtpForgotPinPopupContract.swift in Sources */,
 				BCBFA6692AA0739E009035B7 /* AddMoneyEnterAmountContract.swift in Sources */,
 				BCBFA4E92AA0739D009035B7 /* SavedUtilityBillTableViewCell.swift in Sources */,
 				BCBFA7C52AA0739E009035B7 /* CardDetailsContract.swift in Sources */,
@@ -16094,6 +16208,7 @@
 				BCBFA77E2AA0739E009035B7 /* CancelCardResponseModel.swift in Sources */,
 				BCBFA7ED2AA0739E009035B7 /* RegisterOptionCell.swift in Sources */,
 				BCBFA82F2AA0739F009035B7 /* ReEnterPinPresenter.swift in Sources */,
+				2717633E2AEC36A100F4A5DF /* OtpForgotPinPopupResponseModel.swift in Sources */,
 				BCBFA89F2AA0739F009035B7 /* LoginInteractor.swift in Sources */,
 				BCBFA55E2AA0739D009035B7 /* VehiclesAndTransportFinesDetailsViewController.swift in Sources */,
 				2721E1CC2AE018C2009E307C /* NoPadding.swift in Sources */,
@@ -16124,6 +16239,7 @@
 				BCBFA8BA2AA0739F009035B7 /* SlideDrawer.swift in Sources */,
 				2721E1E32AE018C2009E307C /* Rabbit.swift in Sources */,
 				BCBFA89C2AA0739F009035B7 /* LoginPresenter.swift in Sources */,
+				271763422AEC36A100F4A5DF /* OtpForgotPinPopupInteractor.swift in Sources */,
 				BCBFA5882AA0739D009035B7 /* BillSingleButtonCell.swift in Sources */,
 				BCBFA8702AA0739F009035B7 /* EnableNotificationResponseModel.swift in Sources */,
 				BCBFA6402AA0739E009035B7 /* CollapsableTitleTableViewCell.swift in Sources */,

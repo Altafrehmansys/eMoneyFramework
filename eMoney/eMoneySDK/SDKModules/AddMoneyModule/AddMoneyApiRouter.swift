@@ -24,6 +24,7 @@ enum AddMoneyApiRouter: RequestProtocol {
     case removeCard(param: InitializeCardPaymentRequestModel)
     case updateIntentStatus(paymentIntentID: String)
     case addMoneyMetaData
+    case availableBalance
     
     var path: String {
         switch self {
@@ -59,6 +60,8 @@ enum AddMoneyApiRouter: RequestProtocol {
             return EndPoints.AddMoney.updateIntentStatus
         case .addMoneyMetaData:
             return EndPoints.AddMoney.addMoneyMetaData
+        case .availableBalance:
+            return EndPoints.AddMoney.getAvailableBalance
         }
     }
     
@@ -111,12 +114,14 @@ enum AddMoneyApiRouter: RequestProtocol {
             
         case .updateIntentStatus(let paymentIntentID):
             return ["paymentIntentID" : paymentIntentID]
+        case .availableBalance:
+            return [:]
         }
     }
     
     var requestType: RequestType {
         switch self {
-        case .getOptionsList, .getBankAccountsList, .verify, .createPaymentIntent, .getLocationsList, .getBanksList, .removeBankAccount, .paymentGateway, .initializeCardPayment, .finalizeCardPayment, .listCards, .initializeAddCard, .removeCard, .updateIntentStatus, .addMoneyMetaData, .finalizeApplePayPayment:
+        case .getOptionsList, .getBankAccountsList, .verify, .createPaymentIntent, .getLocationsList, .getBanksList, .removeBankAccount, .paymentGateway, .initializeCardPayment, .finalizeCardPayment, .listCards, .initializeAddCard, .removeCard, .updateIntentStatus, .addMoneyMetaData, .finalizeApplePayPayment, .availableBalance:
             return .POST
         }
     }

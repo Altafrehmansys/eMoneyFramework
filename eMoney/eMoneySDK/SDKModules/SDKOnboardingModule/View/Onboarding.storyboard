@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Y6W-OH-hqX">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="22154" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Y6W-OH-hqX">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21679"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22130"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -89,20 +89,20 @@
             <objects>
                 <viewController storyboardIdentifier="TopViewController" id="FiU-ko-ZAS" customClass="TopViewController" customModule="eMoneySDK" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="36j-Cv-9VR">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="44"/>
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="76"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Lqt-Xm-gDE">
-                                <rect key="frame" x="0.0" y="0.0" width="393" height="44"/>
+                                <rect key="frame" x="0.0" y="0.0" width="393" height="76"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="PoC-pO-KiG">
-                                        <rect key="frame" x="67.333333333333343" y="8.6666666666666679" width="258.33333333333326" height="35.333333333333329"/>
+                                        <rect key="frame" x="83.333333333333329" y="15.333333333333332" width="226.33333333333337" height="60.666666666666671"/>
                                         <subviews>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_e&amp;money" translatesAutoresizingMaskIntoConstraints="NO" id="boy-eL-KxJ">
-                                                <rect key="frame" x="29.333333333333357" y="0.0" width="199.66666666666663" height="35.333333333333336"/>
+                                                <rect key="frame" x="21.333333333333343" y="0.0" width="183.66666666666666" height="60.666666666666664"/>
                                             </imageView>
                                             <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nry-fv-0G4">
-                                                <rect key="frame" x="108.66666666666667" y="0.0" width="41.333333333333329" height="0.0"/>
+                                                <rect key="frame" x="92.666666666666671" y="0.0" width="41.333333333333329" height="0.0"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
@@ -113,13 +113,13 @@
                                         </constraints>
                                     </stackView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NO9-lM-pQ3">
-                                        <rect key="frame" x="332" y="9.6666666666666679" width="51" height="34.333333333333329"/>
+                                        <rect key="frame" x="332" y="27.666666666666668" width="51" height="34.333333333333329"/>
                                         <color key="tintColor" name="e&amp;_Grey_100"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" image="xmark" catalog="system" title=" "/>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gUV-sE-nae">
-                                        <rect key="frame" x="10.000000000000004" y="5" width="44.333333333333343" height="34.333333333333336"/>
+                                        <rect key="frame" x="10.000000000000004" y="27.666666666666668" width="44.333333333333343" height="34.333333333333329"/>
                                         <color key="tintColor" name="e&amp;_Grey_100"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" image="chevron.left" catalog="system" title=" "/>
@@ -137,11 +137,11 @@
                                 <constraints>
                                     <constraint firstItem="gUV-sE-nae" firstAttribute="leading" secondItem="Lqt-Xm-gDE" secondAttribute="leading" constant="10" id="2hP-aZ-If3"/>
                                     <constraint firstItem="boy-eL-KxJ" firstAttribute="height" secondItem="Lqt-Xm-gDE" secondAttribute="height" multiplier="0.8" id="4H5-0O-gyl"/>
-                                    <constraint firstItem="gUV-sE-nae" firstAttribute="centerY" secondItem="Lqt-Xm-gDE" secondAttribute="centerY" id="E6y-KV-iag"/>
                                     <constraint firstItem="PoC-pO-KiG" firstAttribute="centerX" secondItem="Lqt-Xm-gDE" secondAttribute="centerX" id="G9f-ne-Vfs"/>
-                                    <constraint firstAttribute="height" constant="44" id="Rts-h0-6Sp"/>
+                                    <constraint firstAttribute="height" constant="76" id="Rts-h0-6Sp"/>
                                     <constraint firstItem="zCF-hw-V6x" firstAttribute="centerX" secondItem="Lqt-Xm-gDE" secondAttribute="centerX" id="WcY-Ef-6KP"/>
-                                    <constraint firstAttribute="bottom" secondItem="NO9-lM-pQ3" secondAttribute="bottom" id="jpB-6p-sQM"/>
+                                    <constraint firstAttribute="bottom" secondItem="gUV-sE-nae" secondAttribute="bottom" constant="14" id="j4a-1A-f0T"/>
+                                    <constraint firstAttribute="bottom" secondItem="NO9-lM-pQ3" secondAttribute="bottom" constant="14" id="jpB-6p-sQM"/>
                                     <constraint firstAttribute="trailing" secondItem="NO9-lM-pQ3" secondAttribute="trailing" constant="10" id="rqJ-sm-NlT"/>
                                     <constraint firstAttribute="bottom" secondItem="PoC-pO-KiG" secondAttribute="bottom" id="ua6-rQ-uLV"/>
                                     <constraint firstItem="zCF-hw-V6x" firstAttribute="top" secondItem="Lqt-Xm-gDE" secondAttribute="top" constant="5" id="vPS-hX-F3c"/>
@@ -156,6 +156,7 @@
                             <constraint firstAttribute="trailing" secondItem="Lqt-Xm-gDE" secondAttribute="trailing" id="v0g-Wn-aTE"/>
                         </constraints>
                     </view>
+                    <size key="freeformSize" width="393" height="76"/>
                     <connections>
                         <outlet property="backButton" destination="gUV-sE-nae" id="yRB-Nf-4Ee"/>
                         <outlet property="crossButton" destination="NO9-lM-pQ3" id="Tc5-B0-Zf1"/>
@@ -181,7 +182,7 @@
     </scenes>
     <resources>
         <image name="chevron.left" catalog="system" width="97" height="128"/>
-        <image name="ic_e&amp;money" width="199.66667175292969" height="40"/>
+        <image name="ic_e&amp;money" width="183.66667175292969" height="37"/>
         <image name="sheetIndicator" width="60" height="4"/>
         <image name="xmark" catalog="system" width="128" height="113"/>
         <namedColor name="e&amp;_Grey_100">

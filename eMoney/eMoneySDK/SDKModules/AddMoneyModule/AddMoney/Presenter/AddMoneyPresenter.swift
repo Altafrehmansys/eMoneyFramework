@@ -94,14 +94,14 @@ extension AddMoneyPresenter {
         self.dataSource.removeAll()
         
         if self.filteredBanksList.isEmpty == false || self.filteredCardsList.isEmpty == false {
-            let titleCellModel = GenericTitleAndButtonTableViewCellModel(actions: self.cellActions, title: Strings.AddMoney.savedAccounts, buttonTitle: Strings.AddMoney.manage)
+            let titleCellModel = GenericTitleAndButtonTableViewCellModel(actions: self.cellActions, title: Strings.AddMoney.debitCards, buttonTitle: Strings.AddMoney.manage)
             self.dataSource.append(titleCellModel)
         }
         
-        addSavedAccounts()
+//        addSavedAccounts()
         addSavedCards()
         
-        let count = bankAccountsList.count + cardsList.count
+        let count = cardsList.count//bankAccountsList.count + cardsList.count
         if count > 5 {
             self.dataSource.append(spaceCell(with: 8))
             
@@ -110,7 +110,10 @@ extension AddMoneyPresenter {
             self.dataSource.append(buttonCell)
         }
 
-        addPaymentOptions()
+//        addPaymentOptions()
+        
+        let addNewBeneficiaryCell = AddNewBeneficiaryCellModel(actions: self.cellActions, title: Strings.AddMoney.addANewMethod, subTitle: Strings.AddMoney.addAnOtherSourceAccountCard, backgroundColor: AppColor.eAnd_Baige.withAlphaComponent(0.2))
+        dataSource.append(addNewBeneficiaryCell)
 
         view?.reloadData()
     }
@@ -211,6 +214,11 @@ extension AddMoneyPresenter {
     
     private func setupCellActions() {
         cellActions = StandardCellActions(cellSelected: { index, model in
+            
+            if let _ = model as? AddNewBeneficiaryCellModel {
+                self.initializeAddDebitCard()
+                return
+            }
             
             if let _ = model as? GenericTitleAndButtonTableViewCellModel {
                 let input = ManageSavedAccountsRouter.Input(bankAccountsList: self.bankAccountsList, cardsList: self.cardsList)
@@ -332,7 +340,7 @@ extension AddMoneyPresenter {
             self.getCardsList()
         }
         self.getOptionsList()
-        
+        self.getAvailableBalance()
         dispatchGroup.notify(queue: DispatchQueue.main) {
             if let view = self.view as? AddMoneyViewController {
                 Loader.shared.hide(view: view.mainContainerView)
@@ -351,6 +359,11 @@ extension AddMoneyPresenter {
         
         dispatchGroup.enter()
         interactor?.getAddMoneyMetaData()
+    }
+    
+    private func getAvailableBalance() {
+        dispatchGroup.enter()
+        interactor?.getAvailableBalance()
     }
     
     private func getBankAccountsList() {
@@ -425,6 +438,19 @@ extension AddMoneyPresenter: AddMoneyInteractorOutputProtocol {
     func onAddCard(Error error: AppError) {
         Loader.shared.hideFullScreen()
         Alert.showBottomSheetError(title: Strings.Generic.somethingWentWrong, message: error.errorDescription, actionBtnTitle: Strings.Generic.ok, delegate: self)
+    }
+    
+    func onAvailableBalanceResponse(response: AvailableBalanceResponse?) {
+        dispatchGroup.leave()
+        Loader.shared.hideFullScreen()
+        if let data = response?.data {
+            GlobalData.shared.availableBalance = data
+        }
+    }
+    
+    func onAvailableBalanceError(error: AppError) {
+        dispatchGroup.leave()
+        Loader.shared.hideFullScreen()
     }
 }
 

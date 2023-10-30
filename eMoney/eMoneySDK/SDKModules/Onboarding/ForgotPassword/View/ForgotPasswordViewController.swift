@@ -16,6 +16,8 @@ class ForgotPasswordViewController: BaseViewController {
     @IBOutlet weak var labelPin: UILabel!
     @IBOutlet weak var labelPinDesc: UILabel!
     @IBOutlet weak var buttonDone: BaseButton!
+    @IBOutlet weak var downloadButton: BaseButton!
+    @IBOutlet weak var mainView: UIView!
     
     
     // MARK: Properties
@@ -28,15 +30,26 @@ class ForgotPasswordViewController: BaseViewController {
         super.viewDidLoad()
         setUI()
         presenter?.loadData()
+        NotificationCenter.default.post(name: .onChangeScreenSize, object: nil, userInfo: ["size":"half"])
     }
     @IBAction func buttonDoneTapped(_ sender: Any) {
         presenter?.backToLogin()
     }
     
+    @IBAction func buttonDownloadTapped(_ sender: Any) {
+        //presenter?.backToLogin()
+    }
+    
     private func setUI() {
+        labelPin.font = AppFont.appSemiBold(size: .h7)
         labelPin.text = "emoney_account_created_success".localized
+        labelPinDesc.font = AppFont.appRegular(size: .body3)
         labelPinDesc.text = "emoney_account_created_success_desc".localized
-        buttonDone.setTitle("ok".localized, for: .normal)
+        labelPinDesc.textColor = AppColor.eAnd_Gray
+        buttonDone.setTitle("continue_btn_text".localized, for: .normal)
+        downloadButton.setTitle("downloadeMoney".localized, for: .normal)
+        mainView.layer.cornerRadius = 20
+        mainView.layer.masksToBounds = true
     }
 }
 

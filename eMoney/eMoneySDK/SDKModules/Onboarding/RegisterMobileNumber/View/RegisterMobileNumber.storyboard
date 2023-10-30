@@ -6,6 +6,7 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22130"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
@@ -31,35 +32,87 @@
                                         <color key="textColor" name="e&amp;_Black_80"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" distribution="fillEqually" alignment="top" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="Cjb-qT-OL7">
-                                        <rect key="frame" x="60" y="150" width="350" height="68"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" distribution="fillEqually" alignment="top" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="Cjb-qT-OL7">
+                                        <rect key="frame" x="20" y="150" width="390" height="64"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="I accept the terms and conditions for sharing of personal data" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eYo-Wf-XCa">
-                                                <rect key="frame" x="0.0" y="0.0" width="338" height="32"/>
-                                                <fontDescription key="fontDescription" name="SuisseIntl" family="Suisse Int'l" pointSize="12"/>
-                                                <color key="textColor" name="e&amp;_Black_80"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="I accept the Private Policy" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bkr-6h-yW2">
-                                                <rect key="frame" x="0.0" y="36" width="140.33333333333334" height="32"/>
-                                                <fontDescription key="fontDescription" name="SuisseIntl" family="Suisse Int'l" pointSize="12"/>
-                                                <nil key="textColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                        </subviews>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="68" id="TRV-Zf-Tyj"/>
-                                        </constraints>
-                                    </stackView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" distribution="fillEqually" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="S74-df-9bE">
-                                        <rect key="frame" x="20" y="150" width="30" height="68"/>
-                                        <subviews>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="redCheckbox" translatesAutoresizingMaskIntoConstraints="NO" id="9Sx-lm-Sdp">
-                                                <rect key="frame" x="0.0" y="0.0" width="30" height="28"/>
-                                            </imageView>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="redCheckbox" translatesAutoresizingMaskIntoConstraints="NO" id="DIT-Il-Ijb">
-                                                <rect key="frame" x="0.0" y="40" width="30" height="28"/>
-                                            </imageView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" alignment="top" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="IpV-Td-I2R">
+                                                <rect key="frame" x="0.0" y="0.0" width="390" height="24"/>
+                                                <subviews>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ALg-B8-n6W">
+                                                        <rect key="frame" x="0.0" y="0.0" width="24" height="24"/>
+                                                        <color key="backgroundColor" name="e&amp;_Error_100"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="24" id="R5v-AU-ryY"/>
+                                                            <constraint firstAttribute="width" constant="24" id="j47-Vn-8LC"/>
+                                                        </constraints>
+                                                        <color key="tintColor" systemColor="systemBackgroundColor"/>
+                                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                        <state key="normal" image="tick"/>
+                                                        <connections>
+                                                            <action selector="buttonTermsTapped:" destination="BZO-RZ-Lp6" eventType="touchUpInside" id="2ob-1E-6qc"/>
+                                                        </connections>
+                                                    </button>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Dyo-nX-KvJ">
+                                                        <rect key="frame" x="34" y="0.0" width="356" height="24"/>
+                                                        <subviews>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="I accept the terms and conditions for sharing of personal data" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eYo-Wf-XCa">
+                                                                <rect key="frame" x="0.0" y="4.3333333333333419" width="356" height="15.666666666666664"/>
+                                                                <fontDescription key="fontDescription" name="SuisseIntl" family="Suisse Int'l" pointSize="12"/>
+                                                                <color key="textColor" name="e&amp;_Black_80"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                        </subviews>
+                                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                        <constraints>
+                                                            <constraint firstItem="eYo-Wf-XCa" firstAttribute="centerY" secondItem="Dyo-nX-KvJ" secondAttribute="centerY" id="Dij-47-2xj"/>
+                                                            <constraint firstAttribute="trailing" secondItem="eYo-Wf-XCa" secondAttribute="trailing" id="Trq-1R-Tt2"/>
+                                                            <constraint firstItem="eYo-Wf-XCa" firstAttribute="leading" secondItem="Dyo-nX-KvJ" secondAttribute="leading" id="c3R-Hb-95c"/>
+                                                        </constraints>
+                                                    </view>
+                                                </subviews>
+                                                <constraints>
+                                                    <constraint firstItem="Dyo-nX-KvJ" firstAttribute="height" secondItem="ALg-B8-n6W" secondAttribute="height" id="W5P-dG-CGw"/>
+                                                </constraints>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" alignment="top" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="6Lq-fB-CXr">
+                                                <rect key="frame" x="0.0" y="40" width="214.33333333333334" height="24"/>
+                                                <subviews>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wmF-k6-foO">
+                                                        <rect key="frame" x="0.0" y="0.0" width="24" height="24"/>
+                                                        <color key="backgroundColor" name="e&amp;_Red"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" constant="24" id="F2C-Qb-aAy"/>
+                                                            <constraint firstAttribute="height" constant="24" id="k1C-Jg-1Y9"/>
+                                                        </constraints>
+                                                        <color key="tintColor" systemColor="systemBackgroundColor"/>
+                                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                        <state key="normal" image="tick"/>
+                                                        <connections>
+                                                            <action selector="buttonPrivacyPolicyTapped:" destination="BZO-RZ-Lp6" eventType="touchUpInside" id="1L7-dP-kou"/>
+                                                        </connections>
+                                                    </button>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cSp-oc-88v">
+                                                        <rect key="frame" x="34" y="0.0" width="180.33333333333334" height="24"/>
+                                                        <subviews>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="I accept the Private Policy" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bkr-6h-yW2">
+                                                                <rect key="frame" x="0.0" y="4.3333333333333135" width="180.33333333333334" height="15.666666666666664"/>
+                                                                <fontDescription key="fontDescription" name="SuisseIntl" family="Suisse Int'l" pointSize="12"/>
+                                                                <nil key="textColor"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                        </subviews>
+                                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                        <constraints>
+                                                            <constraint firstItem="bkr-6h-yW2" firstAttribute="centerY" secondItem="cSp-oc-88v" secondAttribute="centerY" id="iZZ-1D-Cix"/>
+                                                            <constraint firstAttribute="trailing" secondItem="bkr-6h-yW2" secondAttribute="trailing" id="rGA-zq-O1a"/>
+                                                            <constraint firstItem="bkr-6h-yW2" firstAttribute="leading" secondItem="cSp-oc-88v" secondAttribute="leading" id="tL4-1M-egl"/>
+                                                        </constraints>
+                                                    </view>
+                                                </subviews>
+                                                <constraints>
+                                                    <constraint firstItem="wmF-k6-foO" firstAttribute="height" secondItem="cSp-oc-88v" secondAttribute="height" id="pCu-nr-YoH"/>
+                                                </constraints>
+                                            </stackView>
                                         </subviews>
                                     </stackView>
                                     <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="OpL-85-6Yb" customClass="StandardTextField" customModule="eMoneySDK" customModuleProvider="target">
@@ -68,47 +121,20 @@
                                             <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="64" id="AiW-GJ-kHj"/>
                                         </constraints>
                                     </view>
-                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ALg-B8-n6W">
-                                        <rect key="frame" x="20" y="150" width="30" height="28"/>
-                                        <color key="tintColor" name="e&amp;_Error_100"/>
-                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                        <connections>
-                                            <action selector="buttonTermsTapped:" destination="BZO-RZ-Lp6" eventType="touchUpInside" id="2ob-1E-6qc"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wmF-k6-foO">
-                                        <rect key="frame" x="20" y="190" width="30" height="28"/>
-                                        <color key="tintColor" name="e&amp;_Error_100"/>
-                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                        <connections>
-                                            <action selector="buttonPrivacyPolicyTapped:" destination="BZO-RZ-Lp6" eventType="touchUpInside" id="1L7-dP-kou"/>
-                                        </connections>
-                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstItem="ALg-B8-n6W" firstAttribute="leading" secondItem="9Sx-lm-Sdp" secondAttribute="leading" id="1G3-IG-EJL"/>
-                                    <constraint firstItem="wmF-k6-foO" firstAttribute="leading" secondItem="DIT-Il-Ijb" secondAttribute="leading" id="3CV-DF-2x0"/>
-                                    <constraint firstItem="Cjb-qT-OL7" firstAttribute="leading" secondItem="S74-df-9bE" secondAttribute="trailing" constant="10" id="7Bp-TJ-GcL"/>
-                                    <constraint firstItem="ALg-B8-n6W" firstAttribute="top" secondItem="9Sx-lm-Sdp" secondAttribute="top" id="9xE-QI-cHX"/>
+                                    <constraint firstItem="Cjb-qT-OL7" firstAttribute="leading" secondItem="rwX-RQ-bYE" secondAttribute="leading" constant="20" id="7zy-1C-4la"/>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="245" id="Lyx-tQ-Dv3"/>
                                     <constraint firstAttribute="trailing" secondItem="Cjb-qT-OL7" secondAttribute="trailing" constant="20" id="Rrx-KW-MaO"/>
                                     <constraint firstItem="7A6-LH-7Ir" firstAttribute="top" secondItem="rwX-RQ-bYE" secondAttribute="top" constant="32" id="V0D-C9-oun"/>
                                     <constraint firstAttribute="trailing" secondItem="OpL-85-6Yb" secondAttribute="trailing" constant="20" id="VEy-3G-6dL"/>
-                                    <constraint firstItem="wmF-k6-foO" firstAttribute="trailing" secondItem="DIT-Il-Ijb" secondAttribute="trailing" id="Yx3-8S-mgj"/>
-                                    <constraint firstItem="wmF-k6-foO" firstAttribute="bottom" secondItem="DIT-Il-Ijb" secondAttribute="bottom" id="ZNW-X9-xFB"/>
-                                    <constraint firstItem="ALg-B8-n6W" firstAttribute="bottom" secondItem="9Sx-lm-Sdp" secondAttribute="bottom" id="c2a-ax-hbs"/>
-                                    <constraint firstItem="S74-df-9bE" firstAttribute="centerY" secondItem="Cjb-qT-OL7" secondAttribute="centerY" id="cXK-fS-lBU"/>
-                                    <constraint firstItem="S74-df-9bE" firstAttribute="height" secondItem="Cjb-qT-OL7" secondAttribute="height" id="fQR-2Q-BZl"/>
                                     <constraint firstItem="7A6-LH-7Ir" firstAttribute="leading" secondItem="rwX-RQ-bYE" secondAttribute="leading" constant="20" id="fj1-pG-ue1"/>
                                     <constraint firstAttribute="trailing" secondItem="7A6-LH-7Ir" secondAttribute="trailing" constant="20" id="gpv-lL-Goo"/>
                                     <constraint firstItem="Cjb-qT-OL7" firstAttribute="top" secondItem="OpL-85-6Yb" secondAttribute="bottom" constant="19" id="iNG-ts-IWc"/>
                                     <constraint firstItem="OpL-85-6Yb" firstAttribute="leading" secondItem="rwX-RQ-bYE" secondAttribute="leading" constant="20" symbolic="YES" id="iwv-XB-hOg"/>
                                     <constraint firstAttribute="bottom" secondItem="Cjb-qT-OL7" secondAttribute="bottom" constant="27" id="jfN-an-bjX"/>
-                                    <constraint firstItem="ALg-B8-n6W" firstAttribute="trailing" secondItem="9Sx-lm-Sdp" secondAttribute="trailing" id="oPp-t4-2xW"/>
                                     <constraint firstItem="OpL-85-6Yb" firstAttribute="top" secondItem="7A6-LH-7Ir" secondAttribute="bottom" constant="14" id="r9C-Sq-m1X"/>
-                                    <constraint firstItem="S74-df-9bE" firstAttribute="leading" secondItem="rwX-RQ-bYE" secondAttribute="leading" constant="20" id="ttI-kl-GON"/>
-                                    <constraint firstItem="wmF-k6-foO" firstAttribute="top" secondItem="DIT-Il-Ijb" secondAttribute="top" id="vGV-Yc-dKp"/>
                                 </constraints>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9Wx-iP-Ufz" customClass="BaseButton" customModule="eMoneySDK" customModuleProvider="target">
@@ -143,13 +169,12 @@
                     <connections>
                         <outlet property="buttonJoinEmoney" destination="9Wx-iP-Ufz" id="wpT-nd-umz"/>
                         <outlet property="constraintBottomButton" destination="wGZ-wr-XtE" id="vU8-lN-XNj"/>
-                        <outlet property="imageViewPrivacy" destination="DIT-Il-Ijb" id="oAn-7W-l7k"/>
-                        <outlet property="imageViewTerms" destination="9Sx-lm-Sdp" id="T3E-SG-Uwx"/>
                         <outlet property="labelPrivacyPolicy" destination="bkr-6h-yW2" id="JI7-eT-Neh"/>
                         <outlet property="labelTermsAndCond" destination="eYo-Wf-XCa" id="5wN-IS-iXi"/>
                         <outlet property="labelTop" destination="7A6-LH-7Ir" id="tmm-9T-545"/>
-                        <outlet property="stackViewImage" destination="S74-df-9bE" id="dLX-Sp-Z2V"/>
+                        <outlet property="privacyButton" destination="wmF-k6-foO" id="lAJ-NY-Dll"/>
                         <outlet property="stackViewText" destination="Cjb-qT-OL7" id="YTj-4H-XUU"/>
+                        <outlet property="termsButton" destination="ALg-B8-n6W" id="2nC-F3-lhj"/>
                         <outlet property="viewField" destination="OpL-85-6Yb" id="2Le-wA-cew"/>
                     </connections>
                 </viewController>
@@ -164,12 +189,18 @@
         </designable>
     </designables>
     <resources>
-        <image name="redCheckbox" width="24" height="24"/>
+        <image name="tick" width="11" height="8"/>
         <namedColor name="e&amp;_Black_80">
             <color red="0.18823529411764706" green="0.18823529411764706" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="e&amp;_Error_100">
             <color red="0.90588235294117647" green="0.22352941176470589" blue="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
+        <namedColor name="e&amp;_Red">
+            <color red="0.87450980392156863" green="0.027450980392156862" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
     </resources>
 </document>

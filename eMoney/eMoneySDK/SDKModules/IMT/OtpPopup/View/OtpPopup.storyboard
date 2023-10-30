@@ -28,7 +28,7 @@
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rZo-M5-w5d">
-                                <rect key="frame" x="0.0" y="562" width="430" height="370"/>
+                                <rect key="frame" x="0.0" y="79" width="430" height="853"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DEd-km-3Cl">
                                         <rect key="frame" x="185" y="6" width="60" height="4"/>
@@ -39,7 +39,7 @@
                                         </constraints>
                                     </view>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enter OTP sent to +971 57451 9021" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LAs-Tc-FdE">
-                                        <rect key="frame" x="0.0" y="34" width="430" height="21"/>
+                                        <rect key="frame" x="20" y="34" width="390" height="21"/>
                                         <fontDescription key="fontDescription" name="SuisseIntl" family="Suisse Int'l" pointSize="16"/>
                                         <color key="textColor" name="e&amp;_Black_80"/>
                                         <nil key="highlightedColor"/>
@@ -68,14 +68,14 @@
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7iK-Pw-YCm" customClass="BaseAmountField" customModule="eMoneySDK" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="15.666666666666629" width="382" height="70"/>
+                                                <rect key="frame" x="0.0" y="15.666666666666657" width="382" height="70"/>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="70" id="QdN-QV-VyO"/>
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zHf-rg-e39">
-                                                <rect key="frame" x="0.0" y="85.666666666666629" width="382" height="15.666666666666671"/>
+                                                <rect key="frame" x="0.0" y="85.666666666666657" width="382" height="15.666666666666671"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="1000" text="To e&amp; money wallet" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="s6S-6H-UNm">
                                                         <rect key="frame" x="138" y="0.0" width="106" height="15.666666666666666"/>
@@ -94,15 +94,14 @@
                                         </subviews>
                                     </stackView>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IAz-MH-NJ0" customClass="OTPTextField" customModule="eMoneySDK" customModuleProvider="target">
-                                        <rect key="frame" x="24" y="220.33333333333337" width="382" height="70"/>
+                                        <rect key="frame" x="24" y="220.33333333333331" width="382" height="70"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="70" id="0Mv-fp-sbP"/>
-                                            <constraint firstAttribute="width" secondItem="IAz-MH-NJ0" secondAttribute="height" multiplier="191:35" id="a3j-F8-1PG"/>
                                         </constraints>
                                     </view>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g4v-eO-EkD">
-                                        <rect key="frame" x="326" y="313.66666666666663" width="80" height="29"/>
+                                        <rect key="frame" x="326" y="313.66666666666669" width="80" height="29"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                         <state key="normal" title="Resend OTP"/>
@@ -111,7 +110,7 @@
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Haven’t received?" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LjH-D3-fu1">
-                                        <rect key="frame" x="23.999999999999993" y="320.33333333333337" width="98.333333333333314" height="15.666666666666686"/>
+                                        <rect key="frame" x="23.999999999999993" y="320.33333333333331" width="98.333333333333314" height="15.666666666666686"/>
                                         <fontDescription key="fontDescription" name="SuisseIntl" family="Suisse Int'l" pointSize="12"/>
                                         <color key="textColor" name="e&amp;_Black_80"/>
                                         <nil key="highlightedColor"/>
@@ -123,15 +122,17 @@
                                     <constraint firstItem="IAz-MH-NJ0" firstAttribute="centerX" secondItem="rZo-M5-w5d" secondAttribute="centerX" id="5XQ-Nd-8So"/>
                                     <constraint firstItem="YBG-cs-qmi" firstAttribute="centerX" secondItem="rZo-M5-w5d" secondAttribute="centerX" id="8dt-IF-92M"/>
                                     <constraint firstItem="YBG-cs-qmi" firstAttribute="top" secondItem="LAs-Tc-FdE" secondAttribute="bottom" constant="27" id="BQG-Nj-cTr"/>
+                                    <constraint firstItem="IAz-MH-NJ0" firstAttribute="leading" secondItem="rZo-M5-w5d" secondAttribute="leading" constant="24" id="L7U-4o-89z"/>
                                     <constraint firstItem="IAz-MH-NJ0" firstAttribute="top" secondItem="YBG-cs-qmi" secondAttribute="bottom" constant="37" id="NU1-nD-qBS"/>
-                                    <constraint firstAttribute="trailing" secondItem="LAs-Tc-FdE" secondAttribute="trailing" id="PkW-8g-X4s"/>
+                                    <constraint firstAttribute="trailing" secondItem="LAs-Tc-FdE" secondAttribute="trailing" constant="20" id="PkW-8g-X4s"/>
                                     <constraint firstItem="LjH-D3-fu1" firstAttribute="leading" secondItem="IAz-MH-NJ0" secondAttribute="leading" id="V0q-S0-AfK"/>
-                                    <constraint firstAttribute="bottom" secondItem="LjH-D3-fu1" secondAttribute="bottom" constant="34" id="XX9-0h-aFm"/>
+                                    <constraint firstAttribute="trailing" secondItem="IAz-MH-NJ0" secondAttribute="trailing" constant="24" id="W8o-pJ-EOx"/>
+                                    <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="LjH-D3-fu1" secondAttribute="bottom" constant="34" id="XX9-0h-aFm"/>
                                     <constraint firstItem="YBG-cs-qmi" firstAttribute="width" secondItem="IAz-MH-NJ0" secondAttribute="width" id="akV-OJ-cgd"/>
                                     <constraint firstItem="DEd-km-3Cl" firstAttribute="top" secondItem="rZo-M5-w5d" secondAttribute="top" constant="6" id="ceM-W7-FyP"/>
                                     <constraint firstItem="DEd-km-3Cl" firstAttribute="centerX" secondItem="rZo-M5-w5d" secondAttribute="centerX" id="eas-S9-Zso"/>
                                     <constraint firstItem="g4v-eO-EkD" firstAttribute="trailing" secondItem="IAz-MH-NJ0" secondAttribute="trailing" id="fjl-uM-rBH"/>
-                                    <constraint firstItem="LAs-Tc-FdE" firstAttribute="leading" secondItem="rZo-M5-w5d" secondAttribute="leading" id="gIM-qk-R3x"/>
+                                    <constraint firstItem="LAs-Tc-FdE" firstAttribute="leading" secondItem="rZo-M5-w5d" secondAttribute="leading" constant="20" id="gIM-qk-R3x"/>
                                     <constraint firstItem="LjH-D3-fu1" firstAttribute="top" secondItem="IAz-MH-NJ0" secondAttribute="bottom" constant="30" id="gsz-Rz-y87"/>
                                     <constraint firstItem="LAs-Tc-FdE" firstAttribute="top" secondItem="DEd-km-3Cl" secondAttribute="bottom" constant="24" id="qMr-DW-7OV"/>
                                     <constraint firstItem="g4v-eO-EkD" firstAttribute="centerY" secondItem="LjH-D3-fu1" secondAttribute="centerY" id="vxH-v0-mH7"/>
@@ -149,7 +150,7 @@
                             <constraint firstAttribute="bottom" secondItem="n4R-W9-vr9" secondAttribute="bottom" id="BYl-D0-zS6"/>
                             <constraint firstItem="n4R-W9-vr9" firstAttribute="top" secondItem="oxZ-QJ-aur" secondAttribute="top" id="IQj-B8-W2T"/>
                             <constraint firstItem="Fgm-va-hO6" firstAttribute="trailing" secondItem="n4R-W9-vr9" secondAttribute="trailing" id="Js1-tN-Rn5"/>
-                            <constraint firstItem="rZo-M5-w5d" firstAttribute="top" relation="greaterThanOrEqual" secondItem="Fgm-va-hO6" secondAttribute="top" constant="20" id="NyR-wi-IYN"/>
+                            <constraint firstItem="rZo-M5-w5d" firstAttribute="top" secondItem="Fgm-va-hO6" secondAttribute="top" constant="20" id="NyR-wi-IYN"/>
                             <constraint firstItem="Fgm-va-hO6" firstAttribute="trailing" secondItem="rZo-M5-w5d" secondAttribute="trailing" id="WWV-u7-tTB"/>
                             <constraint firstAttribute="bottom" secondItem="rZo-M5-w5d" secondAttribute="bottom" id="cSu-nq-ZBa"/>
                             <constraint firstItem="rZo-M5-w5d" firstAttribute="leading" secondItem="Fgm-va-hO6" secondAttribute="leading" id="ccK-JE-D8h"/>

@@ -64,6 +64,17 @@ class TopViewController: SDKBaseViewController {
         }
     }
     
+    func setupTopViewForEnterPin(_ lblTitle: String) {
+        DispatchQueue.main.async {
+//            self.backButton.isHidden   = isFirst ? true  : false
+            self.backButton.isHidden   = true
+            self.imgTopCenter.isHidden = true
+            self.lblTopCenter.isHidden = false
+            self.crossButton.isHidden  = false
+            self.lblTopCenter.text     = lblTitle//"enter_pin".localized
+        }
+    }
+    
     private func addActions() {
         self.backButton.addTarget(self, action: #selector(actionBack), for: .touchUpInside)
         self.crossButton.addTarget(self, action: #selector(actionCross), for: .touchUpInside)

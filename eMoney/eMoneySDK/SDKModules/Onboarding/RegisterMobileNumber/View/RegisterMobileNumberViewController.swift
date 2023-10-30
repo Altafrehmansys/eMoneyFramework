@@ -19,13 +19,12 @@ public class RegisterMobileNumberViewController: BaseViewController {
     
     @IBOutlet weak var buttonJoinEmoney: BaseButton!
     @IBOutlet weak var stackViewText: UIStackView!
-    @IBOutlet weak var stackViewImage: UIStackView!
     @IBOutlet weak var labelTermsAndCond: UILabel!
     @IBOutlet weak var labelTop: UILabel!
     
     @IBOutlet weak var constraintBottomButton: NSLayoutConstraint!
-    @IBOutlet weak var imageViewPrivacy: UIImageView!
-    @IBOutlet weak var imageViewTerms: UIImageView!
+    @IBOutlet weak var privacyButton: UIButton!
+    @IBOutlet weak var termsButton: UIButton!
     @IBOutlet weak var labelPrivacyPolicy: UILabel!
     //    @IBOutlet weak var buttonJoinEmoneyTapped: BaseButton!
     // MARK: Properties
@@ -87,7 +86,6 @@ public class RegisterMobileNumberViewController: BaseViewController {
                     Alert.showBottomSheetError(title: Strings.Generic.somethingWentWrong, message: Strings.Generic.generalErrorMsg)
                 }
             }
-            
         }
     }
     
@@ -122,8 +120,18 @@ public class RegisterMobileNumberViewController: BaseViewController {
         //            AppColor.backGroundHeaderGradiant1,
         //            AppColor.backGroundHeaderGradiant2
         //        ], locations: nil, startPoint: .unitCoordinate(.top), endPoint: .unitCoordinate(.bottom),cornerRadius: 0)
-        self.imageViewPrivacy.image = UIImage(named:"defaultCheckbox")
-        self.imageViewTerms.image = UIImage(named:"defaultCheckbox")
+        self.privacyButton.setImage(UIImage(named:"defaultCheckbox"), for: .normal)
+        self.privacyButton.roundCorners(corners: .allCorners, radius: 7)
+        self.privacyButton.backgroundColor = .clear
+        self.termsButton.setImage(UIImage(named:"defaultCheckbox"), for: .normal)
+        self.termsButton.roundCorners(corners: .allCorners, radius: 7)
+        self.termsButton.backgroundColor = .clear
+//        self.imageViewPrivacy.backgroundColor = SDKColors.shared.receivedTheme?.buttonBackgroundColor
+//        imageViewTerms.backgroundColor = SDKColors.shared.receivedTheme?.buttonBackgroundColor
+//        self.imageViewPrivacy.image = UIImage(named:"tick")?.withTintColor(.white, renderingMode: .alwaysTemplate)
+//        self.imageViewTerms.image = UIImage(named:"tick")?.withTintColor(.white, renderingMode: .alwaysTemplate)
+//        self.imageViewPrivacy.isHidden = true
+//        self.imageViewTerms.isHidden = true
         
         setupTextFieldDelegates()
         self.updateBottomBtnConstraintOnKeyboardAppearing(self.constraintBottomButton, bottomPadding: 32)
@@ -225,28 +233,44 @@ public class RegisterMobileNumberViewController: BaseViewController {
         if position.x > 64 {
             presenter?.navigateToTermsCondition(privacyType: PrivacypolicyType.privacyPolicy)
         }
-        
     }
     
     
     // MARK: IB Actions
     
     @IBAction func buttonTermsTapped(_ sender: Any) {
-        self.imageViewTerms.image = UIImage(named:"defaultCheckbox")
-        isSelectTerms = !isSelectTerms
+//        self.imageViewTerms.image = UIImage(named:"defaultCheckbox")
+        self.termsButton.setImage(UIImage(named:"defaultCheckbox"), for: .normal)
+        termsButton.backgroundColor = .clear
+        isSelectTerms.toggle()
+        
         if isSelectTerms {
-            self.imageViewTerms.image = UIImage(named:"redCheckbox")
+            self.termsButton.setImage(UIImage(named:"tick")?.withTintColor(.white, renderingMode: .alwaysTemplate), for: .normal)
+            if let theme = SDKColors.shared.receivedTheme {
+                self.termsButton.backgroundColor = theme.buttonBackgroundColor
+            } else {
+                self.termsButton.backgroundColor = AppColor.eAnd_Red
+            }
+            
         }
         self.buttonEnableDisableValidation()
         self.viewField.resignFirstResponder()
     }
     
     @IBAction func buttonPrivacyPolicyTapped(_ sender: Any) {
-        self.imageViewPrivacy.image = UIImage(named:"defaultCheckbox")
-        isSelectPrivacy = !isSelectPrivacy
+//        self.imageViewPrivacy.isHidden = true// .image = UIImage(named:"defaultCheckbox")
+        self.privacyButton.setImage(UIImage(named:"defaultCheckbox"), for: .normal)
+        self.privacyButton.backgroundColor = .clear
+        isSelectPrivacy.toggle()// = !isSelectPrivacy
         if isSelectPrivacy {
-            self.imageViewPrivacy.image = UIImage(named:"redCheckbox")
+            self.privacyButton.setImage(UIImage(named:"tick")?.withTintColor(.white, renderingMode: .alwaysTemplate), for: .normal)
+            if let theme = SDKColors.shared.receivedTheme {
+                self.privacyButton.backgroundColor = theme.buttonBackgroundColor
+            } else {
+                self.privacyButton.backgroundColor = AppColor.eAnd_Red
+            }
         }
+        
         self.buttonEnableDisableValidation()
         self.viewField.resignFirstResponder()
     }

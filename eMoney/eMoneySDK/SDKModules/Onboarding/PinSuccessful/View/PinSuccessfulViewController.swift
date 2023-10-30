@@ -31,6 +31,7 @@ class PinSuccessfulViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
        setViewInterface()
+        NotificationCenter.default.post(name: .onChangeScreenSize, object: nil, userInfo: ["size":"half"])
     }
     
     func setViewInterface(){
@@ -39,8 +40,14 @@ class PinSuccessfulViewController: BaseViewController {
         animationView.contentMode = .scaleAspectFit
         animationView.loopMode = .repeat(2)
         animationView.play()
-        labelHeadingPin.text = "forget_pin_success".localized
-        labelPinDesc.text = "forget_pin_success_desc".localized
+        if SDKColors.shared.flowName == flowName.changePin.rawValue {
+            labelHeadingPin.text = "change_pin_success".localized
+            labelPinDesc.text = "change_pin_success_desc".localized
+        } else {
+            labelHeadingPin.text = "forget_pin_success".localized
+            labelPinDesc.text = "forget_pin_success_desc".localized
+        }
+        
         self.buttonDone.setTitle("done_btn_text".localized, for: .normal)
     }
     

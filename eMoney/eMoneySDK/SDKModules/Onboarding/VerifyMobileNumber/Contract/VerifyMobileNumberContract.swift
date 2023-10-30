@@ -19,8 +19,9 @@ protocol VerifyMobileNumberViewProtocol: ViperView {
 protocol VerifyMobileNumberPresenterProtocol: ViperPresenter {
     func checkotpSendRequestResponse()
     func verifyOtpRequestResponse(otp : String,flowType : UserJourneyFlow)
-    func navigateToSelectMethod()
+    func navigateToCaptureIdentity(delegate: SendDataSDK?)
     func navigateToRegisterPin(otp:String)
+    func navigateToFastTrack()
     func navigateToFailedOtp(model : VerifyMobileNumberResponseModel)
     func initiatePinRequest(resend:Bool, questionSkip : Bool,unblock : Bool)
 }

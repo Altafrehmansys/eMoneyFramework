@@ -175,7 +175,8 @@ enum OnboardingApiRouter: RequestProtocol {
     var headers: [String : String]{
         switch self {
         case .registerUser:
-            return ["Content-Type":"multipart/form-data"]
+//            return ["Content-Type":"multipart/form-data"]
+            return ["Content-Type":"application/json"]
         default:
             return [:]
         }
