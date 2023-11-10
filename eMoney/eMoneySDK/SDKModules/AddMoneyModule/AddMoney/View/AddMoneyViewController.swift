@@ -16,6 +16,7 @@ class AddMoneyViewController: BaseViewController {
     @IBOutlet weak var tableViewHeightConstraint: NSLayoutConstraint!
     @IBOutlet weak var backgroundView: UIView!
     @IBOutlet weak var mainContainerView: UIView!
+    @IBOutlet weak var titleLabele: UILabel!
     
     // MARK: Properties
     var presenter: AddMoneyPresenterProtocol!
@@ -25,7 +26,6 @@ class AddMoneyViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.presenter.loadData()
-        NotificationCenter.default.post(name: .onChangeScreenSize, object: nil, userInfo: ["size":"half"])
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -48,6 +48,7 @@ class AddMoneyViewController: BaseViewController {
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
+        setScreenSize(size: .halfScreen)
         if !isDismiss {
             self.navigationController?.setNavigationBarHidden(false, animated: false)
         }
@@ -64,7 +65,9 @@ extension AddMoneyViewController: AddMoneyViewProtocol {
     func setupUI() {
         self.addGesture()
         self.setupTableView()
-        
+        self.titleLabele.text = "saved_accounts".localized
+        titleLabele.textColor = AppColor.eAnd_Black
+        titleLabele.font = AppFont.appSemiBold(size: .body2)
         view.backgroundColor = .clear
         backgroundView.backgroundColor = AppColor.eAnd_bottom_sheet_background
         
@@ -89,6 +92,7 @@ extension AddMoneyViewController: AddMoneyViewProtocol {
     
     private func setupHeightConstraint() {
         tableViewHeightConstraint.constant = tableView.intrinsicContentSize.height
+        self.setScreenSize(size: .halfScreen, fixedHeight: mainContainerView.frame.size.height)
     }
     
     private func addGesture() {

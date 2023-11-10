@@ -21,6 +21,7 @@ public class BaseViewController: UIViewController, InternetConnectionErrorViewCo
         // Do any additional setup after loading the view.
         self.hideBackButton()
         overrideUserInterfaceStyle = .light
+        self.navigationController?.view.overrideUserInterfaceStyle = .light
     }
     
     private func changeTextColorsFromSDK() {
@@ -65,6 +66,19 @@ public class BaseViewController: UIViewController, InternetConnectionErrorViewCo
     
     private func hideBackButton() {
         self.navigationItem.setHidesBackButton(true, animated: true)
+    }
+    
+    func setScreenSize(size: ScreenSizes, fixedHeight: CGFloat = 0) {
+        switch size {
+        case .fullScreen:
+            NotificationCenter.default.post(name: .onChangeScreenSize, object: nil, userInfo: ["size":ScreenSizes.fullScreen.rawValue])
+        case .halfScreen:
+            NotificationCenter.default.post(name: .onChangeScreenSize, object: nil, userInfo: ["size":ScreenSizes.halfScreen.rawValue])
+        case .fullScreenOverContext:
+            NotificationCenter.default.post(name: .onChangeScreenSize, object: nil, userInfo: ["size":ScreenSizes.fullScreenOverContext.rawValue])
+        case .fixed:
+            NotificationCenter.default.post(name: .onChangeScreenSize, object: nil, userInfo: ["size":ScreenSizes.fixed.rawValue, "height": fixedHeight])
+        }
     }
     
     func setTitleImage(){

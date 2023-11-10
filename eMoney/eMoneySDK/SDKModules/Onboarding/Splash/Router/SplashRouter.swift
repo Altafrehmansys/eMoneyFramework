@@ -76,8 +76,9 @@ extension SplashRouter: SplashRouterProtocol {
             CommonMethods.setRootViewController(viewController: vc)
         //FIXME
         case .accountDetails:
-            let vc = AccountDetailsRouter.setupModule()
-            CommonMethods.setRootViewController(viewController: vc)
+//            let vc = AccountDetailsRouter.setupModule()
+//            CommonMethods.setRootViewController(viewController: vc)
+            break
             
         }
     }

@@ -41,6 +41,11 @@ class ReviewEidViewController: BaseViewController {
         presenter?.loadData(updateType: self.updateType)
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        NotificationCenter.default.post(name: .onChangeTopCloseButton, object: nil, userInfo: ["isShow":true])
+    }
+    
     func setupUI() {
         self.navigationItem.setTitle(title: "register".localized, subtitle: "capture_identity".localized)
         self.stepsBar.addRedLine(noOfSteps: 4, currentStep: 1)
@@ -63,6 +68,10 @@ class ReviewEidViewController: BaseViewController {
         
         self.imgViewFront.image = self.frontImage
         self.imgViewBack.image = self.backImage
+        if SDKColors.shared.flowName == SDKFlowName.updateEmiratesId.rawValue {
+            GlobalData.shared.backImage = self.backImage
+            GlobalData.shared.frontImage = self.frontImage
+        }
     }
     
     // MARK: Actions

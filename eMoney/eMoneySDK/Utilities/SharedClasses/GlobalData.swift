@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import UIKit
 
 final class GlobalData: NSObject {
     static let shared = GlobalData()
@@ -52,4 +53,7 @@ final class GlobalData: NSObject {
         }
         return false
     }
+    
+    var frontImage:UIImage?
+    var backImage:UIImage?
 }

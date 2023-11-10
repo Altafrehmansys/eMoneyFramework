@@ -50,10 +50,12 @@ extension ManageSavedAccountsPresenter {
     func makeDataSource() {
         dataSource.removeAll()
         
-        let addNewBeneficiaryCell = AddNewBeneficiaryCellModel(actions: self.cellActions, title: Strings.AddMoney.addANewMethod, subTitle: Strings.AddMoney.addAnOtherSourceAccountCard, backgroundColor: AppColor.eAnd_Baige.withAlphaComponent(0.2))
-        dataSource.append(addNewBeneficiaryCell)
+//        let addNewBeneficiaryCell = AddNewBeneficiaryCellModel(actions: self.cellActions, title: Strings.AddMoney.addANewMethod, subTitle: Strings.AddMoney.addAnOtherSourceAccountCard, backgroundColor: AppColor.eAnd_Baige.withAlphaComponent(0.2))
+//        dataSource.append(addNewBeneficiaryCell)
+        let titleCellModel = GenericTitleAndButtonTableViewCellModel(actions: nil, title: Strings.AddMoney.debitCards, buttonTitle: "")
+        self.dataSource.append(titleCellModel)
         
-        addSavedAccounts()
+//        addSavedAccounts()
         addSavedCards()
         
 //        let count = bankAccountsList.count + cardsList.count
@@ -237,7 +239,7 @@ extension ManageSavedAccountsPresenter {
         
         let removeMethodButton = BaseButton()
         removeMethodButton.type = .PlainButton
-        removeMethodButton.setTitle(Strings.AddMoney.removeThisMethod, for: .normal)
+        removeMethodButton.setTitle(Strings.AddMoney.removeThisCard, for: .normal)
         
         removeMethodButton.addTarget(self, action: #selector(removeBankButtonTappedAction), for: .touchUpInside)
         
@@ -287,13 +289,13 @@ extension ManageSavedAccountsPresenter {
         
         let tableViewCell = TableViewCellModelWithUITableView(dataSource: dataSource, borderWidth: 1, borderColor: AppColor.eAnd_Baige, cornerRadius: 20, leftSpace: 24, rightSpace: 24, topSpace: 10)
         
-        let removeMethodButton = BaseButton()
-        removeMethodButton.type = .PlainButton
-        removeMethodButton.setTitle(Strings.AddMoney.removeThisMethod, for: .normal)
+        let removeCardButton = BaseButton()
+        removeCardButton.type = .PlainButton
+        removeCardButton.setTitle(Strings.AddMoney.removeThisCard, for: .normal)
         
-        removeMethodButton.addTarget(self, action: #selector(removeCardButtonTappedAction), for: .touchUpInside)
+        removeCardButton.addTarget(self, action: #selector(removeCardButtonTappedAction), for: .touchUpInside)
         
-        router?.go(to: .manageBankAccount(dataSource: [titleModel, tableViewCell], actions: [removeMethodButton]))
+        router?.go(to: .manageBankAccount(dataSource: [titleModel, tableViewCell], actions: [removeCardButton]))
     }
 }
 
@@ -312,17 +314,17 @@ extension ManageSavedAccountsPresenter {
         let descModel = GenericSingleLabelCellModel(content: content, font: AppFont.appRegular(size: .body4), color: AppColor.eAnd_Grey_100, alignment: .center)
         dataSource.append(descModel)
         
-        let removeMethodButton = BaseButton()
-        removeMethodButton.type = .GradientButton
-        removeMethodButton.setTitle(Strings.AddMoney.removeThisMethod, for: .normal)
-        removeMethodButton.addTarget(self, action: #selector(removeBankAction), for: .touchUpInside)
+        let removeCardButton = BaseButton()
+        removeCardButton.type = .GradientButton
+        removeCardButton.setTitle(Strings.AddMoney.removeThisCard, for: .normal)
+        removeCardButton.addTarget(self, action: #selector(removeBankAction), for: .touchUpInside)
         
         let cancelButton = BaseButton()
         cancelButton.type = .PlainButton
         cancelButton.setTitle(Strings.Generic.cancel, for: .normal)
         cancelButton.addTarget(self, action: #selector(cancelAction), for: .touchUpInside)
         
-        router?.go(to: .remove(dataSource: dataSource, actions: [removeMethodButton, cancelButton]))
+        router?.go(to: .remove(dataSource: dataSource, actions: [removeCardButton, cancelButton]))
     }
     
     @objc private func removeCardButtonTappedAction() {
@@ -335,17 +337,17 @@ extension ManageSavedAccountsPresenter {
         let descModel = GenericSingleLabelCellModel(content: Strings.AddMoney.removeCardDescriptionString, font: AppFont.appRegular(size: .body4), color: AppColor.eAnd_Grey_100, alignment: .center)
         dataSource.append(descModel)
         
-        let removeMethodButton = BaseButton()
-        removeMethodButton.type = .GradientButton
-        removeMethodButton.setTitle(Strings.AddMoney.removeThisMethod, for: .normal)
-        removeMethodButton.addTarget(self, action: #selector(removeCardAction), for: .touchUpInside)
+        let removeCardButton = BaseButton()
+        removeCardButton.type = .GradientButton
+        removeCardButton.setTitle(Strings.AddMoney.removeThisCard, for: .normal)
+        removeCardButton.addTarget(self, action: #selector(removeCardAction), for: .touchUpInside)
         
         let cancelButton = BaseButton()
         cancelButton.type = .PlainButton
         cancelButton.setTitle(Strings.Generic.cancel, for: .normal)
         cancelButton.addTarget(self, action: #selector(cancelAction), for: .touchUpInside)
         
-        router?.go(to: .remove(dataSource: dataSource, actions: [removeMethodButton, cancelButton]))
+        router?.go(to: .remove(dataSource: dataSource, actions: [removeCardButton, cancelButton]))
     }
     
     @objc private func removeBankAction() {

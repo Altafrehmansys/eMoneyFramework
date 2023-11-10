@@ -36,7 +36,7 @@ extension OtpForgotPinPopupInteractor: OtpForgotPinPopupInteractorProtocol {
     func getTokenRequestFromServer() {
         Task {
             do {
-                let response:TokenResponseModel? = try await ApiManager.shared.execute(OnboardingApiRouter.getToken(token: "Basic bW9iaWxlLWZlOnBhc3N3b3JkMTIz"))
+                let response:TokenResponseModel? = try await ApiManager.shared.execute(OnboardingApiRouter.getToken(token: "bW9iaWxlLWZlOnBhc3N3b3JkMTIz"))
                 await MainActor.run {
                     SDKColors.shared.accessToken = response?.data?.accessToken
                     output?.getTokenRequestResponse()

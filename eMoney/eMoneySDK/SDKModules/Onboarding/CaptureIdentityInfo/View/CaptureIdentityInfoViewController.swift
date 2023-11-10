@@ -40,7 +40,9 @@ class CaptureIdentityInfoViewController: BaseViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        delegate?.changeScreenSize(size: .fullScreen)
+        delegate?.changeScreenSize(size: .fullScreen, viewHeight: 0)
+        setScreenSize(size: .fullScreen)
+        NotificationCenter.default.post(name: .onChangeTopCloseButton, object: nil, userInfo: ["isShow":true])
     }
     
     // MARK: - Deallocation
@@ -59,22 +61,21 @@ class CaptureIdentityInfoViewController: BaseViewController {
         if !isScreenTypeSelfi {
             if let type = self.updateType {
                 if type == .updateEid {
-                    self.navigationItem.setTitle(title: "Profile".localized, subtitle: "Update emirates ID".localized)
+                    self.navigationItem.setTitle(title: "update_emirates_id".localized, subtitle: "capture_identity".localized)
                     //self.stepsBar.addRedLine(noOfSteps: 4, currentStep: 2)
                     self.stepsBar.isHidden = true
-                }else{
+                } else {
                     self.navigationItem.setTitle(title: "register".localized, subtitle: "capture_identity".localized)
                     self.stepsBar.addRedLine(noOfSteps: 2, currentStep: 1)
                 }
-            }else {
+            } else {
                 self.navigationItem.setTitle(title: "register".localized, subtitle: "capture_identity".localized)
                 self.stepsBar.addRedLine(noOfSteps: 4, currentStep: 1)
             }
-        }else{
+        } else {
             self.navigationItem.setTitle(title: "register".localized, subtitle: "verify_identity".localized)
             self.stepsBar.addRedLine(noOfSteps: 4, currentStep: 2)
         }
-        
         
         createNavBackBtn()
     }

@@ -28,7 +28,7 @@ class EidScannerViewModel{
 
     init(docType: DocumentType){
         self.documentType = docType
-        
+        DocumentReaderSDK.getScannerOverlayView()?.overrideUserInterfaceStyle = .light
     }
     
     func backBtnPress(){

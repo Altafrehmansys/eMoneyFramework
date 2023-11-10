@@ -53,9 +53,9 @@ extension LoginRouter: LoginRouterProtocol {
             vc.userJourneyEnum = .forgotPin
             view?.navigationController?.pushViewController(vc, animated: true)
         case .home:
-            let vc = CustomTabbarViewController()
-            CommonMethods.setRootViewControllerWithoutNavigation(viewController: vc)
-            
+//            let vc = CustomTabbarViewController()
+//            CommonMethods.setRootViewControllerWithoutNavigation(viewController: vc)
+            break
         case .otp:
             let vc = VerifyMobileNumberRouter.setupModule()
             vc.msisdn = UserDefaultHelper.msisdn ?? ""

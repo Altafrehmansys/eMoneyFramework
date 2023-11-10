@@ -53,7 +53,7 @@ extension ManageSavedCardViewController: ManageSavedCardViewProtocol {
         updateCardDetailsButton.setTitle(Strings.AddMoney.updateCardDetails, for: .normal)
         updateCardDetailsButton.type = .GradientButton
         
-        removeThisMethodButton.setTitle(Strings.AddMoney.removeThisMethod, for: .normal)
+        removeThisMethodButton.setTitle(Strings.AddMoney.removeThisCard, for: .normal)
         removeThisMethodButton.type = .PlainButton
     }
     

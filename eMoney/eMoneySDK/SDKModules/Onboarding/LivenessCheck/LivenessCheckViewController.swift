@@ -77,7 +77,6 @@ class LivenessCheckViewController: BaseViewController, EFRSDK.FaceCaptureDelegat
     }
     
     func statupMethod(){
-        
         UserDefaults.standard.set([], forKey: "selectedFunctions")
         //self.headerHeight.constant = UIScreen.main.bounds.height > 800 ? 120 : 95
         self.view.layoutIfNeeded()
@@ -85,14 +84,13 @@ class LivenessCheckViewController: BaseViewController, EFRSDK.FaceCaptureDelegat
         //Check application moved to background
         let notificationCenter = NotificationCenter.default
         notificationCenter.addObserver(self, selector: #selector(appMovedToBackground), name: UIApplication.willResignActiveNotification, object: nil)
-        
     }
-    
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
+        setScreenSize(size: .fullScreen)
+        NotificationCenter.default.post(name: .onChangeTopCloseButton, object: nil, userInfo: ["isShow":true])
     }
-    
     
     @objc func appMovedToBackground() {
         SDK.getInstance.stopProcess()
@@ -120,15 +118,17 @@ class LivenessCheckViewController: BaseViewController, EFRSDK.FaceCaptureDelegat
             let configSetting:EFRSDKConfigurationData = EFRSDKConfigurationData(configuration: configurationData, secretKey: secretKey)
             
             DispatchQueue.main.async {
-                
+                Loader.shared.showFullScreen()
                 do {
                     try SDK.initialise(configurationSettings: configSetting) { (code:FeedbackMessage)  in
                         DispatchQueue.main.async {
                             if code == .OK{
+                                Loader.shared.hideFullScreen()
                                 self.startSelectedProcess()
                                 self.eWalletRegisterHandlerforExecutionBlock()
                                 
                             }else{
+                                Loader.shared.hideFullScreen()
                                 self.pushLivenessErrorScreen()
                             }
                         }
@@ -153,6 +153,7 @@ extension LivenessCheckViewController{
         SDK.getInstance.executionFeedback.setHandler({ (message) in
             
             print("SDK.getInstance.executionFeedback.setHandler")
+            Loader.shared.showFullScreen()
             Task{
                 do {
                     let response:RegistrationLivenessResponse? = try await ApiManager.shared.execute(OnboardingApiRouter.liveness(command: message))
@@ -164,7 +165,7 @@ extension LivenessCheckViewController{
                     }
                 } catch {
                     await MainActor.run{
-       
+                        Loader.shared.hideFullScreen()
                         let vc = LivenessErrorViewController.instantiate(fromAppStoryboard: .Liveness)
                         vc.errorMsg = ""
                         vc.isPlainError = true
@@ -205,7 +206,9 @@ extension LivenessCheckViewController{
         SDK.getInstance.frameStrokeWidth = 2
         SDK.getInstance.frameColorWarningFeedbackMessage = .red
         SDK.getInstance.frameColorNeutralFeedbackMessage = .green
-        
+//        let img = UIImage(named: "Close")?.withTintColor(AppColor.eAnd_White)
+        //SDK.getInstance.closeButton?.setImage(img, for: .normal)
+        SDK.getInstance.closeButton?.sizeToFit()
         
         self.pageNumber = 0
         
@@ -402,7 +405,6 @@ extension LivenessCheckViewController{
             
             if  result.bestFaceResult != nil {
                 
-                print(result.bestFaceResult)
                 if result.bestFaceResult?.portraits?.count ?? 0 > 0 {
                     self.resultPortraitCount = result.bestFaceResult?.portraits?.count ?? 0
                     
@@ -417,34 +419,17 @@ extension LivenessCheckViewController{
                     
                     let face = EFRServerValidationFaces()
                     
-//                    let imageString = imageData!.base64EncodedString(options: Data.Base64EncodingOptions(rawValue: 0))
-                    
-                    
-//                    var data = Data(base64Encoded: recording_base64, options: .ignoreUnknownCharacters)
-                    
                     face.data = result.bestFaceResult?.portraits?[self.pageNumber].image ?? ""//imageData?.base64EncodedString(options: Data.Base64EncodingOptions(rawValue: 0)) ?? ""
                     face.dataHash = result.bestFaceResult?.portraits?[self.pageNumber].imageHash ?? ""//imageHash?.base64EncodedString(options: Data.Base64EncodingOptions(rawValue: 0)) ?? ""
                     
                     let request = EFRServerValidationRequest()
-//                    request.msisdn = "544007731" 971544007731
-//                    request.processId = ""
-
-//                    request.cacheFlow = false
-                    //request.pin = AESDataEncryption.aes128Encrypt(withSecretText: CommonMethods.getUserPinInDefault() ?? "") ?? ""
                     request.faces = [face];
-                    if self.isUpgradeFlow {
+                    if SDKColors.shared.flowName == SDKFlowName.updateEmiratesId.rawValue {
                         request.previousProfileName = GlobalData.shared.loginData?.profileName ?? ""
                         request.profileName = GlobalData.shared.loginData?.upgradeToProfile ?? ""
-                    }else{
+                    } else {
                         request.profileName = "Consumer Physical KYC Profile"
                         request.previousProfileName = "Consumer NO KYC Profile"
-//                        if let msisdn = CommonMethods.getMsisdnFromKeychainIfExists(), !msisdn.isEmpty {
-//                            request.msisdn = msisdn
-//                        }else if let msisdn = CommonMethods.getTempMsisdnFromKeychainIfExists() {
-//                            request.msisdn = msisdn
-//                        }else{
-//                            request.msisdn = ""
-//                        }
                     }
                     request.isSingleAccount = GlobalData.shared.isSingleAccount
                     
@@ -461,7 +446,7 @@ extension LivenessCheckViewController{
                         request.gender = GlobalData.shared.userEidInfo?.sex ?? ""
                     }
                     
-                    self.saveData(request:request)
+                    self.saveData(request:request, selfiImage:imageString ?? "")
                     
                     self.capturedFace = result.bestFaceResult?.portraits?[self.pageNumber]
                     //self.btnSend.alpha = 1.0
@@ -495,7 +480,7 @@ extension LivenessCheckViewController{
     
     
     
-    func saveData(request : EFRServerValidationRequest)  {
+    func saveData(request : EFRServerValidationRequest, selfiImage: String)  {
         Loader.shared.showFullScreen()
         
         Task{
@@ -504,7 +489,7 @@ extension LivenessCheckViewController{
                 //self.statusLabel.text = "MATCH"
                 self.profileMatch = true
                 
-                if self.isUpgradeFlow {
+                if SDKColors.shared.flowName == SDKFlowName.updateEmiratesId.rawValue {
                     //update profile status
                     if let responseData = response?.data {
                         GlobalData.shared.loginData?.upgradeScreen = responseData.upgradeScreen
@@ -514,9 +499,21 @@ extension LivenessCheckViewController{
                     }
                     
                     await MainActor.run{
-                        Loader.shared.hideFullScreen()
-                        NotificationCenter.default.post(Notification(name: .onUpgradeFlowCompletion))
-                        self.dismiss(animated: true)
+//                        Loader.shared.hideFullScreen()
+                        //TODO: Call API to update profile
+                        let request = UpdateProfileRequest()
+                        request.pin = UserDefaultHelper.userLoginPin
+                        request.frontImage = GlobalData.shared.frontImage?.convertImageToBase64String()
+                        request.backImage = GlobalData.shared.backImage?.convertImageToBase64String()
+                        request.operationType = "EMIRATE_UPDATE"
+                        request.selfieImage = selfiImage
+                        request.eidNumber = GlobalData.shared.userEidInfo?.emiratesId
+                        request.expiryDate = GlobalData.shared.userEidInfo?.expiry ?? ""
+                        request.firstName = GlobalData.shared.userEidInfo?.firstName ?? ""
+                        request.middleName = GlobalData.shared.userEidInfo?.middleName ?? ""
+                        request.lastName = GlobalData.shared.userEidInfo?.lastName ?? ""
+                        request.fullName = GlobalData.shared.userEidInfo?.fullName ?? ""
+                        self.updateProfile(request: request)
                     }
 
                 }else{
@@ -538,6 +535,32 @@ extension LivenessCheckViewController{
             }
         }
         
+    }
+    
+    func updateProfile(request: UpdateProfileRequest) {
+        Task{
+            do {
+                let response:UpdateProfileResponseModel? = try await ApiManager.shared.execute(OnboardingApiRouter.updateProfile(params: request))
+                //self.statusLabel.text = "MATCH"
+                self.profileMatch = true
+                await MainActor.run {
+                    Loader.shared.hideFullScreen()
+                    GlobalData.shared.backImage = nil
+                    GlobalData.shared.frontImage = nil
+                    let vc = EmiratesIdSuccessRouter.setupModule()
+                    self.dismiss(animated: true, completion: {
+                        SDKNavigationStack.shared.baseViewController?.present(vc, animated: true)
+                    })
+                }
+            } catch let error as AppError{
+                await MainActor.run{
+                    Loader.shared.hideFullScreen()
+                    self.profileMatch = false
+                    print("error \(error.errorDescription)")
+                    self.pushLivenessErrorScreen(error: error)
+                }
+            }
+        }
     }
     
     func pushLivenessErrorScreen(error: AppError? = nil) {

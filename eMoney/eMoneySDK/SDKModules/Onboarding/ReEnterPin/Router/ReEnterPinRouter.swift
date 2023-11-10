@@ -50,8 +50,9 @@ extension ReEnterPinRouter: ReEnterPinRouterProtocol {
     func go(to route: Route) {
         switch route {
         case .navigateToNotificationScreen:
-            let vc = EnableNotificationRouter.setupModule()
-            view?.navigationController?.pushViewController(vc, animated: true)
+//            let vc = EnableNotificationRouter.setupModule()
+//            view?.navigationController?.pushViewController(vc, animated: true)
+            break
         case .backToLogin :
             let vc = LoginRouter.setupModule()
             CommonMethods.setRootViewController(viewController: vc)
@@ -65,7 +66,10 @@ extension ReEnterPinRouter: ReEnterPinRouterProtocol {
 //            view?.navigationController?.pushViewController(vc, animated: true)
         case .navigateForgotPinSuccess :
             let vc = PinSuccessfulRouter.setupModule()
-            view?.navigationController?.pushViewController(vc, animated: true)
+            view?.dismiss(animated: true, completion: {
+                SDKNavigationStack.shared.baseViewController?.present(vc, animated: true)
+            })
+//            view?.navigationController?.pushViewController(vc, animated: true)
         
         }
     }

@@ -171,11 +171,12 @@ extension BaseButton {
     }
     
     private func setupPlainButton() {
-        
-        //setTitleColor(Constants.ColorConstants.disabledButtonTextColor, for: UIControl.State.disabled)
-//        setTitleColor(AppColor.eAnd_Red, for: UIControl.State.normal)
-        
-        self.setColorFromOr(color: AppColor.eAnd_Red)
+        if let buttonBackgroundColor = SDKColors.shared.receivedTheme?.buttonBackgroundColor {
+            setTitleColor(buttonBackgroundColor, for: UIControl.State.normal)
+        } else {
+            setTitleColor(AppColor.eAnd_Red, for: UIControl.State.normal)
+        }
+//        self.setColorFromOr(color: AppColor.eAnd_Red)
     }
     
     private func setupImageTitleButton() {

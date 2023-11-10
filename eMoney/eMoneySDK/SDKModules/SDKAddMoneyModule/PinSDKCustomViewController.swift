@@ -46,26 +46,35 @@ class PinSDKCustomViewController: BaseViewController {
         
         IQKeyboardManager.shared.enable = true
         
-        if SDKColors.shared.accessToken == nil {
+//        if SDKColors.shared.accessToken == nil {
+//            Loader.shared.showFullScreen()
             self.getToken()
-        } else {
-            Loader.shared.showFullScreen()
-            sendOTP()
+//        } else {
+//            Loader.shared.showFullScreen()
+//            sendOTP()
+//        }
+        
+        self.keyboardCallBack = { (isHidden, frame) in
+            if isHidden {
+                self.delegate?.changeScreenSize(size: .halfScreen, viewHeight: 0)
+            } else {
+                self.delegate?.changeScreenSize(size: .fullScreen, viewHeight: 0)
+            }
         }
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         delegate?.sendStringData(string: "enter_pin".localized)
+        NotificationCenter.default.post(name: .onChangeTopCloseButton, object: nil, userInfo: ["isShow":false])
     }
     
     func getToken() {
         Loader.shared.showFullScreen()
         Task {
             do {
-                let response:TokenResponseModel? = try await ApiManager.shared.execute(OnboardingApiRouter.getToken(token: "Basic bW9iaWxlLWZlOnBhc3N3b3JkMTIz"))
+                let response:TokenResponseModel? = try await ApiManager.shared.execute(OnboardingApiRouter.getToken(token: "bW9iaWxlLWZlOnBhc3N3b3JkMTIz"))
                 await MainActor.run {
-//                    Loader.shared.hideFullScreen()
                     SDKColors.shared.accessToken = response?.data?.accessToken
                     self.sendOTP()
                 }
@@ -79,26 +88,6 @@ class PinSDKCustomViewController: BaseViewController {
                 }
             }
         }
-        
-//        var request = URLRequest(url: URL(string: "https://enmoneyapim.azure-api.net/gettoken/v1/token?authorization=Basic%20bW9iaWxlLWZlOnBhc3N3b3JkMTIz")!)
-//        request.method = HTTPMethod.post
-//        request.headers.add(HTTPHeader(name: "custom_header", value: "pre_prod"))
-//        if let clientId = SDKColors.shared.clientID {
-//            request.headers.add(HTTPHeader(name: "client_id",   value: clientId))
-//        }
-//        
-//        URLSession.shared.dataTask(with: request) { [weak self] (data, response, error) in
-//            if let error = error {
-//                Loader.shared.hideFullScreen()
-//                SDKColors.shared.onFailure?("", error.localizedDescription)
-//            }
-//            if let data = data {
-//                self?.parseData(data)
-//            } else {
-//                Loader.shared.hideFullScreen()
-//                
-//            }
-//        }.resume()
     }
     
     func parseData(_ data : Data) {
@@ -129,9 +118,64 @@ class PinSDKCustomViewController: BaseViewController {
         setIsPasswordHide(passwordHide: isPasswordHide)
     }
     
+    
+    func proceedWithSelectedFlow(loginModel: LoginResponseModel?) {
+        switch SDKColors.shared.flowName {
+        case SDKFlowName.changePin.rawValue:
+            routToSetupNewPIN()
+        case SDKFlowName.updateEmiratesId.rawValue:
+            routToUpdateEmirateId()
+        case SDKFlowName.login.rawValue:
+            self.dismiss(animated: true) {
+                if let loginData = loginModel?.data {
+                    let baseResponse = BaseResponse(withLoginData: loginData, pin: UserDefaultHelper.userLoginPin ?? "")
+                    SDKColors.shared.onLoginSuccess?(baseResponse)
+                } else {
+                    SDKColors.shared.onFailure?("", EWalletErrorCode.NO_DATA.rawValue)
+                }
+            }
+        default:
+            routToAddMoney()
+        }
+    }
+    
+    func routToVerifyOtp() {
+        var title = ""
+        switch SDKColors.shared.flowName {
+        case SDKFlowName.addMoney.rawValue:
+            title = "add_money".localized
+        case SDKFlowName.changePin.rawValue:
+            title = "change_pin".localized
+        case SDKFlowName.login.rawValue:
+            title = "login".localized
+        case SDKFlowName.updateEmiratesId.rawValue:
+            title = "update_emirates_id".localized
+        default:
+            title = ""
+        }
+        let vc = VerifyMobileNumberRouter.setupModule()
+        vc.msisdn = GlobalData.shared.msisdn ?? ""
+        vc.userJourneyEnum = .registerDevice
+        vc.pageTitle = title
+        vc.delegate = self.delegate
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
+    
     func routToAddMoney() {
         delegate?.sendStringData(string: "Add Money")
         let vc = AddMoneyRouter.setupModule()
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
+    
+    func routToUpdateEmirateId() {
+        delegate?.sendStringData(string: "Update Emirates Id")
+        let vc = CaptureIdentityInfoRouter.setupModule()
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
+    
+    func routToSetupNewPIN() {
+        delegate?.sendStringData(string: "Reset Pin")
+        let vc = SetUpNewPINRouter.setupModule()
         self.navigationController?.pushViewController(vc, animated: true)
     }
     
@@ -152,11 +196,6 @@ class PinSDKCustomViewController: BaseViewController {
         }
     }
     
-    func routToSetupNewPIN() {
-        delegate?.sendStringData(string: "Reset Pin")
-        let vc = SetUpNewPINRouter.setupModule()
-        self.navigationController?.pushViewController(vc, animated: true)
-    }
     
     func loginUser(pin: String) {
         Task {
@@ -166,37 +205,25 @@ class PinSDKCustomViewController: BaseViewController {
                 let val = try? pin.aesEncrypt(key:EncryptionKey.pinKey)
                 request.pin = val
                 request.isNewLogin = true
-//                request.identity = SDKColors.shared.msisdn?.planPhoneNumberString
-//                request.msisdn = SDKColors.shared.msisdn?.planPhoneNumberString
-//                request.flowName = "AddMoney"
-                
-//                if GlobalData.shared.isDeviceChanged && GlobalData.shared.msisdnStatusData?.oldDeviceId != nil {
-//                    request.oldDeviceId = GlobalData.shared.msisdnStatusData?.oldDeviceId ?? ""
-//                } else {
-//                    request.oldDeviceId = ""
-//                }
-                
                 let loginModel:LoginResponseModel? = try await ApiManager.shared.execute(OnboardingApiRouter.login(param: request))
 
                 await MainActor.run {
                     if loginModel != nil {
-//                        output?.loginRequestResponse(response: loginModel!)
                         // Show cards screen
                         Loader.shared.hideFullScreen()
-                        UserDefaultHelper.userLoginPin = pin
-                        UserDefaultHelper.userSessionToken = loginModel?.data?.userToken
-                        if SDKColors.shared.flowName == flowName.changePin.rawValue {
-                            routToSetupNewPIN()
+                        if let oldDevice = loginModel?.data?.oldDeviceId, !oldDevice.isEmpty {
+                            // Go to verify otp
+                            self.routToVerifyOtp()
                         } else {
-                            routToAddMoney()
+                            UserDefaultHelper.userLoginPin = pin
+                            UserDefaultHelper.userSessionToken = loginModel?.data?.userToken
+                            self.proceedWithSelectedFlow(loginModel: loginModel)
                         }
-                        
                     }
                 }
             } catch let error as AppError {
                 print(error.localizedDescription)
                 await MainActor.run {
-//                    output?.loginRequestResponseError(error:error)
                     // Show error
                     Alert.showBottomSheetError(title: error.title, message: error.errorDescription)
                     Loader.shared.hideFullScreen()

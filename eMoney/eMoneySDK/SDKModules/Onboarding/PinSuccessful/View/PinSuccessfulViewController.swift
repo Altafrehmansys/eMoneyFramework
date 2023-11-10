@@ -20,6 +20,7 @@ class PinSuccessfulViewController: BaseViewController {
     @IBOutlet weak var buttonDone: BaseButton!
     @IBOutlet weak var labelPinDesc: UILabel!
     @IBOutlet weak var labelHeadingPin: UILabel!
+    @IBOutlet weak var mainView: UIView!
     
     
     // MARK: Properties
@@ -31,7 +32,11 @@ class PinSuccessfulViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
        setViewInterface()
-        NotificationCenter.default.post(name: .onChangeScreenSize, object: nil, userInfo: ["size":"half"])
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        setScreenSize(size: .halfScreen)
     }
     
     func setViewInterface(){
@@ -40,7 +45,7 @@ class PinSuccessfulViewController: BaseViewController {
         animationView.contentMode = .scaleAspectFit
         animationView.loopMode = .repeat(2)
         animationView.play()
-        if SDKColors.shared.flowName == flowName.changePin.rawValue {
+        if SDKColors.shared.flowName == SDKFlowName.changePin.rawValue {
             labelHeadingPin.text = "change_pin_success".localized
             labelPinDesc.text = "change_pin_success_desc".localized
         } else {
@@ -49,6 +54,8 @@ class PinSuccessfulViewController: BaseViewController {
         }
         
         self.buttonDone.setTitle("done_btn_text".localized, for: .normal)
+        mainView.layer.cornerRadius = 20
+        mainView.layer.masksToBounds = true
     }
     
     // MARK: IB Actions

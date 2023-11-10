@@ -28,9 +28,19 @@ class RegisterEmailViewController: BaseViewController {
         super.viewDidLoad()
         presenter?.loadData()
         setViewInterface()
+        
+        self.keyboardCallBack = {[weak self] (isHidden, frame) in
+            if isHidden {
+                self?.setScreenSize(size: .halfScreen)
+            } else {
+                self?.setScreenSize(size: .fullScreen)
+            }
+        }
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        setScreenSize(size: .halfScreen)
+        NotificationCenter.default.post(name: .onChangeTopCloseButton, object: nil, userInfo: ["isShow":true])
     }
     func setViewInterface(){
         self.isHideNavigation(false)

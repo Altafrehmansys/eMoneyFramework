@@ -67,10 +67,12 @@ class AddMoneyEnterAmountViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         presenter?.loadData()
+        
     }
     
     override func viewDidAppear(_ animated: Bool) {
         amountField.becomeFirstResponder = true
+        self.setScreenSize(size: .fullScreen)
     }
 }
 

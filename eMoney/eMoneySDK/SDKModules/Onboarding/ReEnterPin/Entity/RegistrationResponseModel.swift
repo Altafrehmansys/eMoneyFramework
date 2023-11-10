@@ -42,17 +42,17 @@ class RegistrationData: Codable {
 
 
 class ResetPinResponseModel: BaseResponseModel{
-    var data : ResetPinData?
-
-    enum CodingKeys: String, CodingKey {
-        case data = "data"
-    }
-
-    public required init(from decoder: Decoder) throws {
-        let values = try decoder.container(keyedBy: CodingKeys.self)
-        data = try values.decodeIfPresent(ResetPinData.self, forKey: .data)
-        try super.init(from: decoder)
-    }
+//    var data : ResetPinData?
+//
+//    enum CodingKeys: String, CodingKey {
+//        case data = "data"
+//    }
+//
+//    public required init(from decoder: Decoder) throws {
+//        let values = try decoder.container(keyedBy: CodingKeys.self)
+//        data = try values.decodeIfPresent(ResetPinData.self, forKey: .data)
+//        try super.init(from: decoder)
+//    }
 }
 
 class ResetPinData: Codable {

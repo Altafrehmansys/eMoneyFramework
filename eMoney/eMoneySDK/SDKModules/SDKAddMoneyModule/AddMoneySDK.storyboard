@@ -44,7 +44,7 @@
                                         </subviews>
                                     </stackView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nR4-ai-XAb">
-                                        <rect key="frame" x="332" y="27.666666666666668" width="51" height="34.333333333333329"/>
+                                        <rect key="frame" x="332" y="10" width="51" height="34.333333333333336"/>
                                         <color key="tintColor" name="e&amp;_Grey_100"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" image="xmark" catalog="system" title=" "/>
@@ -68,9 +68,9 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="76" id="Esx-vj-ng1"/>
                                     <constraint firstItem="duf-2e-ytZ" firstAttribute="centerX" secondItem="1Xy-vH-x4a" secondAttribute="centerX" id="G48-Gd-zrz"/>
-                                    <constraint firstAttribute="bottom" secondItem="nR4-ai-XAb" secondAttribute="bottom" constant="14" id="I8F-pu-ptE"/>
                                     <constraint firstAttribute="trailing" secondItem="nR4-ai-XAb" secondAttribute="trailing" constant="10" id="Me6-0h-l9g"/>
                                     <constraint firstAttribute="bottom" secondItem="0JV-U7-AnZ" secondAttribute="bottom" constant="14" id="OG4-GI-u7E"/>
+                                    <constraint firstItem="nR4-ai-XAb" firstAttribute="top" secondItem="1Xy-vH-x4a" secondAttribute="top" constant="10" id="OP9-Ty-HwK"/>
                                     <constraint firstAttribute="bottom" secondItem="duf-2e-ytZ" secondAttribute="bottom" id="Zjr-Eg-xcP"/>
                                     <constraint firstItem="0JV-U7-AnZ" firstAttribute="leading" secondItem="1Xy-vH-x4a" secondAttribute="leading" constant="10" id="cB0-Fo-QJf"/>
                                     <constraint firstItem="seH-Oo-ntB" firstAttribute="top" secondItem="1Xy-vH-x4a" secondAttribute="top" constant="5" id="oax-1q-Ho1"/>

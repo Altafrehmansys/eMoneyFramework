@@ -30,38 +30,21 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rZo-M5-w5d">
                                 <rect key="frame" x="0.0" y="0.0" width="430" height="932"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DEd-km-3Cl">
-                                        <rect key="frame" x="185" y="6" width="60" height="4"/>
-                                        <color key="backgroundColor" name="e&amp;_Grey_50"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="60" id="dYe-wB-efU"/>
-                                            <constraint firstAttribute="height" constant="4" id="gBA-JX-jLl"/>
-                                        </constraints>
-                                    </view>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enter OTP sent to +971 57451 9021" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LAs-Tc-FdE">
-                                        <rect key="frame" x="24" y="100" width="382" height="21"/>
+                                        <rect key="frame" x="24" y="75" width="382" height="21"/>
                                         <fontDescription key="fontDescription" name="SuisseIntl" family="Suisse Int'l" pointSize="16"/>
                                         <color key="textColor" name="e&amp;_Black_80"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="736-hE-HaG">
-                                        <rect key="frame" x="355" y="20.000000000000004" width="51" height="34.333333333333343"/>
-                                        <color key="tintColor" name="e&amp;_Grey_100"/>
-                                        <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="plain" image="xmark" catalog="system" title=" "/>
-                                        <connections>
-                                            <action selector="closeBtnTapped:" destination="oRW-E5-bIC" eventType="touchUpInside" id="4z7-P4-6nz"/>
-                                        </connections>
-                                    </button>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IAz-MH-NJ0" customClass="OTPTextField" customModule="eMoneySDK" customModuleProvider="target">
-                                        <rect key="frame" x="24" y="141" width="382" height="70"/>
+                                        <rect key="frame" x="24" y="116" width="382" height="70"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="70" id="0Mv-fp-sbP"/>
                                         </constraints>
                                     </view>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g4v-eO-EkD">
-                                        <rect key="frame" x="326" y="234.33333333333334" width="80" height="29.000000000000028"/>
+                                        <rect key="frame" x="326" y="209.33333333333334" width="80" height="29"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                         <state key="normal" title="Resend OTP"/>
@@ -70,7 +53,7 @@
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Haven’t received?" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LjH-D3-fu1">
-                                        <rect key="frame" x="23.999999999999993" y="241" width="98.333333333333314" height="15.666666666666686"/>
+                                        <rect key="frame" x="23.999999999999993" y="216" width="98.333333333333314" height="15.666666666666657"/>
                                         <fontDescription key="fontDescription" name="SuisseIntl" family="Suisse Int'l" pointSize="12"/>
                                         <color key="textColor" name="e&amp;_Black_80"/>
                                         <nil key="highlightedColor"/>
@@ -78,33 +61,29 @@
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
+                                    <constraint firstItem="LAs-Tc-FdE" firstAttribute="top" secondItem="rZo-M5-w5d" secondAttribute="top" constant="75" id="1BM-QV-PBD"/>
                                     <constraint firstItem="g4v-eO-EkD" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="LjH-D3-fu1" secondAttribute="trailing" constant="5" id="2ad-he-WCn"/>
                                     <constraint firstItem="IAz-MH-NJ0" firstAttribute="centerX" secondItem="rZo-M5-w5d" secondAttribute="centerX" id="5XQ-Nd-8So"/>
-                                    <constraint firstItem="736-hE-HaG" firstAttribute="top" secondItem="rZo-M5-w5d" secondAttribute="top" constant="20" id="5XU-Tn-aDt"/>
                                     <constraint firstItem="IAz-MH-NJ0" firstAttribute="leading" secondItem="rZo-M5-w5d" secondAttribute="leading" constant="24" id="L7U-4o-89z"/>
                                     <constraint firstAttribute="trailing" secondItem="LAs-Tc-FdE" secondAttribute="trailing" constant="24" id="PkW-8g-X4s"/>
                                     <constraint firstItem="LjH-D3-fu1" firstAttribute="leading" secondItem="IAz-MH-NJ0" secondAttribute="leading" id="V0q-S0-AfK"/>
                                     <constraint firstAttribute="trailing" secondItem="IAz-MH-NJ0" secondAttribute="trailing" constant="24" id="W8o-pJ-EOx"/>
                                     <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="LjH-D3-fu1" secondAttribute="bottom" constant="34" id="XX9-0h-aFm"/>
-                                    <constraint firstItem="DEd-km-3Cl" firstAttribute="top" secondItem="rZo-M5-w5d" secondAttribute="top" constant="6" id="ceM-W7-FyP"/>
-                                    <constraint firstAttribute="trailing" secondItem="736-hE-HaG" secondAttribute="trailing" constant="24" id="ddf-Wm-7dB"/>
-                                    <constraint firstItem="DEd-km-3Cl" firstAttribute="centerX" secondItem="rZo-M5-w5d" secondAttribute="centerX" id="eas-S9-Zso"/>
                                     <constraint firstItem="g4v-eO-EkD" firstAttribute="trailing" secondItem="IAz-MH-NJ0" secondAttribute="trailing" id="fjl-uM-rBH"/>
                                     <constraint firstItem="LAs-Tc-FdE" firstAttribute="leading" secondItem="rZo-M5-w5d" secondAttribute="leading" constant="24" id="gIM-qk-R3x"/>
                                     <constraint firstItem="LjH-D3-fu1" firstAttribute="top" secondItem="IAz-MH-NJ0" secondAttribute="bottom" constant="30" id="gsz-Rz-y87"/>
-                                    <constraint firstItem="LAs-Tc-FdE" firstAttribute="top" secondItem="DEd-km-3Cl" secondAttribute="bottom" constant="90" id="qMr-DW-7OV"/>
                                     <constraint firstItem="IAz-MH-NJ0" firstAttribute="top" secondItem="LAs-Tc-FdE" secondAttribute="bottom" constant="20" id="sSo-vW-Wwh"/>
                                     <constraint firstItem="g4v-eO-EkD" firstAttribute="centerY" secondItem="LjH-D3-fu1" secondAttribute="centerY" id="vxH-v0-mH7"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                        <real key="value" value="20"/>
+                                        <real key="value" value="0.0"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Fgm-va-hO6"/>
-                        <color key="backgroundColor" red="0.19215686274509802" green="0.19215686274509802" blue="0.19215686274509802" alpha="0.59515837585034015" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstAttribute="bottom" secondItem="n4R-W9-vr9" secondAttribute="bottom" id="BYl-D0-zS6"/>
                             <constraint firstItem="n4R-W9-vr9" firstAttribute="top" secondItem="oxZ-QJ-aur" secondAttribute="top" id="IQj-B8-W2T"/>
@@ -116,9 +95,9 @@
                             <constraint firstItem="n4R-W9-vr9" firstAttribute="leading" secondItem="Fgm-va-hO6" secondAttribute="leading" id="mcv-SC-DY9"/>
                         </constraints>
                     </view>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics"/>
                     <connections>
                         <outlet property="backGroundView" destination="n4R-W9-vr9" id="SFY-Bn-W9I"/>
-                        <outlet property="buttonClose" destination="736-hE-HaG" id="1td-xg-ssN"/>
                         <outlet property="buttonResendOtp" destination="g4v-eO-EkD" id="cyt-vb-pOQ"/>
                         <outlet property="labelHaventRecieve" destination="LjH-D3-fu1" id="CjI-1P-lzP"/>
                         <outlet property="labelOtpNumber" destination="LAs-Tc-FdE" id="aNJ-2N-0yw"/>
@@ -133,15 +112,8 @@
         </scene>
     </scenes>
     <resources>
-        <image name="xmark" catalog="system" width="128" height="113"/>
         <namedColor name="e&amp;_Black_80">
             <color red="0.18823529411764706" green="0.18823529411764706" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </namedColor>
-        <namedColor name="e&amp;_Grey_100">
-            <color red="0.48627450980392156" green="0.48627450980392156" blue="0.47843137254901963" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </namedColor>
-        <namedColor name="e&amp;_Grey_50">
-            <color red="0.74117647058823533" green="0.74117647058823533" blue="0.73725490196078436" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

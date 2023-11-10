@@ -133,10 +133,10 @@ extension AddMoneyPresenter {
         if self.filteredBanksList.isEmpty { return }
         
         var banksDataSource = [StandardCellModel]()
-        filteredBanksList.forEach { bank in
-            banksDataSource.append(self.getBankDetailsCell(with: bank))
-            banksDataSource.append(self.spaceCell(with: 16))
-        }
+//        filteredBanksList.forEach { bank in
+//            banksDataSource.append(self.getBankDetailsCell(with: bank))
+//            banksDataSource.append(self.spaceCell(with: 16))
+//        }
         banksDataSource.removeLast()
         
         let cellModel = SavedAccountsAndCardsTableViewCellModel(title: Strings.AddMoney.banks, dataSource: banksDataSource, type: .banks)
@@ -144,23 +144,23 @@ extension AddMoneyPresenter {
         self.dataSource.append(spaceCell(with: 26))
     }
     
-    // MARK: - Configure Cell with bank details
-    private func getBankDetailsCell(with bank: BankAccountsListResponseModel.PaymentSources) -> StandardCellModel {
-        var dataSource = [StandardCellModel]()
-        
-        let titleCell = BankAccountInfoTableViewCellModel(actions: self.cellActions, bank: bank)
-        dataSource.append(titleCell)
-        
-        bank.accounts?.forEach { account in
-            let model = LinkedBanksTableViewCellModel(actions: self.cellActions, bank: bank, account: account)
-            dataSource.append(model)
-            dataSource.append(self.dividerCell())
-        }
-        dataSource.removeLast()
-        
-        let tableViewCellModel = TableViewCellModelWithUITableView(dataSource: dataSource, borderWidth: 1, borderColor: AppColor.eAnd_Grey_20, cornerRadius: 12)
-        return tableViewCellModel
-    }
+//    // MARK: - Configure Cell with bank details
+//    private func getBankDetailsCell(with bank: BankAccountsListResponseModel.PaymentSources) -> StandardCellModel {
+//        var dataSource = [StandardCellModel]()
+//        
+//        let titleCell = BankAccountInfoTableViewCellModel(actions: self.cellActions, bank: bank)
+//        dataSource.append(titleCell)
+//        
+//        bank.accounts?.forEach { account in
+//            let model = LinkedBanksTableViewCellModel(actions: self.cellActions, bank: bank, account: account)
+//            dataSource.append(model)
+//            dataSource.append(self.dividerCell())
+//        }
+//        dataSource.removeLast()
+//        
+//        let tableViewCellModel = TableViewCellModelWithUITableView(dataSource: dataSource, borderWidth: 1, borderColor: AppColor.eAnd_Grey_20, cornerRadius: 12)
+//        return tableViewCellModel
+//    }
     
     // MARK: - Add Payment options
     private func addPaymentOptions() {
@@ -330,10 +330,13 @@ extension AddMoneyPresenter {
 extension AddMoneyPresenter {
     
     private func makeAPICalls() {
-        if let view = view as? AddMoneyViewController, isInitialLoading {
+//        if let view = view as? AddMoneyViewController, 
+        if isInitialLoading {
             isInitialLoading = false
-            Loader.shared.showWithoutGreyBackground(in: view.mainContainerView)
+            //            Loader.shared.showWithoutGreyBackground(in: view.mainContainerView)
+            Loader.shared.showFullScreen()
         }
+        
         
         if openState != .managedSavedAccount {
 //            self.getBankAccountsList()
@@ -342,9 +345,10 @@ extension AddMoneyPresenter {
         self.getOptionsList()
         self.getAvailableBalance()
         dispatchGroup.notify(queue: DispatchQueue.main) {
-            if let view = self.view as? AddMoneyViewController {
-                Loader.shared.hide(view: view.mainContainerView)
-            }
+//            if let view = self.view as? AddMoneyViewController {
+//                Loader.shared.hide(view: view.mainContainerView)
+//            }
+            Loader.shared.hideFullScreen()
             
             // Prepare arrays for show more/less functionality
             self.handleShowMoreAction()

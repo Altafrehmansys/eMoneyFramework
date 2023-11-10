@@ -24,6 +24,7 @@ protocol VerifyMobileNumberPresenterProtocol: ViperPresenter {
     func navigateToFastTrack()
     func navigateToFailedOtp(model : VerifyMobileNumberResponseModel)
     func initiatePinRequest(resend:Bool, questionSkip : Bool,unblock : Bool)
+    func popToRootView()
 }
 
 protocol VerifyMobileNumberInteractorProtocol: ViperInteractor {

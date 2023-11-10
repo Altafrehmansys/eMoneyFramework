@@ -30,6 +30,7 @@ class LoginResponseModel: BaseResponseModel {
     }
     
 }
+
 class LoginData: Codable {
     let result, userToken, fullName: String?
     let isDigitalKyc: Bool?
@@ -78,4 +79,61 @@ class LoginData: Codable {
         oldDeviceId = try values.decodeIfPresent(String.self, forKey: .oldDeviceId)
     }
     
+}
+
+
+public class LoginModel {
+    public let result, userToken, fullName: String?
+    public let isDigitalKyc: Bool?
+    public var profileName: String?
+    public let isSingleAccount, isEIDSuspended: Bool?
+    public let isFirstLogin: Bool?
+    public let loyaltyPointsAccountsFri, fri: String?
+    public let oldDeviceId:String?
+    public var pin: String
+    public var retriesLeft: Int?
+    public var remainingDays: Int?
+    public var noOfDaysPendingForPhysicalVer: Int?
+    public var upgradeScreen: String?
+    public var upgradeToProfile: String?
+    public var flowName: String?
+    public var survey: String?
+    public var errors: [String]?
+    
+    
+    init(withLoginData data: LoginData, pin: String) {
+        self.result = data.result
+        self.userToken = data.userToken
+        self.fullName = data.fullName
+        self.isDigitalKyc = data.isDigitalKyc
+        self.profileName = data.profileName
+        self.isSingleAccount = data.isSingleAccount
+        self.isEIDSuspended = data.isEIDSuspended
+        self.isFirstLogin = data.isFirstLogin
+        self.loyaltyPointsAccountsFri = data.loyaltypointsaccountsfri
+        self.fri = data.fri
+        self.oldDeviceId = data.oldDeviceId
+        self.pin = pin
+        self.upgradeScreen = data.upgradeScreen
+        self.upgradeToProfile = data.upgradeToProfile
+        self.flowName = data.flowName
+    }
+}
+
+public class BaseResponse {
+    public let responseCode: Int = 0
+    public var responseMessage: String?
+    public var title: String?
+    public var message: String?
+    public var displayAppRating: Bool?
+    public let data: LoginModel
+    
+    init(withLoginData data: LoginData, pin: String) {
+        let loginData = LoginModel.init(withLoginData:data, pin: pin)
+        self.data = loginData
+        self.responseMessage = nil
+        self.displayAppRating = false
+        self.message = nil
+        self.title = nil
+    }
 }

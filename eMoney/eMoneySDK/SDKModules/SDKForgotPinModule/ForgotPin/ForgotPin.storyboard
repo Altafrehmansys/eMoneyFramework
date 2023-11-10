@@ -104,15 +104,18 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="3Mj-9F-2I8" kind="relationship" relationship="rootViewController" id="Xah-tw-92B"/>
+                    </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0nt-gV-Z70" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-199.23664122137404" y="537.67605633802816"/>
         </scene>
-        <!--OtpForgotPinPopup-->
+        <!--OtpForgotPinPopupViewController-->
         <scene sceneID="pbI-Cf-H6E">
             <objects>
-                <viewControllerPlaceholder storyboardName="OtpForgotPinPopup" id="3Mj-9F-2I8" sceneMemberID="viewController">
+                <viewControllerPlaceholder storyboardName="OtpForgotPinPopup" referencedIdentifier="OtpForgotPinPopupViewController" id="3Mj-9F-2I8" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="Ntf-Ur-3wE"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Wfh-bU-rl2" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

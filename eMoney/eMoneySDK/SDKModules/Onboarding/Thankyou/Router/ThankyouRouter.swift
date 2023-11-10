@@ -53,8 +53,9 @@ extension ThankyouRouter: ThankyouRouterProtocol {
             view?.navigationController?.pushViewController(vc, animated: true)
             break
         case .home:
-            let vc = CustomTabbarViewController()
-            CommonMethods.setRootViewControllerWithoutNavigation(viewController: vc)
+//            let vc = CustomTabbarViewController()
+//            CommonMethods.setRootViewControllerWithoutNavigation(viewController: vc)
+            break
         case .tempCaseWithValue(let value):
             break
         }

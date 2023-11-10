@@ -42,8 +42,8 @@ extension SendMoneyToBankAccountPresenter {
         let titleCell2 = GenericSingleLabelCellModel(content: "You can find your IBAN in the Internet/Mobile Bank and on your account statement.It starts with AE and total length is 23 characters", alignment: .center)
         dataSource.append(titleCell2)
         
-        let descriptionCellModel = SingleImageTableViewCellModel(image: "iban-info", backgroundImage: "iban-info-background")
-        dataSource.append(descriptionCellModel)
+//        let descriptionCellModel = SingleImageTableViewCellModel(image: "iban-info", backgroundImage: "iban-info-background")
+//        dataSource.append(descriptionCellModel)
         self.router?.go(to: .showIBANInfo(dataSource: dataSource))
     }
 }

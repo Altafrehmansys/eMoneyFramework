@@ -17,18 +17,34 @@ class OtpForgotPinPopupViewController: BaseViewController {
     @IBOutlet weak var labelHaventRecieve: UILabel!
     @IBOutlet weak var backGroundView: UIView!
     @IBOutlet weak var buttonResendOtp: UIButton!
-    @IBOutlet weak var buttonClose: UIButton!
     @IBOutlet weak var viewBottomConstraint: NSLayoutConstraint!
     
-    var delegate: OtpForgotPinPopupDelegate?
+//    var delegate: OtpForgotPinPopupDelegate?
     var presenter: OtpForgotPinPopupPresenterProtocol?
     var otpInputCode = String()
     var timer : Timer?
     var verifyCount = 0
+    var delegate : SendDataSDK?
     
     override func viewDidLoad() {
-       super.viewDidLoad()
-       setUpUI()
+        super.viewDidLoad()
+        setUpUI()
+        delegate?.sendStringData(string: "forgot_pin")
+        keyboardCallBack = {[weak self] (isHidden, _) in
+            if isHidden {
+                self?.delegate?.changeScreenSize(size: .halfScreen, viewHeight: 0)
+            }else {
+                self?.delegate?.changeScreenSize(size: .fullScreen, viewHeight: 0)
+            }
+        }
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -40,19 +56,27 @@ class OtpForgotPinPopupViewController: BaseViewController {
         TimerOtp.shared.stopTimer()
     }
     
+    func setupModule() {
+        let presenter = OtpForgotPinPopupPresenter()
+        let router = OtpForgotPinPopupRouter()
+        let interactor = OtpForgotPinPopupInteractor()
+        self.presenter =  presenter
+        presenter.view = self
+        presenter.router = router
+        presenter.interactor = interactor
+        router.view = self
+        interactor.output = presenter
+    }
+    
     func setUpUI() {
         
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(dismissView))
         self.backGroundView.addGestureRecognizer(tapGesture)
         
         self.isHideNavigation(false)
-        self.navigationItem.setTitle(title: "forgot_pin_statement".localized,subtitle: "set_your_new_pin".localized)
-        self.createNavCloseBtn()
+        self.navigationItem.setTitle(title:"forgot_pin_statement".localized,subtitle: "enter_otp".localized)
+//        self.createNavCloseBtn()
         self.presenter?.getTokenRequestFromServer()
-//        if TimerOtp.shared.timeCounter == 0 {
-//            SDKColors.shared.flowName == ""
-//            self.presenter?.checkotpSendRequestResponse()
-//        }
         TimerOtp.shared.delegate = self
         IQKeyboardManager.shared.enable = true
         labelOtpNumber.text = Strings.AddMoney.enterOTPEmail
@@ -72,7 +96,7 @@ class OtpForgotPinPopupViewController: BaseViewController {
         configureOtpField()
         
         self.updateBottomBtnConstraintOnKeyboardAppearing(viewBottomConstraint, bottomPadding: 0)
-        self.addSwipeDown(on: self.viewPopup)
+//        self.addSwipeDown(on: self.viewPopup)
     }
     
     func configureOtpField() {
@@ -103,7 +127,7 @@ class OtpForgotPinPopupViewController: BaseViewController {
                 toolBar.isTranslucent = true
                 let space = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.flexibleSpace, target: nil, action: nil)
 
-                let doneButton = UIBarButtonItem(title: "Done", style: .done, target: self,
+        let doneButton = UIBarButtonItem(title: "done_btn_text".localized, style: .done, target: self,
                                                  action: #selector(textFieldDonePressed))
                 doneButton.tintColor = .blue
 
@@ -140,9 +164,15 @@ class OtpForgotPinPopupViewController: BaseViewController {
         TimerOtp.shared.delegate = self
     }
     
-    func timerStart(remainingTimer: Int? = nil){
+//    func timerStart(remainingTimer: Int? = nil){
+//        TimerOtp.shared.stopTimer()
+//        timerCountStart(remainingTimer: remainingTimer)
+//        verifyCount = 0
+//    }
+    
+    func timerStart() {
         TimerOtp.shared.stopTimer()
-        timerCountStart(remainingTimer: remainingTimer)
+        timerCountStart()
         verifyCount = 0
     }
 
@@ -158,54 +188,61 @@ class OtpForgotPinPopupViewController: BaseViewController {
 
 // MARK: Delegates
 extension OtpForgotPinPopupViewController: OtpForgotPinPopupViewProtocol {
-    func otpSendRequestResponse(response: VerifyMobileNumberResponseModel) {
-        Loader.shared.hideFullScreen()
-        if response.data?.isBlocked ?? false {
-            presenter?.`navigateToFailedOtp`(model: response)
-        }
-        else {
-            self.timerStart(remainingTimer: response.data?.remainingReattemptTimeInSeconds)
-            self.setError(with: "", isError: false)
-        }
-    }
+//    func otpSendRequestResponse(response: VerifyMobileNumberResponseModel) {
+//        Loader.shared.hideFullScreen()
+//        if response.data?.isBlocked ?? false {
+//            presenter?.`navigateToFailedOtp`(model: response)
+//        }
+//        else {
+//            self.timerStart()//(remainingTimer: response.data?.remainingReattemptTimeInSeconds)
+//            self.setError(with: "", isError: false)
+//        }
+//    }
+//    
+//    func otpSendError(error: AppError) {
+//        Loader.shared.hideFullScreen()
+//        currentCount(counter: -1)
+//        Alert.showBottomSheetError(title: error.title, message: error.errorDescription)
+//    }
+//    
+//    func initiatePinRequestResponse(response: InitiatePinResponseModel) {
+//        Loader.shared.hideFullScreen()
+//        verifyCount = 0
+//    }
     
-    func otpSendError(error: AppError) {
-        Loader.shared.hideFullScreen()
-        currentCount(counter: -1)
-        Alert.showBottomSheetError(title: error.title, message: error.errorDescription)
-    }
-    
-    func initiatePinRequestResponse(response: InitiatePinResponseModel) {
-        Loader.shared.hideFullScreen()
-        verifyCount = 0
-    }
-    
-    func otpVerifyRequestResponse(response: VerifyMobileNumberResponseModel) {
-        SDKColors.shared.onSuccess?("\(#function) with response \(response)")
-        Loader.shared.hideFullScreen()
-        delegate?.otpPopupDidDismiss()
-        self.dismiss(animated: true, completion: nil)
-    }
-    
-    func verifyMobileRequestResponseError(error: AppError) {
-        SDKColors.shared.onFailure?("\(error.errorCode)", "\(error.localizedDescription)")
-        Loader.shared.hideFullScreen()
-        if error.errorCode != "1" {
-            Alert.showBottomSheetError(title: error.errorDescription, message: "")
-        } else {
-            verifyCount += 1
-            self.setError(with: error.errorDescription, isError: true)
-        }
-    }
+//    func otpVerifyRequestResponse(response: VerifyMobileNumberResponseModel) {
+//        SDKColors.shared.onSuccess?("\(#function) with response \(response)")
+//        Loader.shared.hideFullScreen()
+//        delegate?.otpPopupDidDismiss()
+//        self.dismiss(animated: true, completion: nil)
+//    }
+//    
+//    func verifyMobileRequestResponseError(error: AppError) {
+//        SDKColors.shared.onFailure?("\(error.errorCode)", "\(error.localizedDescription)")
+//        Loader.shared.hideFullScreen()
+//        if error.errorCode != "1" {
+//            Alert.showBottomSheetError(title: error.errorDescription, message: "")
+//        } else {
+//            verifyCount += 1
+//            self.setError(with: error.errorDescription, isError: true)
+//        }
+//    }
     
     func forgetPinOtpSendRequestResponse(response: VerifyMobileNumberResponseModel) {
         Loader.shared.hideFullScreen()
         labelOtpNumber.text = Strings.AddMoney.enterOTPEmail + " \(response.data?.email ?? "")"
+        if response.data?.isBlocked ?? false {
+            presenter?.`navigateToFailedOtp`(model: response)
+        } else {
+            self.timerStart()
+            self.setError(with: "", isError: false)
+        }
     }
     
     func forgetPinOtpSendError(error: AppError) {
         Loader.shared.hideFullScreen()
         Alert.showBottomSheetError(title: error.errorDescription, message: "")
+        currentCount(counter: -1)
     }
 }
 

@@ -48,8 +48,8 @@ extension KickstartSuccessRouter: KickstartSuccessRouterProtocol {
     func go(to route: Route) {
         switch route {
         case .home:
-            let vc = CustomTabbarViewController()
-            CommonMethods.setRootViewControllerWithoutNavigation(viewController: vc)
+//            let vc = CustomTabbarViewController()
+//            CommonMethods.setRootViewControllerWithoutNavigation(viewController: vc)
             break
         case .tempCaseWithValue(let value):
             break

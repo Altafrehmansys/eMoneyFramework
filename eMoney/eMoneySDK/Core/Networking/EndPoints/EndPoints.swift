@@ -62,7 +62,7 @@ enum EndPoints {
         static let register                 = "onboarding/\(route)register"
 //        static let register                 = "\(route)registration/register"
         static let initiatePin              = "\(route)registration/generateOtpForCredentials"
-        static let resetPin                 = "\(route)registration/user/resetPinWithOtp"
+        static let resetPin                 = "registrations/\(route)user/resetPinWithOtp"
         static let lookup                   = "\(route)registration/lookup"
 //    https://enmoneyapim.azure-api.net/onboarding/v1/validate-email
         static let verifyEmail              = "onboarding/\(route)validate-email"

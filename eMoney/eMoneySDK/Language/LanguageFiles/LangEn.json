@@ -38,7 +38,7 @@
             "fine_source": "Fine Source",
             "all_uae_contacts": "All UAE Contacts",
             "international_transfer": "International Transfers",
-            "manage_saved_methods": "Manage saved methods",
+            "manage_saved_methods": "Manage cards",
             "select_a_source": "Select a source",
             "card_holder_name": "Card holder name",
             "tv_welcome": "Welcome",
@@ -123,6 +123,7 @@
             "unfortunately_partial_payment_error": "Unfortunately partial payment is not supported by the biller. Please pay the full amount to complete transaction request.",
             "will_be_notified": "%@ will be notified of the decline for the AED %@ request.",
             "forget_pin_success_desc": "You have successfully set your PIN, now you can login your account.",
+            "update_emirateid_success": "Your Emirates ID has been successfully updated.",
             "national_bonds": "National Bonds",
             "no_internet_desc": "Oops! It seems like you're not connected to the internet. Please check your connection and try again.",
             "mobile": "Mobile",
@@ -262,7 +263,7 @@
             "share_message_txt_for_request_money": "%@ has requested %@ from %@. To manage the request, please use the e& money APP: %@",
             "label_choose_an_application": "Choose an Application",
             "account_numbers": "Account numbers",
-            "manage_method": "Manage method",
+            "manage_method": "Manage Card",
             "min_aed": ", minimum AED",
             "registration_under_review": "Your registration is under review, this could take a couple of days. Explore the app in limited functionality until then!",
             "select_cause": "Select cause",
@@ -457,7 +458,7 @@
             "my_qr": "My QR",
             "update_language": "Update language",
             "emoney_process": "e& money processing",
-            "we_will_send_link": "Enter an email address that you have access to as you will have to verify it.",
+            "we_will_send_link": "We will send you a verification link. The link will be valid for 7 days.",
             "total_bill_due": "Total bill due",
             "cancel ahahha": "Cancel",
             "test_name": "Test in Englist Update",
@@ -682,7 +683,7 @@
             "max": "max",
             "lets_try_again": "Let’s try again",
             "need_help": "Need help?",
-            "join_emoney": "Join e& money",
+            "join_emoney": "Register for e& money",
             "mobile_postpaid_recharge": "Mobile postpaid & recharge",
             "device_error_biometry": "Your device is not configured for biometric authentication.",
             "agents": "Agents",
@@ -1032,7 +1033,9 @@
             "okay" : "Okay",
             "downloadeMoney": "Download e& money now",
             "set_new_pin": "Set new PIN",
-            "enter_new_pin": "Enter your new PIN to secure your account."
+            "enter_new_pin": "Enter your new PIN to secure your account.",
+            "login": "Login",
+            "update_emirates_id" :"Update Emirates ID"
         }
     }
 }

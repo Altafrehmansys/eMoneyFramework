@@ -42,6 +42,10 @@ extension VerifyMobileNumberPresenter: VerifyMobileNumberPresenterProtocol {
         router?.go(to: .failedOtp(model: model))
     }
     
+    func popToRootView() {
+        router?.go(to: .popToRootView)
+    }
+    
     func checkotpSendRequestResponse() {
         Loader.shared.showFullScreen()
         interactor?.checkotpSendRequestResponseFromServer()

@@ -30,6 +30,7 @@ enum OnboardingApiRouter: RequestProtocol {
     case cardColor(param:SelectCardRequestModel)
     case getToken(token: String)
     case forgetPinSendOtp
+    case updateProfile(params: UpdateProfileRequest)
     
     var path: String {
         switch self {
@@ -77,13 +78,16 @@ enum OnboardingApiRouter: RequestProtocol {
             return EndPoints.Onboarding.cardColor
         case .getToken:
             return EndPoints.Onboarding.tokenGetter
+        case .updateProfile:
+            return EndPoints.Onboarding.tokenGetter
         }
     }
     
     var queryParameters: [String: String] {
         switch self {
-        case .getToken(let token):
-            return ["authorization":token]
+        case .getToken:
+            return [:]
+//            return ["authorization":token]
         default:
             return [:]
         }
@@ -140,6 +144,8 @@ enum OnboardingApiRouter: RequestProtocol {
             return CommonMethods.codableToDictionary(codableObject: param)
         case .getToken:
             return [:]
+        case .updateProfile(let param):
+            return CommonMethods.codableToDictionary(codableObject: param)
             
         }
     }
@@ -147,7 +153,7 @@ enum OnboardingApiRouter: RequestProtocol {
         switch self {
         case .checkAppVersion,.languagePack,.allLanguages:
             return .POST
-        case .walkthrough,.ocrAnalyze,.keyAndConfiguration,.liveness,.rhserv,.registerUser,.verifyEmail,.updateDocument:
+        case .walkthrough,.ocrAnalyze,.keyAndConfiguration,.liveness,.rhserv,.registerUser,.verifyEmail,.updateDocument, .updateProfile:
             return .POST
         case .registerationStatus:
             return .POST
@@ -177,6 +183,9 @@ enum OnboardingApiRouter: RequestProtocol {
         case .registerUser:
 //            return ["Content-Type":"multipart/form-data"]
             return ["Content-Type":"application/json"]
+        case .getToken:
+            let token = SDKColors.shared.authorizationToken
+            return ["Authorization":token]
         default:
             return [:]
         }

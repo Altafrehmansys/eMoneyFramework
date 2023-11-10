@@ -33,8 +33,8 @@ class ResetPinRequestModel:Codable{
     var repeatNewPin:String?
     var otp:String?
     var newPin:String?
-    var pin:String?
-    var flowName: String?
+//    var pin:String?
+//    var flowName: String?
     var transactionId: String?
     var credentialType: String?
 }

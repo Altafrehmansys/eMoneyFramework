@@ -53,6 +53,12 @@ extension CaptureIdentityInfoRouter: CaptureIdentityInfoRouterProtocol {
             //viewController.popToViewController = self.popToViewController
             viewController.updateType = (view as? CaptureIdentityInfoViewController)?.updateType
             view?.navigationController?.pushViewController(viewController, animated: true)
+            
+//            SDKNavigationStack.shared.baseViewController?.addChild(viewController)
+//            let frame = SDKNavigationStack.shared.baseViewController?.view.frame
+//            viewController.view.frame = CGRect.init(x: 0, y: 0, width: frame?.width ?? 0, height: frame?.height ?? 0)
+//            SDKNavigationStack.shared.baseViewController?.view.addSubview(viewController.view)
+//            viewController.didMove(toParent: SDKNavigationStack.shared.baseViewController)
             break
         case .livenessCheck:
             let vc = SelfiPreviewViewController.instantiate(fromAppStoryboard: .Liveness)

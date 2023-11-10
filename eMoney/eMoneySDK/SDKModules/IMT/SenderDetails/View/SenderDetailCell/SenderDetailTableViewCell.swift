@@ -69,13 +69,13 @@ class SenderDetailTableViewCell: StandardCell {
             dropDown.backgroundColor = .white
             dropDown.setupCornerRadius(16)
             dropDown.customCellConfiguration = { index, item, cell in
-                guard let customCell = cell as? CustomDropDownCell else { return }
-                
-                if index == self.dropDown.dataSource.count - 1{
-                    customCell.separatorView.isHidden = true
-                }else{
-                    customCell.separatorView.isHidden = false
-                }
+//                guard let customCell = cell as? CustomDropDownCell else { return }
+//                
+//                if index == self.dropDown.dataSource.count - 1{
+//                    customCell.separatorView.isHidden = true
+//                }else{
+//                    customCell.separatorView.isHidden = false
+//                }
             }
             
             dropDown.selectionAction = { (index,item) in

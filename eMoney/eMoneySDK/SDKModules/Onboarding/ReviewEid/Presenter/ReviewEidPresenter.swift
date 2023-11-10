@@ -84,6 +84,8 @@ extension ReviewEidPresenter: ReviewEidInteractorOutputProtocol {
                 if let type = self.updateType {
                     if type == .updateEid {
                         self.callUpdateDocumentApi()
+                    } else {
+                        self.router?.go(to: .verifyIdentity)
                     }
                 }else{
                     self.router?.go(to: .verifyIdentity)

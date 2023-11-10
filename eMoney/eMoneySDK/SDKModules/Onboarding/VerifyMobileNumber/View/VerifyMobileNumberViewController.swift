@@ -35,6 +35,7 @@ class VerifyMobileNumberViewController: BaseViewController {
     var verifyCount = 0
     var currentCount = 0
     var currentDate = Date()
+    var pageTitle: String?
     // MARK: Lifecycle
     
     override func viewDidLoad() {
@@ -49,7 +50,8 @@ class VerifyMobileNumberViewController: BaseViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        self.delegate?.changeScreenSize(size: .halfScreen)
+        self.delegate?.changeScreenSize(size: .halfScreen, viewHeight: 0)
+        NotificationCenter.default.post(name: .onChangeTopCloseButton, object: nil, userInfo: ["isShow":true])
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -69,7 +71,7 @@ class VerifyMobileNumberViewController: BaseViewController {
             labelOTP.text = otpSentence
             self.presenter?.initiatePinRequest(resend: false, questionSkip: false, unblock: false)
             //self.timerStart()
-        case .onboarding :
+        case .onboarding:
             labelEmailID.isHidden = true
             self.navigationItem.setTitle(title: "register".localized,subtitle: "verify_mobile_number".localized)
             let otpSentence = "enter_otp_number".localized + " " + CommonMethods.getFormattedStringForPhoneNumberWithCode(phoneNumber: "+\(msisdn)")
@@ -78,6 +80,16 @@ class VerifyMobileNumberViewController: BaseViewController {
                 timerStartFromScratch()
             }
             else {
+                timerResume()
+            }
+        case .registerDevice:
+            labelEmailID.isHidden = true
+            self.navigationItem.setTitle(title: pageTitle ?? "", subtitle: "verify_mobile_number".localized)
+            let otpSentence = "enter_otp_number".localized + " " + CommonMethods.getFormattedStringForPhoneNumberWithCode(phoneNumber: "+\(msisdn)")
+            labelOTP.text = otpSentence
+            if isNumberChange {
+                timerStartFromScratch()
+            } else {
                 timerResume()
             }
         }
@@ -106,6 +118,13 @@ class VerifyMobileNumberViewController: BaseViewController {
         NotificationCenter.default.addObserver(self, selector: #selector(appBecomeActive), name: UIApplication.didBecomeActiveNotification, object: nil)
         
         self.updateBottomBtnConstraintOnKeyboardAppearing(self.constraintBottomButton, bottomPadding: 32)
+        self.keyboardCallBack = { (isHidden, frame) in
+            if isHidden {
+                self.delegate?.changeScreenSize(size: .halfScreen, viewHeight: 0)
+            } else {
+                self.delegate?.changeScreenSize(size: .fullScreen, viewHeight: 0)
+            }
+        }
     }
     
     func showEmailInMasking(response: VerifyMobileNumberResponseModel){
@@ -130,7 +149,6 @@ class VerifyMobileNumberViewController: BaseViewController {
             TimerOtp.shared.delegate = self
             TimerOtp.shared.timerResume()
         }
-        
     }
     
     @objc func appMovedToBackground() {
@@ -138,6 +156,7 @@ class VerifyMobileNumberViewController: BaseViewController {
         currentDate = Date()
         print("App moved to background!")
     }
+    
     @objc func appBecomeActive() {
         print("App become active")
         let elapsed = Date().timeIntervalSince(currentDate)
@@ -214,16 +233,17 @@ class VerifyMobileNumberViewController: BaseViewController {
     func navigateToTimer(modelOtp : VerifyMobileNumberResponseModel){
         presenter?.navigateToFailedOtp(model: modelOtp)
     }
-    func timerStart(){
+    func timerStart() {
         TimerOtp.shared.stopTimer()
         timerCountStart()
         verifyCount = 0
     }
+    
     // MARK: IB Actions
     @IBAction func buttonConfirmTapped(_ sender: Any) {
         view.endEditing(true)
         switch userJourneyEnum {
-        case .onboarding :
+        case .onboarding, .registerDevice:
             self.presenter?.verifyOtpRequestResponse(otp: otpInputCode, flowType: .onboarding)
         case .forgotPin :
             GlobalData.shared.otp = otpInputCode
@@ -278,6 +298,8 @@ extension VerifyMobileNumberViewController: VerifyMobileNumberViewProtocol {
             checkUserStatus()
         case .forgotPin :
             presenter?.navigateToRegisterPin(otp: "")
+        case .registerDevice:
+            presenter?.popToRootView()
         }
     }
     

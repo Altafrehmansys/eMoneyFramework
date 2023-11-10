@@ -54,6 +54,19 @@ class RegisterPinViewController: BaseViewController {
         
         
         setViewInterface()
+        
+        self.keyboardCallBack = {[weak self] (isHidden, frame) in
+            if isHidden {
+                self?.setScreenSize(size: .halfScreen)
+            } else {
+                self?.setScreenSize(size: .fullScreen)
+            }
+        }
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        setScreenSize(size: .halfScreen)
     }
     
     func getLangPack(selectedLang: String) {
@@ -84,7 +97,7 @@ class RegisterPinViewController: BaseViewController {
         self.createNavBackBtn()
         
         switch userJourneyEnum {
-        case .onboarding :
+        case .onboarding:
             self.viewStepper.isHidden = false
             self.navigationItem.setTitle(title: "register".localized,subtitle: "set_your_new_pin".localized)
             labelSecureAccount.text = "create_pin".localized
@@ -93,6 +106,8 @@ class RegisterPinViewController: BaseViewController {
             self.viewStepper.isHidden = true
             labelSecureAccount.text = "use_this_pin".localized
             self.navigationItem.setTitle(title: "forgot_pin_statement".localized,subtitle: "set_your_new_pin".localized)
+        case .registerDevice:
+            print("This case will not be handled here")
         }
         setFontsAndText()
         if GlobalData.shared.isSingleAccount {

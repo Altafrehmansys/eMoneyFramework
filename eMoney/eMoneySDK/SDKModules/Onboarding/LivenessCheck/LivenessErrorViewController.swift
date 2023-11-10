@@ -54,6 +54,10 @@ class LivenessErrorViewController: BaseViewController {
         }
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+    }
+    
 
     func setupUI(){
         self.titleLabel.font = AppFont.appSemiBold(size: .h7)

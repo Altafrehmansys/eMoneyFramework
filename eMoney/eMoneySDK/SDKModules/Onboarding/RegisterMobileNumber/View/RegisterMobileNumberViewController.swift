@@ -57,7 +57,7 @@ public class RegisterMobileNumberViewController: BaseViewController {
             print("language pack loaded")
         }
         IQKeyboardManager.shared.enable = true
-        
+        self.getToken()
         if self.presenter == nil {
             _ = RegisterMobileNumberRouter.setupModule(vc: self)
         } else {
@@ -67,6 +67,25 @@ public class RegisterMobileNumberViewController: BaseViewController {
         settingViewInterface()
         let tap = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
         view.addGestureRecognizer(tap)
+    }
+    
+    func getToken() {
+        Loader.shared.showFullScreen()
+        Task {
+            do {
+                let response:TokenResponseModel? = try await ApiManager.shared.execute(OnboardingApiRouter.getToken(token: "bW9iaWxlLWZlOnBhc3N3b3JkMTIz"))
+                await MainActor.run {
+                    Loader.shared.hideFullScreen()
+                    SDKColors.shared.accessToken = response?.data?.accessToken
+                }
+
+            } catch let error as AppError {
+                await MainActor.run {
+                    print(error)
+                    Loader.shared.hideFullScreen()
+                }
+            }
+        }
     }
     
     func getLangPack(selectedLang: String) {

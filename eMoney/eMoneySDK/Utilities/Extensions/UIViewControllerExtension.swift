@@ -136,6 +136,8 @@ extension UIViewController {
         case CancelCard = "CancelCard"
         case CardAccountLimits = "CardAccountLimits"
         case PinSuccessful = "PinSuccessful"
+        case EmiratesIdSuccess = "EmiratesIdSuccess"
+        case ForgotPin = "ForgotPin"
              
         var instance: UIStoryboard {
             return UIStoryboard(name: rawValue, bundle: Bundle(identifier: "com.app.taskLocalTester.asdf.asdf.asdf.eMoneySDK")!)

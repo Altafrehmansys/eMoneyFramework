@@ -12,10 +12,12 @@ public enum Environment: String {
     case staging
     case production
 }
-enum flowName: String {
+enum SDKFlowName: String {
     case registration = "registration"
     case addMoney = "AddMoney"
     case changePin = "ChangePin"
+    case updateEmiratesId = "UpdateEmiratesID"
+    case login = "Login"
 }
 
 public struct EWalletConfiguration {
@@ -52,7 +54,7 @@ public class EWalletSDK {
 //            onFailure?("", "phone_number_error_pre_paid_and_post_paid".localized)
 //            return
 //        }
-        SDKColors.shared.flowName = flowName.registration.rawValue
+        SDKColors.shared.flowName = SDKFlowName.registration.rawValue
         SDKNavigationStack.shared.baseViewController = controller
         
         let onboardingView = OnboardingViewController.instantiate(fromAppStoryboard: .Onboarding)
@@ -71,7 +73,7 @@ public class EWalletSDK {
 //            onFailure?("", "phone_number_error_pre_paid_and_post_paid".localized)
 //            return
 //        }
-        SDKColors.shared.flowName = flowName.addMoney.rawValue
+        SDKColors.shared.flowName = SDKFlowName.addMoney.rawValue
         SDKNavigationStack.shared.baseViewController = controller
         
         let onboardingView = OnboardingViewController.instantiate(fromAppStoryboard: .AddMoneySDK)
@@ -91,24 +93,38 @@ public class EWalletSDK {
 //            onFailure?("", "phone_number_error_pre_paid_and_post_paid".localized)
 //            return
 //        }
-        SDKColors.shared.flowName = flowName.registration.rawValue
+        SDKColors.shared.flowName = SDKFlowName.registration.rawValue
         SDKNavigationStack.shared.baseViewController = controller
         SDKColors.shared.onSuccess = onSuccess
         SDKColors.shared.onFailure = onFailure
         SDKColors.shared.msisdn = msisdn
-        let vc = OtpForgotPinPopupRouter.setupModule()
-        vc.modalPresentationStyle = .popover
-        let nc = UINavigationController(rootViewController: vc)
-        nc.modalPresentationStyle = .popover
-        nc.view.layer.cornerRadius = 20.0
-        nc.view.layer.masksToBounds = true
-        controller.present(nc, animated: true)
+        
+//        let vc = OtpForgotPinPopupRouter.setupModule()
+//        vc.modalPresentationStyle = .popover
+//        let nc = UINavigationController(rootViewController: vc)
+////        nc.modalPresentationStyle = .popover
+//        nc.view.layer.cornerRadius = 20.0
+//        nc.view.layer.masksToBounds = true
+//        controller.present(nc, animated: true)
+                
+        let onboardingView = OnboardingViewController.instantiate(fromAppStoryboard: .ForgotPin)
+        onboardingView.modalPresentationStyle = .overCurrentContext
+        onboardingView.onSuccess = onSuccess
+        onboardingView.onFailure = onFailure
+        onboardingView.msisdn = msisdn
+        onboardingView.clientID = configuration.clientId
+        onboardingView.partnerName = configuration.partnerName
+        onboardingView.receivedTheme = configuration.theme
+        controller.present(onboardingView, animated: true)
     }
     
     public func startChangePin(in controller: UIViewController, msisdn: String, onSuccess: ((String) -> ())?, onFailure: ((String, String) -> ())?)
     {
-        SDKColors.shared.flowName = flowName.changePin.rawValue
+        SDKColors.shared.flowName = SDKFlowName.changePin.rawValue
         SDKNavigationStack.shared.baseViewController = controller
+        SDKColors.shared.onSuccess = onSuccess
+        SDKColors.shared.onFailure = onFailure
+        SDKColors.shared.msisdn = msisdn
         
         let onboardingView = OnboardingViewController.instantiate(fromAppStoryboard: .AddMoneySDK)
         onboardingView.modalPresentationStyle = .overCurrentContext
@@ -117,6 +133,39 @@ public class EWalletSDK {
         onboardingView.msisdn = msisdn
         onboardingView.clientID = configuration.clientId
         onboardingView.partnerName = configuration.partnerName
+        onboardingView.receivedTheme = configuration.theme
+        controller.present(onboardingView, animated: true)
+    }
+    
+    public func startUpdateEmiratesId(in controller: UIViewController, msisdn: String, onSuccess: ((String) -> ())?, onFailure: ((String, String) -> ())?)
+    {
+        SDKColors.shared.flowName = SDKFlowName.updateEmiratesId.rawValue
+        SDKNavigationStack.shared.baseViewController = controller
+        SDKColors.shared.onSuccess = onSuccess
+        SDKColors.shared.onFailure = onFailure
+        SDKColors.shared.msisdn = msisdn
+        
+        let onboardingView = OnboardingViewController.instantiate(fromAppStoryboard: .AddMoneySDK)
+        onboardingView.modalPresentationStyle = .overCurrentContext
+        onboardingView.msisdn = msisdn
+        onboardingView.clientID = configuration.clientId
+        onboardingView.partnerName = configuration.partnerName
+        onboardingView.receivedTheme = configuration.theme
+        controller.present(onboardingView, animated: true)
+    }
+    
+    public func login(in controller: UIViewController, msisdn: String, onSuccess: ((BaseResponse) -> ())?, onFailure: ((String, String) -> ())?) {
+        SDKColors.shared.flowName = SDKFlowName.login.rawValue
+        SDKNavigationStack.shared.baseViewController = controller
+        SDKColors.shared.onLoginSuccess = onSuccess
+        SDKColors.shared.onFailure = onFailure
+        SDKColors.shared.msisdn = msisdn
+        
+        let onboardingView = OnboardingViewController.instantiate(fromAppStoryboard: .AddMoneySDK)
+        onboardingView.modalPresentationStyle = .overCurrentContext
+        onboardingView.clientID = configuration.clientId
+        onboardingView.partnerName = configuration.partnerName
+        onboardingView.msisdn = msisdn
         onboardingView.receivedTheme = configuration.theme
         controller.present(onboardingView, animated: true)
     }

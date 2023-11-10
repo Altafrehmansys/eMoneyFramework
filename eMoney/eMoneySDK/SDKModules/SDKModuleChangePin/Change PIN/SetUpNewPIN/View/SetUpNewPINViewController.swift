@@ -41,6 +41,19 @@ class SetUpNewPINViewController: BaseViewController {
         presenter?.loadData()
         setUpNavBar()
         setViewInterface()
+        
+        self.keyboardCallBack = {[weak self] (isHidden, frame) in
+            if isHidden {
+                self?.setScreenSize(size: .halfScreen)
+            } else {
+                self?.setScreenSize(size: .fullScreen)
+            }
+        }
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.setScreenSize(size: .halfScreen)
     }
     
     private func setUpNavBar(){

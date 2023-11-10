@@ -57,9 +57,10 @@ extension HomeScreenRouter {
             vc.hidesBottomBarWhenPushed = true
             self.viewController?.navigationController?.pushViewController(vc, animated: true)
         case .BillsAndTopsUp:
-            let vc = BillsAndTopsUpRouter.setupModule(isSavedBill: false)
-            vc.hidesBottomBarWhenPushed = true
-            self.viewController?.navigationController?.pushViewController(vc, animated: true)
+//            let vc = BillsAndTopsUpRouter.setupModule(isSavedBill: false)
+//            vc.hidesBottomBarWhenPushed = true
+//            self.viewController?.navigationController?.pushViewController(vc, animated: true)
+            break
         case .showAMLUnverifiedScreen:
             let vc = ThankyouRouter.setupModule()
             vc.screenTypeEnum = .amlUnverifiedSupport

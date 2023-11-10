@@ -45,7 +45,6 @@ class EidScannerViewController: BaseViewController {
         self.scannerVM = EidScannerViewModel(docType: .ID_CARD) // Direct use
         self.initBinding()
         //scannerVM?.sdkCustomization()
-        
         self.navigationItem.setHidesBackButton(true, animated: false)
         
     }
@@ -59,16 +58,17 @@ class EidScannerViewController: BaseViewController {
         super.viewWillDisappear(animated)
         (self.navigationController as? BaseNavigationController)?.isBlackNavBar = false
 //        self.navigationController?.isNavigationBarHidden = false
-
+        setScreenSize(size: .fullScreen)
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         self.navigationItem.setTitle(title: "register".localized, subtitle: "scan_front_title".localized, isBlackNav: true)
         self.scannerVM?.readDocument(view: scannerView)
+        setScreenSize(size: .fullScreenOverContext)
+        NotificationCenter.default.post(name: .onChangeTopCloseButton, object: nil, userInfo: ["isShow":false])
     }
 
-    
     func initBinding(){
         scannerVM?.alertMessage.bind { msg in
             if msg.count > 0 {

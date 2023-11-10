@@ -71,15 +71,7 @@ extension AddMoneyConfirmAmountRouter: AddMoneyConfirmAmountRouterProtocol {
     func go(to route: Route) {
         switch route {
         case .back:
-            if let controllers = self.view?.navigationController?.viewControllers {
-                if controllers.contains(where: {$0 is AddMoneySelectBankViewController}) {
-                    self.view?.navigationController?.popToViewController(ofClass: AddMoneySelectBankViewController.self)
-                    return
-                }
-            }
-            
             self.view?.navigationController?.popToRootViewController(animated: true)
-            
         case .loadWebViewWith(let input):
             let vc = AddMoneyWebViewRouter.setupModule(input: input)
             self.view?.navigationController?.pushViewController(vc, animated: true)
@@ -92,9 +84,10 @@ extension AddMoneyConfirmAmountRouter: AddMoneyConfirmAmountRouterProtocol {
             self.view?.navigationController?.popToRootViewController(animated: true)
             
         case .alternateFlow:
-            let vc = AlternateFlowForLeanRouter.setupModule()
-            vc.modalPresentationStyle = .overCurrentContext
-            self.view?.present(vc, animated: true)
+//            let vc = AlternateFlowForLeanRouter.setupModule()
+//            vc.modalPresentationStyle = .overCurrentContext
+//            self.view?.present(vc, animated: true)
+            print("This will not be handled in sdk")
             
         case .loadOTPScreen(let msisdn, let addingText, let amount, let toTitle):
             let input = OtpPopupRouter.Input(msisdn: msisdn, addingText: addingText, amount: amount, toTitle: toTitle, userJourney: .onboarding)

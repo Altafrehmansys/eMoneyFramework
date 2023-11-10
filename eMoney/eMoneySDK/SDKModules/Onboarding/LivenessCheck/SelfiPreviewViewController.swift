@@ -36,6 +36,7 @@ class SelfiPreviewViewController: BaseViewController {
         super.viewWillAppear(animated)
 //        self.navigationController?.isNavigationBarHidden = true
         (self.navigationController as? BaseNavigationController)?.isBlackNavBar = true
+        NotificationCenter.default.post(name: .onChangeTopViewColor, object: nil, userInfo: ["isBlack":true])
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -43,7 +44,8 @@ class SelfiPreviewViewController: BaseViewController {
         // Setup your camera here...
         captureSession = AVCaptureSession()
         captureSession.sessionPreset = .high
-        
+        setScreenSize(size: .fullScreenOverContext)
+        NotificationCenter.default.post(name: .onChangeTopCloseButton, object: nil, userInfo: ["isShow":false])
         guard let backCamera = AVCaptureDevice.default(.builtInWideAngleCamera, for: AVMediaType.video,position: .front)
             else {
                 print("Unable to access back camera!")
@@ -66,6 +68,7 @@ class SelfiPreviewViewController: BaseViewController {
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         (self.navigationController as? BaseNavigationController)?.isBlackNavBar = false
+        NotificationCenter.default.post(name: .onChangeTopViewColor, object: nil, userInfo: ["isBlack":false])
         self.captureSession.stopRunning()
     }
 
@@ -85,7 +88,6 @@ class SelfiPreviewViewController: BaseViewController {
         }
     }
     
-    
     @IBAction func captureBtnTapped(_ sender: Any) {
         let vc = LivenessCheckViewController.instantiate(fromAppStoryboard: .Liveness)
         vc.cofigurationResponse = GlobalData.shared.keyAndConfiguration
@@ -93,7 +95,6 @@ class SelfiPreviewViewController: BaseViewController {
         vc.updateType = self.updateType
         self.navigationController?.pushViewController(vc, animated: true)
     }
-    
 }
 
 

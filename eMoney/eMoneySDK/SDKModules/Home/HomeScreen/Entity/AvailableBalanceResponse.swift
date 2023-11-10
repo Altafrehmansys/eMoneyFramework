@@ -61,5 +61,4 @@ class AvailableBalanceData: Codable {
         balance = try values.decodeIfPresent(Double.self, forKey: .balance)
         cardHolderName = try values.decodeIfPresent(String.self, forKey: .cardHolderName)
     }
-    
 }

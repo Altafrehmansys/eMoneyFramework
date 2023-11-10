@@ -39,10 +39,18 @@ class ReEnterPinViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setViewInterface()
+        self.keyboardCallBack = {[weak self] (isHidden, frame) in
+            if isHidden {
+                self?.setScreenSize(size: .halfScreen)
+            } else {
+                self?.setScreenSize(size: .fullScreen)
+            }
+        }
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        setScreenSize(size: .halfScreen)
     }
     
 //https://uat-swypapp.etisalat.ae/mwallet-rest/api/pin/reset
@@ -54,7 +62,7 @@ class ReEnterPinViewController: BaseViewController {
         self.viewEnableFace.isHidden = false
         
         switch userJourneyEnum {
-        case .onboarding :
+        case .onboarding:
             self.navigationItem.setTitle(title: "register".localized,subtitle: "re_enter_pin_title".localized)
             labelReEnterPin.text = "re_enter_pinsave".localized
             buttonSetPin.setTitle("set_pin_btn_text".localized, for: .normal)
@@ -66,6 +74,8 @@ class ReEnterPinViewController: BaseViewController {
             self.viewEnableFace.isHidden = true
             self.viewStepperTopConstraint.constant = 0
             self.viewStepper.isHidden = true
+        case .registerDevice:
+            print("This case will not be handled here")
         }
         
         self.labelPinMismatch.isHidden = true
@@ -216,17 +226,19 @@ class ReEnterPinViewController: BaseViewController {
         }
     }
     func resetApiCall(){
-        guard let encryptOtp = try? GlobalData.shared.otp?.aesEncrypt(key:EncryptionKey.pinKey) else {return}
+        guard let otp = GlobalData.shared.otp//?.aesEncrypt(key:EncryptionKey.pinKey)
+        else {return}
         let obj = ResetPinRequestModel()
-        obj.repeatNewPin = textFieldOtp.text
-        obj.newPin = self.pinPassword
-        obj.otp = encryptOtp
-        obj.pin = ""
-        obj.flowName = "Upgrade"
+        obj.repeatNewPin = try? textFieldOtp.text.aesEncrypt(key: EncryptionKey.pinKey)
+        obj.newPin = try? self.pinPassword.aesEncrypt(key: EncryptionKey.pinKey)
+        obj.otp = otp
+//        obj.pin = ""
+//        obj.flowName = "ForgotPin"
         obj.transactionId = "971549996938-02364892152"
         obj.credentialType = "pincode"
         presenter?.callResetApi(resetPinObj: obj)
     }
+    
     func setFlowJourney(){
         switch userJourneyEnum {
         case .onboarding :
@@ -238,6 +250,8 @@ class ReEnterPinViewController: BaseViewController {
             }
         case .forgotPin :
            resetApiCall()
+        case .registerDevice:
+            print("This case will not be handled here")
         }
     }
     

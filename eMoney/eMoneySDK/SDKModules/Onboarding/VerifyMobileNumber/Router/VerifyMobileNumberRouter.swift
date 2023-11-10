@@ -18,6 +18,7 @@ class VerifyMobileNumberRouter {
         case FastTrack
         case Login
         case failedOtp(model:VerifyMobileNumberResponseModel)
+        case popToRootView
     }
     
     // MARK: Properties
@@ -56,6 +57,9 @@ extension VerifyMobileNumberRouter: VerifyMobileNumberRouterProtocol {
             view?.navigationController?.pushViewController(vc, animated: true)
         case .captureIdentity(let delegate):
             let vc = CaptureIdentityInfoRouter.setupModule()
+            if SDKColors.shared.flowName != SDKFlowName.registration.rawValue {
+                vc.updateType = .updateEidAndSelfi
+            }
             vc.delegate = delegate
             view?.navigationController?.pushViewController(vc, animated: true)
         case .RegisterPin(let otp):
@@ -74,6 +78,8 @@ extension VerifyMobileNumberRouter: VerifyMobileNumberRouterProtocol {
             let vc = FailedOtpRouter.setupModule()
             vc.responseObj = model
             view?.navigationController?.pushViewController(vc, animated: true)
+        case .popToRootView:
+            view?.navigationController?.popViewController(animated: true)
         }
         
     }

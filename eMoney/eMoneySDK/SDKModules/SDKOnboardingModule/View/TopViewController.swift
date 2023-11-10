@@ -52,6 +52,10 @@ class TopViewController: SDKBaseViewController {
         }
     }
     
+    func setTopViewBlack(_ isBlack: Bool) {
+//        topView.backgroundColor = isBlack ? .black: .white
+    }
+    
     func setupTopView(isFirst: Bool, _ lblTitle: String) {
         DispatchQueue.main.async {
 //            self.backButton.isHidden   = isFirst ? true  : false
@@ -62,6 +66,10 @@ class TopViewController: SDKBaseViewController {
 //            self.lblTopCenter.isHidden = isFirst ? true  : false
 //            self.lblTopCenter.text     = "Register"
         }
+    }
+    
+    func showCloseButton(_ isShow: Bool) {
+        self.crossButton.isHidden  = !isShow
     }
     
     func setupTopViewForEnterPin(_ lblTitle: String) {

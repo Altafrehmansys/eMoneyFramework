@@ -48,7 +48,10 @@ extension ReEnterYourPINRouter: ReEnterYourPINRouterProtocol {
         switch route {
         case .successPinChange:
             let vc = PinSuccessfulRouter.setupModule()
-            view?.navigationController?.pushViewController(vc, animated: true)
+            view?.dismiss(animated: true, completion: {
+                SDKNavigationStack.shared.baseViewController?.present(vc, animated: true)
+            })
+//            view?.navigationController?.pushViewController(vc, animated: true)
         }
     }
 }

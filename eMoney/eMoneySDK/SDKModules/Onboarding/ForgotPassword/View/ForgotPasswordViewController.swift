@@ -30,7 +30,7 @@ class ForgotPasswordViewController: BaseViewController {
         super.viewDidLoad()
         setUI()
         presenter?.loadData()
-        NotificationCenter.default.post(name: .onChangeScreenSize, object: nil, userInfo: ["size":"half"])
+        setScreenSize(size: .halfScreen)
     }
     @IBAction func buttonDoneTapped(_ sender: Any) {
         presenter?.backToLogin()

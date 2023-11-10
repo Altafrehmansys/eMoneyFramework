@@ -25,7 +25,7 @@ class ManageSavedAccountsViewController: BaseViewController {
     
     // MARK: - Deallocation
     deinit {
-        debugPrint("\(AddMoneySelectBankViewController.self) release from memory")
+//        debugPrint("\(AddMoneySelectBankViewController.self) release from memory")
     }
 }
 

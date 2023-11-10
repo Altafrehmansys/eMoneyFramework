@@ -58,15 +58,15 @@ class ManageCardPresenter {
                                                                    titleColor: AppColor.eAnd_Black_80,
                                                                    rightImage: "add-apple-wallet",
                                                                    rightImageSize: CGSize(width: 100, height: 32))
-        cells.append(TableViewCellModelWithUITableView(actions: self.cellActions,
-                                                       dataSource: [applePayCell],
-                                                       borderWidth: 1,
-                                                       borderColor: AppColor.eAnd_Grey_20,
-                                                       cornerRadius: 12,
-                                                       leftSpace: 20,
-                                                       rightSpace: 20,
-                                                       topSpace: 20,
-                                                       bottomSpace: 20))
+//        cells.append(TableViewCellModelWithUITableView(actions: self.cellActions,
+//                                                       dataSource: [applePayCell],
+//                                                       borderWidth: 1,
+//                                                       borderColor: AppColor.eAnd_Grey_20,
+//                                                       cornerRadius: 12,
+//                                                       leftSpace: 20,
+//                                                       rightSpace: 20,
+//                                                       topSpace: 20,
+//                                                       bottomSpace: 20))
         cells.append(SpaceTableViewCellModel(height: 20))
         cells.append(GenericSingleLabelCellModel(content: Strings.Wallet.customise_card_face,
                                                  font: AppFont.appSemiBold(size: .body2),
@@ -193,8 +193,8 @@ extension ManageCardPresenter: ManageCardPresenterProtocol {
         dataSource.append(GenericSingleLabelCellModel(content:"Cancel card",font: AppFont.appRegular(size: .body2),color: AppColor.eAnd_Black_80,alignment: .center))
         dataSource.append(GenericSingleLabelCellModel(content: "You can only cancel your e& money card 3 times. You have 2 cancellations left.",font: AppFont.appRegular(size: .body4),color: AppColor.eAnd_Grey_100,alignment:.center))
        
-        dataSource.append(CancelCardReasonsCellModel(placeHolderText: "Select a reason",dropDownDataSource:["I have unrecognised transactions","I have better prepaid card options","I don’t use the card","My card is lost/stolen","Other reasons"], errorText: ""))
-        dataSource.append(TellUsMoreCellModel(placeHolderText: "Tell us more"))
+//        dataSource.append(CancelCardReasonsCellModel(placeHolderText: "Select a reason",dropDownDataSource:["I have unrecognised transactions","I have better prepaid card options","I don’t use the card","My card is lost/stolen","Other reasons"], errorText: ""))
+//        dataSource.append(TellUsMoreCellModel(placeHolderText: "Tell us more"))
         
         let cancelCardButton = BaseButton()
         cancelCardButton.type = .GradientButton
@@ -250,8 +250,8 @@ extension ManageCardPresenter: ManageCardPresenterProtocol {
         dataSource.append(SpaceTableViewCellModel(height: 20))
         dataSource.append(SeparatorWithTextCellModel(text: "OR"))
         dataSource.append(GenericSingleLabelCellModel(content: "Add a different source", font: AppFont.appSemiBold(size: .body2), color: AppColor.eAnd_Black_80))
-        dataSource.append(SavedAccountCellModel(actions: self.cellActions,cardImage: "debit-card", account: "Debit / credit card", cardNumber: "100% secure transfers"))
-        dataSource.append(SavedAccountCellModel(actions: self.cellActions,cardImage: "other-source-applepay", account: "Apple Pay", cardNumber: "Quick and convenient"))
+//        dataSource.append(SavedAccountCellModel(actions: self.cellActions,cardImage: "debit-card", account: "Debit / credit card", cardNumber: "100% secure transfers"))
+//        dataSource.append(SavedAccountCellModel(actions: self.cellActions,cardImage: "other-source-applepay", account: "Apple Pay", cardNumber: "Quick and convenient"))
         
         let saveButton = BaseButton()
         saveButton.type = .GradientButton

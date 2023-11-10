@@ -67,8 +67,9 @@ extension AddMoneyRouter: AddMoneyRouterProtocol {
             vc = ManageSavedAccountsRouter.setupModule(input: input)
             
         case .selectBank(let linkedAccountsList):
-            let input = AddMoneySelectBankRouter.Input(linkedAccountsList: linkedAccountsList, type: .general)
-            vc = AddMoneySelectBankRouter.setupModule(input: input)
+//            let input = AddMoneySelectBankRouter.Input(linkedAccountsList: linkedAccountsList, type: .general)
+//            vc = AddMoneySelectBankRouter.setupModule(input: input)
+            print("This case will not be handled")
             
         case .creditDebitCard:
             vc = AddNewCardRouter.setupModule()
@@ -77,8 +78,8 @@ extension AddMoneyRouter: AddMoneyRouterProtocol {
             vc = AddMoneyEnterAmountRouter.setupModule(input: input)
                         
         case .paymentMachine(let getLocationNearByType):
-            vc = PaymentMachinesRouter.setupModule(getLocationNearByType: getLocationNearByType)
-             
+//            vc = PaymentMachinesRouter.setupModule(getLocationNearByType: getLocationNearByType)
+            print("This case will not be handled")
         case .cashAdvance(let input):
             vc = AddMoneyEnterAmountRouter.setupModule(input: input)
              
@@ -89,10 +90,11 @@ extension AddMoneyRouter: AddMoneyRouterProtocol {
             vc = AddMoneyWebViewRouter.setupModule(input: input)
             
         case .leanCoolOffBottomSheet(let interval):
-            vc = LeanCoolOffBottomSheetRouter.setupModule(coolDownTime: interval - 1)
-            vc.modalPresentationStyle = .overCurrentContext
-            self.view?.present(vc, animated: true)
-            return
+//            vc = LeanCoolOffBottomSheetRouter.setupModule(coolDownTime: interval - 1)
+//            vc.modalPresentationStyle = .overCurrentContext
+//            self.view?.present(vc, animated: true)
+//            return
+            print("This case will not be handled")
         }
         
         

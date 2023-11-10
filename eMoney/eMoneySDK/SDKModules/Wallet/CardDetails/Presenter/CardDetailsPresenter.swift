@@ -36,15 +36,15 @@ class CardDetailsPresenter {
                                    allowCopyCardTitle: true,
                                    cardTypeImage: "MasterCard"))
         cells.append(SpaceTableViewCellModel(height: 20))
-        let collectionCells:[StandardCellModel] = [SavedBillCellModel(title: Strings.Wallet.add_money,
-                                                                      imgName: "add-money"),
-                                                   SavedBillCellModel(title: Strings.Wallet.card_details,
-                                                                      imgName: "card-details"),
-                                                   SavedBillCellModel(title: Strings.Wallet.manage_card,
-                                                                      imgName: "manage-card"),
-                                                   SavedBillCellModel(title: Strings.Wallet.spend_analysis,
-                                                                      imgName: "spend-analysis")]
-        cells.append(HorizontalCollectionTableViewCellModel(actions: self.cellActions, datasource: collectionCells, cellSize: CGSize(width: 75, height: 80), spacing: 0, collectionHeight: 75))
+//        let collectionCells:[StandardCellModel] = [SavedBillCellModel(title: Strings.Wallet.add_money,
+//                                                                      imgName: "add-money"),
+//                                                   SavedBillCellModel(title: Strings.Wallet.card_details,
+//                                                                      imgName: "card-details"),
+//                                                   SavedBillCellModel(title: Strings.Wallet.manage_card,
+//                                                                      imgName: "manage-card"),
+//                                                   SavedBillCellModel(title: Strings.Wallet.spend_analysis,
+//                                                                      imgName: "spend-analysis")]
+        /*cells.append(HorizontalCollectionTableViewCellModel(actions: self.cellActions, datasource: collectionCells, cellSize: CGSize(width: 75, height: 80), spacing: 0, collectionHeight: 75))*/
         cells.append(GenericTitleAndButtonTableViewCellModel(actions: self.cellActions, title: "\(Strings.Wallet.transaction_history) (AED)" , buttonTitle: Strings.BillPayment.viewAll))
         cells.append(SpaceTableViewCellModel(height: 32))
         cells.append(TransactionHistoryCellModel(actions: self.cellActions,
@@ -54,11 +54,11 @@ class CardDetailsPresenter {
                                                  date: "Yesterday",
                                                  amount: "- 90.00",
                                                  points: "0.90"))
-        cells.append(SingleLineCellModel(lineColor: AppColor.eAnd_Grey_30,
-                                         leftSpace: 24,
-                                         rightSpace: 24,
-                                         topSpeace: 20,
-                                         bottomSpace: 20))
+//        cells.append(SingleLineCellModel(lineColor: AppColor.eAnd_Grey_30,
+//                                         leftSpace: 24,
+//                                         rightSpace: 24,
+//                                         topSpeace: 20,
+//                                         bottomSpace: 20))
         cells.append(TransactionHistoryCellModel(actions: self.cellActions,
                                                  leftImage: "etisalat",
                                                  title: "Aish ****98274",
@@ -66,11 +66,11 @@ class CardDetailsPresenter {
                                                  date: "Yesterday",
                                                  amount: "- 90.00",
                                                  points: "0.90"))
-        cells.append(SingleLineCellModel(lineColor: AppColor.eAnd_Grey_30,
-                                         leftSpace: 24,
-                                         rightSpace: 24,
-                                         topSpeace: 20,
-                                         bottomSpace: 20))
+//        cells.append(SingleLineCellModel(lineColor: AppColor.eAnd_Grey_30,
+//                                         leftSpace: 24,
+//                                         rightSpace: 24,
+//                                         topSpeace: 20,
+//                                         bottomSpace: 20))
         cells.append(TransactionHistoryCellModel(actions: self.cellActions,
                                                  leftImage: "etisalat",
                                                  title: "Aish ****98274",
@@ -78,11 +78,11 @@ class CardDetailsPresenter {
                                                  date: "Yesterday",
                                                  amount: "- 90.00",
                                                  points: "0.90"))
-        cells.append(SingleLineCellModel(lineColor: AppColor.eAnd_Grey_30,
-                                         leftSpace: 24,
-                                         rightSpace: 24,
-                                         topSpeace: 20,
-                                         bottomSpace: 20))
+//        cells.append(SingleLineCellModel(lineColor: AppColor.eAnd_Grey_30,
+//                                         leftSpace: 24,
+//                                         rightSpace: 24,
+//                                         topSpeace: 20,
+//                                         bottomSpace: 20))
                      
         self.dataSource = cells
     }

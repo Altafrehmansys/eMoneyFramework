@@ -43,11 +43,19 @@ public class OnboardingViewController: UIViewController {
         self.setupTopBar()
         // Register to receive notification in your class
         NotificationCenter.default.addObserver(self, selector: #selector(self.changeScreenSize(_:)), name: .onChangeScreenSize, object: nil)
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(self.changeTopViewColor(_:)), name: .onChangeTopViewColor, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(self.changeCloseButton(_:)), name: .onChangeTopCloseButton, object: nil)
     }
     
+    deinit {
+//        NotificationCenter.default.removeObserver(self, name: .onChangeScreenSize, object: nil)
+//        NotificationCenter.default.removeObserver(self, name: .onChangeTopViewColor, object: nil)
+//        NotificationCenter.default.removeObserver(self, name: .onChangeTopCloseButton, object: nil)
+    }
     public override func viewDidAppear( _ animdated: Bool) {
         super.viewDidAppear(animdated)
-        self.getToken()
+//        self.getToken()
     }
     public override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -104,11 +112,12 @@ public class OnboardingViewController: UIViewController {
                 vc.delegate                  = self
                 self.navController           = destination
             }
-            
-//            SDKColors.shared.clientID    = clientID
-//            SDKColors.shared.partnerName = partnerName
-//            SDKColors.shared.msisdn      = msisdn
-//            SDKColors.shared.setReceivedColor(theme: self.receivedTheme ?? nil)
+            if let destination = segue.destination as? UINavigationController,
+                    let vc = destination.topViewController as? OtpForgotPinPopupViewController {
+                vc.delegate                  = self
+                vc.setupModule()
+                self.navController           = destination
+            }
         case SegueNames.second:
             print("second vc line executed")
         case SegueNames.topView:
@@ -132,11 +141,31 @@ public class OnboardingViewController: UIViewController {
     // handle notification
     @objc func changeScreenSize(_ notification: NSNotification) {
         if let size = notification.userInfo?["size"] as? String {
-            if size == "half" {
-                self.changeScreenSize(size: .halfScreen)
-            } else {
-                self.changeScreenSize(size: .fullScreen)
+            if size == ScreenSizes.halfScreen.rawValue {
+                self.changeScreenSize(size: .halfScreen, viewHeight: 0)
+            }else if size == ScreenSizes.fullScreenOverContext.rawValue {
+                self.changeScreenSize(size: .fullScreenOverContext, viewHeight: 0)
+            } else if size == ScreenSizes.fixed.rawValue {
+                guard let height = notification.userInfo?["height"] as? CGFloat else {
+                    self.changeScreenSize(size: .halfScreen, viewHeight: 0)
+                    return
+                }
+                self.changeScreenSize(size: .fixed, viewHeight:height)
+            }else {
+                self.changeScreenSize(size: .fullScreen, viewHeight: 0)
             }
+        }
+    }
+    
+    @objc func changeTopViewColor(_ notification: NSNotification) {
+        if let isBlack = notification.userInfo?["isBlack"] as? Bool {
+            topController?.setTopViewBlack(isBlack)
+        }
+    }
+    
+    @objc func changeCloseButton(_ notification: NSNotification) {
+        if let isShow = notification.userInfo?["isShow"] as? Bool {
+            topController?.showCloseButton(isShow)
         }
     }
     
@@ -154,13 +183,16 @@ public class OnboardingViewController: UIViewController {
         self.mainView.addGestureRecognizer(panGesture)
     }
     
-    private func getSize(_ size: ScreenSizes) -> CGFloat{
+    private func getSize(_ size: ScreenSizes, height: CGFloat = 0) -> CGFloat{
         switch size {
+        case .fullScreenOverContext:
+            return 0
         case .fullScreen:
             return 50
-            //            return 0
         case .halfScreen:
             return UIScreen.main.bounds.height * 0.4
+        case .fixed:
+            return height
         }
     }
     
@@ -202,15 +234,11 @@ public class OnboardingViewController: UIViewController {
         currentContainerHeight = height
     }
     
-    deinit {
-        print("\(#function) was called here")
-    }
-    
     func getToken() {
         Loader.shared.showFullScreen()
         Task {
             do {
-                let response:TokenResponseModel? = try await ApiManager.shared.execute(OnboardingApiRouter.getToken(token: "Basic bW9iaWxlLWZlOnBhc3N3b3JkMTIz"))
+                let response:TokenResponseModel? = try await ApiManager.shared.execute(OnboardingApiRouter.getToken(token: "bW9iaWxlLWZlOnBhc3N3b3JkMTIz"))
                 await MainActor.run {
                     Loader.shared.hideFullScreen()
                     SDKColors.shared.accessToken = response?.data?.accessToken
@@ -222,33 +250,6 @@ public class OnboardingViewController: UIViewController {
                     Loader.shared.hideFullScreen()
                 }
             }
-        }
-//        var request = URLRequest(url: URL(string: "https://enmoneyapim.azure-api.net/gettoken/v1/token?authorization=Basic%20bW9iaWxlLWZlOnBhc3N3b3JkMTIz")!)
-//        request.method = HTTPMethod.post
-//        request.headers.add(HTTPHeader(name: "custom_header", value: "pre_prod"))
-//        if let clientId = SDKColors.shared.clientID {
-//            request.headers.add(HTTPHeader(name: "client_id",   value: clientId))
-//        }
-//        
-//        URLSession.shared.dataTask(with: request) { [weak self] (data, response, error) in
-//            if let data = data {
-//                self?.parseData(data)
-//            }
-//        }.resume()
-    }
-    
-    func parseData(_ data : Data) {
-        do {
-            let readableJSON = try JSONSerialization.jsonObject(with: data, options: .mutableContainers) as! [String: AnyObject]
-            if let data = readableJSON["data"], let accessToken = data["accessToken"] as? String {
-                SDKColors.shared.accessToken = accessToken//readableJSON["data"]?["accessToken"] as? String
-            }
-            
-            print(SDKColors.shared.accessToken ?? "")
-        }
-        catch {
-            print(error)
-            Loader.shared.hideFullScreen()
         }
     }
 }
@@ -268,8 +269,14 @@ extension OnboardingViewController: SendDataSDK {
         }
     }
     
-    func changeScreenSize(size: ScreenSizes) {
-        animateContainerHeight(getSize(size))
+    func changeScreenSize(size: ScreenSizes, viewHeight: CGFloat) {
+        if size == ScreenSizes.fixed {
+            let height = self.view.frame.size.height
+            let topAnchor = height - viewHeight - (topController?.view.frame.size.height ?? 44)
+            animateContainerHeight(getSize(size, height: topAnchor))
+        } else {
+            animateContainerHeight(getSize(size))
+        }
     }
 }
 
@@ -291,14 +298,17 @@ extension OnboardingViewController: TopViewActionsSDK {
     }
 }
 
-enum ScreenSizes {
+enum ScreenSizes: String {
     case fullScreen
     case halfScreen
+    case fullScreenOverContext
+    case fixed
 }
 
 protocol SendDataSDK {
     func sendStringData(string: String)
-    func changeScreenSize(size: ScreenSizes)
+//    func changeScreenSize(size: ScreenSizes)
+    func changeScreenSize(size: ScreenSizes, viewHeight: CGFloat)
 }
 
 protocol TopViewActionsSDK {

@@ -7,7 +7,7 @@
 import UIKit
 import Foundation
 
-public class SDKColors {
+class SDKColors {
     
     static let shared = SDKColors()
     public var clientID: String?
@@ -18,6 +18,7 @@ public class SDKColors {
     public var onSuccess: ((String) -> ())?
     public var onFailure: ((String, String) -> ())?
     private var isLogEnable: Bool = true
+    public var onLoginSuccess: ((BaseResponse) -> ())?
     public var environment: Environment?
     
     private init() {
@@ -39,36 +40,9 @@ public class SDKColors {
             isLogEnable
         }
     }
-}
-
-public struct EWalletTheme {
-    public var buttonBackgroundColor: UIColor?
-    public var buttonTextColor: UIColor?
-    public var buttonFont: UIFont?
     
-    public var toolBarTitleColor: UIColor?
-    public var toolBarLabelColor: UIColor?
-    public var toolBarIconColor: UIColor?
-    
-    public var checkBoxColor: UIColor?
-    public var segmentBarColor: UIColor?
-    
-    public init(buttonBackgroundColor: UIColor? = nil,
-                buttonTextColor: UIColor? = nil,
-                buttonFont: UIFont? = nil,
-                toolBarTitleColor: UIColor? = nil,
-                toolBarLabelColor: UIColor? = nil,
-                toolBarIconColor: UIColor? = nil,
-                checkBoxColor: UIColor? = nil,
-                segmentBarColor: UIColor? = nil) {
-        self.buttonBackgroundColor = buttonBackgroundColor
-        self.buttonTextColor = buttonTextColor
-        self.buttonFont = buttonFont
-        self.toolBarTitleColor = toolBarTitleColor
-        self.toolBarLabelColor = toolBarLabelColor
-        self.toolBarIconColor = toolBarIconColor
-        self.checkBoxColor = checkBoxColor
-        self.segmentBarColor = segmentBarColor
+    var authorizationToken: String {
+        return "bW9iaWxlLWZlOnBhc3N3b3JkMTIz"
     }
 }
 
@@ -82,4 +56,6 @@ public class SDKNavigationStack {
     
     
 }
+
+
 //use the above colors like this UIColor(hex: "#D9ECF5")

@@ -11,4 +11,6 @@ extension Notification.Name {
     static let appSessionExpired = Notification.Name("NotificationSessionExpired")
     static let onUpgradeFlowCompletion = Notification.Name(rawValue: "onUpgradeFlowCompletion")
     static let onChangeScreenSize = Notification.Name(rawValue: "onChangeScreenSize")
+    static let onChangeTopViewColor = Notification.Name(rawValue: "onChangeTopViewColor")
+    static let onChangeTopCloseButton = Notification.Name(rawValue: "onChangeTopCloseButton")
 }

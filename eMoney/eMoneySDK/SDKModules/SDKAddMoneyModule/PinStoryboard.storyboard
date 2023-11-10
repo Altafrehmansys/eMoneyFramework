@@ -24,19 +24,19 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enter your pin" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5kE-jN-D5T">
-                                <rect key="frame" x="16" y="79" width="361" height="21"/>
+                                <rect key="frame" x="16" y="70" width="361" height="21"/>
                                 <fontDescription key="fontDescription" name="SuisseIntl" family="Suisse Int'l" pointSize="16"/>
                                 <color key="textColor" name="e&amp;_Black_80"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0Bh-l8-bro" customClass="StandardTextField" customModule="eMoneySDK" customModuleProvider="target">
-                                <rect key="frame" x="16" y="116" width="361" height="64"/>
+                                <rect key="frame" x="16" y="107" width="361" height="64"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="64" id="Ui0-XY-2Vc"/>
                                 </constraints>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tcb-bm-xZC">
-                                <rect key="frame" x="282" y="190" width="87" height="34.333333333333343"/>
+                                <rect key="frame" x="282" y="181" width="87" height="34.333333333333343"/>
                                 <color key="tintColor" name="e&amp;_Red_100"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" image="eye" title=" Show"/>
@@ -71,10 +71,9 @@
                             <constraint firstItem="5kE-jN-D5T" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="16" id="Tmg-YN-DuH"/>
                             <constraint firstItem="0Bh-l8-bro" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="16" id="VlP-97-u1X"/>
                             <constraint firstItem="NRK-4N-uzr" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="Wrp-jc-K9B"/>
-                            <constraint firstItem="5kE-jN-D5T" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="Xgy-Bb-VT1"/>
+                            <constraint firstItem="5kE-jN-D5T" firstAttribute="top" secondItem="5EZ-qb-Rvc" secondAttribute="top" constant="70" id="ZqQ-6y-5Yh"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="5kE-jN-D5T" secondAttribute="trailing" constant="16" id="d8Y-aI-Box"/>
                             <constraint firstAttribute="bottom" secondItem="NRK-4N-uzr" secondAttribute="bottom" constant="50" id="oiu-qt-z8G"/>
-                            <constraint firstItem="5kE-jN-D5T" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="20" id="uzp-LT-8sY"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="tcb-bm-xZC" secondAttribute="trailing" constant="24" id="yEd-Gh-uUy"/>
                         </constraints>
                     </view>

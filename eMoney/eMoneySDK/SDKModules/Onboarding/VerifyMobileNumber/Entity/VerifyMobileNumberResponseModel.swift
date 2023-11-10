@@ -11,6 +11,7 @@ import Foundation
 enum UserJourneyFlow {
     case forgotPin
     case onboarding
+    case registerDevice
 }
 struct InitiatePinRequestModel:Codable{
     var resendFlag:Bool?
